@@ -1,6 +1,8 @@
 # ogws_info
 Resources/information that I've gathered during my work with OGWS.  
   
+If you are interested in the decompilation, or would like to contribute, feel free to check it out here: https://github.com/doldecomp/ogws
+  
 ## Index
 - `RSPE_r1.dmap`: Symbol map (NTSC-U, v1.01) for use with the Dolphin emulator, to aid in debugging. Converted from the decompilation Ghidra project. Updated when I get the chance.  
   
