@@ -890,8 +890,8 @@
   800412a0 000008 800412a0  4 @168@detail_Update 	Sound3DActor
   800412a8 000014 800412a8  4 Sound3DListener 	Sound3DListener
   800412bc 000050 800412bc  4 Sound3DManager 	Sound3DManager
-  8004130c 000054 8004130c  4 FUN_8004130c 	Global
-  80041360 000034 80041360  4 FUN_80041360 	Global
+  8004130c 000054 8004130c  4 GetRequiredMemSize 	Sound3DManager
+  80041360 000034 80041360  4 Setup 	Sound3DManager
   80041394 0000a0 80041394  4 detail_Update 	Sound3DManager
   80041434 00080c 80041434  4 Update 	Sound3DManager
   80041c40 000068 80041c40  4 detail_AllocAmbientArg 	Sound3DManager
@@ -973,7 +973,7 @@
   800441dc 000298 800441dc  4 SetupMram 	SoundArchivePlayer
   80044474 000198 80044474  4 SetupSoundPlayer 	SoundArchivePlayer
   8004460c 000398 8004460c  4 Update 	SoundArchivePlayer
-  800449a4 000008 800449a4  4 FUN_800449a4 	Global
+  800449a4 000008 800449a4  4 GetSoundArchive 	SoundArchivePlayer
   800449ac 000010 800449ac  4 GetSoundPlayer 	SoundArchivePlayer
   800449bc 00014c 800449bc  4 detail_GetFileAddress 	SoundArchivePlayer
   80044b08 00014c 80044b08  4 detail_GetFileWaveDataAddress 	SoundArchivePlayer
@@ -1248,8 +1248,6 @@
   80050788 000054 80050788  4 ResWriteSSMask 	detail
   800507dc 0000d8 800507dc  4 Get 	ResDic
   800508b4 0000d4 800508b4  4 Get 	ResDic
-  80050958 000001 80050958  8 make_str2_NULL 	Get
-  80050970 000001 80050970  8 return_NULL 	Get
   80050988 00007c 80050988  4 operator_[] 	ResDic
   80050a04 000068 80050a04  4 operator_[] 	ResDic
   80050a6c 000070 80050a6c  4 GetIndex 	ResDic
@@ -1277,10 +1275,10 @@
   80051554 000098 80051554  4 GetResAnmScn 	ResFile
   800515ec 00006c 800515ec  4 GetResAnmScn 	ResFile
   80051658 000234 80051658  4 Bind 	ResFile
-  8005188c 000200 8005188c  4 FUN_8005188c 	Global
-  80051a8c 0002c4 80051a8c  4 FUN_80051a8c 	Global
-  80051d50 000120 80051d50  4 FUN_80051d50 	Global
-  80051e70 00094c 80051e70  4 FUN_80051e70 	Global
+  8005188c 000200 8005188c  4 Release 	ResFile
+  80051a8c 0002c4 80051a8c  4 Init 	ResFile
+  80051d50 000120 80051d50  4 Terminate 	ResFile
+  80051e70 00094c 80051e70  4 CheckRevision 	ResFile
   800527bc 000044 800527bc  4 GetResByteCode 	ResMdl
   80052800 000044 80052800  4 GetResNode 	ResMdl
   80052844 000050 80052844  4 GetResNode 	ResMdl
@@ -1312,16 +1310,16 @@
   80052fd8 000054 80052fd8  4 FUN_80052fd8 	Global
   8005302c 000034 8005302c  4 FUN_8005302c 	Global
   80053060 00010c 80053060  4 Bind 	ResMdl
-  8005316c 0000e8 8005316c  4 FUN_8005316c 	Global
+  8005316c 0000e8 8005316c  4 Release 	ResMdl
   80053254 000440 80053254  4 Init 	ResMdl
-  80053694 0000e8 80053694  4 FUN_80053694 	Global
-  8005377c 000204 8005377c  4 FUN_8005377c 	Global
-  80053980 00026c 80053980  4 FUN_80053980 	Global
-  80053bec 000048 80053bec  4 FUN_80053bec 	Global
-  80053c34 00005c 80053c34  4 FUN_80053c34 	Global
-  80053c90 000064 80053c90  4 FUN_80053c90 	Global
+  80053694 0000e8 80053694  4 Terminate 	ResMdl
+  8005377c 000204 8005377c  4 GXGetVtxDescv 	ResShp
+  80053980 00026c 80053980  4 DisableSetArray 	ResShp
+  80053bec 000048 80053bec  4 GetResVtxPos 	ResShp
+  80053c34 00005c 80053c34  4 GetResVtxNrm 	ResShp
+  80053c90 000064 80053c90  4 GetResVtxClr 	ResShp
   80053cf4 00038c 80053cf4  4 Init 	ResShp
-  80054080 000268 80054080  4 FUN_80054080 	Global
+  80054080 000268 80054080  4 Terminate 	ResShp
   800542e8 0000d8 800542e8  4 CallPrePrimitiveDisplayList 	ResShp
   800543c0 000064 800543c0  4 CallPrimitiveDisplayList 	ResShp
   80054424 0000b0 80054424  4 FUN_80054424 	Global
@@ -1394,7 +1392,7 @@
   80055f08 0001b4 80055f08  4 FUN_80055f08 	Global
   800560bc 0001f8 800560bc  4 FUN_800560bc 	Global
   800562b4 0000c8 800562b4  4 Bind 	ResMat
-  8005637c 0000b0 8005637c  4 FUN_8005637c 	Global
+  8005637c 0000b0 8005637c  4 Release 	ResMat
   8005642c 000024 8005642c  4 Init 	ResMat
   80056450 000020 80056450  4 GetResTev 	ResMat
   80056470 000020 80056470  4 GetResTev 	ResMat
@@ -1426,7 +1424,7 @@
   80057374 0000ac 80057374  4 SearchFrame 	g3d
   80057420 000180 80057420  4 GetAnmResult 	ResAnmTexPat
   800575a0 000170 800575a0  4 Bind 	ResAnmTexPat
-  80057710 0001a0 80057710  4 FUN_80057710 	Global
+  80057710 0001a0 80057710  4 Release 	ResAnmTexPat
   800578b0 000414 800578b0  4 GetAnmResult 	ResAnmTexSrt
   80057cc4 0002b8 80057cc4  4 GetAnmScale 	g3d
   80057f7c 00012c 80057f7c  4 CalcAnimationFVS 	g3d
@@ -1434,7 +1432,7 @@
   80058218 0001c0 80058218  4 CalcAnimationFVS 	g3d
   800583d8 000a5c 800583d8  4 GetAnmRotation 	g3d
   80058e34 000270 80058e34  4 GetAnmTranslation 	g3d
-  80059488 000464 80059488  4 FUN_80059488 	Global
+  80059488 000464 80059488  4 GetAnmResult 	ResAnmChr
   80059508 00003c 80059508  4 FUN_80059508 	Global
   80059544 000194 80059544  4 FUN_80059544 	Global
   800596d8 00003c 800596d8  4 FUN_800596d8 	Global
@@ -1465,17 +1463,19 @@
   8005ac4c 000058 8005ac4c  4 DetachAll 	AnmObjVis
   8005aca4 000050 8005aca4  4 G3dProc 	AnmObjVis
   8005acf4 000040 8005acf4  4 ~AnmObjVis 	AnmObjVis
-  8005ad34 000088 8005ad34  4 FUN_8005ad34 	Global
-  8005adbc 0000ec 8005adbc  4 FUN_8005adbc 	Global
-  8005aea8 00016c 8005aea8  4 FUN_8005aea8 	Global
-  8005b014 000060 8005b014  4 FUN_8005b014 	Global
-  8005b074 000070 8005b074  4 FUN_8005b074 	Global
-  8005b130 000070 8005b130  4 FUN_8005b130 	Global
-  8005b1ec 0000e4 8005b1ec  4 FUN_8005b1ec 	Global
-  8005b2d0 0000ac 8005b2d0  4 FUN_8005b2d0 	Global
-  8005b37c 000084 8005b37c  4 FUN_8005b37c 	Global
-  8005b400 0000fc 8005b400  4 FUN_8005b400 	Global
-  8005b4fc 0000a0 8005b4fc  4 FUN_8005b4fc 	Global
+  8005ad34 000088 8005ad34  4 ~AnmObjVisNode 	AnmObjVisNode
+  8005adbc 0000ec 8005adbc  4 Attach 	AnmObjVisNode
+  8005aea8 00016c 8005aea8  4 Detach 	AnmObjVisNode
+  8005b014 000060 8005b014  4 UpdateFrame 	AnmObjVisNode
+  8005b074 000070 8005b074  4 SetFrame 	AnmObjVisNode
+  8005b0e4 00004c 8005b0e4  4 GetFrame 	AnmObjVisNode
+  8005b130 000070 8005b130  4 SetUpdateRate 	AnmObjVisNode
+  8005b1a0 00004c 8005b1a0  4 GetUpdateRate 	AnmObjVisNode
+  8005b1ec 0000e4 8005b1ec  4 Bind 	AnmObjVisNode
+  8005b2d0 0000ac 8005b2d0  4 Release 	AnmObjVisNode
+  8005b37c 000084 8005b37c  4 G3dProc 	AnmObjVisNode
+  8005b400 0000fc 8005b400  4 Construct 	AnmObjVisOR
+  8005b4fc 0000a0 8005b4fc  4 GetResult 	AnmObjVisOR
   8005b59c 000150 8005b59c  4 Construct 	AnmObjVisRes
   8005b6ec 000064 8005b6ec  4 SetFrame 	AnmObjVisRes
   8005b750 000008 8005b750  4 GetFrame 	AnmObjVisRes
@@ -1506,20 +1506,20 @@
   8005be18 000008 8005be18  4 Detach 	AnmObjMatClr
   8005be20 000004 8005be20  4 DetachAll 	AnmObjMatClr
   8005be24 000040 8005be24  4 ~AnmObjMatClr 	AnmObjMatClr
-  8005be64 000064 8005be64  4 FUN_8005be64 	Global
-  8005bec8 0000ec 8005bec8  4 Attach 	AnmObjMatClrOverride
-  8005bfb4 000118 8005bfb4  4 Detach 	AnmObjMatClrOverride
-  8005c0cc 000060 8005c0cc  4 DetachAll 	AnmObjMatClrOverride
-  8005c12c 000078 8005c12c  4 UpdateFrame 	AnmObjMatClrOverride
-  8005c1a4 000088 8005c1a4  4 SetFrame 	AnmObjMatClrOverride
-  8005c22c 000054 8005c22c  4 GetFrame 	AnmObjMatClrOverride
-  8005c280 000088 8005c280  4 SetUpdateRate 	AnmObjMatClrOverride
-  8005c308 000054 8005c308  4 GetUpdateRate 	AnmObjMatClrOverride
-  8005c35c 0000f0 8005c35c  4 Bind 	AnmObjMatClrOverride
-  8005c44c 0000b8 8005c44c  4 Release 	AnmObjMatClrOverride
-  8005c504 000090 8005c504  4 G3dProc 	AnmObjMatClrOverride
-  8005c594 000134 8005c594  4 FUN_8005c594 	Global
-  8005c6c8 0000b0 8005c6c8  4 FUN_8005c6c8 	Global
+  8005be64 000064 8005be64  4 ~AnmObjMatClrNode 	AnmObjMatClrNode
+  8005bec8 0000ec 8005bec8  4 Attach 	AnmObjMatClrNode
+  8005bfb4 000118 8005bfb4  4 Detach 	AnmObjMatClrNode
+  8005c0cc 000060 8005c0cc  4 DetachAll 	AnmObjMatClrNode
+  8005c12c 000078 8005c12c  4 UpdateFrame 	AnmObjMatClrNode
+  8005c1a4 000088 8005c1a4  4 SetFrame 	AnmObjMatClrNode
+  8005c22c 000054 8005c22c  4 GetFrame 	AnmObjMatClrNode
+  8005c280 000088 8005c280  4 SetUpdateRate 	AnmObjMatClrNode
+  8005c308 000054 8005c308  4 GetUpdateRate 	AnmObjMatClrNode
+  8005c35c 0000f0 8005c35c  4 Bind 	AnmObjMatClrNode
+  8005c44c 0000b8 8005c44c  4 Release 	AnmObjMatClrNode
+  8005c504 000090 8005c504  4 G3dProc 	AnmObjMatClrNode
+  8005c594 000134 8005c594  4 Construct 	AnmObjMatClrOverride
+  8005c6c8 0000b0 8005c6c8  4 GetResult 	AnmObjMatClrOverride
   8005c778 0001f0 8005c778  4 Construct 	AnmObjMatClrRes
   8005c968 0000c0 8005c968  4 SetFrame 	AnmObjMatClrRes
   8005ca28 000008 8005ca28  4 GetFrame 	AnmObjMatClrRes
@@ -1530,7 +1530,7 @@
   8005cc08 000074 8005cc08  4 GetResult 	AnmObjMatClrRes
   8005cc7c 000054 8005cc7c  4 G3dProc 	AnmObjMatClrRes
   8005ccd0 000530 8005ccd0  4 ApplyClrAnmResult 	g3d
-  8005d200 000010 8005d200  4 __ad 	Color
+  8005d200 000010 8005d200  4 operator_& 	Color
   8005d210 000010 8005d210  4 operator_| 	Color
   8005d220 000068 8005d220  4 IsDerivedFrom 	AnmObjMatClrRes
   8005d288 000050 8005d288  4 IsDerivedFrom 	AnmObjMatClr
@@ -1551,19 +1551,22 @@
   8005d5b0 000008 8005d5b0  4 Attach 	AnmObjTexPat
   8005d5b8 000008 8005d5b8  4 Detach 	AnmObjTexPat
   8005d5c0 000004 8005d5c0  4 DetachAll 	AnmObjTexPat
-  8005d5c4 000040 8005d5c4  4 FUN_8005d5c4 	Global
-  8005d604 000064 8005d604  4 FUN_8005d604 	Global
-  8005d668 0000ec 8005d668  4 FUN_8005d668 	Global
-  8005d754 000118 8005d754  4 FUN_8005d754 	Global
-  8005d86c 000060 8005d86c  4 FUN_8005d86c 	Global
-  8005d8cc 000078 8005d8cc  4 FUN_8005d8cc 	Global
-  8005d944 000088 8005d944  4 FUN_8005d944 	Global
-  8005da20 000088 8005da20  4 FUN_8005da20 	Global
-  8005dafc 0000f0 8005dafc  4 FUN_8005dafc 	Global
-  8005dbec 0000b8 8005dbec  4 FUN_8005dbec 	Global
-  8005dd34 000134 8005dd34  4 FUN_8005dd34 	Global
-  8005de68 0000c0 8005de68  4 FUN_8005de68 	Global
-  8005df28 0001f0 8005df28  4 FUN_8005df28 	Global
+  8005d5c4 000040 8005d5c4  4 ~AnmObjTexPat 	AnmObjTexPat
+  8005d604 000064 8005d604  4 ~AnmObjTexPatNode 	AnmObjTexPatNode
+  8005d668 0000ec 8005d668  4 Attach 	AnmObjTexPatNode
+  8005d754 000118 8005d754  4 Detach 	AnmObjTexPatNode
+  8005d86c 000060 8005d86c  4 DetachAll 	AnmObjTexPatNode
+  8005d8cc 000078 8005d8cc  4 UpdateFrame 	AnmObjTexPatNode
+  8005d944 000088 8005d944  4 SetFrame 	AnmObjTexPatNode
+  8005d9cc 000054 8005d9cc  4 GetFrame 	AnmObjTexPatNode
+  8005da20 000088 8005da20  4 SetUpdateRate 	AnmObjTexPatNode
+  8005daa8 000054 8005daa8  4 GetUpdateRate 	AnmObjTexPatNode
+  8005dafc 0000f0 8005dafc  4 Bind 	AnmObjTexPatNode
+  8005dbec 0000b8 8005dbec  4 Release 	AnmObjTexPatNode
+  8005dca4 000090 8005dca4  4 G3dProc 	AnmObjTexPatNode
+  8005dd34 000134 8005dd34  4 Construct 	AnmObjTexPatOverride
+  8005de68 0000c0 8005de68  4 GetResult 	AnmObjTexPatOverride
+  8005df28 0001f0 8005df28  4 Construct 	AnmObjTexPatRes
   8005e118 0000c0 8005e118  4 SetFrame 	AnmObjTexPatRes
   8005e1d8 000008 8005e1d8  4 GetFrame 	AnmObjTexPatRes
   8005e1e0 000008 8005e1e0  4 SetUpdateRate 	AnmObjTexPatRes
@@ -1574,98 +1577,164 @@
   8005e430 000054 8005e430  4 G3dProc 	AnmObjTexPatRes
   8005e484 0001f4 8005e484  4 ApplyTexPatAnmResult 	g3d
   8005e678 000068 8005e678  4 IsDerivedFrom 	AnmObjTexPatRes
+  8005e6e0 000050 8005e6e0  4 IsDerivedFrom 	AnmObjTexPat
   8005e730 000030 8005e730  4 GetTypeName 	AnmObjTexPatRes
   8005e760 00000c 8005e760  4 GetTypeObj 	AnmObjTexPatRes
   8005e76c 000044 8005e76c  4 ~AnmObjTexPatRes 	AnmObjTexPatRes
-  8005e894 000030 8005e894  4 FUN_8005e894 	Global
-  8005e8d0 000068 8005e8d0  4 FUN_8005e8d0 	Global
-  8005e938 000030 8005e938  4 FUN_8005e938 	Global
-  8005e974 000030 8005e974  4 FUN_8005e974 	Global
+  8005e7b0 00007c 8005e7b0  4 IsDerivedFrom 	AnmObjTexPatOverride
+  8005e82c 000068 8005e82c  4 IsDerivedFrom 	AnmObjTexPatNode
+  8005e894 000030 8005e894  4 GetTypeName 	AnmObjTexPatOverride
+  8005e8c4 00000c 8005e8c4  4 GetTypeObj 	AnmObjTexPatOverride
+  8005e8d0 000068 8005e8d0  4 ~AnmObjTexPatOverride 	AnmObjTexPatOverride
+  8005e938 000030 8005e938  4 GetTypeName 	AnmObjTexPatNode
+  8005e968 00000c 8005e968  4 GetTypeObj 	AnmObjTexPatNode
+  8005e974 000030 8005e974  4 GetTypeName 	AnmObjTexPat
+  8005e9a4 00000c 8005e9a4  4 GetTypeObj 	AnmObjTexPat
   8005e9b0 00001c 8005e9b0  4 TestExistence 	AnmObjTexSrt
-  8005e9cc 00003c 8005e9cc  4 FUN_8005e9cc 	Global
-  8005ea1c 000040 8005ea1c  4 FUN_8005ea1c 	Global
-  8005ea5c 000064 8005ea5c  4 FUN_8005ea5c 	Global
-  8005eac0 0000ec 8005eac0  4 FUN_8005eac0 	Global
-  8005ebac 000118 8005ebac  4 FUN_8005ebac 	Global
-  8005ecc4 000060 8005ecc4  4 FUN_8005ecc4 	Global
-  8005ed24 000078 8005ed24  4 FUN_8005ed24 	Global
-  8005ed9c 000088 8005ed9c  4 FUN_8005ed9c 	Global
-  8005ee78 000088 8005ee78  4 FUN_8005ee78 	Global
-  8005ef54 0000f0 8005ef54  4 FUN_8005ef54 	Global
-  8005f044 0000b8 8005f044  4 FUN_8005f044 	Global
-  8005f18c 000134 8005f18c  4 FUN_8005f18c 	Global
-  8005f2c0 0000b0 8005f2c0  4 FUN_8005f2c0 	Global
-  8005f370 0001f0 8005f370  4 FUN_8005f370 	Global
-  8005f560 0000c0 8005f560  4 FUN_8005f560 	Global
-  8005f638 0000d0 8005f638  4 FUN_8005f638 	Global
-  8005f708 0000f8 8005f708  4 FUN_8005f708 	Global
-  8005f800 000074 8005f800  4 FUN_8005f800 	Global
+  8005e9cc 00003c 8005e9cc  4 Release 	AnmObjTexSrt
+  8005ea08 000008 8005ea08  4 Attach 	AnmObjTexSrt
+  8005ea10 000008 8005ea10  4 Detach 	AnmObjTexSrt
+  8005ea18 000004 8005ea18  4 DetachAll 	AnmObjTexSrt
+  8005ea1c 000040 8005ea1c  4 ~AnmObjTexSrt 	AnmObjTexSrt
+  8005ea5c 000064 8005ea5c  4 ~AnmObjTexSrtNode 	AnmObjTexSrtNode
+  8005eac0 0000ec 8005eac0  4 Attach 	AnmObjTexSrtNode
+  8005ebac 000118 8005ebac  4 Detach 	AnmObjTexSrtNode
+  8005ecc4 000060 8005ecc4  4 DetachAll 	AnmObjTexSrtNode
+  8005ed24 000078 8005ed24  4 UpdateFrame 	AnmObjTexSrtNode
+  8005ed9c 000088 8005ed9c  4 SetFrame 	AnmObjTexSrtNode
+  8005ee24 000054 8005ee24  4 GetFrame 	AnmObjTexSrtNode
+  8005ee78 000088 8005ee78  4 SetUpdateRate 	AnmObjTexSrtNode
+  8005ef00 000054 8005ef00  4 GetUpdateRate 	AnmObjTexSrtNode
+  8005ef54 0000f0 8005ef54  4 Bind 	AnmObjTexSrtNode
+  8005f044 0000b8 8005f044  4 Release 	AnmObjTexSrtNode
+  8005f0fc 000090 8005f0fc  4 G3dProc 	AnmObjTexSrtNode
+  8005f18c 000134 8005f18c  4 Construct 	AnmObjTexSrtOverride
+  8005f2c0 0000b0 8005f2c0  4 GetResult 	AnmObjTexSrtOverride
+  8005f370 0001f0 8005f370  4 Construct 	AnmObjTexSrtRes
+  8005f560 0000c0 8005f560  4 SetFrame 	AnmObjTexSrtRes
+  8005f620 000008 8005f620  4 GetFrame 	AnmObjTexSrtRes
+  8005f628 000008 8005f628  4 SetUpdateRate 	AnmObjTexSrtRes
+  8005f630 000008 8005f630  4 GetUpdateRate 	AnmObjTexSrtRes
+  8005f638 0000d0 8005f638  4 UpdateFrame 	AnmObjTexSrtRes
+  8005f708 0000f8 8005f708  4 Bind 	AnmObjTexSrtRes
+  8005f800 000074 8005f800  4 GetResult 	AnmObjTexSrtRes
+  8005f874 000054 8005f874  4 G3dProc 	AnmObjTexSrtRes
   8005f8c8 000218 8005f8c8  4 ApplyTexSrtAnmResult 	g3d
-  8005fb98 000030 8005fb98  4 FUN_8005fb98 	Global
-  8005fbd4 000044 8005fbd4  4 FUN_8005fbd4 	Global
-  8005fcfc 000030 8005fcfc  4 FUN_8005fcfc 	Global
-  8005fd38 000068 8005fd38  4 FUN_8005fd38 	Global
-  8005fda0 000030 8005fda0  4 FUN_8005fda0 	Global
-  8005fddc 000030 8005fddc  4 FUN_8005fddc 	Global
-  8005fe18 00003c 8005fe18  4 FUN_8005fe18 	Global
-  8005fe74 000040 8005fe74  4 FUN_8005fe74 	Global
-  8005feb4 000064 8005feb4  4 FUN_8005feb4 	Global
-  8005ff18 0000ec 8005ff18  4 FUN_8005ff18 	Global
-  80060004 000118 80060004  4 FUN_80060004 	Global
-  8006011c 000060 8006011c  4 FUN_8006011c 	Global
-  8006017c 000078 8006017c  4 FUN_8006017c 	Global
-  800601f4 000088 800601f4  4 FUN_800601f4 	Global
-  800602d0 000088 800602d0  4 FUN_800602d0 	Global
-  800603ac 0000f0 800603ac  4 FUN_800603ac 	Global
-  8006049c 000100 8006049c  4 FUN_8006049c 	Global
-  8006059c 0000b8 8006059c  4 FUN_8006059c 	Global
-  80060654 00013c 80060654  4 FUN_80060654 	Global
-  80060820 000174 80060820  4 FUN_80060820 	Global
-  80060994 000558 80060994  4 FUN_80060994 	Global
-  80060f0c 0001f0 80060f0c  4 FUN_80060f0c 	Global
-  800610fc 0000c0 800610fc  4 FUN_800610fc 	Global
-  800611d4 0000d0 800611d4  4 FUN_800611d4 	Global
-  800612a4 000104 800612a4  4 FUN_800612a4 	Global
-  800613a8 0001f8 800613a8  4 FUN_800613a8 	Global
-  800615a0 0001cc 800615a0  4 FUN_800615a0 	Global
-  8006176c 000074 8006176c  4 FUN_8006176c 	Global
-  800618ec 000030 800618ec  4 FUN_800618ec 	Global
-  80061928 000044 80061928  4 FUN_80061928 	Global
-  800619e8 000068 800619e8  4 FUN_800619e8 	Global
-  80061a50 000030 80061a50  4 FUN_80061a50 	Global
-  80061a8c 000068 80061a8c  4 FUN_80061a8c 	Global
-  80061af4 000030 80061af4  4 FUN_80061af4 	Global
-  80061b24 00000c 80061b24  4 FUN_80061b24 	Global
-  80061b30 000030 80061b30  4 FUN_80061b30 	Global
-  80061b6c 00001c 80061b6c  4 FUN_80061b6c 	Global
-  80061b88 00003c 80061b88  4 FUN_80061b88 	Global
-  80061be4 000040 80061be4  4 FUN_80061be4 	Global
-  80061c24 000064 80061c24  4 FUN_80061c24 	Global
-  80061c88 0000ec 80061c88  4 FUN_80061c88 	Global
-  80061d74 000118 80061d74  4 FUN_80061d74 	Global
-  80061e8c 000060 80061e8c  4 FUN_80061e8c 	Global
-  80061eec 000078 80061eec  4 FUN_80061eec 	Global
-  80061f64 000088 80061f64  4 FUN_80061f64 	Global
-  80062040 000088 80062040  4 FUN_80062040 	Global
-  8006211c 0000f0 8006211c  4 FUN_8006211c 	Global
-  8006220c 0000b8 8006220c  4 FUN_8006220c 	Global
-  80062354 000174 80062354  4 FUN_80062354 	Global
-  800624c8 000308 800624c8  4 FUN_800624c8 	Global
-  800627f0 000240 800627f0  4 FUN_800627f0 	Global
-  80062a30 0000c4 80062a30  4 FUN_80062a30 	Global
-  80062b0c 0000d4 80062b0c  4 FUN_80062b0c 	Global
-  80062be0 0001b4 80062be0  4 FUN_80062be0 	Global
-  80062d94 000078 80062d94  4 FUN_80062d94 	Global
-  80062f18 000030 80062f18  4 FUN_80062f18 	Global
-  80062f54 000044 80062f54  4 FUN_80062f54 	Global
-  8006307c 000030 8006307c  4 FUN_8006307c 	Global
-  800630b8 000068 800630b8  4 FUN_800630b8 	Global
-  80063120 000030 80063120  4 FUN_80063120 	Global
-  8006315c 000030 8006315c  4 FUN_8006315c 	Global
-  80063198 000314 80063198  4 FUN_80063198 	Global
-  800634ac 00003c 800634ac  4 FUN_800634ac 	Global
+  8005fae0 000068 8005fae0  4 IsDerivedFrom 	AnmObjTexSrtRes
+  8005fb48 000050 8005fb48  4 IsDerivedFrom 	AnmObjTexSrt
+  8005fb98 000030 8005fb98  4 GetTypeName 	AnmObjTexSrtRes
+  8005fbc8 00000c 8005fbc8  4 GetTypeObj 	AnmObjTexSrtRes
+  8005fbd4 000044 8005fbd4  4 ~AnmObjTexSrtRes 	AnmObjTexSrtRes
+  8005fc18 00007c 8005fc18  4 IsDerivedFrom 	AnmObjTexSrtOverride
+  8005fc94 000068 8005fc94  4 IsDerivedFrom 	AnmObjTexSrtNode
+  8005fcfc 000030 8005fcfc  4 GetTypeName 	AnmObjTexSrtOverride
+  8005fd2c 00000c 8005fd2c  4 GetTypeObj 	AnmObjTexSrtOverride
+  8005fd38 000068 8005fd38  4 ~AnmObjTexSrtOverride 	AnmObjTexSrtOverride
+  8005fda0 000030 8005fda0  4 GetTypeName 	AnmObjTexSrtNode
+  8005fdd0 00000c 8005fdd0  4 GetTypeObj 	AnmObjTexSrtNode
+  8005fddc 000030 8005fddc  4 GetTypeName 	AnmObjTexSrt
+  8005fe0c 00000c 8005fe0c  4 GetTypeObj 	AnmObjTexSrt
+  8005fe18 00003c 8005fe18  4 Release 	AnmObjChr
+  8005fe54 000008 8005fe54  4 Attach 	AnmObjChr
+  8005fe5c 000008 8005fe5c  4 Detach 	AnmObjChr
+  8005fe64 000004 8005fe64  4 SetWeight 	AnmObjChr
+  8005fe68 000008 8005fe68  4 GetWeight 	AnmObjChr
+  8005fe70 000004 8005fe70  4 DetachAll 	AnmObjChr
+  8005fe74 000040 8005fe74  4 ~AnmObjChr 	AnmObjChr
+  8005feb4 000064 8005feb4  4 ~AnmObjChrNode 	AnmObjChrNode
+  8005ff18 0000ec 8005ff18  4 Attach 	AnmObjChrNode
+  80060004 000118 80060004  4 Detach 	AnmObjChrNode
+  8006011c 000060 8006011c  4 DetachAll 	AnmObjChrNode
+  8006017c 000078 8006017c  4 UpdateFrame 	AnmObjChrNode
+  800601f4 000088 800601f4  4 SetFrame 	AnmObjChrNode
+  8006027c 000054 8006027c  4 GetFrame 	AnmObjChrNode
+  800602d0 000088 800602d0  4 SetUpdateRate 	AnmObjChrNode
+  80060358 000054 80060358  4 GetUpdateRate 	AnmObjChrNode
+  800603ac 0000f0 800603ac  4 Bind 	AnmObjChrNode
+  8006049c 000100 8006049c  4 Bind 	AnmObjChrNode
+  8006059c 0000b8 8006059c  4 Release 	AnmObjChrNode
+  80060654 00013c 80060654  4 Release 	AnmObjChrNode
+  80060790 000090 80060790  4 G3dProc 	AnmObjChrNode
+  80060820 000174 80060820  4 Constuct 	AnmObjChrBlend
+  80060994 000558 80060994  4 GetResult 	AnmObjChrBlend
+  80060eec 000010 80060eec  4 SetWeight 	AnmObjChrBlend
+  80060efc 000010 80060efc  4 GetWeight 	AnmObjChrBlend
+  80060f0c 0001f0 80060f0c  4 Construct 	AnmObjChrRes
+  800610fc 0000c0 800610fc  4 SetFrame 	AnmObjChrRes
+  800611bc 000008 800611bc  4 GetFrame 	AnmObjChrRes
+  800611c4 000008 800611c4  4 SetUpdateRate 	AnmObjChrRes
+  800611cc 000008 800611cc  4 GetUpdateRate 	AnmObjChrRes
+  800611d4 0000d0 800611d4  4 UpdateFrame 	AnmObjChrRes
+  800612a4 000104 800612a4  4 Bind 	AnmObjChrRes
+  800613a8 0001f8 800613a8  4 Bind 	AnmObjChrRes
+  800615a0 0001cc 800615a0  4 Release 	AnmObjChrRes
+  8006176c 000074 8006176c  4 GetResult 	AnmObjChrRes
+  800617e0 000054 800617e0  4 G3dProc 	AnmObjChrRes
+  80061834 000068 80061834  4 IsDerivedFrom 	AnmObjChrRes
+  8006189c 000050 8006189c  4 IsDerivedFrom 	AnmObjChr
+  800618ec 000030 800618ec  4 GetTypeName 	AnmObjChrRes
+  8006191c 00000c 8006191c  4 GetTypeObj 	AnmObjChrRes
+  80061928 000044 80061928  4 ~AnmObjChrRes 	AnmObjChrRes
+  8006196c 00007c 8006196c  4 IsDerivedFrom 	AnmObjChrBlend
+  800619e8 000068 800619e8  4 IsDerivedFrom 	AnmObjChrNode
+  80061a50 000030 80061a50  4 GetTypeName 	AnmObjChrBlend
+  80061a80 00000c 80061a80  4 GetTypeObj 	AnmObjChrBlend
+  80061a8c 000068 80061a8c  4 ~AnmObjChrBlend 	AnmObjChrBlend
+  80061af4 000030 80061af4  4 GetTypeName 	AnmObjChrNode
+  80061b24 00000c 80061b24  4 GetTypeObj 	AnmObjChrNode
+  80061b30 000030 80061b30  4 GetTypeName 	AnmObjChr
+  80061b60 00000c 80061b60  4 GetTypeObj 	AnmObjChr
+  80061b6c 00001c 80061b6c  4 TestExistence 	AnmObjShp
+  80061b88 00003c 80061b88  4 Release 	AnmObjShp
+  80061bc4 000008 80061bc4  4 Attach 	AnmObjShp
+  80061bcc 000008 80061bcc  4 Detach 	AnmObjShp
+  80061bd4 000004 80061bd4  4 SetWeight 	AnmObjShp
+  80061bd8 000008 80061bd8  4 GetWeight 	AnmObjShp
+  80061be0 000004 80061be0  4 DetachAll 	AnmObjShp
+  80061be4 000040 80061be4  4 ~AnmObjShp 	AnmObjShp
+  80061c24 000064 80061c24  4 ~AnmObjShpNode 	AnmObjShpNode
+  80061c88 0000ec 80061c88  4 Attach 	AnmObjShpNode
+  80061d74 000118 80061d74  4 Detach 	AnmObjShpNode
+  80061e8c 000060 80061e8c  4 DetachAll 	AnmObjShpNode
+  80061eec 000078 80061eec  4 UpdateFrame 	AnmObjShpNode
+  80061f64 000088 80061f64  4 SetFrame 	AnmObjShpNode
+  80061fec 000054 80061fec  4 GetFrame 	AnmObjShpNode
+  80062040 000088 80062040  4 SetUpdateRate 	AnmObjShpNode
+  800620c8 000054 800620c8  4 GetUpdateRate 	AnmObjShpNode
+  8006211c 0000f0 8006211c  4 Bind 	AnmObjShpNode
+  8006220c 0000b8 8006220c  4 Release 	AnmObjShpNode
+  800622c4 000090 800622c4  4 G3dProc 	AnmObjShpNode
+  80062354 000174 80062354  4 Construct 	AnmObjShpBlend
+  800624c8 000308 800624c8  4 GetResult 	AnmObjShpBlend
+  800627d0 000010 800627d0  4 SetWeight 	AnmObjShpBlend
+  800627e0 000010 800627e0  4 GetWeight 	AnmObjShpBlend
+  800627f0 000240 800627f0  4 Construct 	AnmObjShpRes
+  80062a30 0000c4 80062a30  4 SetFrame 	AnmObjShpRes
+  80062af4 000008 80062af4  4 GetFrame 	AnmObjShpRes
+  80062afc 000008 80062afc  4 SetUpdateRate 	AnmObjShpRes
+  80062b04 000008 80062b04  4 GetUpdateRate 	AnmObjShpRes
+  80062b0c 0000d4 80062b0c  4 UpdateFrame 	AnmObjShpRes
+  80062be0 0001b4 80062be0  4 Bind 	AnmObjShpRes
+  80062d94 000078 80062d94  4 GetResult 	AnmObjShpRes
+  80062e0c 000054 80062e0c  4 G3dProc 	AnmObjShpRes
+  80062e60 000068 80062e60  4 IsDerivedFrom 	AnmObjShpRes
+  80062ec8 000050 80062ec8  4 IsDerivedFrom 	AnmObjShp
+  80062f18 000030 80062f18  4 GetTypeName 	AnmObjShpRes
+  80062f48 00000c 80062f48  4 GetTypeObj 	AnmObjShpRes
+  80062f54 000044 80062f54  4 ~AnmObjShpRes 	AnmObjShpRes
+  80062f98 00007c 80062f98  4 IsDerivedFrom 	AnmObjShpBlend
+  80063014 000068 80063014  4 IsDerivedFrom 	AnmObjShpNode
+  8006307c 000030 8006307c  4 GetTypeName 	AnmObjShpBlend
+  800630ac 00000c 800630ac  4 GetTypeObj 	AnmObjShpBlend
+  800630b8 000068 800630b8  4 ~AnmObjShpBlend 	AnmObjShpBlend
+  80063120 000030 80063120  4 GetTypeName 	AnmObjShpNode
+  80063150 00000c 80063150  4 GetTypeObj 	AnmObjShpNode
+  8006315c 000030 8006315c  4 GetTypeName 	AnmObjShp
+  8006318c 00000c 8006318c  4 GetTypeObj 	AnmObjShp
+  80063198 000314 80063198  4 GetLightSetting 	AnmScn
+  800634ac 00003c 800634ac  4 GetLightSet 	LightSetting
   800634e8 00004c 800634e8  4 ~G3dObj 	G3dObj
-  80063534 000078 80063534  4 FUN_80063534 	Global
+  80063534 000078 80063534  4 Destroy 	G3dObj
   800635ac 00001c 800635ac  4 IsDerivedFrom 	G3dObj
   800635c8 000030 800635c8  4 GetTypeName 	G3dObj
   800635f8 00000c 800635f8  4 GetTypeObj 	G3dObj
@@ -1673,206 +1742,244 @@
   8006360c 000070 8006360c  4 PlayPolicy_Loop 	g3d
   8006367c 000028 8006367c  4 SetAnmFlag 	AnmObj
   800636a4 000018 800636a4  4 TestAnmFlag 	AnmObj
-  800636bc 000080 800636bc  4 FUN_800636bc 	Global
-  8006373c 000030 8006373c  4 FUN_8006373c 	Global
-  8006376c 000070 8006376c  4 FUN_8006376c 	Global
-  800637dc 000298 800637dc  4 FUN_800637dc 	Global
-  80063a74 00005c 80063a74  4 FUN_80063a74 	Global
-  80063ad0 00007c 80063ad0  4 FUN_80063ad0 	Global
-  80063b4c 000080 80063b4c  4 FUN_80063b4c 	Global
+  800636bc 000080 800636bc  4 GDSetGenMode2 	fifo
+  8006373c 000030 8006373c  4 GDSetCullMode 	fifo
+  8006376c 000070 8006376c  4 GDSetTexCoordScale2 	fifo
+  800637dc 000298 800637dc  4 GDSetIndTexMtx 	fifo
+  80063a74 00005c 80063a74  4 GDResetCurrentMtx 	fifo
+  80063ad0 00007c 80063ad0  4 GDSetCurrentMtx 	fifo
+  80063b4c 000080 80063b4c  4 GDLoadTexMtxImm3x3 	fifo
   80063bcc 0000fc 80063bcc  4 FUN_80063bcc 	Global
   80063cc8 0000d4 80063cc8  4 FUN_80063cc8 	Global
+  80063d9c 000028 80063d9c  4 FUN_80063d9c 	Global
   80063dc4 000160 80063dc4  4 FUN_80063dc4 	Global
   80063f24 0000dc 80063f24  4 Copy32ByteBlocks 	detail
-  80064000 0000c8 80064000  4 FUN_80064000 	Global
-  800640c8 0003e4 800640c8  4 FUN_800640c8 	Global
-  800644ac 00012c 800644ac  4 FUN_800644ac 	Global
-  800645d8 00044c 800645d8  4 FUN_800645d8 	Global
-  80064a34 000070 80064a34  4 FUN_80064a34 	Global
-  80064ab0 000040 80064ab0  4 FUN_80064ab0 	Global
-  80064be4 000418 80064be4  4 FUN_80064be4 	Global
-  80064ffc 000098 80064ffc  4 FUN_80064ffc 	Global
-  80065094 000070 80065094  4 FUN_80065094 	Global
-  80065104 000268 80065104  4 FUN_80065104 	Global
-  8006536c 00014c 8006536c  4 FUN_8006536c 	Global
-  800654b8 0001cc 800654b8  4 FUN_800654b8 	Global
-  80065684 000210 80065684  4 FUN_80065684 	Global
-  80065894 0000a8 80065894  4 FUN_80065894 	Global
-  80065940 0000a8 80065940  4 FUN_80065940 	Global
-  800659ec 0000b4 800659ec  4 FUN_800659ec 	Global
-  80065aa4 0001d0 80065aa4  4 FUN_80065aa4 	Global
-  80065c74 00072c 80065c74  4 FUN_80065c74 	Global
-  800663a0 000090 800663a0  4 FUN_800663a0 	Global
-  80066430 0002ac 80066430  4 FUN_80066430 	Global
-  800666dc 0001a4 800666dc  4 FUN_800666dc 	Global
-  80066880 000348 80066880  4 FUN_80066880 	Global
-  80066bc8 000088 80066bc8  4 FUN_80066bc8 	Global
-  80066c50 0000c4 80066c50  4 FUN_80066c50 	Global
+  80064000 0000c8 80064000  4 ZeroMemory32ByteBlocks 	detail
+  800640c8 0003e4 800640c8  4 EnvironmentMapping 	ScnDependentMtxFunc
+  800644ac 00012c 800644ac  4 ProjectionMapping 	ScnDependentMtxFunc
+  800645d8 00044c 800645d8  4 EnvironmentSpecularMapping 	ScnDependentMtxFunc
+  80064a24 00000c 80064a24  4 DefaultMapping 	ScnDependentMtxFunc
+  80064a34 000070 80064a34  4 FifoSend 	IndTexMtxInfo
+  80064aa4 00000c 80064aa4  4 LightObj 	LightObj
+  80064ab0 000040 80064ab0  4 ~LightObj 	LightObj
+  80064af0 0000f4 80064af0  4 SetLightSetting 	LightState
+  80064be4 000418 80064be4  4 LoadLightSet 	LightState
+  80064ffc 000098 80064ffc  4 CameraMtxState 	CameraMtxState
+  80065094 000070 80065094  4 LoadResMatMisc 	G3DState
+  80065104 000268 80065104  4 LoadResTexObj 	G3DState
+  8006536c 00014c 8006536c  4 LoadResTlutObj 	G3DState
+  800654b8 0001cc 800654b8  4 LoadResGenMode 	G3DState
+  80065684 000210 80065684  4 LoadResTev 	G3DState
+  80065894 0000a8 80065894  4 LoadResMatPix 	G3DState
+  80065940 0000a8 80065940  4 LoadResMatTevColor 	G3DState
+  800659ec 0000b4 800659ec  4 LoadResMatIndMtxAndScale 	G3DState
+  80065aa4 0001d0 80065aa4  4 LoadResMatIndMtxAndScale 	G3DState
+  80065c74 00072c 80065c74  4 LoadResMatChan 	G3DState
+  800663a0 000090 800663a0  4 LoadResMatTexCoordGen 	G3DState
+  80066430 0002ac 80066430  4 LoadResTexSrt 	G3DState
+  800666dc 0001a4 800666dc  4 LoadResShpPrePrimitive 	G3DState
+  80066880 000348 80066880  4 LoadResShpPrimitive 	G3DState
+  80066bc8 000088 80066bc8  4 SetViewPosNrmMtxArray 	G3DState
+  80066c50 0000c4 80066c50  4 GetViewNrmMtxPtr 	G3DState
   80066d14 000068 80066d14  4 FUN_80066d14 	Global
   80066d7c 000054 80066d7c  4 FUN_80066d7c 	Global
-  80066dd0 000008 80066dd0  4 FUN_80066dd0 	Global
-  80066dd8 0000a4 80066dd8  4 FUN_80066dd8 	Global
-  80066e7c 0000c0 80066e7c  4 FUN_80066e7c 	Global
-  80066f3c 00245c 80066f3c  4 FUN_80066f3c 	Global
-  80066f4c 000030 80066f4c  4 FUN_80066f4c 	Global
-  80066f7c 00005c 80066f7c  4 FUN_80066f7c 	Global
+  80066dd0 000008 80066dd0  4 GetIndMtxOp 	G3DState
+  80066dd8 0000a4 80066dd8  4 SetFog 	G3DState
+  80066e7c 0000c0 80066e7c  4 LoadFog 	G3DState
+  80066f3c 000010 80066f3c  4 SetLightSetting 	G3DState
+  80066f4c 000030 80066f4c  4 GetLightObj 	G3DState
+  80066f7c 00005c 80066f7c  4 LoadLightSet 	G3DState
   80066fd8 000088 80066fd8  4 FUN_80066fd8 	Global
-  80067060 0000ac 80067060  4 FUN_80067060 	Global
-  8006710c 00001c 8006710c  4 FUN_8006710c 	Global
+  80067060 0000ac 80067060  4 SetCameraProjMtx 	G3DState
+  8006710c 00001c 8006710c  4 GetCameraMtxPtr 	G3DState
   80067128 000068 80067128  4 FUN_80067128 	Global
-  80067190 000200 80067190  4 FUN_80067190 	Global
-  80067390 00000c 80067390  4 FUN_80067390 	Global
-  8006739c 000148 8006739c  4 FUN_8006739c 	Global
-  800674e4 00015c 800674e4  4 FUN_800674e4 	Global
-  80067640 000050 80067640  4 FUN_80067640 	Global
-  800677fc 000040 800677fc  4 FUN_800677fc 	Global
-  8006783c 000294 8006783c  4 FUN_8006783c 	Global
-  80067ad0 000068 80067ad0  4 FUN_80067ad0 	Global
-  80067b38 0005c8 80067b38  4 FUN_80067b38 	Global
-  80068100 0000b0 80068100  4 FUN_80068100 	Global
-  800681b0 0000c8 800681b0  4 FUN_800681b0 	Global
-  80068278 00022c 80068278  4 FUN_80068278 	Global
-  800684a4 0002c4 800684a4  4 FUN_800684a4 	Global
-  80068768 0002cc 80068768  4 FUN_80068768 	Global
-  80068a34 000364 80068a34  4 FUN_80068a34 	Global
-  80068d98 000264 80068d98  4 FUN_80068d98 	Global
-  80068ffc 000288 80068ffc  4 FUN_80068ffc 	Global
+  80067190 000200 80067190  4 SetRenderModeObj 	G3DState
+  80067390 00000c 80067390  4 GetRenderModeObj 	G3DState
+  8006739c 000148 8006739c  4 Invalidate 	G3DState
+  800674e4 00015c 800674e4  4 SetNrmMapMtx 	IndMtxOpStd
+  80067640 000050 80067640  4 Reset 	IndMtxOpStd
+  80067690 00016c 80067690  4 operator_() 	IndMtxOpStd
+  800677fc 000040 800677fc  4 ~IndMtxOpStd 	IndMtxOpStd
+  8006783c 000294 8006783c  4 __sinit_\g3d_state_cpp 	Global
+  80067ad0 000068 80067ad0  4 ~LightState 	LightState
+  80067b38 0005c8 80067b38  4 Draw1Mat1ShpDirectly 	g3d
+  80068100 0000b0 80068100  4 GetModelLocalAxisY2 	g3d
+  800681b0 0000c8 800681b0  4 GetModelLocalAxisY3 	g3d
+  80068278 00022c 80068278  4 Calc_BILLBOARD_STD 	g3d
+  800684a4 0002c4 800684a4  4 Calc_BILLBOARD_PERSP_STD 	g3d
+  80068768 0002cc 80068768  4 Calc_BILLBOARD_ROT 	g3d
+  80068a34 000364 80068a34  4 Calc_BILLBOARD_PERSP_ROT 	g3d
+  80068d98 000264 80068d98  4 Calc_BILLBOARD_Y 	g3d
+  80068ffc 000288 80068ffc  4 Calc_BILLBOARD_PERSP_Y 	g3d
   80069284 000324 80069284  4 CalcView 	g3d
   800695a8 00049c 800695a8  4 CalcView_LC 	g3d
   80069a44 00055c 80069a44  4 CalcView_LC_DMA_ModelMtx 	g3d
-  80069fa0 000088 80069fa0  4 FUN_80069fa0 	Global
-  8006a028 00000c 8006a028  4 FUN_8006a028 	Global
-  8006a034 000010 8006a034  4 FUN_8006a034 	Global
-  8006a044 00000c 8006a044  4 FUN_8006a044 	Global
-  8006a050 00000c 8006a050  4 FUN_8006a050 	Global
-  8006a05c 00000c 8006a05c  4 FUN_8006a05c 	Global
-  8006a068 00000c 8006a068  4 FUN_8006a068 	Global
+  80069fa0 000088 80069fa0  4 CalcTexMtx 	g3d
+  8006a028 00000c 8006a028  4 GetScaleTemporary 	workmem
+  8006a034 000010 8006a034  4 GetMtxIDTemporary 	workmem
+  8006a044 00000c 8006a044  4 GetMdlZTemporary 	workmem
+  8006a050 00000c 8006a050  4 GetSkinningMtxTemporary 	workmem
+  8006a05c 00000c 8006a05c  4 GetBillboardMtxTemporary 	workmem
+  8006a068 00000c 8006a068  4 GetShpAnmResultBufTemporary 	workmem
   8006a074 0005c4 8006a074  4 FUN_8006a074 	Global
   8006a638 000030 8006a638  4 FUN_8006a638 	Global
-  8006a668 0002dc 8006a668  4 FUN_8006a668 	Global
-  8006a944 00051c 8006a944  4 FUN_8006a944 	Global
-  8006ae60 0001a8 8006ae60  4 FUN_8006ae60 	Global
-  8006b008 000148 8006b008  4 FUN_8006b008 	Global
-  8006b150 0001cc 8006b150  4 FUN_8006b150 	Global
-  8006b31c 000120 8006b31c  4 FUN_8006b31c 	Global
-  8006b43c 000170 8006b43c  4 FUN_8006b43c 	Global
-  8006b5ac 000138 8006b5ac  4 FUN_8006b5ac 	Global
+  8006a668 0002dc 8006a668  4 CalcSkinning 	g3d
+  8006a944 00051c 8006a944  4 GetIndMtxOp 	detail
+  8006ae60 0001a8 8006ae60  4 SetupDraw1Mat1ShpSwap 	g3d
+  8006b008 000148 8006b008  4 DrawResMdlLoop 	g3d
+  8006b150 0001cc 8006b150  4 DrawResMdlLoop 	g3d
+  8006b31c 000120 8006b31c  4 DrawResMdlLoop 	g3d
+  8006b43c 000170 8006b43c  4 DrawResMdlLoop 	g3d
+  8006b5ac 000138 8006b5ac  4 SetUpMdlZ 	g3d
   8006b6e4 000228 8006b6e4  4 DrawResMdlDirectly 	g3d
-  8006b9ac 0005bc 8006b9ac  4 FUN_8006b9ac 	Global
-  8006bf68 0005bc 8006bf68  4 FUN_8006bf68 	Global
-  8006c524 000260 8006c524  4 FUN_8006c524 	Global
-  8006c784 000008 8006c784  4 FUN_8006c784 	Global
-  8006c78c 000050 8006c78c  4 FUN_8006c78c 	Global
-  8006c7dc 00011c 8006c7dc  4 FUN_8006c7dc 	Global
-  8006c8f8 000028 8006c8f8  4 FUN_8006c8f8 	Global
+  8006b9ac 0005bc 8006b9ac  4 sort 	std
+  8006bf68 0005bc 8006bf68  4 sort 	std
+  8006c524 000260 8006c524  4 __sort132 	std
+  8006c784 000008 8006c784  4 Camera 	Camera
+  8006c78c 000050 8006c78c  4 Init 	Camera
+  8006c7dc 00011c 8006c7dc  4 Init 	Camera
+  8006c8f8 000028 8006c8f8  4 SetCameraMtxDirectly 	Camera
   8006c920 000034 8006c920  4 FUN_8006c920 	Global
   8006c954 000220 8006c954  4 FUN_8006c954 	Global
   8006cb74 000048 8006cb74  4 FUN_8006cb74 	Global
-  8006cbbc 000038 8006cbbc  4 FUN_8006cbbc 	Global
-  8006cbf4 000040 8006cbf4  4 FUN_8006cbf4 	Global
+  8006cbbc 000038 8006cbbc  4 SetPerspective 	Camera
+  8006cbf4 000040 8006cbf4  4 SetOrtho 	Camera
   8006cc34 00004c 8006cc34  4 FUN_8006cc34 	Global
-  8006cc80 000020 8006cc80  4 FUN_8006cc80 	Global
-  8006cca0 000018 8006cca0  4 FUN_8006cca0 	Global
-  8006ccb8 00009c 8006ccb8  4 FUN_8006ccb8 	Global
+  8006cc80 000020 8006cc80  4 SetScissor 	Camera
+  8006cca0 000018 8006cca0  4 SetScissorBoxOffset 	Camera
+  8006ccb8 00009c 8006ccb8  4 SetViewport 	Camera
   8006cd54 000018 8006cd54  4 FUN_8006cd54 	Global
-  8006cd6c 000070 8006cd6c  4 FUN_8006cd6c 	Global
-  8006cddc 000060 8006cddc  4 FUN_8006cddc 	Global
-  8006ce3c 0000dc 8006ce3c  4 FUN_8006ce3c 	Global
-  8006cf18 0000d0 8006cf18  4 FUN_8006cf18 	Global
-  8006cfe8 000080 8006cfe8  4 FUN_8006cfe8 	Global
-  8006d068 000084 8006d068  4 FUN_8006d068 	Global
-  8006d0ec 0000c8 8006d0ec  4 FUN_8006d0ec 	Global
-  8006d1b4 000020 8006d1b4  4 FUN_8006d1b4 	Global
-  8006d1d8 000018 8006d1d8  4 FUN_8006d1d8 	Global
-  8006d1f4 000404 8006d1f4  4 FUN_8006d1f4 	Global
-  8006d5f8 000168 8006d5f8  4 FUN_8006d5f8 	Global
-  8006d798 000094 8006d798  4 FUN_8006d798 	Global
-  8006d864 0000bc 8006d864  4 FUN_8006d864 	Global
-  8006d920 0000b0 8006d920  4 FUN_8006d920 	Global
-  8006da20 0000dc 8006da20  4 FUN_8006da20 	Global
-  8006db74 000130 8006db74  4 FUN_8006db74 	Global
-  8006dccc 000194 8006dccc  4 FUN_8006dccc 	Global
-  8006de60 000160 8006de60  4 FUN_8006de60 	Global
-  8006e048 0001a8 8006e048  4 FUN_8006e048 	Global
-  8006e1f0 00009c 8006e1f0  4 FUN_8006e1f0 	Global
-  8006e28c 000190 8006e28c  4 FUN_8006e28c 	Global
-  8006e454 000088 8006e454  4 FUN_8006e454 	Global
-  8006e514 0000a0 8006e514  4 FUN_8006e514 	Global
-  8006e5b4 0000c8 8006e5b4  4 FUN_8006e5b4 	Global
-  8006e6cc 0000c8 8006e6cc  4 FUN_8006e6cc 	Global
-  8006e80c 000110 8006e80c  4 FUN_8006e80c 	Global
-  8006e940 00013c 8006e940  4 FUN_8006e940 	Global
-  8006ea7c 00012c 8006ea7c  4 FUN_8006ea7c 	Global
-  8006ec30 00015c 8006ec30  4 FUN_8006ec30 	Global
-  8006ed8c 00009c 8006ed8c  4 FUN_8006ed8c 	Global
-  8006ee28 0001b0 8006ee28  4 FUN_8006ee28 	Global
-  8006f020 0000ac 8006f020  4 FUN_8006f020 	Global
-  8006f104 0000b4 8006f104  4 FUN_8006f104 	Global
-  8006f1b8 0000cc 8006f1b8  4 FUN_8006f1b8 	Global
-  8006f2dc 0000cc 8006f2dc  4 FUN_8006f2dc 	Global
-  8006f428 000124 8006f428  4 FUN_8006f428 	Global
-  8006f570 000144 8006f570  4 FUN_8006f570 	Global
-  8006f6b4 000140 8006f6b4  4 FUN_8006f6b4 	Global
-  8006f888 000164 8006f888  4 FUN_8006f888 	Global
-  8006f9ec 00009c 8006f9ec  4 FUN_8006f9ec 	Global
-  8006fa88 0000a8 8006fa88  4 FUN_8006fa88 	Global
+  8006cd6c 000070 8006cd6c  4 GetViewport 	Camera
+  8006cddc 000060 8006cddc  4 GetCameraMtx 	Camera
+  8006ce3c 0000dc 8006ce3c  4 GetProjectionMtx 	Camera
+  8006cf18 0000d0 8006cf18  4 GetProjectionTexMtx 	Camera
+  8006cfe8 000080 8006cfe8  4 GetEnvironmentTexMtx 	Camera
+  8006d068 000084 8006d068  4 GXSetViewport 	Camera
+  8006d0ec 0000c8 8006d0ec  4 GXSetProjection 	Camera
+  8006d1b4 000020 8006d1b4  4 GXSetScissor 	Camera
+  8006d1d8 000018 8006d1d8  4 GXSetScissorBoxOffset 	Camera
+  8006d1f4 000404 8006d1f4  4 UpdateCameraMtx 	Camera
+  8006d5f8 000168 8006d5f8  4 CalcWorldMtx_Basic 	dcc
+  8006d798 000094 8006d798  4 MakeTexSrtMtx_R 	dcc
+  8006d82c 000038 8006d82c  4 MakeTexSrtMtx_T 	dcc
+  8006d864 0000bc 8006d864  4 MakeTexSrtMtx_SR 	dcc
+  8006d920 0000b0 8006d920  4 MakeTexSrtMtx_RT 	dcc
+  8006d9d0 000050 8006d9d0  4 MakeTexSrtMtx_ST 	dcc
+  8006da20 0000dc 8006da20  4 MakeTexSrtMtx_SRT 	dcc
+  8006dafc 000078 8006dafc  4 ProductTexSrtMtx_S 	dcc
+  8006db74 000130 8006db74  4 ProductTexSrtMtx_R 	dcc
+  8006dca4 000028 8006dca4  4 ProductTexSrtMtx_T 	dcc
+  8006dccc 000194 8006dccc  4 ProductTexSrtMtx_SR 	dcc
+  8006de60 000160 8006de60  4 ProductTexSrtMtx_RT 	dcc
+  8006dfc0 000088 8006dfc0  4 ProductTexSrtMtx_ST 	dcc
+  8006e048 0001a8 8006e048  4 ProductTexSrtMtx_SRT 	dcc
+  8006e1f0 00009c 8006e1f0  4 CalcTexMtx_Maya 	dcc
+  8006e28c 000190 8006e28c  4 CalcWorldMtx_Maya_SSC_Apply 	dcc
+  8006e454 000088 8006e454  4 MakeTexSrtMtx_R 	dcc
+  8006e4dc 000038 8006e4dc  4 MakeTexSrtMtx_T 	dcc
+  8006e514 0000a0 8006e514  4 MakeTexSrtMtx_SR 	dcc
+  8006e5b4 0000c8 8006e5b4  4 MakeTexSrtMtx_RT 	dcc
+  8006e67c 000050 8006e67c  4 MakeTexSrtMtx_ST 	dcc
+  8006e6cc 0000c8 8006e6cc  4 MakeTexSrtMtx_SRT 	dcc
+  8006e794 000078 8006e794  4 ProductTexSrtMtx_S 	dcc
+  8006e80c 000110 8006e80c  4 ProductTexSrtMtx_R 	dcc
+  8006e91c 000024 8006e91c  4 ProductTexSrtMtx_T 	dcc
+  8006e940 00013c 8006e940  4 ProductTexSrtMtx_SR 	dcc
+  8006ea7c 00012c 8006ea7c  4 ProductTexSrtMtx_RT 	dcc
+  8006eba8 000088 8006eba8  4 ProductTexSrtMtx_ST 	dcc
+  8006ec30 00015c 8006ec30  4 ProductTexSrtMtx_SRT 	dcc
+  8006ed8c 00009c 8006ed8c  4 CalcTexMtx_Xsi 	dcc
+  8006ee28 0001b0 8006ee28  4 CalcWorldMtx_Xsi 	dcc
+  8006f020 0000ac 8006f020  4 MakeTexSrtMtx_R 	dcc
+  8006f0cc 000038 8006f0cc  4 MakeTexSrtMtx_T 	dcc
+  8006f104 0000b4 8006f104  4 MakeTexSrtMtx_SR 	dcc
+  8006f1b8 0000cc 8006f1b8  4 MakeTexSrtMtx_RT 	dcc
+  8006f284 000058 8006f284  4 MakeTexSrtMtx_ST 	dcc
+  8006f2dc 0000cc 8006f2dc  4 MakeTexSrtMtx_SRT 	dcc
+  8006f3a8 000080 8006f3a8  4 ProductTexSrtMtx_S 	dcc
+  8006f428 000124 8006f428  4 ProductTexSrtMtx_R 	dcc
+  8006f54c 000024 8006f54c  4 ProductTexSrtMtx_T 	dcc
+  8006f570 000144 8006f570  4 ProductTexSrtMtx_SR 	dcc
+  8006f6b4 000140 8006f6b4  4 ProductTexSrtMtx_RT 	dcc
+  8006f7f4 000094 8006f7f4  4 ProductTexSrtMtx_ST 	dcc
+  8006f888 000164 8006f888  4 ProductTexSrtMtx_SRT 	dcc
+  8006f9ec 00009c 8006f9ec  4 CalcTexMtx_3dsmax 	dcc
+  8006fa88 0000a8 8006fa88  4 CalcWorldMtx 	ScnObj
   8006fb30 000014 8006fb30  4 CalcViewMtx 	ScnObj
-  8006fb44 0000ec 8006fb44  4 FUN_8006fb44 	Global
-  8006fc30 000084 8006fc30  4 FUN_8006fc30 	Global
-  8006ff1c 00008c 8006ff1c  4 FUN_8006ff1c 	Global
+  8006fb44 0000ec 8006fb44  4 ScnObj 	ScnObj
+  8006fc30 000084 8006fc30  4 ~ScnObj 	ScnObj
+  8006fcb4 000198 8006fcb4  4 SetScnObjOption 	ScnObj
+  8006fe4c 0000d0 8006fe4c  4 GetScnObjOption 	ScnObj
+  8006ff1c 00008c 8006ff1c  4 SetMtx 	ScnObj
   8006ffa8 00004c 8006ffa8  4 FUN_8006ffa8 	Global
+  8006fff4 00000c 8006fff4  4 GetValueForSortOpa 	ScnObj
+  80070000 000008 80070000  4 GetValueForSortXlu 	ScnObj
   80070008 000024 80070008  4 FUN_80070008 	Global
   8007002c 000024 8007002c  4 FUN_8007002c 	Global
   80070050 000040 80070050  4 FUN_80070050 	Global
   80070090 000014 80070090  4 FUN_80070090 	Global
-  800700a4 000080 800700a4  4 FUN_800700a4 	Global
-  80070128 000060 80070128  4 FUN_80070128 	Global
-  80070188 000038 80070188  4 FUN_80070188 	Global
-  80070254 0000f4 80070254  4 FUN_80070254 	Global
-  80070348 000040 80070348  4 FUN_80070348 	Global
+  800700a4 000080 800700a4  4 SetBoundingVolume 	ScnObj
+  80070128 000060 80070128  4 GetBoundingVolume 	ScnObj
+  80070188 000038 80070188  4 ForEach 	ScnLeaf
+  800701c0 000048 800701c0  4 SetScnObjOption 	ScnLeaf
+  80070208 00004c 80070208  4 GetScnObjOption 	ScnLeaf
+  80070254 0000f4 80070254  4 CalcWorldMtx 	ScnLeaf
+  80070348 000040 80070348  4 GetScaleProperty 	ScnLeaf
   80070388 000308 80070388  4 DefG3dProcScnLeaf 	ScnLeaf
-  80070690 000138 80070690  4 FUN_80070690 	Global
-  800707c8 000118 800707c8  4 FUN_800707c8 	Global
-  8007091c 00045c 8007091c  4 FUN_8007091c 	Global
-  80070d78 0001b8 80070d78  4 FUN_80070d78 	Global
-  80070f30 0000bc 80070f30  4 FUN_80070f30 	Global
-  80070fec 000084 80070fec  4 FUN_80070fec 	Global
-  80071070 000070 80071070  4 FUN_80071070 	Global
-  800710e0 0000c4 800710e0  4 FUN_800710e0 	Global
-  8007122c 000030 8007122c  4 FUN_8007122c 	Global
-  80071268 000030 80071268  4 FUN_80071268 	Global
-  800712a4 000138 800712a4  4 FUN_800712a4 	Global
-  800713dc 0000ac 800713dc  4 FUN_800713dc 	Global
-  80071488 00005c 80071488  4 FUN_80071488 	Global
-  800714e4 00003c 800714e4  4 FUN_800714e4 	Global
-  80071520 000008 80071520  4 FUN_80071520 	Global
+  80070690 000138 80070690  4 ForEach 	ScnGroup
+  800707c8 000118 800707c8  4 ScnGroup_G3DPROC_GATHER_SCNOBJ 	ScnGroup
+  800708e0 000038 800708e0  4 G3dProc 	ScnGroup
+  8007091c 00045c 8007091c  4 DefG3dProcScnGroup 	ScnGroup
+  80070d78 0001b8 80070d78  4 Insert 	ScnGroup
+  80070f30 0000bc 80070f30  4 Remove 	ScnGroup
+  80070fec 000084 80070fec  4 Remove 	ScnGroup
+  80071070 000070 80071070  4 ScnGroup 	ScnGroup
+  800710e0 0000c4 800710e0  4 ~ScnGroup 	ScnGroup
+  800711a4 000050 800711a4  4 IsDerivedFrom 	ScnGroup
+  800711f4 000038 800711f4  4 IsDerivedFrom 	ScnObj
+  8007122c 000030 8007122c  4 GetTypeName 	ScnGroup
+  8007125c 00000c 8007125c  4 GetTypeObj 	ScnGroup
+  80071268 000030 80071268  4 GetTypeName 	ScnObj
+  80071298 00000c 80071298  4 GetTypeObj 	ScnObj
+  800712a4 000138 800712a4  4 Construct 	ScnRoot
+  800713dc 0000ac 800713dc  4 G3dProc 	ScnRoot
+  80071488 00005c 80071488  4 GetCamera 	ScnRoot
+  800714e4 00003c 800714e4  4 GetCurrentCamera 	ScnRoot
+  80071520 000008 80071520  4 SetCurrentCamera 	ScnRoot
   80071528 00005c 80071528  4 FUN_80071528 	Global
   80071584 000008 80071584  4 FUN_80071584 	Global
-  800715f4 000220 800715f4  4 FUN_800715f4 	Global
-  80071814 000188 80071814  4 FUN_80071814 	Global
-  8007199c 00004c 8007199c  4 FUN_8007199c 	Global
-  800719e8 00001c 800719e8  4 FUN_800719e8 	Global
-  80071a20 000078 80071a20  4 FUN_80071a20 	Global
-  80071a98 0000ec 80071a98  4 FUN_80071a98 	Global
-  80071b84 000060 80071b84  4 FUN_80071b84 	Global
-  80071be4 000074 80071be4  4 FUN_80071be4 	Global
-  80071c58 000074 80071c58  4 FUN_80071c58 	Global
-  80071ccc 0000fc 80071ccc  4 FUN_80071ccc 	Global
-  80071dc8 00007c 80071dc8  4 FUN_80071dc8 	Global
-  80071e44 000120 80071e44  4 FUN_80071e44 	Global
-  80071f64 000060 80071f64  4 FUN_80071f64 	Global
-  80072044 000380 80072044  4 FUN_80072044 	Global
-  800723c4 000380 800723c4  4 FUN_800723c4 	Global
-  80072744 000100 80072744  4 FUN_80072744 	Global
-  80072844 000060 80072844  4 FUN_80072844 	Global
-  800728a4 000090 800728a4  4 FUN_800728a4 	Global
-  80072934 000090 80072934  4 FUN_80072934 	Global
-  800729c4 000064 800729c4  4 FUN_800729c4 	Global
-  80072a28 000088 80072a28  4 FUN_80072a28 	Global
-  80072ab0 000088 80072ab0  4 FUN_80072ab0 	Global
-  80072b48 000040 80072b48  4 FUN_80072b48 	Global
-  80072bf0 000030 80072bf0  4 FUN_80072bf0 	Global
-  80072c2c 000194 80072c2c  4 FUN_80072c2c 	Global
+  8007158c 000068 8007158c  4 UpdateFrame 	ScnRoot
+  800715f4 000220 800715f4  4 SetGlbSettings 	ScnRoot
+  80071814 000188 80071814  4 CalcAnmScn 	ScnRoot
+  8007199c 00004c 8007199c  4 CalcWorld 	ScnRoot
+  800719e8 00001c 800719e8  4 CalcMaterial 	ScnRoot
+  80071a04 00001c 80071a04  4 FUN_80071a04 	Global
+  80071a20 000078 80071a20  4 CalcView 	ScnRoot
+  80071a98 0000ec 80071a98  4 GatherDrawScnObj 	ScnRoot
+  80071b84 000060 80071b84  4 ZSort 	ScnRoot
+  80071be4 000074 80071be4  4 DrawOpa 	ScnRoot
+  80071c58 000074 80071c58  4 DrawXlu 	ScnRoot
+  80071ccc 0000fc 80071ccc  4 ScnRoot 	ScnRoot
+  80071dc8 00007c 80071dc8  4 ~ScnRoot 	ScnRoot
+  80071e44 000120 80071e44  4 Add 	ScnObjGather
+  80071f64 000060 80071f64  4 ZSort 	ScnObjGather
+  80071fc4 000040 80071fc4  4 LessZSortOpa 	g3d
+  80072004 000040 80072004  4 LessZSortXlu 	g3d
+  80072044 000380 80072044  4 sort 	std
+  800723c4 000380 800723c4  4 sort 	std
+  80072744 000100 80072744  4 __sort132 	std
+  80072844 000060 80072844  4 Sort 	ScnObjGather
+  800728a4 000090 800728a4  4 LessByGetValueForSortOpa 	g3d
+  80072934 000090 80072934  4 LessByGetValueForSortXlu 	g3d
+  800729c4 000064 800729c4  4 Sort 	ScnObjGather
+  80072a28 000088 80072a28  4 DrawOpa 	ScnObjGather
+  80072ab0 000088 80072ab0  4 DrawXlu 	ScnObjGather
+  80072b38 000010 80072b38  4 Clear 	ScnObjGather
+  80072b48 000040 80072b48  4 ~ScnObjGather 	ScnObjGather
+  80072b88 000068 80072b88  4 IsDerivedFrom 	ScnRoot
+  80072bf0 000030 80072bf0  4 GetTypeName 	ScnRoot
+  80072c20 00000c 80072c20  4 GetTypeObj 	ScnRoot
+  80072c2c 000194 80072c2c  4 ScnMdlSmpl_CalcPosture 	ScnMdlSimple
   80072dc0 00025c 80072dc0  4 ScnMdlSmpl_CalcPosture 	ScnMdlSimple
   8007301c 000034 8007301c  4 FUN_8007301c 	Global
   80073050 00034c 80073050  4 FUN_80073050 	Global
@@ -1920,11 +2027,11 @@
   80077d3c 000108 80077d3c  4 FUN_80077d3c 	Global
   80077eac 000030 80077eac  4 FUN_80077eac 	Global
   80077ee8 000040 80077ee8  4 FUN_80077ee8 	Global
-  80077f28 000008 80077f28  4 FUN_80077f28 	Global
-  80077f30 000070 80077f30  4 FUN_80077f30 	Global
-  80077fa0 000054 80077fa0  4 FUN_80077fa0 	Global
-  80077ff4 069f9c 80077ff4  4 FUN_80077ff4 	Global
-  80078014 000088 80078014  4 FUN_80078014 	Global
+  80077f28 000008 80077f28  4 Fog 	Fog
+  80077f30 000070 80077f30  4 Init 	Fog
+  80077fa0 000054 80077fa0  4 CopyTo 	Fog
+  80077ff4 069f9c 80077ff4  4 SetFogRangeAdjParam 	Fog
+  80078014 000088 80078014  4 SetGP 	Fog
   8007809c 000014 8007809c  4 FUN_8007809c 	Global
   800780b0 000048 800780b0  4 FUN_800780b0 	Global
   800780f8 00003c 800780f8  4 FUN_800780f8 	Global
@@ -1934,11 +2041,11 @@
   800781f4 000040 800781f4  4 FUN_800781f4 	Global
   80078234 000040 80078234  4 FUN_80078234 	Global
   80078274 000060 80078274  4 FUN_80078274 	Global
-  800782d4 000018 800782d4  4 FUN_800782d4 	Global
-  800782f0 000018 800782f0  4 FUN_800782f0 	Global
-  8007830c 00043c 8007830c  4 FUN_8007830c 	Global
-  80078748 000190 80078748  4 FUN_80078748 	Global
-  800788d8 000120 800788d8  4 FUN_800788d8 	Global
+  800782d4 000018 800782d4  4 GetLightPos 	LightObj
+  800782f0 000018 800782f0  4 GetLightDir 	LightObj
+  8007830c 00043c 8007830c  4 LightSetting 	LightSetting
+  80078748 000190 80078748  4 Import 	LightSetting
+  800788d8 000120 800788d8  4 ApplyViewMtx 	LightSetting
   800789f8 000070 800789f8  4 FUN_800789f8 	Global
   80078a68 000068 80078a68  4 FUN_80078a68 	Global
   80078ad0 0007f8 80078ad0  4 FUN_80078ad0 	Global
@@ -2323,9 +2430,9 @@
   80098ed4 000008 80098ed4  4 FUN_80098ed4 	Global
   80098edc 000008 80098edc  4 FUN_80098edc 	Global
   80098ee4 0000b0 80098ee4  4 FUN_80098ee4 	Global
-  80098f94 027a1c 80098f94  4 FUN_80098f94 	Global
+  80098f94 000014 80098f94  4 FUN_80098f94 	Global
   80098fac 000014 80098fac  4 FUN_80098fac 	Global
-  80098fc4 0275d4 80098fc4  4 FUN_80098fc4 	Global
+  80098fc4 000014 80098fc4  4 FUN_80098fc4 	Global
   80098fdc 00006c 80098fdc  4 FUN_80098fdc 	Global
   80099048 00008c 80099048  4 FUN_80099048 	Global
   800990d4 000070 800990d4  4 FUN_800990d4 	Global
@@ -2885,7 +2992,7 @@
   800bd1b4 0000a8 800bd1b4  4 stricmp 	Global
   800bd25c 0002c4 800bd25c  4 __ieee754_acos 	Global
   800bd520 000298 800bd520  4 __ieee754_asin 	Global
-  800bd7b8 000270 800bd7b8  4 atan2 	Global
+  800bd7b8 000270 800bd7b8  4 __ieee754_atan2 	Global
   800bda28 000330 800bda28  4 __ieee754_fmod 	Global
   800bdd58 000848 800bdd58  4 __ieee754_pow 	Global
   800be5a0 000398 800be5a0  4 __ieee754_rem_pio2 	Global
@@ -2907,7 +3014,7 @@
   800c0e74 000004 800c0e74  4 asin 	Global
   800c0e78 000004 800c0e78  4 atan2 	Global
   800c0e7c 000004 800c0e7c  4 fmod 	Global
-  800c0e80 000004 800c0e80  4 __ieee754_pow 	Global
+  800c0e80 000004 800c0e80  4 pow 	Global
   800c0e84 000248 800c0e84  4 __ieee754_sqrt 	Global
   800c10cc 000004 800c10cc  4 nan 	Global
   800c10d0 000004 800c10d0  4 sqrt 	Global
@@ -3258,7 +3365,7 @@
   800dda30 00026c 800dda30  4 GXGetVtxAttrFmt 	Global
   800ddc9c 000074 800ddc9c  4 FUN_800ddc9c 	Global
   800ddd10 000040 800ddd10  4 GXSetArray 	Global
-  800ddd50 000010 800ddd50  4 FUN_800ddd50 	Global
+  800ddd50 000010 800ddd50  4 GXInvalidateVtxCache 	Global
   800ddd60 000228 800ddd60  4 GXSetTexCoordGen2 	Global
   800ddf88 000024 800ddf88  4 GXSetNumTexGens 	Global
   800ddfac 00008c 800ddfac  4 FUN_800ddfac 	Global
@@ -3317,7 +3424,7 @@
   800dfbbc 000028 800dfbbc  4 FUN_800dfbbc 	Global
   800dfbe4 00010c 800dfbe4  4 FUN_800dfbe4 	Global
   800dfcf0 00000c 800dfcf0  4 FUN_800dfcf0 	Global
-  800dfcfc 00007c 800dfcfc  4 FUN_800dfcfc 	Global
+  800dfcfc 00007c 800dfcfc  4 GXLoadLightObjImm 	Global
   800dfd78 000040 800dfd78  4 FUN_800dfd78 	Global
   800dfdb8 0000d8 800dfdb8  4 GXSetChanAmbColor 	Global
   800dfe90 0000d8 800dfe90  4 GXSetChanMatColor 	Global
@@ -3332,8 +3439,8 @@
   800e0580 000008 800e0580  4 FUN_800e0580 	Global
   800e0588 000028 800e0588  4 FUN_800e0588 	Global
   800e05b0 000064 800e05b0  4 FUN_800e05b0 	Global
-  800e0614 000014 800e0614  4 FUN_800e0614 	Global
-  800e0628 000014 800e0628  4 FUN_800e0628 	Global
+  800e0614 000014 800e0614  4 GXGetTexObjWidth 	Global
+  800e0628 000014 800e0628  4 GXGetTexObjHeight 	Global
   800e063c 000008 800e063c  4 FUN_800e063c 	Global
   800e0644 00000c 800e0644  4 FUN_800e0644 	Global
   800e0650 00000c 800e0650  4 FUN_800e0650 	Global
@@ -3397,23 +3504,23 @@
   800e3028 0000ac 800e3028  4 FUN_800e3028 	Global
   800e30d4 000074 800e30d4  4 GXCallDisplayList 	Global
   800e3148 000044 800e3148  4 FUN_800e3148 	Global
-  800e318c 000064 800e318c  4 FUN_800e318c 	Global
+  800e318c 000064 800e318c  4 GXSetProjection 	Global
   800e31f0 00004c 800e31f0  4 FUN_800e31f0 	Global
   800e323c 000040 800e323c  4 GXGetProjectionv 	Global
   800e327c 000050 800e327c  4 GXLoadPosMtxImm 	Global
-  800e32cc 00002c 800e32cc  4 FUN_800e32cc 	Global
-  800e32f8 000058 800e32f8  4 FUN_800e32f8 	Global
-  800e3350 000034 800e3350  4 FUN_800e3350 	Global
+  800e32cc 00002c 800e32cc  4 GXLoadPosMtxIndx 	Global
+  800e32f8 000058 800e32f8  4 GXLoadNrmMtxImm 	Global
+  800e3350 000034 800e3350  4 GXLoadNrmMtxInd3x3 	Global
   800e3384 000020 800e3384  4 GXSetCurrentMtx 	Global
   800e33a4 0000b4 800e33a4  4 GXLoadTexMtxImm 	Global
   800e3458 000090 800e3458  4 FUN_800e3458 	Global
-  800e34e8 00003c 800e34e8  4 FUN_800e34e8 	Global
-  800e3524 00002c 800e3524  4 FUN_800e3524 	Global
+  800e34e8 00003c 800e34e8  4 GXSetViewportJitter 	Global
+  800e3524 00002c 800e3524  4 GXSetViewport 	Global
   800e3550 000020 800e3550  4 FUN_800e3550 	Global
   800e3570 000030 800e3570  4 FUN_800e3570 	Global
-  800e35a0 000068 800e35a0  4 FUN_800e35a0 	Global
+  800e35a0 000068 800e35a0  4 GXSetScissor 	Global
   800e3608 000048 800e3608  4 FUN_800e3608 	Global
-  800e3650 00003c 800e3650  4 FUN_800e3650 	Global
+  800e3650 00003c 800e3650  4 GXSetScissorBoxOffset 	Global
   800e368c 000028 800e368c  4 GXSetClipMode 	Global
   800e36b4 000088 800e36b4  4 FUN_800e36b4 	Global
   800e373c 00082c 800e373c  4 FUN_800e373c 	Global
@@ -3492,10 +3599,10 @@
   800e75f8 00002c 800e75f8  4 PSMTXIdentity 	Global
   800e7624 000034 800e7624  4 PSMTXCopy 	Global
   800e7658 0000cc 800e7658  4 PSMTXConcat 	Global
-  800e7724 000198 800e7724  4 FUN_800e7724 	Global
+  800e7724 000198 800e7724  4 PSMTXConcatArray 	Global
   800e78bc 000050 800e78bc  4 FUN_800e78bc 	Global
   800e790c 0000f8 800e790c  4 PSMTXInverse 	Global
-  800e7a04 0000c8 800e7a04  4 FUN_800e7a04 	Global
+  800e7a04 0000c8 800e7a04  4 PSMTXInvXpose 	Global
   800e7acc 00007c 800e7acc  4 FUN_800e7acc 	Global
   800e7b48 0000b0 800e7b48  4 FUN_800e7b48 	Global
   800e7bf8 0000b0 800e7bf8  4 FUN_800e7bf8 	Global
@@ -3504,27 +3611,27 @@
   800e7d58 00004c 800e7d58  4 FUN_800e7d58 	Global
   800e7da4 000028 800e7da4  4 FUN_800e7da4 	Global
   800e7dcc 000058 800e7dcc  4 PSMTXScaleApply 	Global
-  800e7e24 0000a4 800e7e24  4 FUN_800e7e24 	Global
-  800e7ec8 000174 800e7ec8  4 FUN_800e7ec8 	Global
-  800e803c 0000a4 800e803c  4 FUN_800e803c 	Global
-  800e80e0 0000f8 800e80e0  4 FUN_800e80e0 	Global
-  800e81d8 000088 800e81d8  4 FUN_800e81d8 	Global
+  800e7e24 0000a4 800e7e24  4 PSMTXQuat 	Global
+  800e7ec8 000174 800e7ec8  4 C_MTXLookAt 	Global
+  800e803c 0000a4 800e803c  4 C_MTXLightFrustum 	Global
+  800e80e0 0000f8 800e80e0  4 C_MTXLightPerspective 	Global
+  800e81d8 000088 800e81d8  4 C_MTXLightOrtho 	Global
   800e8260 000054 800e8260  4 PSMTXMultVec 	Global
-  800e82b4 00009c 800e82b4  4 FUN_800e82b4 	Global
-  800e8350 0000ec 800e8350  4 FUN_800e8350 	Global
-  800e843c 000098 800e843c  4 FUN_800e843c 	Global
+  800e82b4 00009c 800e82b4  4 C_MTXFrustum 	Global
+  800e8350 0000ec 800e8350  4 C_MTXPerspective 	Global
+  800e843c 000098 800e843c  4 C_MTXOrtho 	Global
   800e84d4 000024 800e84d4  4 FUN_800e84d4 	Global
   800e84f8 00001c 800e84f8  4 FUN_800e84f8 	Global
   800e8514 000044 800e8514  4 PSVECNormalize 	Global
   800e8558 000044 800e8558  4 PSVECMag 	Global
   800e859c 000020 800e859c  4 FUN_800e859c 	Global
   800e85bc 00003c 800e85bc  4 PSVECCrossProduct 	Global
-  800e85f8 0000d8 800e85f8  4 FUN_800e85f8 	Global
+  800e85f8 0000d8 800e85f8  4 C_VECHalfAngle 	Global
   800e86d0 000028 800e86d0  4 PSVECSquareDistance 	Global
   800e86f8 00005c 800e86f8  4 FUN_800e86f8 	Global
   800e8754 000054 800e8754  4 FUN_800e8754 	Global
-  800e87a8 0001cc 800e87a8  4 FUN_800e87a8 	Global
-  800e8974 00019c 800e8974  4 FUN_800e8974 	Global
+  800e87a8 0001cc 800e87a8  4 C_QUATMtx 	Global
+  800e8974 00019c 800e8974  4 C_QUATSlerp 	Global
   800e8b10 000128 800e8b10  4 FUN_800e8b10 	Global
   800e8c38 000074 800e8c38  4 FUN_800e8c38 	Global
   800e8cac 000074 800e8cac  4 FUN_800e8cac 	Global
@@ -3667,7 +3774,7 @@
   800ee3bc 000024 800ee3bc  4 LCStoreBlocks 	Global
   800ee3e0 0000a0 800ee3e0  4 LCStoreData 	Global
   800ee480 00000c 800ee480  4 LCQueueLength 	Global
-  800ee48c 000014 800ee48c  4 FUN_800ee48c 	Global
+  800ee48c 000014 800ee48c  4 LCQueueWait 	Global
   800ee4a0 000148 800ee4a0  4 DMAErrorHandler 	Global
   800ee5e8 000138 800ee5e8  4 __OSCacheInit 	Global
   800ee720 000124 800ee720  4 FUN_800ee720 	Global
@@ -6927,7 +7034,7 @@
   801beabc 000038 801beabc  4 FUN_801beabc 	Global
   801beaf4 00000c 801beaf4  4 FUN_801beaf4 	Global
   801beb00 000014 801beb00  4 FUN_801beb00 	Global
-  801beb14 000004 801beb14  4 thunk_FUN_800e7e24 	Global
+  801beb14 000004 801beb14  4 PSMTXQuat 	Global
   801beb18 000004 801beb18  4 PSMTXIdentity 	Global
   801beb1c 0000a4 801beb1c  4 FUN_801beb1c 	Global
   801bebc0 00006c 801bebc0  4 FUN_801bebc0 	Global
@@ -8194,6 +8301,7 @@
   80214b64 000200 80214b64  4 FUN_80214b64 	Global
   80214d64 000078 80214d64  4 FUN_80214d64 	Global
   80214ddc 000058 80214ddc  4 FUN_80214ddc 	Global
+  80214e34 00000c 80214e34  4 FUN_80214e34 	Global
   80214e40 000104 80214e40  4 FUN_80214e40 	Global
   80214f44 000078 80214f44  4 FUN_80214f44 	Global
   80214fbc 000044 80214fbc  4 FUN_80214fbc 	Global
@@ -12054,6 +12162,12 @@
   80354c38 000040 80354c38  4 FUN_80354c38 	Global
   80354cac 0002ac 80354cac  4 FUN_80354cac 	Global
   80354f64 000118 80354f64  4 FUN_80354f64 	Global
+  80375b78 000004 80375b78  4 FLOAT_80375b78 	Global
+  80375b7c 000004 80375b7c  4 FLOAT_80375b7c 	Global
+  80375b80 000004 80375b80  4 FLOAT_80375b80 	Global
+  80375b84 000004 80375b84  4 FLOAT_80375b84 	Global
+  80375b88 000004 80375b88  4 FLOAT_80375b88 	Global
+  80375b8c 000004 80375b8c  4 FLOAT_80375b8c 	Global
   803780a8 000004 803780a8  4 switchdataD_803780a8 	switchD_80059504
   80378c18 000001 80378c18  1 s_eggShadowTextureManager.cpp_80378c18 	Global
   80378c34 000001 80378c34  1 s_group_<_GROUP_MAX_80378c34 	Global
