@@ -4,6 +4,8 @@ Resources/information that I've gathered during my work with OGWS.
 If you are interested in the decompilation, or would like to contribute, feel free to check it out here: https://github.com/doldecomp/ogws
   
 ## Index
+- `code/`: Documented code regarding data structures and concepts seen within the game. The code is not a 1:1 decompilation; however, it is close enough to precisely replicate thinigs like mathematical formulas.  
+  
 - `RSPE_r1.dmap`: Symbol map (NTSC-U, v1.01) for use with the Dolphin emulator, to aid in debugging. Converted from the decompilation Ghidra project. Updated when I get the chance.  
   
 - `RSPE_r1.map`: Symbol map (NTSC-U, v1.01) for use with Ghidra when loading the Wii Sports DOL.  
