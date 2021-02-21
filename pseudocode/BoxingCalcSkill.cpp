@@ -17,7 +17,6 @@ void RPBoxMain::BoxingCalcNewSkill()
     //=================================================================//
     //          Factor in total damage dealt (from both players)       //
     //=================================================================//
-    // Get damage dealt by both players (minus 1.0)
     RPBoxSub_91b69b24::_0x9C *box_0x9C = DAT_804bf958->sub_0x9C;
     // P1 total dealt damage - 1.0
     f32 playerDmgCoeff = box_0x9C->boxer1_0x414->obj_0xd8->totalDamageDealt_0x28 - 1.0f;
