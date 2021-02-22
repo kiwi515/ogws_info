@@ -27,11 +27,11 @@ struct RPGol_91bf9268
 //========================================//
 //               Functions                //
 //========================================//
-u32 GetRoundLength();                                   // 8029ce58
-s32 GetPlayerScoreOnRelativeHole(u32, u32);             // 8029cbd4
-u32 GetIndexedHoleNum(u32);                             // 8029ce04
-f64 GolGetCurrentSkill(RPGol_91b69b24::_0x68 *, u32);   // 801efa00
-void FUN_801ef944(f64, RPGol_91b69b24::_0x68 *, u32);   // 801ef944
+u32 GetRoundLength();                                     // 8029ce58
+s32 GetPlayerScoreOnRelativeHole(u32, u32);               // 8029cbd4
+u32 GetIndexedHoleNum(u32);                               // 8029ce04
+f64 GetCurrentSportSkill(RPGol_91b69b24::_0x68 *, u32);   // 801efa00
+void FUN_801ef944(f64, RPGol_91b69b24::_0x68 *, u32);     // 801ef944
 
 namespace nw4r::math::detail {
     f32 FLog(f32);

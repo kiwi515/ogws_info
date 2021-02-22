@@ -13,8 +13,9 @@ void GolfCalcNewSkill()
     // so skill level needs to be calculated for *everyone*)
     for (int i = 0; i < DAT_804bf8d0->numOfPlayers_0x338; i++)
     {
-        // Get current player's skill level
-        f64 currentSkill = GolGetCurrentSkill(DAT_804bf730->sub_0x68, i);
+        // Get player i's skill level
+        // (in current sport)
+        f64 currentSkill = GetCurrentSportSkill(DAT_804bf730->sub_0x68, i);
 
         // Loop through each hole played
         for (int j = 0; j < GetRoundLength(); j++)
