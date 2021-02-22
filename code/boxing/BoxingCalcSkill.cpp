@@ -98,7 +98,7 @@ void RPBoxMain::BoxingCalcNewSkill()
     FUN_801f813c(result, 1);
 
     u32 result2 = FUN_80304914(DAT_804bf958->sub_0x9C->skillObj_0x438,
-        DAT_804bf958->sub_0x9C->boxer2_0x418->obj_0xd8->totalDamageDealt_0x28;
+        DAT_804bf958->sub_0x9C->boxer2_0x418->obj_0xd8->totalDamageDealt_0x28);
 
     if ((result2 != 0) && (this->matchResult_0x38 == P1_BEAT_P2)) {
         FUN_801f7f34(result);

@@ -2,40 +2,42 @@
 #include "types.h"
 
 // US 1.01 @ 8024f5f0
-void BaseballCalcNewSkill()
+void RPBsb_91bfd944::BaseballCalcNewSkill()
 {
     u8 bVar1;
     u8 bVar2;
     int iVar3;
     int iVar4;
-    undefined4 uVar5;
     int iVar6;
     int iVar7;
     uint uVar8;
-    undefined4 uVar9;
     double dVar11;
     undefined8 in_f31;
     double dVar12;
     double dVar13;
 
     iVar3 = _savegpr_26();
-    iVar4 = FUN_80271ee8();
 
-    if (iVar4 == 0)
+    if (this->IsGameMultiplayer())
     {
-        uVar5 = FUN_801f9390(DAT_804bf740, 0xffffffff);
-        FUN_801f813c(uVar5,1);
+        void *uVar5 = FUN_801f9390(DAT_804bf740, -1);
+        FUN_801f813c(uVar5, 1);
     }
 
-    uVar9 = *(*(iVar3 + 0x118) + 0x180);
-    uVar5 = *(DAT_804bf730 + 0x68);
-    FUN_802656bc(uVar9,0);
-    FUN_802656bc(uVar9,1);
-    iVar4 = FUN_8026755c(*(iVar3 + 0x118),0);
-    iVar6 = FUN_8026755c(*(iVar3 + 0x118),1);
-    iVar7 = (**(**(iVar3 + 300) + 0x1c))();
+    RPBsb_91bfd944::_0x118::_0x180 *uVar9 = this->sub_0x118->sub_0x180;
+    RPBsb_91b69b24::_0x68* uVar5 = DAT_804bf730->sub_0x68;
 
-    if (iVar7 == 0)
+    FUN_802656bc(uVar9, 0);
+    FUN_802656bc(uVar9, 1);
+
+    iVar4 = FUN_8026755c(this->sub_0x118, 0);
+    iVar6 = FUN_8026755c(this->sub_0x118, 1);
+
+    //iVar7 = (**(**(iVar3 + 300) + 0x1c))();
+
+    // This function always returns zero, maybe other versions
+    // were #ifdef'd out but not the extra code below to go with it?
+    if (this->sub_0x12C->sub_0x0->FUN_8026e0c0() == 0)
     {
         uVar8 = iVar4 - iVar6;
     }
@@ -65,4 +67,9 @@ void BaseballCalcNewSkill()
     FUN_801ee840(DAT_804bf730);
 
     return;
+}
+
+bool RPBsb_91bfd944::IsGameMultiplayer()
+{
+    return this->sub_0x100->isGameSinglePlayer_0x14 == FALSE;
 }

@@ -14,7 +14,7 @@ BaseballCalcNewSkill:
 
 # Call (_thiscall) func
 /* 8024F610 0024A510  48 02 28 D9 */	bl func_80271EE8
-# if (this->func_80271EE8() == 0) {
+# if (this->IsGameMultiplayer() == 0) {
     /* 8024F614 0024A514  2C 03 00 00 */	cmpwi r3, 0
     /* 8024F618 0024A518  40 82 00 18 */	bne lbl_8024F630
     # r3 = gobj_804BF740
@@ -74,13 +74,13 @@ lbl_8024F630:
 
 # copy retval -> r31
 /* 8024F67C 0024A57C  7C 7F 1B 78 */	mr r31, r3
-# r3 = this->word_0x12C
+# r3 = this->obj_0x12C
 /* 8024F680 0024A580  80 7A 01 2C */	lwz r3, 0x12c(r26)
-# r12 = this->obj_0x0
+# r12 = this->obj_0x12C->obj_0x0
 /* 8024F684 0024A584  81 83 00 00 */	lwz r12, 0(r3)
-# r12 = this->obj_0x0->ptmf_0x1C
+# r12 = this->obj_0x12C->obj_0x0->ptmf_0x1C
 /* 8024F688 0024A588  81 8C 00 1C */	lwz r12, 0x1c(r12)
-# this->obj_0x0->ptmf_0x1C()
+# this->obj_0x12C->obj_0x0->ptmf_0x1C()
 /* 8024F68C 0024A58C  7D 89 03 A6 */	mtctr r12
 /* 8024F690 0024A590  4E 80 04 21 */	bctrl 
 # if (this->obj_0x0->ptmf_0x1C() != 0) {
@@ -112,18 +112,26 @@ lbl_8024F6B0:
 /* 8024F6C0 0024A5C0  90 01 00 08 */	stw r0, 8(r1)
 # f1 = 3.0f
 /* 8024F6C4 0024A5C4  C0 22 B8 AC */	lfs f1, lbl_804C32CC-_SDA2_BASE_(r2)
+# load double off of stack (r0, which equals 0x43300000)
 /* 8024F6C8 0024A5C8  C8 41 00 08 */	lfd f2, 8(r1)
 # f0 = 120.0f
 /* 8024F6CC 0024A5CC  C0 02 B8 A8 */	lfs f0, lbl_804C32C8-_SDA2_BASE_(r2)
+# f2 = f2 (0x43300000) - int2float const (0x461c4000)
 /* 8024F6D0 0024A5D0  EC 42 18 28 */	fsubs f2, f2, f3
+# finish converting uVar8 to float
 /* 8024F6D4 0024A5D4  EC 22 08 24 */	fdivs f1, f2, f1
 /* 8024F6D8 0024A5D8  EC 20 00 72 */	fmuls f1, f0, f1
+
+# if (f1 > 120.0f)
 /* 8024F6DC 0024A5DC  FC 01 00 40 */	fcmpo cr0, f1, f0
 /* 8024F6E0 0024A5E0  40 81 00 08 */	ble lbl_8024F6E8
 /* 8024F6E4 0024A5E4  48 00 00 0C */	b lbl_8024F6F0
 lbl_8024F6E8:
+# f0 = -120.0f
 /* 8024F6E8 0024A5E8  C0 02 B8 B0 */	lfs f0, lbl_804C32D0-_SDA2_BASE_(r2)
+# compare f1 and f0????
 /* 8024F6EC 0024A5EC  FC 01 00 40 */	fcmpo cr0, f1, f0
+# }
 lbl_8024F6F0:
 /* 8024F6F0 0024A5F0  6C 83 80 00 */	xoris r3, r4, 0x8000
 /* 8024F6F4 0024A5F4  3C 00 43 30 */	lis r0, 0x4330
