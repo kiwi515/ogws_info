@@ -1,4 +1,5 @@
 // https://github.com/doldecomp/ogws/blob/master/include/types.h
+// edited for this repo
 
 typedef unsigned long long u64;
 typedef signed long long s64;
