@@ -7,7 +7,7 @@
   800060e8 000024 800060e8  4 __check_pad3 	Global
   80006110 00000c 80006110  4 __set_debug_bba 	Global
   8000611c 000008 8000611c  4 __get_debug_bba 	Global
-  80006124 0f0ee0 80006124  4 __start 	Global
+  80006124 00016c 80006124  4 __start 	Global
   80006290 000090 80006290  4 __init_registers 	Global
   80006320 0000a8 80006320  4 __init_data 	Global
   800063c8 000024 800063c8  4 __init_hardware 	Global
@@ -236,7 +236,7 @@
   80011518 00007c 80011518  4 ~EffectSystem 	EffectSystem
   80011594 00000c 80011594  4 GetInstance 	EffectSystem
   800115a0 000100 800115a0  4 Initialize 	EffectSystem
-  800116a0 000048 800116a0  4 ActivityList 	ActivityList
+  800116a0 000048 800116a0  4 SetOffset 	ActivityList
   800116e8 000060 800116e8  4 Closing 	EffectSystem
   80011748 00011c 80011748  4 CreateEffect 	EffectSystem
   80011864 0000f0 80011864  4 RetireEffectAll 	EffectSystem
@@ -497,7 +497,7 @@
   8003047c 0000b4 8003047c  4 Set 	FRUSTUM
   80030530 0006a8 80030530  4 Set 	FRUSTUM
   80030bd8 0001a4 80030bd8  4 IntersectAABB_Ex 	FRUSTUM
-  80030d7c 000054 80030d7c  4 FUN_80030d7c 	Global
+  80030d7c 000054 80030d7c  4 ~SoundHandle 	SoundHandle
   80030dd0 0004a0 80030dd0  4 AxManager 	AxManager
   80031290 000058 80031290  4 ~LinkList 	LinkList<nw4r::snd::FxBase,4>
   800312e8 000064 800312e8  4 GetInstance 	AxManager
@@ -561,7 +561,7 @@
   800353d0 0002d0 800353d0  4 AcquireAxVoice 	AxVoiceManager
   800356a0 0000cc 800356a0  4 FreeAxVoice 	AxVoiceManager
   8003576c 000094 8003576c  4 ReserveForFreeAxVoice 	AxVoiceManager
-  80035800 000180 80035800  4 FreeAllReservedVoice 	AxVoiceManager
+  80035800 000180 80035800  4 FreeAllReservedAxVoice 	AxVoiceManager
   80035980 000048 80035980  4 CreateHeap 	AxfxImpl
   800359c8 000010 800359c8  4 DestroyHeap 	AxfxImpl
   800359dc 00004c 800359dc  4 HookAlloc 	AxfxImpl
@@ -616,7 +616,7 @@
   800373d4 000040 800373d4  4 SetId 	BasicSound
   80037414 000040 80037414  4 ~BasicSound 	BasicSound
   80037454 000008 80037454  4 GetRuntimeTypeInfo 	BasicSound
-  8003745c 00000c 8003745c  4 __sinit_\snd_BasicSound_cpp() 	Global
+  8003745c 00000c 8003745c  4 __sinit_\snd_BasicSound_cpp 	Global
   80037468 00007c 80037468  4 GetInstance 	ChannelManager
   800374e4 000060 800374e4  4 ~ChannelManager 	ChannelManager
   80037544 000028 80037544  4 GetRequiredMemSize 	ChannelManager
@@ -827,7 +827,7 @@
   8003ed7c 00003c 8003ed7c  4 GetVariablePtr 	SeqPlayer
   8003edb8 00010c 8003edb8  4 Update 	SeqPlayer
   8003eec4 000264 8003eec4  4 UpdateTick 	SeqPlayer
-  8003f128 0002a0 8003f128  4 FUN_8003f128 	SeqPlayer
+  8003f128 0002a0 8003f128  4 UpdateTick 	SeqPlayer
   8003f3c8 000028 8003f3c8  4 NoteOn 	SeqPlayer
   8003f3f0 000004 8003f3f0  4 ChannelCallback 	SeqPlayer
   8003f3f4 000008 8003f3f4  4 @74@~SeqPlayer 	SeqPlayer
@@ -1303,7 +1303,7 @@
   80052ddc 000054 80052ddc  4 GetResMat 	ResMdl
   80052e30 000054 80052e30  4 GetResMat 	ResMdl
   80052e84 000034 80052e84  4 GetResMatNumEntries 	ResMdl
-  80052eb8 000044 80052eb8  4 FUN_80052eb8 	Global
+  80052eb8 000044 80052eb8  4 GetResShp 	ResMdl
   80052efc 000054 80052efc  4 GetResShp 	ResMdl
   80052f50 000054 80052f50  4 GetResShp 	ResMdl
   80052fa4 000034 80052fa4  4 GetResShpNumEntries 	ResMdl
@@ -1444,12 +1444,12 @@
   80059c18 0003f8 80059c18  4 FUN_80059c18 	Global
   8005a010 000160 8005a010  4 FUN_8005a010 	Global
   8005a170 000318 8005a170  4 FUN_8005a170 	Global
-  8005a488 000060 8005a488  4 FUN_8005a488 	Global
-  8005a4e8 000060 8005a4e8  4 FUN_8005a4e8 	Global
-  8005a548 000088 8005a548  4 FUN_8005a548 	Global
-  8005a5d0 0000ac 8005a5d0  4 FUN_8005a5d0 	Global
-  8005a67c 000088 8005a67c  4 FUN_8005a67c 	Global
-  8005a704 0000ac 8005a704  4 FUN_8005a704 	Global
+  8005a488 000060 8005a488  4 HasResAnmAmbLight 	ResAnmScn
+  8005a4e8 000060 8005a4e8  4 HasResAnmLight 	ResAnmScn
+  8005a548 000088 8005a548  4 GetResAnmAmbLight 	ResAnmScn
+  8005a5d0 0000ac 8005a5d0  4 GetResAnmAmbLight 	ResAnmScn
+  8005a67c 000088 8005a67c  4 GetResAnmLight 	ResAnmScn
+  8005a704 0000ac 8005a704  4 GetResAnmLight 	ResAnmScn
   8005a7b0 00004c 8005a7b0  4 FUN_8005a7b0 	Global
   8005a7fc 00004c 8005a7fc  4 FUN_8005a7fc 	Global
   8005a848 00004c 8005a848  4 FUN_8005a848 	Global
@@ -1749,10 +1749,10 @@
   80063a74 00005c 80063a74  4 GDResetCurrentMtx 	fifo
   80063ad0 00007c 80063ad0  4 GDSetCurrentMtx 	fifo
   80063b4c 000080 80063b4c  4 GDLoadTexMtxImm3x3 	fifo
-  80063bcc 0000fc 80063bcc  4 FUN_80063bcc 	Global
-  80063cc8 0000d4 80063cc8  4 FUN_80063cc8 	Global
-  80063d9c 000028 80063d9c  4 FUN_80063d9c 	Global
-  80063dc4 000160 80063dc4  4 FUN_80063dc4 	Global
+  80063bcc 0000fc 80063bcc  4 SetTMemLayout 	tmem
+  80063cc8 0000d4 80063cc8  4 TexRegionCallback 	Global
+  80063d9c 000028 80063d9c  4 TlutRegionCallback 	Global
+  80063dc4 000160 80063dc4  4 setTexRegion 	Global
   80063f24 0000dc 80063f24  4 Copy32ByteBlocks 	detail
   80064000 0000c8 80064000  4 ZeroMemory32ByteBlocks 	detail
   800640c8 0003e4 800640c8  4 EnvironmentMapping 	ScnDependentMtxFunc
@@ -1860,6 +1860,7 @@
   8006d1d8 000018 8006d1d8  4 GXSetScissorBoxOffset 	Camera
   8006d1f4 000404 8006d1f4  4 UpdateCameraMtx 	Camera
   8006d5f8 000168 8006d5f8  4 CalcWorldMtx_Basic 	dcc
+  8006d760 000038 8006d760  4 MakeTexSrtMtx_S 	dcc
   8006d798 000094 8006d798  4 MakeTexSrtMtx_R 	dcc
   8006d82c 000038 8006d82c  4 MakeTexSrtMtx_T 	dcc
   8006d864 0000bc 8006d864  4 MakeTexSrtMtx_SR 	dcc
@@ -1875,6 +1876,7 @@
   8006e048 0001a8 8006e048  4 ProductTexSrtMtx_SRT 	dcc
   8006e1f0 00009c 8006e1f0  4 CalcTexMtx_Maya 	dcc
   8006e28c 000190 8006e28c  4 CalcWorldMtx_Maya_SSC_Apply 	dcc
+  8006e41c 000038 8006e41c  4 MakeTexSrtMtx_S 	dcc
   8006e454 000088 8006e454  4 MakeTexSrtMtx_R 	dcc
   8006e4dc 000038 8006e4dc  4 MakeTexSrtMtx_T 	dcc
   8006e514 0000a0 8006e514  4 MakeTexSrtMtx_SR 	dcc
@@ -1890,6 +1892,7 @@
   8006ec30 00015c 8006ec30  4 ProductTexSrtMtx_SRT 	dcc
   8006ed8c 00009c 8006ed8c  4 CalcTexMtx_Xsi 	dcc
   8006ee28 0001b0 8006ee28  4 CalcWorldMtx_Xsi 	dcc
+  8006efd8 000048 8006efd8  4 MakeTexSrtMtx_S 	dcc
   8006f020 0000ac 8006f020  4 MakeTexSrtMtx_R 	dcc
   8006f0cc 000038 8006f0cc  4 MakeTexSrtMtx_T 	dcc
   8006f104 0000b4 8006f104  4 MakeTexSrtMtx_SR 	dcc
@@ -2035,16 +2038,16 @@
   8007772c 000410 8007772c  4 CalcMaterialDirectly 	g3d
   80077b3c 0000f4 80077b3c  4 G3dInit 	g3d
   80077c30 000008 80077c30  4 G3dReset 	g3d
-  80077c38 000104 80077c38  4 FUN_80077c38 	Global
-  80077d3c 000108 80077d3c  4 FUN_80077d3c 	Global
+  80077c38 000104 80077c38  4 Construct 	ScnProc
+  80077d3c 000108 80077d3c  4 G3dProc 	ScnProc
   80077e44 000068 80077e44  4 IsDerivedFrom 	ScnProc
   80077eac 000030 80077eac  4 GetTypeName 	ScnProc
   80077edc 00000c 80077edc  4 GetTypeObj 	ScnProc
-  80077ee8 000040 80077ee8  4 FUN_80077ee8 	Global
+  80077ee8 000040 80077ee8  4 ~ScnProc 	ScnProc
   80077f28 000008 80077f28  4 Fog 	Fog
   80077f30 000070 80077f30  4 Init 	Fog
   80077fa0 000054 80077fa0  4 CopyTo 	Fog
-  80077ff4 069f9c 80077ff4  4 SetFogRangeAdjParam 	Fog
+  80077ff4 00001c 80077ff4  4 SetFogRangeAdjParam 	Fog
   80078014 000088 80078014  4 SetGP 	Fog
   8007809c 000014 8007809c  4 Clear 	LightObj
   800780b0 000048 800780b0  4 InitLightColor 	LightObj
@@ -2061,7 +2064,7 @@
   80078748 000190 80078748  4 Import 	LightSetting
   800788d8 000120 800788d8  4 ApplyViewMtx 	LightSetting
   800789f8 000070 800789f8  4 SelectLightObj 	LightSet
-  80078a68 000068 80078a68  4 FUN_80078a68 	Global
+  80078a68 000068 80078a68  4 LightSet:SelectAmbLightObj 	g3d
   80078ad0 0007f8 80078ad0  4 CalcVtx 	g3d
   800792c8 000054 800792c8  4 LytInit 	lyt
   8007931c 000134 8007931c  4 Pane 	Pane
@@ -2136,7 +2139,7 @@
   8007bc84 000018 8007bc84  4 SetVtxColorElement 	TextBox
   8007bc9c 00009c 8007bc9c  4 GetTextDrawRect 	TextBox
   8007bd38 0001d0 8007bd38  4 DrawSelf 	TextBox
-  8007bf08 000044 8007bf08  4 FUN_8007bf08 	Global
+  8007bf08 000044 8007bf08  4 SetTextColor 	CharWriter
   8007bf4c 000078 8007bf4c  4 AllocStringBuffer 	TextBox
   8007bfc4 000048 8007bfc4  4 FreeStringBuffer 	TextBox
   8007c00c 000068 8007c00c  4 SetString 	TextBox
@@ -2183,7 +2186,7 @@
   80080640 000090 80080640  4 SetTextureNum 	Material
   800806d0 000088 800806d0  4 SetTexCoordGenNum 	Material
   80080758 0001e0 80080758  4 SetColorElement 	Material
-  80080938 000ea0 80080938  4 FUN_80080938 	Global
+  80080938 000ea0 80080938  4 SetupGX 	Material
   800817d8 00001c 800817d8  4 BindAnimation 	Material
   800817f4 000080 800817f4  4 UnbindAnimation 	Material
   80081874 000014 80081874  4 UnbindAllAnimation 	Material
@@ -2198,15 +2201,15 @@
   80081b90 000058 80081b90  4 SetNoWrap 	TexMap
   80081be8 000110 80081be8  4 SetNoWrap 	TexMap
   80081cf8 000074 80081cf8  4 DrawInfo 	DrawInfo
-  80081d6c 000040 80081d6c  4 DrawInfo 	DrawInfo
+  80081d6c 000040 80081d6c  4 ~DrawInfo 	DrawInfo
   80081dac 0000e8 80081dac  4 GetStepCurveValue 	Global
   80081e94 0001bc 80081e94  4 GetHermiteCurveValue 	Global
   80082050 00000c 80082050  4 GetFrameSize 	AnimTransform
-  8008205c 000018 8008205c  4 FUN_8008205c 	Global
+  8008205c 000018 8008205c  4 IsLoopData 	AnimTransform
   80082074 000034 80082074  4 AnimTransformBasic 	AnimTransformBasic
   800820a8 000084 800820a8  4 ~AnimTransformBasic 	AnimTransformBasic
   8008212c 000140 8008212c  4 SetResource 	AnimTransformBasic
-  8008226c 000100 8008226c  4 SetResource 	AnimTransformBasic
+  8008226c 000100 8008226c  4 Bind 	AnimTransformBasic
   8008236c 0000bc 8008236c  4 Bind 	AnimTransformBasic
   80082428 0001ec 80082428  4 Animate 	AnimTransformBasic
   80082614 00031c 80082614  4 Animate 	AnimTransformBasic
@@ -2215,14 +2218,14 @@
   800829a4 000010 800829a4  4 ResourceAccessor 	ResourceAccessor
   800829b4 000008 800829b4  4 GetFont 	ResourceAccessor
   800829bc 0000cc 800829bc  4 FindNameResource 	Global
-  80082a88 000140 80082a88  4 GetResourceStub 	Global
+  80082a88 000140 80082a88  4 GetResourceSub 	Global
   80082bc8 00005c 80082bc8  4 ArcResourceAccessor 	ArcResourceAccessor
   80082c24 00007c 80082c24  4 Attach 	ArcResourceAccessor
   80082ca0 000020 80082ca0  4 GetResource 	ArcResourceAccessor
   80082cc0 000070 80082cc0  4 GetFont 	ArcResourceAccessor
-  80082d30 00006c 80082d30  4 FUN_80082d30 	Global
-  80082d9c 00002c 80082d9c  4 FUN_80082d9c 	Global
-  80082dc8 00002c 80082dc8  4 FUN_80082dc8 	Global
+  80082d30 00006c 80082d30  4 ~ArcResourceAccessor 	ArcResourceAccessor
+  80082d9c 00002c 80082d9c  4 EqualsResName 	detail
+  80082dc8 00002c 80082dc8  4 EqualsMaterialName 	lyt
   80082df4 000028 80082df4  4 TestFileHeader 	detail
   80082e1c 000034 80082e1c  4 TestFileHeader 	detail
   80082e50 000014 80082e50  4 TexCoordAry 	TexCoordAry
@@ -2234,13 +2237,16 @@
   80083118 000054 80083118  4 MultipleAlpha 	detail
   8008316c 0000e4 8008316c  4 SetVertexFormat 	detail
   80083250 000560 80083250  4 DrawQuad 	detail
-  800837b0 0000f8 800837b0  4 DrawQuad 	lyt
-  800838a8 000068 800838a8  4 FUN_800838a8 	Global
-  80083910 00004c 80083910  4 FUN_80083910 	Global
-  80083b08 0002d0 80083b08  4 FUN_80083b08 	Global
-  80083dd8 000040 80083dd8  4 FUN_80083dd8 	Global
-  80083e18 000044 80083e18  4 FUN_80083e18 	Global
-  80083e5c 000060 80083e5c  4 FUN_80083e5c 	Global
+  800837b0 0000f8 800837b0  4 DrawQuad 	detail
+  800838a8 000068 800838a8  4 ShadowTextureManager 	ShadowTextureManager
+  80083910 00004c 80083910  4 initialize 	ShadowTextureManager
+  8008395c 00006c 8008395c  4 setGroup 	ShadowTextureManager
+  800839c8 0000c0 800839c8  4 setTextures 	ShadowTextureManager
+  80083a88 000080 80083a88  4 calcGroups 	ShadowTextureManager
+  80083b08 0002d0 80083b08  4 calcTextures 	ShadowTextureManager
+  80083dd8 000040 80083dd8  4 ~ShadowTextureManager 	ShadowTextureManager
+  80083e18 000044 80083e18  4 invalidateTexAllGX 	StateGX
+  80083e5c 000060 80083e5c  4 resetGXCache 	StateGX
   80083ebc 000004 80083ebc  4 thunk_FUN_80084548 	Global
   80083ec0 000038 80083ec0  4 FUN_80083ec0 	Global
   80083ef8 00013c 80083ef8  4 FUN_80083ef8 	Global
@@ -2254,32 +2260,34 @@
   80084588 000120 80084588  4 FUN_80084588 	Global
   800846a8 0000d4 800846a8  4 FUN_800846a8 	Global
   8008477c 00012c 8008477c  4 FUN_8008477c 	Global
-  800848a8 000150 800848a8  4 FUN_800848a8 	Global
-  800849f8 0000ec 800849f8  4 FUN_800849f8 	Global
-  80084ae4 000074 80084ae4  4 FUN_80084ae4 	Global
-  80084b58 000074 80084b58  4 FUN_80084b58 	Global
-  80084bcc 000074 80084bcc  4 FUN_80084bcc 	Global
+  800848a8 000150 800848a8  4 GXSetScissor 	StateGX
+  800849f8 0000ec 800849f8  4 GXSetScissorBoxOffset 	StateGX
+  80084ae4 000074 80084ae4  4 GXSetColorUpdate 	StateGX
+  80084b58 000074 80084b58  4 GXSetAlphaUpdate 	StateGX
+  80084bcc 000074 80084bcc  4 GXSetDither 	StateGX
   80084c40 000094 80084c40  4 FUN_80084c40 	Global
   80084cd4 000050 80084cd4  4 FUN_80084cd4 	Global
   80084d24 000040 80084d24  4 FUN_80084d24 	Global
-  80084d64 000040 80084d64  4 FUN_80084d64 	Global
+  80084d64 000040 80084d64  4 ~CpuTexture 	CpuTexture
   80084da4 000050 80084da4  4 FUN_80084da4 	Global
   80084df4 000184 80084df4  4 FUN_80084df4 	Global
   80084f78 0001e8 80084f78  4 FUN_80084f78 	Global
   80085160 0000b8 80085160  4 FUN_80085160 	Global
   80085218 00022c 80085218  4 FUN_80085218 	Global
   80085444 000040 80085444  4 FUN_80085444 	Global
-  80085484 000058 80085484  4 FUN_80085484 	Global
+  80085484 000058 80085484  4 __sinit_\eggTextureBuffer_cpp 	Global
+  800854dc 00001c 800854dc  4 FUN_800854dc 	Global
   800854f8 000178 800854f8  4 FUN_800854f8 	Global
   80085670 0004f8 80085670  4 FUN_80085670 	Global
   80085b68 000114 80085b68  4 FUN_80085b68 	Global
+  80085c7c 000004 80085c7c  4 __sinit_\eggAnalizeDL_cpp 	Global
   80085c80 0000c4 80085c80  4 FUN_80085c80 	Global
   80085d44 000068 80085d44  4 FUN_80085d44 	Global
   80085dac 000234 80085dac  4 FUN_80085dac 	Global
   80085fe0 000640 80085fe0  4 FUN_80085fe0 	Global
   80086620 00003c 80086620  4 FUN_80086620 	Global
   8008665c 000038 8008665c  4 FUN_8008665c 	Global
-  80086694 00000c 80086694  4 FUN_80086694 	Global
+  80086694 00000c 80086694  4 configure 	CpuTexture
   800866a0 0000e8 800866a0  4 FUN_800866a0 	Global
   80086788 00007c 80086788  4 FUN_80086788 	Global
   80086804 000060 80086804  4 FUN_80086804 	Global
@@ -2318,13 +2326,14 @@
   80088c30 000044 80088c30  4 FUN_80088c30 	Global
   80088c74 000164 80088c74  4 FUN_80088c74 	Global
   80088dd8 000064 80088dd8  4 FUN_80088dd8 	Global
-  80088e3c 00006c 80088e3c  4 FUN_80088e3c 	Global
+  80088e3c 00006c 80088e3c  4 LoadTexture 	DrawGX
   80088ea8 0003ac 80088ea8  4 FUN_80088ea8 	Global
   80089254 000950 80089254  4 FUN_80089254 	Global
   80089ba4 00008c 80089ba4  4 FUN_80089ba4 	Global
-  80089c30 0000c4 80089c30  4 FUN_80089c30 	Global
-  80089cf4 000068 80089cf4  4 FUN_80089cf4 	Global
-  80089d5c 00006c 80089d5c  4 FUN_80089d5c 	Global
+  80089c30 0000c4 80089c30  4 SetMat_ColorChannel 	DrawGX
+  80089cf4 000068 80089cf4  4 SetZMode 	DrawGX
+  80089d5c 00006c 80089d5c  4 SetBlendMode 	DrawGX
+  80089dc8 000004 80089dc8  4 FUN_80089dc8 	Global
   80089dcc 00004c 80089dcc  4 FUN_80089dcc 	Global
   80089e18 000040 80089e18  4 FUN_80089e18 	Global
   80089e58 00007c 80089e58  4 FUN_80089e58 	Global
@@ -2359,6 +2368,8 @@
   8008e2fc 000060 8008e2fc  4 FUN_8008e2fc 	Global
   8008e370 00099c 8008e370  4 FUN_8008e370 	Global
   8008ed1c 000010 8008ed1c  4 FUN_8008ed1c 	Global
+  8008ed2c 000040 8008ed2c  4 FUN_8008ed2c 	Global
+  8008ed6c 000004 8008ed6c  4 FUN_8008ed6c 	Global
   8008ed70 0000b8 8008ed70  4 FUN_8008ed70 	Global
   8008ee28 00008c 8008ee28  4 FUN_8008ee28 	Global
   8008eeb4 0000a4 8008eeb4  4 FUN_8008eeb4 	Global
@@ -2379,11 +2390,11 @@
   8008f818 0000d0 8008f818  4 FUN_8008f818 	Global
   8008f8e8 00010c 8008f8e8  4 FUN_8008f8e8 	Global
   8008f9f4 0002f8 8008f9f4  4 FUN_8008f9f4 	Global
-  8008fcec 000118 8008fcec  4 FUN_8008fcec 	Global
+  8008fcec 000118 8008fcec  4 initialize 	GfxEngine
   8008fe04 000070 8008fe04  4 FUN_8008fe04 	Global
   8008fe74 000024 8008fe74  4 FUN_8008fe74 	Global
-  8008fe98 00004c 8008fe98  4 FUN_8008fe98 	Global
-  8008fee4 000040 8008fee4  4 FUN_8008fee4 	Global
+  8008fe98 00004c 8008fe98  4 GfxEngine 	GfxEngine
+  8008fee4 000040 8008fee4  4 ~GfxEngine 	GfxEngine
   8008ff24 00023c 8008ff24  4 FUN_8008ff24 	Global
   80090160 00012c 80090160  4 FUN_80090160 	Global
   8009028c 0000b0 8009028c  4 FUN_8009028c 	Global
@@ -2395,11 +2406,14 @@
   80090600 000270 80090600  4 FUN_80090600 	Global
   80090870 000168 80090870  4 FUN_80090870 	Global
   800909d8 000094 800909d8  4 FUN_800909d8 	Global
+  80090a6c 000010 80090a6c  4 FUN_80090a6c 	Global
   80090a7c 000684 80090a7c  4 FUN_80090a7c 	Global
   80091100 000120 80091100  4 FUN_80091100 	Global
   80091220 00012c 80091220  4 FUN_80091220 	Global
   8009134c 0000e4 8009134c  4 FUN_8009134c 	Global
   80091438 000040 80091438  4 FUN_80091438 	Global
+  80091478 000020 80091478  4 FUN_80091478 	Global
+  80091498 000008 80091498  4 FUN_80091498 	Global
   800914a0 000154 800914a0  4 FUN_800914a0 	Global
   800915f4 0001ac 800915f4  4 FUN_800915f4 	Global
   800917a0 000180 800917a0  4 FUN_800917a0 	Global
@@ -2434,8 +2448,8 @@
   80094194 000048 80094194  4 FUN_80094194 	Global
   800941dc 000048 800941dc  4 FUN_800941dc 	Global
   80094224 000a34 80094224  4 FUN_80094224 	Global
-  80094c58 000234 80094c58  4 FUN_80094c58 	Global
-  80094e8c 0000ac 80094e8c  4 FUN_80094e8c 	Global
+  80094c58 000234 80094c58  4 ModelEx 	ModelEx
+  80094e8c 0000ac 80094e8c  4 ~ModelEx 	ModelEx
   80094f38 000010 80094f38  4 FUN_80094f38 	Global
   80094f48 00008c 80094f48  4 FUN_80094f48 	Global
   80094fd4 0000b4 80094fd4  4 FUN_80094fd4 	Global
@@ -2455,11 +2469,13 @@
   80096470 0000e0 80096470  4 FUN_80096470 	Global
   80096550 0000fc 80096550  4 FUN_80096550 	Global
   8009664c 000010 8009664c  4 FUN_8009664c 	Global
+  8009665c 000050 8009665c  4 FUN_8009665c 	Global
   800966ac 0000f4 800966ac  4 FUN_800966ac 	Global
   800967a0 000214 800967a0  4 FUN_800967a0 	Global
   800969b4 000040 800969b4  4 FUN_800969b4 	Global
   800969f4 000040 800969f4  4 FUN_800969f4 	Global
   80096a34 000038 80096a34  4 FUN_80096a34 	Global
+  80096a6c 000010 80096a6c  4 FUN_80096a6c 	Global
   80096a80 0000a0 80096a80  4 FUN_80096a80 	Global
   80096b24 000094 80096b24  4 FUN_80096b24 	Global
   80096bb8 000008 80096bb8  4 FUN_80096bb8 	Global
@@ -2484,6 +2500,7 @@
   800981ac 0001a0 800981ac  4 FUN_800981ac 	Global
   8009834c 0002f0 8009834c  4 FUN_8009834c 	Global
   8009863c 00003c 8009863c  4 FUN_8009863c 	Global
+  80098678 000044 80098678  4 FUN_80098678 	Global
   800986bc 000468 800986bc  4 FUN_800986bc 	Global
   80098b24 00003c 80098b24  4 FUN_80098b24 	Global
   80098b98 000210 80098b98  4 FUN_80098b98 	Global
@@ -2502,20 +2519,20 @@
   80099174 000058 80099174  4 FUN_80099174 	Global
   800991cc 000058 800991cc  4 FUN_800991cc 	Global
   80099224 000064 80099224  4 FUN_80099224 	Global
-  80099288 015814 80099288  4 FUN_80099288 	Global
+  80099288 000014 80099288  4 FUN_80099288 	Global
   800992a0 0000e8 800992a0  4 FUN_800992a0 	Global
   80099388 00011c 80099388  4 FUN_80099388 	Global
   800994ac 00005c 800994ac  4 FUN_800994ac 	Global
   80099508 000058 80099508  4 FUN_80099508 	Global
   80099560 00006c 80099560  4 FUN_80099560 	Global
-  800995cc 000170 800995cc  4 FUN_800995cc 	Global
-  8009973c 0000d4 8009973c  4 FUN_8009973c 	Global
-  80099810 000040 80099810  4 FUN_80099810 	Global
-  80099850 0000d4 80099850  4 FUN_80099850 	Global
-  80099924 0000dc 80099924  4 FUN_80099924 	Global
+  800995cc 000170 800995cc  4 Initialize 	eggScreen
+  8009973c 0000d4 8009973c  4 eggScreen 	eggScreen
+  80099810 000040 80099810  4 ~eggFrustum 	eggFrustum
+  80099850 0000d4 80099850  4 eggScreen 	eggScreen
+  80099924 0000dc 80099924  4 eggScreen 	eggScreen
   80099a00 000004 80099a00  4 FUN_80099a00 	Global
   80099a04 0000e8 80099a04  4 FUN_80099a04 	Global
-  80099aec 000118 80099aec  4 FUN_80099aec 	Global
+  80099aec 000118 80099aec  4 CopyToG3D 	eggScreen
   80099c04 0000a8 80099c04  4 FUN_80099c04 	Global
   80099cac 0000dc 80099cac  4 FUN_80099cac 	Global
   80099d88 0000c4 80099d88  4 FUN_80099d88 	Global
@@ -2532,13 +2549,13 @@
   8009ab40 000124 8009ab40  4 FUN_8009ab40 	Global
   8009ac64 000138 8009ac64  4 FUN_8009ac64 	Global
   8009ad9c 000134 8009ad9c  4 FUN_8009ad9c 	Global
-  8009aed0 00005c 8009aed0  4 FUN_8009aed0 	Global
+  8009aed0 00005c 8009aed0  4 __sinit_\eggScreen_cpp 	Global
   8009af30 0002bc 8009af30  4 FUN_8009af30 	Global
   8009b1ec 000078 8009b1ec  4 FUN_8009b1ec 	Global
-  8009b264 000158 8009b264  4 FUN_8009b264 	Global
-  8009b3bc 00008c 8009b3bc  4 FUN_8009b3bc 	Global
+  8009b264 000158 8009b264  4 Replace 	ShadowTexture
+  8009b3bc 00008c 8009b3bc  4 Release 	ShadowTexture
   8009b448 000100 8009b448  4 FUN_8009b448 	Global
-  8009b548 00027c 8009b548  4 FUN_8009b548 	Global
+  8009b548 00027c 8009b548  4 CalcShadow 	ShadowTexture
   8009b7c4 00010c 8009b7c4  4 FUN_8009b7c4 	Global
   8009b8d0 0002e4 8009b8d0  4 FUN_8009b8d0 	Global
   8009bbb4 000564 8009bbb4  4 FUN_8009bbb4 	Global
@@ -2574,10 +2591,12 @@
   8009e354 00030c 8009e354  4 FUN_8009e354 	Global
   8009e660 0000a4 8009e660  4 FUN_8009e660 	Global
   8009e704 000038 8009e704  4 FUN_8009e704 	Global
+  8009e73c 000010 8009e73c  4 FUN_8009e73c 	Global
   8009e74c 0004d8 8009e74c  4 FUN_8009e74c 	Global
   8009ec24 000118 8009ec24  4 FUN_8009ec24 	Global
   8009ed44 000120 8009ed44  4 FUN_8009ed44 	Global
   8009ee64 0000bc 8009ee64  4 FUN_8009ee64 	Global
+  8009ef20 000010 8009ef20  4 FUN_8009ef20 	Global
   8009ef30 000358 8009ef30  4 FUN_8009ef30 	Global
   8009f288 000194 8009f288  4 FUN_8009f288 	Global
   8009f41c 000878 8009f41c  4 FUN_8009f41c 	Global
@@ -2592,35 +2611,40 @@
   800a03c4 0000f0 800a03c4  4 FUN_800a03c4 	Global
   800a04b4 00021c 800a04b4  4 FUN_800a04b4 	Global
   800a06d0 000130 800a06d0  4 FUN_800a06d0 	Global
-  800a0800 000064 800a0800  4 FUN_800a0800 	Global
-  800a0864 000080 800a0864  4 FUN_800a0864 	Global
-  800a08e4 0000bc 800a08e4  4 FUN_800a08e4 	Global
-  800a08f8 00004c 800a08f8  4 FUN_800a08f8 	Global
-  800a09a0 00006c 800a09a0  4 FUN_800a09a0 	Global
-  800a0a0c 000068 800a0a0c  4 FUN_800a0a0c 	Global
+  800a0800 000064 800a0800  4 eggFrustum 	eggFrustum
+  800a0864 000080 800a0864  4 eggFrustum 	eggFrustum
+  800a08e4 000014 800a08e4  4 FUN_800a08e4 	Global
+  800a08f8 00004c 800a08f8  4 CopyToG3D 	eggFrustum
+  800a0944 00002c 800a0944  4 FUN_800a0944 	Global
+  800a0970 000030 800a0970  4 FUN_800a0970 	Global
+  800a09a0 00006c 800a09a0  4 CopyToG3D_Perspective 	eggFrustum
+  800a0a0c 000068 800a0a0c  4 CopyToG3D_Orthographic 	eggFrustum
   800a0a74 000090 800a0a74  4 FUN_800a0a74 	Global
-  800a0b04 00008c 800a0b04  4 FUN_800a0b04 	Global
+  800a0b04 00008c 800a0b04  4 CalcMtxOrthographic 	eggFrustum
   800a0b90 0002b8 800a0b90  4 FUN_800a0b90 	Global
   800a0e48 000118 800a0e48  4 FUN_800a0e48 	Global
   800a0f60 000290 800a0f60  4 FUN_800a0f60 	Global
-  800a11f0 000074 800a11f0  4 FUN_800a11f0 	Global
-  800a1264 000220 800a1264  4 FUN_800a1264 	Global
-  800a1484 000214 800a1484  4 FUN_800a1484 	Global
-  800a1698 00011c 800a1698  4 FUN_800a1698 	Global
-  800a17d8 000058 800a17d8  4 FUN_800a17d8 	Global
-  800a1830 00011c 800a1830  4 FUN_800a1830 	Global
-  800a194c 000120 800a194c  4 FUN_800a194c 	Global
+  800a11f0 000074 800a11f0  4 CopyFromAnother 	eggFrustum
+  800a1264 000220 800a1264  4 GetViewToScreen 	eggFrustum
+  800a1484 000214 800a1484  4 GetScreenToView 	eggFrustum
+  800a1698 00011c 800a1698  4 GetScreenToView 	eggFrustum
+  800a17b4 000024 800a17b4  4 __sinit_\eggFrustum_cpp 	Global
+  800a17d8 000058 800a17d8  4 GetGXTexCoordGenVal 	GXUtility
+  800a1830 00011c 800a1830  4 setScaleOffsetPerspective 	GXUtility
+  800a194c 000120 800a194c  4 getTexObj 	GXUtility
   800a1a6c 000100 800a1a6c  4 FUN_800a1a6c 	Global
   800a1b6c 00001c 800a1b6c  4 FUN_800a1b6c 	Global
   800a1b88 0000a4 800a1b88  4 FUN_800a1b88 	Global
-  800a1c30 000040 800a1c30  4 FUN_800a1c30 	Global
-  800a1c70 000040 800a1c70  4 FUN_800a1c70 	Global
+  800a1c2c 000004 800a1c2c  4 __sinit_\eggGXUtility_cpp 	Global
+  800a1c30 000040 800a1c30  4 ~Vector3f 	Vector3f
+  800a1c70 000040 800a1c70  4 ~Vector2f 	Vector2f
   800a1cb0 000040 800a1cb0  4 cross 	Vector3f
-  800a1cf0 000040 800a1cf0  4 FUN_800a1cf0 	Global
+  800a1cf0 000040 800a1cf0  4 ~Color 	Color
+  800a1d30 000004 800a1d30  4 Vector3f 	Vector3f
   800a1d34 000028 800a1d34  4 FUN_800a1d34 	Global
   800a1d5c 000034 800a1d5c  4 FUN_800a1d5c 	Global
-  800a1d90 000020 800a1d90  4 FUN_800a1d90 	Global
-  800a1db0 000034 800a1db0  4 FUN_800a1db0 	Global
+  800a1d90 000020 800a1d90  4 __sinit_\eggDrawHelper_cpp 	Global
+  800a1db0 000034 800a1db0  4 VEC3Sub 	EGG
   800a1de4 000124 800a1de4  4 system_print 	Global
   800a1f08 000144 800a1f08  4 system_halt 	Global
   800a204c 000028 800a204c  4 FUN_800a204c 	Global
@@ -2629,26 +2653,36 @@
   800a217c 000024 800a217c  4 sin 	Math<float><float>
   800a21a0 000024 800a21a0  4 cos 	Math<float><float>
   800a21c4 000024 800a21c4  4 atan2 	Math<float><float>
-  800a21e8 000040 800a21e8  4 FUN_800a21e8 	Global
+  800a21e8 000040 800a21e8  4 ~Matrix34f 	Matrix34f
   800a2228 00003c 800a2228  4 makeIdentity 	Matrix34f
   800a2264 0000b0 800a2264  4 makeQ 	Matrix34f
   800a2314 000044 800a2314  4 makeS 	Matrix34f
   800a2358 00003c 800a2358  4 setAxisRotation 	Matrix34f
   800a2394 000004 800a2394  4 loadPosMtx 	Matrix34f
-  800a2398 000044 800a2398  4 FUN_800a2398 	Global
+  800a2398 000044 800a2398  4 __sinit_\eggMatrix_cpp 	Global
   800a23dc 000098 800a23dc  4 setAxisRotation 	Quatf
   800a2474 00007c 800a2474  4 normalise 	Vector3f
-  800a24f0 000130 800a24f0  4 FUN_800a24f0 	Global
-  800a2620 000074 800a2620  4 FUN_800a2620 	Global
-  800a2694 0000ac 800a2694  4 FUN_800a2694 	Global
-  800a2740 0000cc 800a2740  4 Create 	FrmHeap
-  800a280c 000070 800a280c  4 FUN_800a280c 	Global
-  800a289c 000074 800a289c  4 FUN_800a289c 	Global
+  800a24f0 000130 800a24f0  4 __sinit_\eggVector_cpp 	Global
+  800a2620 000074 800a2620  4 ~ExpHeap 	ExpHeap
+  800a2694 0000ac 800a2694  4 create 	ExpHeap
+  800a2740 0000cc 800a2740  4 create 	ExpHeap
+  800a280c 000070 800a280c  4 destroy 	ExpHeap
+  800a287c 000008 800a287c  4 alloc 	ExpHeap
+  800a2884 000008 800a2884  4 free 	ExpHeap
+  800a288c 000008 800a288c  4 resizeForMBlock 	ExpHeap
+  800a2894 000008 800a2894  4 getAllocatableSize 	ExpHeap
+  800a289c 000074 800a289c  4 adjust 	ExpHeap
+  800a2910 000010 800a2910  4 initAllocator 	ExpHeap
+  800a2920 000008 800a2920  4 getHeapKind 	ExpHeap
   800a2928 000074 800a2928  4 ~FrmHeap 	FrmHeap
-  800a299c 0000ac 800a299c  4 FUN_800a299c 	Global
-  800a2a48 0000cc 800a2a48  4 FUN_800a2a48 	Global
-  800a2b14 000070 800a2b14  4 FUN_800a2b14 	Global
-  800a2ba0 000074 800a2ba0  4 FUN_800a2ba0 	Global
+  800a299c 0000ac 800a299c  4 create 	FrmHeap
+  800a2a48 0000cc 800a2a48  4 create 	FrmHeap
+  800a2b14 000070 800a2b14  4 destroy 	FrmHeap
+  800a2b84 000008 800a2b84  4 alloc 	FrmHeap
+  800a2b8c 000004 800a2b8c  4 free 	FrmHeap
+  800a2b90 000008 800a2b90  4 resizeForMBlock 	FrmHeap
+  800a2b98 000008 800a2b98  4 getAllocatableSize 	FrmHeap
+  800a2ba0 000074 800a2ba0  4 adjust 	FrmHeap
   800a2c14 000010 800a2c14  4 initAllocator 	FrmHeap
   800a2c24 000008 800a2c24  4 getHeapKind 	FrmHeap
   800a2c2c 000040 800a2c2c  4 initialize 	Heap
@@ -2682,8 +2716,8 @@
   800a38cc 000008 800a38cc  4 run 	Thread
   800a38d4 00021c 800a38d4  4 initMemory 	ConfigurationData
   800a3af0 00023c 800a3af0  4 run 	ConfigurationData
-  800a3d2c 000004 800a3d2c  4 FUN_800a3d2c 	Global
-  800a3d30 000004 800a3d30  4 FUN_800a3d30 	Global
+  800a3d2c 000004 800a3d2c  4 onBeginFrame 	ConfigurationData
+  800a3d30 000004 800a3d30  4 onEndFrame 	ConfigurationData
   800a3d34 0002c8 800a3d34  4 create 	TaskThread
   800a3ffc 000014 800a3ffc  4 TJob 	TJob
   800a4010 0000c8 800a4010  4 request 	TaskThread
@@ -2707,12 +2741,12 @@
   800a4ab0 000008 800a4ab0  4 getStatus 	ColorFader
   800a4ab8 000040 800a4ab8  4 ~ColorFader 	ColorFader
   800a4af8 000094 800a4af8  4 SceneManager 	SceneManager
-  800a4b8c 000040 800a4b8c  4 FUN_800a4b8c 	Global
+  800a4b8c 000040 800a4b8c  4 ~SceneManager 	SceneManager
   800a4bcc 000060 800a4bcc  4 fadeIn 	SceneManager
   800a4c2c 00004c 800a4c2c  4 calc 	SceneManager
   800a4c78 00004c 800a4c78  4 draw 	SceneManager
   800a4cc4 000004 800a4cc4  4 reinit 	Scene
-  800a4cc8 000090 800a4cc8  4 FUN_800a4cc8 	Global
+  800a4cc8 000090 800a4cc8  4 fadeOut 	SceneManager
   800a4d58 0000f4 800a4d58  4 changeScene 	SceneManager
   800a4e4c 0000a0 800a4e4c  4 FUN_800a4e4c 	Global
   800a4eec 0000a0 800a4eec  4 FUN_800a4eec 	Global
@@ -2734,214 +2768,286 @@
   800a5a5c 000004 800a5a5c  4 outgoing_childCreate 	Scene
   800a5a60 000040 800a5a60  4 FUN_800a5a60 	Global
   800a5aa0 0000fc 800a5aa0  4 getFSStickButton 	CoreStatus
-  800a5b9c 00011c 800a5b9c  4 FUN_800a5b9c 	Global
-  800a5cb8 00000c 800a5cb8  4 FUN_800a5cb8 	Global
-  800a5cc4 000134 800a5cc4  4 FUN_800a5cc4 	Global
-  800a5df8 000104 800a5df8  4 FUN_800a5df8 	Global
-  800a5efc 000110 800a5efc  4 FUN_800a5efc 	Global
-  800a600c 000080 800a600c  4 FUN_800a600c 	Global
-  800a608c 00006c 800a608c  4 FUN_800a608c 	Global
+  800a5b9c 00011c 800a5b9c  4 sceneReset 	CoreController
+  800a5cb8 00000c 800a5cb8  4 stopMotor 	CoreController
+  800a5cc4 000134 800a5cc4  4 createRumbleMgr 	CoreController
+  800a5df8 000104 800a5df8  4 startPatternRumble 	CoreController
+  800a5efc 000110 800a5efc  4 startPowerFrameRumble 	CoreController
+  800a600c 000080 800a600c  4 stopRumbleMgr 	CoreController
+  800a608c 00006c 800a608c  4 getCoreStatus 	CoreController
   800a60f8 000300 800a60f8  4 calc_posture_matrix 	CoreController
   800a63f8 000008 800a63f8  4 getAccel 	CoreController
   800a6400 00001c 800a6400  4 getAccel 	CoreStatus
   800a641c 000028 800a641c  4 operator_- 	Vector3f
   800a6444 0002e8 800a6444  4 beginFrame 	CoreController
   800a672c 00004c 800a672c  4 endFrame 	CoreController
-  800a6778 00006c 800a6778  4 FUN_800a6778 	Global
-  800a67e4 000098 800a67e4  4 FUN_800a67e4 	Global
-  800a6898 000038 800a6898  4 FUN_800a6898 	Global
-  800a68d0 00003c 800a68d0  4 FUN_800a68d0 	Global
-  800a690c 000484 800a690c  4 FUN_800a690c 	Global
-  800a6d94 000078 800a6d94  4 FUN_800a6d94 	Global
-  800a6e0c 000078 800a6e0c  4 FUN_800a6e0c 	Global
-  800a6e84 0000bc 800a6e84  4 FUN_800a6e84 	Global
-  800a6f40 000234 800a6f40  4 FUN_800a6f40 	Global
+  800a6778 00006c 800a6778  4 ~T__Disposer 	T__Disposer
+  800a67e4 000098 800a67e4  4 getNthController 	CoreControllerMgr
+  800a687c 000004 800a687c  4 errRangeOver 	TBuffer<EGG::CoreController*>
+  800a6880 000018 800a6880  4 alloc 	EGG
+  800a6898 000038 800a6898  4 free 	EGG
+  800a68d0 00003c 800a68d0  4 connectCallback 	CoreControllerMgr
+  800a690c 000484 800a690c  4 CoreControllerMgr 	CoreControllerMgr
+  800a6d90 000004 800a6d90  4 errRangeOver 	TBuffer<EGG::eCoreDevType>
+  800a6d94 000078 800a6d94  4 ~TBuffer 	TBuffer<EGG::CoreController*>
+  800a6e0c 000078 800a6e0c  4 ~TBuffer 	TBuffer<EGG::eCoreDevType>
+  800a6e84 0000bc 800a6e84  4 beginFrame 	CoreControllerMgr
+  800a6f40 000234 800a6f40  4 endFrame 	CoreControllerMgr
   800a7174 0000fc 800a7174  4 calc 	ControllerRumbleUnit
   800a7270 000114 800a7270  4 calc 	ControllerRumbleMgr
-  800a7384 000040 800a7384  4 FUN_800a7384 	Global
-  800a73c4 000040 800a73c4  4 FUN_800a73c4 	Global
+  800a7384 000040 800a7384  4 ~ControllerRumbleMgr 	ControllerRumbleMgr
+  800a73c4 000040 800a73c4  4 ~ControllerRumbleUnit 	ControllerRumbleUnit
   800a7404 000008 800a7404  4 setAccParam 	CoreController
   800a740c 000008 800a740c  4 setDistParam 	CoreController
   800a7414 000008 800a7414  4 setHoriParam 	CoreController
   800a741c 000008 800a741c  4 setPosParam 	CoreController
-  800a7424 000050 800a7424  4 FUN_800a7424 	Global
-  800a7474 000074 800a7474  4 FUN_800a7474 	Global
-  800a74ec 000050 800a74ec  4 FUN_800a74ec 	Global
-  800a753c 000074 800a753c  4 FUN_800a753c 	Global
-  800a75b4 00014c 800a75b4  4 FUN_800a75b4 	Global
-  800a7700 000040 800a7700  4 FUN_800a7700 	Global
-  800a7740 000040 800a7740  4 FUN_800a7740 	Global
-  800a7780 000114 800a7780  4 FUN_800a7780 	Global
-  800a7894 0000b8 800a7894  4 FUN_800a7894 	Global
-  800a794c 000118 800a794c  4 FUN_800a794c 	Global
-  800a7a64 0000bc 800a7a64  4 FUN_800a7a64 	Global
-  800a7b20 000114 800a7b20  4 FUN_800a7b20 	Global
-  800a7c34 0000b8 800a7c34  4 FUN_800a7c34 	Global
-  800a7cec 000114 800a7cec  4 FUN_800a7cec 	Global
-  800a7e00 0000b8 800a7e00  4 write_u16 	Stream
-  800a7eb8 000110 800a7eb8  4 FUN_800a7eb8 	Global
-  800a7fc8 0000b8 800a7fc8  4 FUN_800a7fc8 	Global
-  800a8080 000110 800a8080  4 FUN_800a8080 	Global
-  800a8190 0000b8 800a8190  4 FUN_800a8190 	Global
-  800a8248 000110 800a8248  4 FUN_800a8248 	Global
-  800a8358 0000b8 800a8358  4 FUN_800a8358 	Global
-  800a8410 00076c 800a8410  4 FUN_800a8410 	Global
-  800a8b7c 000b00 800a8b7c  4 FUN_800a8b7c 	Global
-  800a967c 0002e8 800a967c  4 FUN_800a967c 	Global
-  800a9964 000244 800a9964  4 FUN_800a9964 	Global
-  800a9ba8 000158 800a9ba8  4 FUN_800a9ba8 	Global
-  800a9d00 000044 800a9d00  4 FUN_800a9d00 	Global
+  800a7424 000050 800a7424  4 allocate 	TBuffer<EGG::eCoreDevType>
+  800a7474 000074 800a7474  4 allocate 	TBuffer<EGG::eCoreDevType>
+  800a74e8 000004 800a74e8  4 onAllocate 	TBuffer<EGG::eCoreDevType>
+  800a74ec 000050 800a74ec  4 allocate 	TBuffer<EGG::CoreController*>
+  800a753c 000074 800a753c  4 allocate 	TBuffer<EGG::CoreController*>
+  800a75b0 000004 800a75b0  4 onAllocate 	TBuffer<EGG::CoreController*>
+  800a75b4 00014c 800a75b4  4 __sinit_\eggController_cpp 	Global
+  800a7700 000040 800a7700  4 ~NullController 	NullController
+  800a7740 000040 800a7740  4 ~Stream 	Stream
+  800a7780 000114 800a7780  4 read_u8 	Stream
+  800a7894 0000b8 800a7894  4 write_u8 	Stream
+  800a794c 000118 800a794c  4 read_s8 	Stream
+  800a7a64 0000bc 800a7a64  4 write_s8 	Stream
+  800a7b20 000114 800a7b20  4 read_u16 	Stream
+  800a7c34 0000b8 800a7c34  4 write_u16 	Stream
+  800a7cec 000114 800a7cec  4 read_s16 	Stream
+  800a7e00 0000b8 800a7e00  4 write_s16 	Stream
+  800a7eb8 000110 800a7eb8  4 read_u32 	Stream
+  800a7fc8 0000b8 800a7fc8  4 write_u32 	Stream
+  800a8080 000110 800a8080  4 read_s32 	Stream
+  800a8190 0000b8 800a8190  4 write_s32 	Stream
+  800a8248 000110 800a8248  4 read_float 	Stream
+  800a8358 0000b8 800a8358  4 write_float 	Stream
+  800a8410 00076c 800a8410  4 writeString 	Stream
+  800a8b7c 000b00 800a8b7c  4 readString 	Stream
+  800a967c 0002e8 800a967c  4 copyToTextBuffer 	Stream
+  800a9964 000244 800a9964  4 skipSpace 	Stream
+  800a9ba8 000158 800a9ba8  4 printf 	Stream
+  800a9d00 000044 800a9d00  4 RamStream 	RamStream
   800a9d44 000110 800a9d44  4 read 	RamStream
   800a9e54 000110 800a9e54  4 write 	RamStream
-  800a9f80 000040 800a9f80  4 FUN_800a9f80 	Global
-  800a9fc0 000048 800a9fc0  4 FUN_800a9fc0 	Global
-  800aa00c 000150 800aa00c  4 FUN_800aa00c 	Global
-  800aa160 0000e0 800aa160  4 FUN_800aa160 	Global
-  800aa244 0000e0 800aa244  4 FUN_800aa244 	Global
-  800aa324 000084 800aa324  4 FUN_800aa324 	Global
-  800aa3a8 000044 800aa3a8  4 FUN_800aa3a8 	Global
-  800aa3ec 0000f0 800aa3ec  4 FUN_800aa3ec 	Global
-  800aa4dc 000070 800aa4dc  4 FUN_800aa4dc 	Global
-  800aa54c 000074 800aa54c  4 FUN_800aa54c 	Global
-  800aa5c0 000148 800aa5c0  4 FUN_800aa5c0 	Global
-  800aa708 000104 800aa708  4 FUN_800aa708 	Global
-  800aa80c 000068 800aa80c  4 FUN_800aa80c 	Global
-  800aa874 000080 800aa874  4 FUN_800aa874 	Global
+  800a9f64 00001c 800a9f64  4 eof 	RamStream
+  800a9f80 000040 800a9f80  4 ~RamStream 	RamStream
+  800a9fc0 000048 800a9fc0  4 Display 	Display
+  800aa008 000004 800aa008  4 getTickPerFrame 	Display
+  800aa00c 000150 800aa00c  4 beginFrame 	Display
+  800aa15c 000004 800aa15c  4 beginRender 	Display
+  800aa160 0000e0 800aa160  4 endRender 	Display
+  800aa240 000004 800aa240  4 endFrame 	Display
+  800aa244 0000e0 800aa244  4 copyEFBtoXFB 	Display
+  800aa324 000084 800aa324  4 calcFrequency 	Display
+  800aa3a8 000044 800aa3a8  4 initialize 	Video
+  800aa3ec 0000f0 800aa3ec  4 configure 	Video
+  800aa4dc 000070 800aa4dc  4 getTickPerVRetrace 	Video
+  800aa54c 000074 800aa54c  4 getTickPerVRetrace 	Video
+  800aa5c0 000148 800aa5c0  4 getStandardRenderModeObj 	Video
+  800aa708 000104 800aa708  4 Xfb 	Xfb
+  800aa80c 000068 800aa80c  4 attach 	XfbManager
+  800aa874 000080 800aa874  4 copyEFB 	XfbManager
   800aa8f4 000068 800aa8f4  4 setNextFrameBuffer 	XfbManager
   800aa95c 00005c 800aa95c  4 postVRetrace 	XfbManager
-  800aa9b8 0000a4 800aa9b8  4 FUN_800aa9b8 	Global
-  800aaa5c 0001c0 800aaa5c  4 FUN_800aaa5c 	Global
-  800aac24 000040 800aac24  4 FUN_800aac24 	Global
-  800aac64 000084 800aac64  4 FUN_800aac64 	Global
-  800aace8 000068 800aace8  4 FUN_800aace8 	Global
-  800aad50 000068 800aad50  4 FUN_800aad50 	Global
-  800aadb8 000078 800aadb8  4 FUN_800aadb8 	Global
-  800aae30 000048 800aae30  4 FUN_800aae30 	Global
-  800aae78 000010 800aae78  4 FUN_800aae78 	Global
-  800aae88 00005c 800aae88  4 FUN_800aae88 	Global
-  800aaee4 0000e4 800aaee4  4 FUN_800aaee4 	Global
-  800aafe4 000090 800aafe4  4 FUN_800aafe4 	Global
+  800aa9b8 0000a4 800aa9b8  4 loadToMainRAM 	DvdRipper
+  800aaa5c 0001c0 800aaa5c  4 loadToMainRAM 	DvdRipper
+  800aac1c 000008 800aac1c  4 getFileSize 	DvdFile
+  800aac24 000040 800aac24  4 initialize 	DvdFile
+  800aac64 000084 800aac64  4 DvdFile 	DvdFile
+  800aace8 000068 800aace8  4 ~DvdFile 	DvdFile
+  800aad50 000068 800aad50  4 initiate 	DvdFile
+  800aadb8 000078 800aadb8  4 open 	DvdFile
+  800aae30 000048 800aae30  4 open 	DvdFile
+  800aae78 000010 800aae78  4 open 	DvdFile
+  800aae88 00005c 800aae88  4 close 	DvdFile
+  800aaee4 0000e4 800aaee4  4 readData 	DvdFile
+  800aafc8 000008 800aafc8  4 writeData 	DvdFile
+  800aafd0 000014 800aafd0  4 doneProcess 	DvdFile
+  800aafe4 000090 800aafe4  4 Scene 	Scene
   800ab074 000040 800ab074  4 ~Scene 	Scene
-  800ab0b4 000048 800ab0b4  4 FUN_800ab0b4 	Global
-  800ab0fc 000048 800ab0fc  4 FUN_800ab0fc 	Global
-  800ab144 000068 800ab144  4 FUN_800ab144 	Global
-  800ab1ac 000038 800ab1ac  4 FUN_800ab1ac 	Global
-  800ab1e4 00003c 800ab1e4  4 FUN_800ab1e4 	Global
-  800ab240 0000c4 800ab240  4 FUN_800ab240 	Global
-  800ab304 00004c 800ab304  4 FUN_800ab304 	Global
-  800ab350 000048 800ab350  4 FUN_800ab350 	Global
-  800ab3d0 000198 800ab3d0  4 FUN_800ab3d0 	Global
-  800ab568 000050 800ab568  4 FUN_800ab568 	Global
-  800ab5b8 00027c 800ab5b8  4 FUN_800ab5b8 	Global
+  800ab0b4 000048 800ab0b4  4 drawColor 	Global
+  800ab0fc 000048 800ab0fc  4 ProcessBar 	ProcessBar
+  800ab144 000068 800ab144  4 CpuMonitor 	CpuMonitor
+  800ab1ac 000038 800ab1ac  4 measureBegin 	CpuMonitor
+  800ab1e4 00003c 800ab1e4  4 measureEnd 	CpuMonitor
+  800ab220 000010 800ab220  4 show 	CpuMonitor
+  800ab230 000010 800ab230  4 hide 	CpuMonitor
+  800ab240 0000c4 800ab240  4 CpuGpMonitor 	CpuGpMonitor
+  800ab304 00004c 800ab304  4 measureBegin 	CpuGpMonitor
+  800ab350 000048 800ab350  4 measureEnd 	CpuGpMonitor
+  800ab398 00001c 800ab398  4 show 	CpuGpMonitor
+  800ab3b4 00001c 800ab3b4  4 hide 	CpuGpMonitor
+  800ab3d0 000198 800ab3d0  4 ProcessMeter 	ProcessMeter
+  800ab568 000050 800ab568  4 callbackDrawSyncStatic 	ProcessMeter
+  800ab5b8 00027c 800ab5b8  4 measureBeginFrame 	ProcessMeter
+  800ab834 000010 800ab834  4 measureEndFrame 	ProcessMeter
+  800ab844 000010 800ab844  4 measureBeginRender 	ProcessMeter
+  800ab854 000010 800ab854  4 measureEndRender 	ProcessMeter
+  800ab864 000038 800ab864  4 FUN_800ab864 	Global
+  800ab89c 000014 800ab89c  4 FUN_800ab89c 	Global
   800ab8b0 0000b4 800ab8b0  4 FUN_800ab8b0 	Global
   800ab964 0000dc 800ab964  4 FUN_800ab964 	Global
-  800aba74 00029c 800aba74  4 FUN_800aba74 	Global
-  800abd10 0000a8 800abd10  4 FUN_800abd10 	Global
-  800abdb8 0001f4 800abdb8  4 FUN_800abdb8 	Global
+  800aba40 000018 800aba40  4 setVisible 	ProcessMeter
+  800aba58 000010 800aba58  4 FUN_800aba58 	Global
+  800aba68 00000c 800aba68  4 isVisible 	ProcessMeter
+  800aba74 00029c 800aba74  4 draw 	ProcessMeter
+  800abd10 0000a8 800abd10  4 draw 	ProcessMeter
+  800abdb8 0001f4 800abdb8  4 drawSetting 	ProcessMeter
+  800abfac 000004 800abfac  4 FUN_800abfac 	Global
   800abfb0 000058 800abfb0  4 FUN_800abfb0 	Global
+  800ac008 000008 800ac008  4 isVisible 	ProcessMeter
+  800ac010 000008 800ac010  4 setVisible 	ProcessMeter
+  800ac018 000008 800ac018  4 draw 	ProcessMeter
+  800ac020 000008 800ac020  4 FUN_800ac020 	Global
+  800ac028 000008 800ac028  4 measureEndRender 	ProcessMeter
+  800ac030 000008 800ac030  4 measureBeginRender 	ProcessMeter
+  800ac038 000008 800ac038  4 measureEndFrame 	ProcessMeter
+  800ac040 000008 800ac040  4 measureBeginFrame 	ProcessMeter
   800ac048 000054 800ac048  4 Disposer 	Disposer
   800ac09c 000074 800ac09c  4 ~Disposer 	Disposer
   800ac110 000078 800ac110  4 ~Archive 	Archive
   800ac188 0001e0 800ac188  4 mount 	Archive
   800ac368 0000a0 800ac368  4 getFile 	Archive
-  800ac408 000ea0 800ac408  4 FUN_800ac408 	Global
+  800ac408 0000b8 800ac408  4 decode 	Decomp
   800ac4c0 0001a8 800ac4c0  4 decodeSZS 	Decomp
-  800ad2a8 000084 800ad2a8  4 checkDecompressed 	Decomp
+  800ac668 000300 800ac668  4 decodeASH 	Decomp
+  800ac968 000940 800ac968  4 decodeASR 	Decomp
+  800ad2a8 000084 800ad2a8  4 checkCompressed 	Decomp
   800ad32c 000108 800ad32c  4 getExpandSize 	Decomp
-  800ad434 000108 800ad434  4 FUN_800ad434 	Global
-  800ad53c 000144 800ad53c  4 FUN_800ad53c 	Global
-  800ad680 000154 800ad680  4 FUN_800ad680 	Global
+  800ad434 000108 800ad434  4 getBitsCode 	Decomp
+  800ad53c 000144 800ad53c  4 readTree9 	Decomp
+  800ad680 000154 800ad680  4 readTree12 	Decomp
   800ad7d4 000068 800ad7d4  4 PostRetraceCallback 	Global
   800ad83c 000034 800ad83c  4 DrawDoneCallback 	Global
-  800ad870 000074 800ad870  4 FUN_800ad870 	Global
-  800ad8e4 000228 800ad8e4  4 FUN_800ad8e4 	Global
-  800adb30 0003b0 800adb30  4 FUN_800adb30 	Global
-  800adee8 000088 800adee8  4 FUN_800adee8 	Global
-  800adf70 000068 800adf70  4 FUN_800adf70 	Global
-  800adfd8 000074 800adfd8  4 FUN_800adfd8 	Global
-  800ae04c 0000bc 800ae04c  4 FUN_800ae04c 	Global
-  800ae108 000060 800ae108  4 FUN_800ae108 	Global
-  800ae168 0000a4 800ae168  4 FUN_800ae168 	Global
-  800ae214 000038 800ae214  4 FUN_800ae214 	Global
-  800ae24c 000094 800ae24c  4 FUN_800ae24c 	Global
+  800ad870 000074 800ad870  4 AsyncDisplay 	AsyncDisplay
+  800ad8e4 000228 800ad8e4  4 syncTick 	AsyncDisplay
+  800adb0c 000004 800adb0c  4 beginFrame 	AsyncDisplay
+  800adb10 000004 800adb10  4 beginRender 	AsyncDisplay
+  800adb14 000004 800adb14  4 endRender 	AsyncDisplay
+  800adb18 000018 800adb18  4 getTickPerFrame 	AsyncDisplay
+  800adb30 0003b0 800adb30  4 clearEFB 	AsyncDisplay
+  800adee0 000008 800adee0  4 getFileSize 	CntFile
+  800adee8 000088 800adee8  4 CntFile 	CntFile
+  800adf70 000068 800adf70  4 ~CntFile 	CntFile
+  800adfd8 000074 800adfd8  4 initiate 	CntFile
+  800ae04c 0000bc 800ae04c  4 open 	CntFile
+  800ae108 000060 800ae108  4 close 	CntFile
+  800ae168 0000a4 800ae168  4 readData 	CntFile
+  800ae20c 000008 800ae20c  4 writeData 	CntFile
+  800ae214 000038 800ae214  4 open 	CntFile
+  800ae24c 000094 800ae24c  4 ArcPlayer 	ArcPlayer
   800ae2e0 000080 800ae2e0  4 ~ArcPlayer 	ArcPlayer
-  800ae360 000020 800ae360  4 FUN_800ae360 	Global
-  800ae380 0000bc 800ae380  4 FUN_800ae380 	Global
-  800ae43c 000224 800ae43c  4 FUN_800ae43c 	Global
-  800ae660 000224 800ae660  4 FUN_800ae660 	Global
-  800ae884 000230 800ae884  4 FUN_800ae884 	Global
-  800aec4c 000090 800aec4c  4 FUN_800aec4c 	Global
-  800aecdc 00011c 800aecdc  4 FUN_800aecdc 	Global
-  800aedf8 00011c 800aedf8  4 FUN_800aedf8 	Global
-  800aef14 00011c 800aef14  4 FUN_800aef14 	Global
-  800af030 000014 800af030  4 Update 	SoundArchivePlayer
-  800af048 00005c 800af048  4 FUN_800af048 	Global
-  800af0a4 00003c 800af0a4  4 FUN_800af0a4 	Global
-  800af0e0 00003c 800af0e0  4 FUN_800af0e0 	Global
-  800af11c 000078 800af11c  4 FUN_800af11c 	Global
-  800af194 00003c 800af194  4 FUN_800af194 	Global
-  800af1d0 00003c 800af1d0  4 FUN_800af1d0 	Global
-  800af20c 000078 800af20c  4 FUN_800af20c 	Global
-  800af284 00003c 800af284  4 FUN_800af284 	Global
-  800af2c0 00003c 800af2c0  4 FUN_800af2c0 	Global
-  800af2fc 000078 800af2fc  4 FUN_800af2fc 	Global
-  800af384 0000b0 800af384  4 FUN_800af384 	Global
-  800af434 000068 800af434  4 FUN_800af434 	Global
-  800af49c 00005c 800af49c  4 FUN_800af49c 	Global
-  800af4f8 00017c 800af4f8  4 FUN_800af4f8 	Global
-  800af674 0000c0 800af674  4 FUN_800af674 	Global
-  800af734 0000bc 800af734  4 FUN_800af734 	Global
-  800af7f0 000034 800af7f0  4 FUN_800af7f0 	Global
+  800ae360 000020 800ae360  4 setSteamBlocks 	ArcPlayer
+  800ae380 0000bc 800ae380  4 openArchive 	ArcPlayer
+  800ae43c 000224 800ae43c  4 openDvdArchive 	ArcPlayer
+  800ae660 000224 800ae660  4 openNandArchive 	ArcPlayer
+  800ae884 000230 800ae884  4 openCntArchive 	ArcPlayer
+  800aeab4 000198 800aeab4  4 setupMemoryArchive 	ArcPlayer
+  800aec4c 000090 800aec4c  4 closeArchive 	ArcPlayer
+  800aecdc 00011c 800aecdc  4 loadGroup 	ArcPlayer
+  800aedf8 00011c 800aedf8  4 loadGroup 	ArcPlayer
+  800aef14 00011c 800aef14  4 loadGroup 	ArcPlayer
+  800af030 000014 800af030  4 calc 	ArcPlayer
+  800af048 00005c 800af048  4 stopAllSound 	ArcPlayer
+  800af0a4 00003c 800af0a4  4 holdSound 	ArcPlayer
+  800af0e0 00003c 800af0e0  4 holdSound 	ArcPlayer
+  800af11c 000078 800af11c  4 holdSound 	ArcPlayer
+  800af194 00003c 800af194  4 prepareSound 	ArcPlayer
+  800af1d0 00003c 800af1d0  4 prepareSound 	ArcPlayer
+  800af20c 000078 800af20c  4 prepareSound 	ArcPlayer
+  800af284 00003c 800af284  4 startSound 	ArcPlayer
+  800af2c0 00003c 800af2c0  4 startSound 	ArcPlayer
+  800af2fc 000078 800af2fc  4 startSound 	ArcPlayer
+  800af374 000010 800af374  4 setupMemoryArchive 	ArcPlayer
+  800af384 0000b0 800af384  4 ExpAudioMgr 	ExpAudioMgr
+  800af434 000068 800af434  4 ~ExpAudioMgr 	ExpAudioMgr
+  800af49c 00005c 800af49c  4 ExpAudioMgrArg 	ExpAudioMgrArg
+  800af4f8 00017c 800af4f8  4 initialize 	ExpAudioMgr
+  800af674 0000c0 800af674  4 openArchive 	ExpAudioMgr
+  800af734 0000bc 800af734  4 setupMemoryArchive 	ExpAudioMgr
+  800af7f0 000034 800af7f0  4 closeArchive 	ExpAudioMgr
+  800af824 000010 800af824  4 setupMemoryArchive 	ExpAudioMgr
   800af834 0000c0 800af834  4 FUN_800af834 	Global
-  800af8f4 00008c 800af8f4  4 FUN_800af8f4 	Global
-  800af980 0000d4 800af980  4 FUN_800af980 	Global
-  800afa54 000054 800afa54  4 FUN_800afa54 	Global
-  800afb34 0000dc 800afb34  4 FUN_800afb34 	Global
-  800afc10 000278 800afc10  4 FUN_800afc10 	Global
-  800afe88 0002a0 800afe88  4 FUN_800afe88 	Global
-  800b0128 000278 800b0128  4 FUN_800b0128 	Global
-  800b03a0 000278 800b03a0  4 FUN_800b03a0 	Global
-  800b0618 000048 800b0618  4 FUN_800b0618 	Global
-  800b0660 000064 800b0660  4 FUN_800b0660 	Global
-  800b06c4 0000c0 800b06c4  4 FUN_800b06c4 	Global
-  800b0784 000070 800b0784  4 FUN_800b0784 	Global
-  800b07f4 000070 800b07f4  4 FUN_800b07f4 	Global
-  800b0864 000070 800b0864  4 FUN_800b0864 	Global
-  800b08d4 000070 800b08d4  4 FUN_800b08d4 	Global
-  800b0944 0000e4 800b0944  4 FUN_800b0944 	Global
-  800b0a28 00000c 800b0a28  4 FUN_800b0a28 	Global
-  800b0a34 00000c 800b0a34  4 FUN_800b0a34 	Global
-  800b0a40 00000c 800b0a40  4 FUN_800b0a40 	Global
-  800b0a4c 00000c 800b0a4c  4 FUN_800b0a4c 	Global
+  800af8f4 00008c 800af8f4  4 loadState 	SoundHeapMgr
+  800af980 0000d4 800af980  4 saveState 	SoundHeapMgr
+  800afa54 000054 800afa54  4 getCurrentLevel 	SoundHeapMgr
+  800afab0 000008 800afab0  4 FUN_800afab0 	Global
+  800afab8 000008 800afab8  4 FUN_800afab8 	Global
+  800afac0 000008 800afac0  4 calc 	SimpleAudioMgr
+  800afac8 000008 800afac8  4 FUN_800afac8 	Global
+  800afad0 000008 800afad0  4 FUN_800afad0 	Global
+  800afad8 000008 800afad8  4 FUN_800afad8 	Global
+  800afae0 000008 800afae0  4 FUN_800afae0 	Global
+  800afae8 000008 800afae8  4 FUN_800afae8 	Global
+  800afaf0 000008 800afaf0  4 FUN_800afaf0 	Global
+  800afaf8 000008 800afaf8  4 FUN_800afaf8 	Global
+  800afb00 000008 800afb00  4 FUN_800afb00 	Global
+  800afb08 000008 800afb08  4 FUN_800afb08 	Global
+  800afb10 000008 800afb10  4 openArchive 	ExpAudioMgr
+  800afb18 000008 800afb18  4 ~ExpAudioMgr 	ExpAudioMgr
+  800afb20 000014 800afb20  4 AudioFx 	AudioFx
+  800afb34 0000dc 800afb34  4 ~AudioFx 	AudioFx
+  800afc10 000278 800afc10  4 createFxReverbHi 	AudioFx
+  800afe88 0002a0 800afe88  4 createFxReverbHiDpl2 	AudioFx
+  800b0128 000278 800b0128  4 createFxChorus 	AudioFx
+  800b03a0 000278 800b03a0  4 createFxDelay 	AudioFx
+  800b0618 000048 800b0618  4 AudioFxMgr 	AudioFxMgr
+  800b0660 000064 800b0660  4 ~AudioFxMgr 	AudioFxMgr
+  800b06c4 0000c0 800b06c4  4 initializeFx 	AudioFxMgr
+  800b0784 000070 800b0784  4 setFxReverbHi 	AudioFxMgr
+  800b07f4 000070 800b07f4  4 setFxReverbHiDpl2 	AudioFxMgr
+  800b0864 000070 800b0864  4 setFxChorus 	AudioFxMgr
+  800b08d4 000070 800b08d4  4 setFxDelay 	AudioFxMgr
+  800b0944 0000e4 800b0944  4 clearFx 	AudioFxMgr
+  800b0a28 00000c 800b0a28  4 getDefaultFxReverbHi 	AudioFxMgr
+  800b0a34 00000c 800b0a34  4 getDefaultFxReverbHiDpl2 	AudioFxMgr
+  800b0a40 00000c 800b0a40  4 getDefaultFxChorus 	AudioFxMgr
+  800b0a4c 00000c 800b0a4c  4 getDefaultFxDelay 	AudioFxMgr
   800b0a58 0000a4 800b0a58  4 FUN_800b0a58 	Global
-  800b0afc 00008c 800b0afc  4 FUN_800b0afc 	Global
-  800b0b88 000008 800b0b88  4 FUN_800b0b88 	Global
-  800b0b90 00003c 800b0b90  4 FUN_800b0b90 	Global
-  800b0bcc 0000b4 800b0bcc  4 FUN_800b0bcc 	Global
-  800b0c80 00008c 800b0c80  4 FUN_800b0c80 	Global
-  800b0d0c 000174 800b0d0c  4 FUN_800b0d0c 	Global
-  800b0e80 00004c 800b0e80  4 FUN_800b0e80 	Global
-  800b0ee4 002438 800b0ee4  4 FUN_800b0ee4 	Global
-  800b0eec 000008 800b0eec  4 FUN_800b0eec 	Global
-  800b0f18 00001c 800b0f18  4 FUN_800b0f18 	Global
-  800b0f34 000040 800b0f34  4 FUN_800b0f34 	Global
-  800b0f74 0000f8 800b0f74  4 FUN_800b0f74 	Global
-  800b106c 00030c 800b106c  4 FUN_800b106c 	Global
-  800b1378 000040 800b1378  4 FUN_800b1378 	Global
-  800b13b8 000110 800b13b8  4 FUN_800b13b8 	Global
-  800b14c8 0000b8 800b14c8  4 FUN_800b14c8 	Global
-  800b1580 000160 800b1580  4 FUN_800b1580 	Global
-  800b1744 000008 800b1744  4 FUN_800b1744 	Global
-  800b174c 000004 800b174c  4 FUN_800b174c 	Global
+  800b0afc 00008c 800b0afc  4 createSoundHeap 	SoundHeapMgr
+  800b0b88 000008 800b0b88  4 destroySoundHeap 	SoundHeapMgr
+  800b0b90 00003c 800b0b90  4 SimpleAudioMgrArg 	SimpleAudioMgrArg
+  800b0bcc 0000b4 800b0bcc  4 SimpleAudioMgr 	SimpleAudioMgr
+  800b0c80 00008c 800b0c80  4 ~SimpleAudioMgr 	SimpleAudioMgr
+  800b0d0c 000174 800b0d0c  4 initialize 	SimpleAudioMgr
+  800b0e80 00004c 800b0e80  4 calc 	SimpleAudioMgr
+  800b0ecc 000008 800b0ecc  4 FUN_800b0ecc 	Global
+  800b0ed4 000008 800b0ed4  4 openNandArchive 	ExpAudioMgr
+  800b0edc 000008 800b0edc  4 FUN_800b0edc 	Global
+  800b0ee4 000008 800b0ee4  4 setupMemoryArchive 	ArcPlayer
+  800b0eec 000008 800b0eec  4 closeArchive 	ArcPlayer
+  800b0ef4 000008 800b0ef4  4 FUN_800b0ef4 	Global
+  800b0efc 000008 800b0efc  4 FUN_800b0efc 	Global
+  800b0f04 000008 800b0f04  4 FUN_800b0f04 	Global
+  800b0f0c 000004 800b0f0c  4 initialize 	IAudioMgr
+  800b0f10 000008 800b0f10  4 ~SimpleAudioMgr 	SimpleAudioMgr
+  800b0f18 00001c 800b0f18  4 AudioSystem 	AudioSystem
+  800b0f34 000040 800b0f34  4 ~AudioSystem 	AudioSystem
+  800b0f74 0000f8 800b0f74  4 calc 	AudioSystem
+  800b106c 00030c 800b106c  4 MsgRes 	MsgRes
+  800b1378 000040 800b1378  4 ~MsgRes 	MsgRes
+  800b13b8 000110 800b13b8  4 analyzeTag 	MsgRes
+  800b14c8 0000b8 800b14c8  4 getMsg 	MsgRes
+  800b1580 000160 800b1580  4 getMsgEntry 	MsgRes
+  800b16e0 000008 800b16e0  4 ModifierTravFunc_SetSimpleLightType 	ParticleManager
+  800b16e8 000024 800b16e8  4 ModifierTravFunc_SetSimpleLightAmbient 	ParticleManager
+  800b170c 000014 800b170c  4 ModifierTravFunc_SetScale 	ParticleManager
+  800b1720 00001c 800b1720  4 ModifierTravFunc_SetRotate 	ParticleManager
+  800b173c 000008 800b173c  4 __sinit_\eggEffect_cpp 	Global
+  800b1744 000008 800b1744  4 create 	Exception
+  800b174c 000004 800b174c  4 setUserCallback 	Exception
   800b1750 00001c 800b1750  4 strlen 	Global
   800b176c 0000c8 800b176c  4 __va_arg 	Global
   800b1834 000018 800b1834  4 __register_global_object 	Global
   800b184c 000048 800b184c  4 __destroy_global_chain 	Global
   800b1894 000104 800b1894  4 __construct_new_array 	Global
-  800b1998 0000bc 800b1998  4 FUN_800b1998 	Global
+  800b1998 0000bc 800b1998  4 ~__partial_array_destructor 	__partial_array_destructor
   800b1a54 0000f8 800b1a54  4 __construct_array 	Global
   800b1b4c 000078 800b1b4c  4 __destroy_arr 	Global
-  800b1bc4 000030 800b1bc4  4 __ptmf_cmpr 	Global
+  800b1bc4 000030 800b1bc4  4 __ptmf_test 	Global
   800b1bf4 000028 800b1bf4  4 __ptmf_scall 	Global
   800b1c1c 00005c 800b1c1c  4 __cvt_fp2unsigned 	Global
   800b1c78 000004 800b1c78  4 __save_fpr 	Global
@@ -2999,13 +3105,13 @@
   800b2b14 000288 800b2b14  4 __timesdec 	Global
   800b2d9c 0000e8 800b2d9c  4 __str2dec 	Global
   800b2e88 00036c 800b2e88  4 __two_exp 	Global
-  800b31f4 0000e4 800b31f4  4 FUN_800b31f4 	Global
-  800b32d8 000100 800b32d8  4 FUN_800b32d8 	Global
-  800b33d8 00051c 800b33d8  4 FUN_800b33d8 	Global
-  800b38f4 000164 800b38f4  4 FUN_800b38f4 	Global
+  800b31f4 0000e4 800b31f4  4 __equals_dec 	Global
+  800b32d8 000100 800b32d8  4 __less_dec 	Global
+  800b33d8 00051c 800b33d8  4 __minus_dec 	Global
+  800b38f4 000164 800b38f4  4 __num2dec_internal 	Global
   800b3a58 0001a0 800b3a58  4 __num2dec 	Global
-  800b3bf8 0007b0 800b3bf8  4 FUN_800b3bf8 	Global
-  800b43a8 000010 800b43a8  4 FUN_800b43a8 	Global
+  800b3bf8 0007b0 800b3bf8  4 __dec2num 	Global
+  800b43a8 000010 800b43a8  4 abs 	Global
   800b43b8 000028 800b43b8  4 __prep_buffer 	Global
   800b43e0 0000b8 800b43e0  4 __flush_buffer 	Global
   800b4498 000308 800b4498  4 __fwrite 	Global
@@ -3017,7 +3123,7 @@
   800b4c00 000018 800b4c00  4 mbtowc 	Global
   800b4c18 00004c 800b4c18  4 __mbtowc_noconv 	Global
   800b4c64 00001c 800b4c64  4 __wctomb_noconv 	Global
-  800b4c80 0000c0 800b4c80  4 FUN_800b4c80 	Global
+  800b4c80 0000c0 800b4c80  4 mbstowcs 	Global
   800b4d40 0000b8 800b4d40  4 wcstombs 	Global
   800b4df8 0000cc 800b4df8  4 memmove 	Global
   800b4ec4 00002c 800b4ec4  4 memchr 	Global
@@ -3045,9 +3151,10 @@
   800b7500 0000d8 800b7500  4 snprintf 	Global
   800b75d8 0000d0 800b75d8  4 sprintf 	Global
   800b76a8 000020 800b76a8  4 rand 	Global
-  800b76c8 0006b4 800b76c8  4 FUN_800b76c8 	Global
-  800b7d7c 000d60 800b7d7c  4 FUN_800b7d7c 	Global
-  800b8b6c 0000c8 800b8b6c  4 FUN_800b8b6c 	Global
+  800b76c8 0006b4 800b76c8  4 parse_format 	Global
+  800b7d7c 000d60 800b7d7c  4 __sformatter 	Global
+  800b8adc 000090 800b8adc  4 __StringRead 	Global
+  800b8b6c 0000c8 800b8b6c  4 sscanf 	Global
   800b8c34 0000c0 800b8c34  4 strcpy 	Global
   800b8cf4 000044 800b8cf4  4 strncpy 	Global
   800b8d38 00002c 800b8d38  4 strcat 	Global
@@ -3056,25 +3163,25 @@
   800b8ecc 000040 800b8ecc  4 strncmp 	Global
   800b8f0c 000030 800b8f0c  4 strchr 	Global
   800b8f3c 00006c 800b8f3c  4 strstr 	Global
-  800b8fa8 0013f4 800b8fa8  4 FUN_800b8fa8 	Global
-  800ba39c 000084 800ba39c  4 FUN_800ba39c 	Global
-  800ba420 000430 800ba420  4 FUN_800ba420 	Global
-  800ba850 0004c4 800ba850  4 FUN_800ba850 	Global
-  800bad14 000008 800bad14  4 FUN_800bad14 	Global
+  800b8fa8 0013f4 800b8fa8  4 __strtold 	Global
+  800ba39c 000084 800ba39c  4 atof 	Global
+  800ba420 000430 800ba420  4 __strtoul 	Global
+  800ba850 0004c4 800ba850  4 __strtoull 	Global
+  800bad14 000008 800bad14  4 wmemcpy 	Global
   800bad1c 000028 800bad1c  4 wmemchr 	Global
-  800bad44 0005c0 800bad44  4 FUN_800bad44 	Global
-  800bb304 000234 800bb304  4 FUN_800bb304 	Global
-  800bb538 0002ac 800bb538  4 FUN_800bb538 	Global
-  800bb7e4 0003c8 800bb7e4  4 FUN_800bb7e4 	Global
-  800bbbac 000128 800bbbac  4 FUN_800bbbac 	Global
-  800bbcd4 0007a0 800bbcd4  4 FUN_800bbcd4 	Global
-  800bc474 000944 800bc474  4 FUN_800bc474 	Global
-  800bcdb8 00006c 800bcdb8  4 FUN_800bcdb8 	Global
-  800bce24 0000dc 800bce24  4 FUN_800bce24 	Global
+  800bad44 0005c0 800bad44  4 parse_format 	Global
+  800bb304 000234 800bb304  4 long2str 	Global
+  800bb538 0002ac 800bb538  4 longlong2str 	Global
+  800bb7e4 0003c8 800bb7e4  4 double2hex 	Global
+  800bbbac 000128 800bbbac  4 round_decimal 	Global
+  800bbcd4 0007a0 800bbcd4  4 float2str 	Global
+  800bc474 000944 800bc474  4 __wpformatter 	Global
+  800bcdb8 00006c 800bcdb8  4 __wStringWrite 	Global
+  800bce24 0000dc 800bce24  4 swprintf 	Global
   800bcf00 00001c 800bcf00  4 wcslen 	Global
   800bcf1c 00001c 800bcf1c  4 wcscpy 	Global
   800bcf38 000044 800bcf38  4 wcsncpy 	Global
-  800bcf7c 00002c 800bcf7c  4 FUN_800bcf7c 	Global
+  800bcf7c 00002c 800bcf7c  4 wcsncat 	Global
   800bcfa8 000034 800bcfa8  4 wcscmp 	Global
   800bcfdc 00002c 800bcfdc  4 wcschr 	Global
   800bd008 000084 800bd008  4 fwide 	Global
@@ -3120,28 +3227,28 @@
   800c13f4 000028 800c13f4  4 TRKNubWelcome 	Global
   800c141c 000024 800c141c  4 TRKTerminateNub 	Global
   800c1440 000138 800c1440  4 TRKInitializeNub 	Global
-  800c1578 00002c 800c1578  4 FUN_800c1578 	Global
-  800c15a4 0000f0 800c15a4  4 FUN_800c15a4 	Global
-  800c1694 000098 800c1694  4 FUN_800c1694 	Global
-  800c172c 0000e8 800c172c  4 FUN_800c172c 	Global
-  800c1814 0000fc 800c1814  4 FUN_800c1814 	Global
-  800c1910 000068 800c1910  4 FUN_800c1910 	Global
-  800c1978 0000fc 800c1978  4 FUN_800c1978 	Global
-  800c1a74 00008c 800c1a74  4 FUN_800c1a74 	Global
-  800c1b00 0000a4 800c1b00  4 FUN_800c1b00 	Global
+  800c1578 00002c 800c1578  4 TRKMessageSend 	Global
+  800c15a4 0000f0 800c15a4  4 TRKReadBuffer_ui32 	Global
+  800c1694 000098 800c1694  4 TRKReadBuffer_ui8 	Global
+  800c172c 0000e8 800c172c  4 TRKReadBuffer1_ui64 	Global
+  800c1814 0000fc 800c1814  4 TRKAppendBuffer_ui32 	Global
+  800c1910 000068 800c1910  4 TRKAppendBuffer_ui8 	Global
+  800c1978 0000fc 800c1978  4 TRKAppendBuffer1_ui64 	Global
+  800c1a74 00008c 800c1a74  4 TRKReadBuffer 	Global
+  800c1b00 0000a4 800c1b00  4 TRKAppendBuffer 	Global
   800c1ba4 000030 800c1ba4  4 TRKSetBufferPosition 	Global
-  800c1bd4 000040 800c1bd4  4 FUN_800c1bd4 	Global
-  800c1c14 000064 800c1c14  4 FUN_800c1c14 	Global
+  800c1bd4 000040 800c1bd4  4 TRKResetBuffer 	Global
+  800c1c14 000064 800c1c14  4 TRKReleaseBuffer 	Global
   800c1c78 00002c 800c1c78  4 TRKGetBuffer 	Global
-  800c1ca4 0000c8 800c1ca4  4 FUN_800c1ca4 	Global
+  800c1ca4 0000c8 800c1ca4  4 TRKGetFreeBuffer 	Global
   800c1d6c 000074 800c1d6c  4 TRKInitializeMessageBuffers 	Global
   800c1de0 000008 800c1de0  4 TRKTerminateSerialHandler 	Global
   800c1de8 000024 800c1de8  4 TRKInitializeSerialHandler 	Global
-  800c1e0c 000050 800c1e0c  4 FUN_800c1e0c 	Global
+  800c1e0c 000050 800c1e0c  4 TRKProcessInput 	Global
   800c1e5c 000060 800c1e5c  4 TRKGetInput 	Global
   800c1ebc 0000d0 800c1ebc  4 TRKTestForPacket 	Global
   800c1f8c 000004 800c1f8c  4 usr_put_initalize 	Global
-  800c1f90 000088 800c1f90  4 FUN_800c1f90 	Global
+  800c1f90 000088 800c1f90  4 usr_puts_serial 	Global
   800c2018 000140 800c2018  4 TRKDispatchMessage 	Global
   800c2158 000008 800c2158  4 TRKInitializeDispatcher 	Global
   800c2160 0000cc 800c2160  4 TRKDoSetOption 	Global
@@ -3158,186 +3265,210 @@
   800c3080 00007c 800c3080  4 TRKDoReset 	Global
   800c30fc 00009c 800c30fc  4 TRKDoDisconnect 	Global
   800c3198 000088 800c3198  4 TRKDoConnect 	Global
-  800c3220 00000c 800c3220  4 FUN_800c3220 	Global
-  800c322c 000010 800c322c  4 FUN_800c322c 	Global
+  800c3220 00000c 800c3220  4 SetTRKConnected 	Global
+  800c322c 000010 800c322c  4 GetTRKConnected 	Global
   800c323c 000110 800c323c  4 HandlePositionFileSupportRequest 	Global
   800c334c 0000e8 800c334c  4 HandleCloseFileSupportRequest 	Global
   800c3434 00011c 800c3434  4 HandleOpenFileSupportRequest 	Global
-  800c3550 000180 800c3550  4 FUN_800c3550 	Global
+  800c3550 000180 800c3550  4 TRKRequestSend 	Global
   800c36d0 000220 800c36d0  4 TRKSuppAccessFile 	Global
   800c38f0 000008 800c38f0  4 TRKReleaseMutex 	Global
   800c38f8 000008 800c38f8  4 TRKAcquireMutex 	Global
-  800c3900 000008 800c3900  4 FUN_800c3900 	Global
-  800c3908 000098 800c3908  4 FUN_800c3908 	Global
+  800c3900 000008 800c3900  4 TRKInitializeMutex 	Global
+  800c3908 000098 800c3908  4 TRKDoNotifyStopped 	Global
   800c39a0 000038 800c39a0  4 TRK_flush_cache 	Global
   800c39d8 0000b8 800c39d8  4 TRK_fill_mem 	Global
-  800c3a90 00001c 800c3a90  4 FUN_800c3a90 	Global
-  800c3aac 000008 800c3aac  4 FUN_800c3aac 	Global
-  800c3ab4 000008 800c3ab4  4 FUN_800c3ab4 	Global
-  800c3abc 00003c 800c3abc  4 FUN_800c3abc 	Global
-  800c3d28 0007b8 800c3d28  4 TRKSwapAndGo 	Global
-  800c3e40 000024 800c3e40  4 FUN_800c3e40 	Global
-  800c3e64 000024 800c3e64  4 FUN_800c3e64 	Global
+  800c3a90 00001c 800c3a90  4 TRK_strlen 	Global
+  800c3aac 000008 800c3aac  4 __TRK_get_MSR 	Global
+  800c3ab4 000008 800c3ab4  4 __TRK_set_MSR 	Global
+  800c3abc 00003c 800c3abc  4 TRK_ppc_memcpy 	Global
+  800c3af8 000194 800c3af8  4 TRKInterruptHandler 	Global
+  800c3c8c 00009c 800c3c8c  4 TRKExceptionHandler 	Global
+  800c3d28 0000c4 800c3d28  4 TRKSwapAndGo 	Global
+  800c3dec 000054 800c3dec  4 TRKInterruptHandlerEnableInterrupts 	Global
+  800c3e40 000024 800c3e40  4 ReadFPSCR 	Global
+  800c3e64 000024 800c3e64  4 WriteFPSCR 	Global
   800c3e88 000010 800c3e88  4 TRKTargetSetInputPendingPtr 	Global
-  800c3e98 000018 800c3e98  4 FUN_800c3e98 	Global
+  800c3e98 000018 800c3e98  4 TRKTargetStop 	Global
   800c3eb0 000010 800c3eb0  4 TRKTargetSetStopped 	Global
   800c3ec0 000010 800c3ec0  4 TRKTargetStopped 	Global
   800c3ed0 000200 800c3ed0  4 TRKTargetSupportRequest 	Global
-  800c40d0 000010 800c40d0  4 FUN_800c40d0 	Global
-  800c40e0 00007c 800c40e0  4 FUN_800c40e0 	Global
-  800c415c 00006c 800c415c  4 FUN_800c415c 	Global
-  800c41c8 000084 800c41c8  4 FUN_800c41c8 	Global
-  800c424c 00008c 800c424c  4 FUN_800c424c 	Global
+  800c40d0 000010 800c40d0  4 TRKTargetGetPC 	Global
+  800c40e0 00007c 800c40e0  4 TRKTargetStepOutOfRange 	Global
+  800c415c 00006c 800c415c  4 TRKTargetSingleStep 	Global
+  800c41c8 000084 800c41c8  4 TRKTargetAddExceptionInfo 	Global
+  800c424c 00008c 800c424c  4 TRKTargetAddStopInfo 	Global
   800c42d8 00015c 800c42d8  4 TRKTargetInterrupt 	Global
-  800c44e0 000438 800c44e0  4 FUN_800c44e0 	Global
-  800c4918 000170 800c4918  4 FUN_800c4918 	Global
-  800c4a88 00050c 800c4a88  4 FUN_800c4a88 	Global
-  800c4f94 0000f4 800c4f94  4 FUN_800c4f94 	Global
-  800c5088 00004c 800c5088  4 FUN_800c5088 	Global
-  800c50d4 00014c 800c50d4  4 FUN_800c50d4 	Global
-  800c5220 0002a4 800c5220  4 FUN_800c5220 	Global
-  800c54d0 000008 800c54d0  4 FUN_800c54d0 	Global
+  800c4434 0000ac 800c4434  4 TRKPostInterruptEvent 	Global
+  800c44e0 000438 800c44e0  4 TRKTargetAccessExtended2 	Global
+  800c4918 000170 800c4918  4 TRKTargetAccessExtended1 	Global
+  800c4a88 00050c 800c4a88  4 TRKTargetAccessFP 	Global
+  800c4f94 0000f4 800c4f94  4 TRKTargetAccessDefault 	Global
+  800c5088 00004c 800c5088  4 TRKTargetReadInstruction 	Global
+  800c50d4 00014c 800c50d4  4 TRKTargetAccessMemory 	Global
+  800c5220 0002a4 800c5220  4 TRKValidMemory32 	Global
+  800c54d0 000008 800c54d0  4 TRKAccessFile 	Global
+  800c54d8 000008 800c54d8  4 TRKOpenFile 	Global
+  800c54e0 000008 800c54e0  4 TRKCloseFile 	Global
+  800c54e8 000008 800c54e8  4 TRKPositionFile 	Global
   800c54f0 00018c 800c54f0  4 TRKSaveExtended1Block 	Global
-  800c56a8 0001b8 800c56a8  4 FUN_800c56a8 	Global
+  800c56a8 0001b8 800c56a8  4 TRKRestoreExtendedBlock 	Global
   800c5860 0000bc 800c5860  4 __TRK_write_console 	Global
-  800c591c 0000bc 800c591c  4 FUN_800c591c 	Global
+  800c591c 0000bc 800c591c  4 __read_console 	Global
   800c59d8 000094 800c59d8  4 InitMetroTRK 	Global
-  800c5a70 0002c8 800c5a70  4 InitMetroTRK_BBA 	Global
+  800c5a70 000090 800c5a70  4 InitMetroTRK_BBA 	Global
   800c5b04 00004c 800c5b04  4 TRKInitializeTarget 	Global
-  800c5b50 00012c 800c5b50  4 FUN_800c5b50 	Global
-  800c5c7c 000058 800c5c7c  4 FUN_800c5c7c 	Global
-  800c5cd4 000020 800c5cd4  4 FUN_800c5cd4 	Global
-  800c5d38 0022c8 800c5d38  4 FUN_800c5d38 	Global
-  800c5dc0 000004 800c5dc0  4 FUN_800c5dc0 	Global
+  800c5b50 00012c 800c5b50  4 __TRK_copy_vectors 	Global
+  800c5c7c 000058 800c5c7c  4 TRKTargetTranslate 	Global
+  800c5cd4 000020 800c5cd4  4 EnableMetroTRKInterrupts 	Global
+  800c5cf4 000044 800c5cf4  4 TRK_main 	Global
+  800c5d38 000088 800c5d38  4 TRKLoadContext 	Global
+  800c5dc0 000004 800c5dc0  4 TRKUARTInterruptHandler 	Global
   800c5dc4 000058 800c5dc4  4 InitializeProgramEndTrap 	Global
   800c5e1c 000030 800c5e1c  4 TRK_board_display 	Global
   800c5e4c 000030 800c5e4c  4 UnreserveEXI2Port 	Global
   800c5e7c 000030 800c5e7c  4 ReserveEXI2Port 	Global
   800c5eac 00003c 800c5eac  4 TRKWriteUARTN 	Global
-  800c5ee8 00003c 800c5ee8  4 FUN_800c5ee8 	Global
-  800c5f24 000030 800c5f24  4 FUN_800c5f24 	Global
-  800c5f54 000048 800c5f54  4 FUN_800c5f54 	Global
+  800c5ee8 00003c 800c5ee8  4 TRKReadUARTN 	Global
+  800c5f24 000030 800c5f24  4 TRKPollUART 	Global
+  800c5f54 000048 800c5f54  4 EnableEXI2Interrupts 	Global
   800c5f9c 000050 800c5f9c  4 TRKInitializeIntDrivenUART 	Global
   800c5fec 0001d4 800c5fec  4 InitMetroTRKCommTable 	Global
-  800c61c0 000038 800c61c0  4 FUN_800c61c0 	Global
+  800c61c0 000038 800c61c0  4 TRKEXICallback 	Global
   800c61f8 000034 800c61f8  4 TRKTargetContinue 	Global
-  800c622c 000010 800c622c  4 FUN_800c622c 	Global
-  800c623c 00000c 800c623c  4 FUN_800c623c 	Global
-  800c6290 000024 800c6290  4 FUN_800c6290 	Global
-  800c62b4 000070 800c62b4  4 FUN_800c62b4 	Global
-  800c6324 000024 800c6324  4 FUN_800c6324 	Global
-  800c6348 000024 800c6348  4 FUN_800c6348 	Global
-  800c636c 000074 800c636c  4 FUN_800c636c 	Global
-  800c63e0 0000b4 800c63e0  4 FUN_800c63e0 	Global
-  800c64c8 00003c 800c64c8  4 FUN_800c64c8 	Global
-  800c6504 00004c 800c6504  4 FUN_800c6504 	Global
-  800c6550 000108 800c6550  4 FUN_800c6550 	Global
-  800c6658 000108 800c6658  4 FUN_800c6658 	Global
-  800c6760 000050 800c6760  4 FUN_800c6760 	Global
-  800c67b0 000008 800c67b0  4 FUN_800c67b0 	Global
-  800c67b8 000024 800c67b8  4 FUN_800c67b8 	Global
-  800c67dc 000030 800c67dc  4 FUN_800c67dc 	Global
-  800c680c 000004 800c680c  4 FUN_800c680c 	Global
-  800c6858 00005c 800c6858  4 FUN_800c6858 	Global
-  800c68b4 000054 800c68b4  4 FUN_800c68b4 	Global
-  800c6908 0000a4 800c6908  4 FUN_800c6908 	Global
-  800c69ac 000080 800c69ac  4 FUN_800c69ac 	Global
-  800c6a2c 000110 800c6a2c  4 FUN_800c6a2c 	Global
-  800c6b3c 000004 800c6b3c  4 FUN_800c6b3c 	Global
-  800c6b40 000004 800c6b40  4 FUN_800c6b40 	Global
-  800c6b44 0002e8 800c6b44  4 FUN_800c6b44 	Global
-  800c6e2c 0000bc 800c6e2c  4 FUN_800c6e2c 	Global
-  800c6ee8 000124 800c6ee8  4 FUN_800c6ee8 	Global
-  800c700c 000104 800c700c  4 FUN_800c700c 	Global
-  800c7110 0000e0 800c7110  4 FUN_800c7110 	Global
-  800c71f0 0000e0 800c71f0  4 FUN_800c71f0 	Global
-  800c72d0 000090 800c72d0  4 FUN_800c72d0 	Global
+  800c622c 000010 800c622c  4 GetUseSerialIO 	Global
+  800c623c 00000c 800c623c  4 SetUseSerialIO 	Global
+  800c6248 000008 800c6248  4 udp_cc_post_setup 	Global
+  800c6250 000008 800c6250  4 udp_cc_pre_continue 	Global
+  800c6258 000008 800c6258  4 udp_cc_peek 	Global
+  800c6260 000008 800c6260  4 udp_cc_write 	Global
+  800c6268 000008 800c6268  4 udp_cc_read 	Global
+  800c6270 000008 800c6270  4 udp_cc_close 	Global
+  800c6278 000008 800c6278  4 udp_cc_open 	Global
+  800c6280 000008 800c6280  4 udp_cc_shutdown 	Global
+  800c6288 000008 800c6288  4 udp_cc_initialize 	Global
+  800c6290 000024 800c6290  4 gdev_cc_initinterrupts 	Global
+  800c62b4 000070 800c62b4  4 gdev_cc_peek 	Global
+  800c6324 000024 800c6324  4 gdev_cc_post_stop 	Global
+  800c6348 000024 800c6348  4 gdev_cc_pre_continue 	Global
+  800c636c 000074 800c636c  4 gdev_cc_write 	Global
+  800c63e0 0000b4 800c63e0  4 gdev_cc_read 	Global
+  800c6494 000008 800c6494  4 gdev_cc_close 	Global
+  800c649c 000024 800c649c  4 gdev_cc_open 	Global
+  800c64c0 000008 800c64c0  4 gdev_cc_shutdown 	Global
+  800c64c8 00003c 800c64c8  4 gdev_cc_initialize 	Global
+  800c6504 00004c 800c6504  4 OutputData 	Global
+  800c6550 000108 800c6550  4 CircleBufferReadBytes 	Global
+  800c6658 000108 800c6658  4 CircleBufferWriteBytes 	Global
+  800c6760 000050 800c6760  4 CircleBufferInitialize 	Global
+  800c67b0 000008 800c67b0  4 CBGetBytesAvailableForRead 	Global
+  800c67b8 000024 800c67b8  4 MWExitCriticalSection 	Global
+  800c67dc 000030 800c67dc  4 MWEnterCriticalSection 	Global
+  800c680c 000004 800c680c  4 MWInitializeCriticalSection 	Global
+  800c6810 000020 800c6810  4 __DBMtrHandler 	Global
+  800c6834 000020 800c6834  4 __DBIntrHandler 	Global
+  800c6858 00005c 800c6858  4 DBInitComm 	Global
+  800c68b4 000054 800c68b4  4 DBInitInterrupts 	Global
+  800c6908 0000a4 800c6908  4 DBQueryData 	Global
+  800c69ac 000080 800c69ac  4 DBRead 	Global
+  800c6a2c 000110 800c6a2c  4 DBWrite 	Global
+  800c6b3c 000004 800c6b3c  4 DBOpen 	Global
+  800c6b40 000004 800c6b40  4 DBClose 	Global
+  800c6b44 0002e8 800c6b44  4 __EXI2Imm 	Global
+  800c6e2c 0000bc 800c6e2c  4 __DBEXIInit 	Global
+  800c6ee8 000124 800c6ee8  4 __DBEXIReadReg 	Global
+  800c700c 000104 800c700c  4 __DBEXIWriteReg 	Global
+  800c7110 0000e0 800c7110  4 __DBEXIReadRam 	Global
+  800c71f0 0000e0 800c71f0  4 __DBEXIWriteRam 	Global
+  800c72d0 000090 800c72d0  4 KPADSetBtnRepeat 	Global
   800c7360 00001c 800c7360  4 KPADSetPosParam 	Global
   800c737c 00001c 800c737c  4 KPADSetHoriParam 	Global
   800c7398 00001c 800c7398  4 KPADSetDistParam 	Global
   800c73b4 00001c 800c73b4  4 KPADSetAccParam 	Global
-  800c73d0 0001d4 800c73d0  4 FUN_800c73d0 	Global
+  800c73d0 0001d4 800c73d0  4 reset_kpad 	Global
   800c75a4 0000d0 800c75a4  4 FUN_800c75a4 	Global
-  800c7674 000194 800c7674  4 FUN_800c7674 	Global
-  800c7808 000194 800c7808  4 FUN_800c7808 	Global
-  800c799c 000124 800c799c  4 FUN_800c799c 	Global
-  800c7ac0 000608 800c7ac0  4 FUN_800c7ac0 	Global
-  800c80c8 0001e8 800c80c8  4 FUN_800c80c8 	Global
-  800c82b0 000228 800c82b0  4 FUN_800c82b0 	Global
-  800c84d8 0001b4 800c84d8  4 FUN_800c84d8 	Global
-  800c868c 000174 800c868c  4 FUN_800c868c 	Global
-  800c8800 0003e8 800c8800  4 FUN_800c8800 	Global
-  800c8be8 000458 800c8be8  4 FUN_800c8be8 	Global
-  800c9040 000128 800c9040  4 FUN_800c9040 	Global
-  800c9168 000224 800c9168  4 FUN_800c9168 	Global
-  800c938c 000278 800c938c  4 FUN_800c938c 	Global
+  800c7674 000194 800c7674  4 calc_button_repeat 	Global
+  800c7808 000194 800c7808  4 calc_acc_horizon 	Global
+  800c799c 000124 800c799c  4 calc_acc_vertical 	Global
+  800c7ac0 000608 800c7ac0  4 read_kpad_acc 	Global
+  800c80c8 0001e8 800c80c8  4 select_2obj_first 	Global
+  800c82b0 000228 800c82b0  4 select_2obj_continue 	Global
+  800c84d8 0001b4 800c84d8  4 select_1obj_first 	Global
+  800c868c 000174 800c868c  4 select_1obj_continue 	Global
+  800c8800 0003e8 800c8800  4 calc_dpd_variable 	Global
+  800c8be8 000458 800c8be8  4 read_kpad_dpd 	Global
+  800c9040 000128 800c9040  4 clamp_stick_circle 	Global
+  800c9168 000224 800c9168  4 clamp_stick_cross 	Global
+  800c938c 000278 800c938c  4 read_kpad_stick 	Global
   800c9604 000718 800c9604  4 KPADRead 	Global
-  800c9d1c 00035c 800c9d1c  4 FUN_800c9d1c 	Global
-  800ca078 00001c 800ca078  4 FUN_800ca078 	Global
-  800ca094 00001c 800ca094  4 FUN_800ca094 	Global
+  800c9d1c 00035c 800c9d1c  4 KPADInit 	Global
+  800ca078 00001c 800ca078  4 KPADDisableDPD 	Global
+  800ca094 00001c 800ca094  4 KPADEnableDPD 	Global
   800ca0b0 000050 800ca0b0  4 FUN_800ca0b0 	Global
-  800ca100 0001f8 800ca100  4 FUN_800ca100 	Global
-  800ca2f8 00007c 800ca2f8  4 FUN_800ca2f8 	Global
-  800ca374 00005c 800ca374  4 FUN_800ca374 	Global
-  800ca3d0 000030 800ca3d0  4 FUN_800ca3d0 	Global
-  800ca400 000030 800ca400  4 FUN_800ca400 	Global
-  800ca430 0001c4 800ca430  4 FUN_800ca430 	Global
-  800ca5f4 0001dc 800ca5f4  4 FUN_800ca5f4 	Global
-  800ca7d0 000104 800ca7d0  4 FUN_800ca7d0 	Global
-  800ca8d4 000bac 800ca8d4  4 FUN_800ca8d4 	Global
-  800cb480 00010c 800cb480  4 FUN_800cb480 	Global
-  800cb58c 000184 800cb58c  4 FUN_800cb58c 	Global
-  800cb710 000728 800cb710  4 FUN_800cb710 	Global
+  800ca100 0001f8 800ca100  4 KPADiSamplingCallback 	Global
+  800ca2f8 00007c 800ca2f8  4 KPADiControlDpdCallback 	Global
+  800ca374 00005c 800ca374  4 __PADDisableRecalibration 	Global
+  800ca3d0 000030 800ca3d0  4 noAlloc 	Global
+  800ca400 000030 800ca400  4 noFree 	Global
+  800ca430 0001c4 800ca430  4 OnShutdown 	Global
+  800ca5f4 0001dc 800ca5f4  4 WPADiSendData 	Global
+  800ca7d0 000104 800ca7d0  4 WPADiRadioSensitivity 	Global
+  800ca8d4 000bac 800ca8d4  4 IsControllerDataChanged 	Global
+  800cb480 00010c 800cb480  4 CheckButtonCombination 	Global
+  800cb58c 000184 800cb58c  4 WPADiCheckContInputs 	Global
+  800cb710 000728 800cb710  4 WPADiManageHandler 	Global
+  800cbe38 000020 800cbe38  4 WPADiManageHandler0 	Global
   800cbe58 000270 800cbe58  4 __ClearControlBlock 	Global
-  800cc0c8 000210 800cc0c8  4 WPADInit 	Global
-  800cc2d8 000054 800cc2d8  4 FUN_800cc2d8 	Global
+  800cc0c8 000210 800cc0c8  4 WPADiInitSub 	Global
+  800cc2d8 000054 800cc2d8  4 WPADInit 	Global
   800cc32c 000004 800cc32c  4 thunk_FUN_80100ac0 	Global
-  800cc330 000004 800cc330  4 thunk_FUN_80100a34 	Global
-  800cc334 000004 800cc334  4 thunk_FUN_80100b4c 	Global
+  800cc330 000004 800cc330  4 WPADStartSimpleSync 	Global
+  800cc334 000004 800cc334  4 WUDStopSyncSimple 	Global
   800cc33c 000004 800cc33c  4 thunk_FUN_80100848 	Global
   800cc340 000004 800cc340  4 thunk_FUN_801008a4 	Global
-  800cc344 000004 800cc344  4 thunk_FUN_8010057c 	Global
+  800cc344 000004 800cc344  4 WUDRegisterAllocator 	Global
   800cc348 000004 800cc348  4 thunk_FUN_8010ce50 	Global
-  800cc34c 000004 800cc34c  4 thunk_FUN_80100758 	Global
+  800cc34c 000004 800cc34c  4 WPADGetStatus 	Global
   800cc350 000080 800cc350  4 FUN_800cc350 	Global
-  800cc3d0 000034 800cc3d0  4 FUN_800cc3d0 	Global
-  800cc404 0000d4 800cc404  4 FUN_800cc404 	Global
-  800cc4d8 0000e4 800cc4d8  4 FUN_800cc4d8 	Global
-  800cc5bc 0008dc 800cc5bc  4 FUN_800cc5bc 	Global
-  800cce98 000100 800cce98  4 FUN_800cce98 	Global
-  800ccf98 000444 800ccf98  4 FUN_800ccf98 	Global
-  800cd3dc 00006c 800cd3dc  4 FUN_800cd3dc 	Global
-  800cd448 0000d8 800cd448  4 FUN_800cd448 	Global
-  800cd544 0000c4 800cd544  4 FUN_800cd544 	Global
-  800cd608 00008c 800cd608  4 FUN_800cd608 	Global
-  800cd694 000068 800cd694  4 FUN_800cd694 	Global
-  800cd6fc 000068 800cd6fc  4 FUN_800cd6fc 	Global
-  800cd764 000068 800cd764  4 FUN_800cd764 	Global
-  800cd7cc 000048 800cd7cc  4 FUN_800cd7cc 	Global
-  800cd814 0000b0 800cd814  4 FUN_800cd814 	Global
+  800cc3d0 000034 800cc3d0  4 WPADGetSensorBarPosition 	Global
+  800cc404 0000d4 800cc404  4 setupCallback 	Global
+  800cc4d8 0000e4 800cc4d8  4 abortConnCallback 	Global
+  800cc5bc 0008dc 800cc5bc  4 firmwareCheckCallback 	Global
+  800cce98 000100 800cce98  4 WPADiRetrieveChannel 	Global
+  800ccf98 000444 800ccf98  4 WPADiConnCallback 	Global
+  800cd3dc 00006c 800cd3dc  4 WPADiRecvCallback 	Global
+  800cd448 0000d8 800cd448  4 WPADGetAccGravityUnit 	Global
+  800cd520 000020 800cd520  4 CloseCallback 	Global
+  800cd544 0000c4 800cd544  4 WPADDisconnect 	Global
+  800cd608 00008c 800cd608  4 WPADProbe 	Global
+  800cd694 000068 800cd694  4 WPADSetSamplingCallback 	Global
+  800cd6fc 000068 800cd6fc  4 WPADSetConnectCallback 	Global
+  800cd764 000068 800cd764  4 WPADSetExtensionCallback 	Global
+  800cd7cc 000048 800cd7cc  4 WPADGetDataFormat 	Global
+  800cd814 0000b0 800cd814  4 WPADSetDataFormat 	Global
   800cd8c4 000054 800cd8c4  4 FUN_800cd8c4 	Global
   800cd918 000220 800cd918  4 FUN_800cd918 	Global
   800cdb38 0000cc 800cdb38  4 WPADControlMotor 	Global
   800cdc04 000034 800cdc04  4 FUN_800cdc04 	Global
   800cdc38 000034 800cdc38  4 FUN_800cdc38 	Global
-  800cdc6c 0001e8 800cdc6c  4 FUN_800cdc6c 	Global
+  800cdc6c 0001e8 800cdc6c  4 WPADControlled 	Global
   800cde54 0000ac 800cde54  4 FUN_800cde54 	Global
-  800cdf00 0001a0 800cdf00  4 FUN_800cdf00 	Global
+  800cdf00 0001a0 800cdf00  4 WPADRead 	Global
   800ce0a0 00017c 800ce0a0  4 FUN_800ce0a0 	Global
   800ce21c 0000c4 800ce21c  4 FUN_800ce21c 	Global
   800ce2e0 000180 800ce2e0  4 FUN_800ce2e0 	Global
-  800ce460 000044 800ce460  4 FUN_800ce460 	Global
+  800ce460 000044 800ce460  4 WPADSpeakerIsEnabled 	Global
   800ce4a4 00161c 800ce4a4  4 WPADControlSpeaker 	Global
   800cfac0 000034 800cfac0  4 FUN_800cfac0 	Global
   800cfaf4 000050 800cfaf4  4 FUN_800cfaf4 	Global
   800cfb44 000138 800cfb44  4 FUN_800cfb44 	Global
   800cfc7c 000084 800cfc7c  4 FUN_800cfc7c 	Global
   800cfd00 000210 800cfd00  4 FUN_800cfd00 	Global
-  800cff10 000008 800cff10  4 FUN_800cff10 	Global
+  800cff10 000008 800cff10  4 WPADGetDpdSensitivity 	Global
   800cff18 000058 800cff18  4 FUN_800cff18 	Global
-  800cff70 000044 800cff70  4 FUN_800cff70 	Global
-  800cffe4 00107c 800cffe4  4 FUN_800cffe4 	Global
-  800d1060 000234 800d1060  4 FUN_800d1060 	Global
+  800cff70 000044 800cff70  4 WPADIsDpdEnabled 	Global
+  800cffe4 00107c 800cffe4  4 WPADControlDpd 	Global
+  800d1060 000234 800d1060  4 __SendData 	Global
   800d1294 000210 800d1294  4 FUN_800d1294 	Global
   800d14a4 0001b4 800d14a4  4 FUN_800d14a4 	Global
   800d1658 0001b8 800d1658  4 FUN_800d1658 	Global
@@ -3444,7 +3575,7 @@
   800dcb1c 000048 800dcb1c  4 FUN_800dcb1c 	Global
   800dcb64 00007c 800dcb64  4 __GXFifoInit 	Global
   800dcbe0 0001a0 800dcbe0  4 FUN_800dcbe0 	Global
-  800dcd80 000008 800dcd80  4 FUN_800dcd80 	Global
+  800dcd80 000008 800dcd80  4 GXGetCurrentGXThread 	Global
   800dcd88 000264 800dcd88  4 GXSetVtxDesc 	Global
   800dcfec 00020c 800dcfec  4 FUN_800dcfec 	Global
   800dd1f8 0000b0 800dd1f8  4 FUN_800dd1f8 	Global
@@ -3491,19 +3622,19 @@
   800ded9c 000028 800ded9c  4 GXSetCullMode 	Global
   800dedc4 00001c 800dedc4  4 FUN_800dedc4 	Global
   800dede0 000034 800dede0  4 GXSetCoPlanar 	Global
-  800dee14 000040 800dee14  4 FUN_800dee14 	Global
+  800dee14 000040 800dee14  4 GXSetDispCopySrc 	Global
   800dee54 000040 800dee54  4 FUN_800dee54 	Global
-  800dee94 000024 800dee94  4 FUN_800dee94 	Global
+  800dee94 000024 800dee94  4 GXSetDispCopyDst 	Global
   800deeb8 00011c 800deeb8  4 FUN_800deeb8 	Global
   800defd4 000020 800defd4  4 FUN_800defd4 	Global
   800deff4 000028 800deff4  4 FUN_800deff4 	Global
-  800df01c 00008c 800df01c  4 FUN_800df01c 	Global
-  800df0a8 000230 800df0a8  4 FUN_800df0a8 	Global
-  800df2d8 0000cc 800df2d8  4 FUN_800df2d8 	Global
-  800df3a4 000078 800df3a4  4 FUN_800df3a4 	Global
-  800df41c 0001e4 800df41c  4 FUN_800df41c 	Global
+  800df01c 00008c 800df01c  4 GXGetNumXfbLines 	Global
+  800df0a8 000230 800df0a8  4 GXGetYScaleFactor 	Global
+  800df2d8 0000cc 800df2d8  4 GXSetDispCopyYScale 	Global
+  800df3a4 000078 800df3a4  4 GXSetCopyClear 	Global
+  800df41c 0001e4 800df41c  4 GXSetCopyFilter 	Global
   800df600 000014 800df600  4 FUN_800df600 	Global
-  800df614 00013c 800df614  4 FUN_800df614 	Global
+  800df614 00013c 800df614  4 GXCopyDisp 	Global
   800df750 000158 800df750  4 FUN_800df750 	Global
   800df8a8 000038 800df8a8  4 FUN_800df8a8 	Global
   800df8e0 00001c 800df8e0  4 GXInitLightAttn 	Global
@@ -3546,7 +3677,7 @@
   800e0934 000094 800e0934  4 GXLoadTlut 	Global
   800e09c8 0000b4 800e09c8  4 GXInitTexCacheRegion 	Global
   800e0a7c 000020 800e0a7c  4 GXInitTlutRegion 	Global
-  800e0a9c 000048 800e0a9c  4 FUN_800e0a9c 	Global
+  800e0a9c 000048 800e0a9c  4 GXInvalidateTexAll 	Global
   800e0ae4 000014 800e0ae4  4 FUN_800e0ae4 	Global
   800e0af8 000014 800e0af8  4 FUN_800e0af8 	Global
   800e0b0c 00007c 800e0b0c  4 FUN_800e0b0c 	Global
@@ -3580,6 +3711,7 @@
   800e1a84 00015c 800e1a84  4 GXSetTevOrder 	Global
   800e1be0 000024 800e1be0  4 GXSetNumTevStages 	Global
   800e1c04 00022c 800e1c04  4 GXSetFog 	Global
+  800e1e30 000160 800e1e30  4 GXInitFogAdjTable 	Global
   800e1f90 000124 800e1f90  4 GXSetFogRangeAdj 	Global
   800e20b4 000050 800e20b4  4 GXSetBlendMode 	Global
   800e2104 00002c 800e2104  4 GXSetColorUpdate 	Global
@@ -3587,8 +3719,8 @@
   800e215c 000034 800e215c  4 GXSetZMode 	Global
   800e2190 000030 800e2190  4 GXSetZCompLoc 	Global
   800e21c0 0000a8 800e21c0  4 FUN_800e21c0 	Global
-  800e2268 00002c 800e2268  4 FUN_800e2268 	Global
-  800e2294 000030 800e2294  4 FUN_800e2294 	Global
+  800e2268 00002c 800e2268  4 GXSetDither 	Global
+  800e2294 000030 800e2294  4 GXSetDstAlpha 	Global
   800e22c4 000034 800e22c4  4 FUN_800e22c4 	Global
   800e22f8 000070 800e22f8  4 FUN_800e22f8 	Global
   800e2368 000840 800e2368  4 FUN_800e2368 	Global
@@ -3598,7 +3730,7 @@
   800e30d4 000074 800e30d4  4 GXCallDisplayList 	Global
   800e3148 000044 800e3148  4 FUN_800e3148 	Global
   800e318c 000064 800e318c  4 GXSetProjection 	Global
-  800e31f0 00004c 800e31f0  4 FUN_800e31f0 	Global
+  800e31f0 00004c 800e31f0  4 GXSetProjectionv 	Global
   800e323c 000040 800e323c  4 GXGetProjectionv 	Global
   800e327c 000050 800e327c  4 GXLoadPosMtxImm 	Global
   800e32cc 00002c 800e32cc  4 GXLoadPosMtxIndx 	Global
@@ -3660,14 +3792,14 @@
   800e6390 000204 800e6390  4 FUN_800e6390 	Global
   800e6594 0000dc 800e6594  4 FUN_800e6594 	Global
   800e6670 0000c8 800e6670  4 FUN_800e6670 	Global
-  800e6738 000168 800e6738  4 FUN_800e6738 	Global
-  800e68a0 0000b0 800e68a0  4 FUN_800e68a0 	Global
+  800e6738 000168 800e6738  4 RecycleRegion_ 	Global
+  800e68a0 0000b0 800e68a0  4 MEMCreateExpHeapEx 	Global
   800e6950 000030 800e6950  4 MEMDestroyExpHeap 	Global
   800e6980 0000b0 800e6980  4 MEMAllocFromExpHeapEx 	Global
-  800e6a30 0001ec 800e6a30  4 FUN_800e6a30 	Global
+  800e6a30 0001ec 800e6a30  4 MEMResizeForMBlockExpHeap 	Global
   800e6c1c 0000cc 800e6c1c  4 MEMFreeToExpHeap 	Global
-  800e6ce8 0000d8 800e6ce8  4 FUN_800e6ce8 	Global
-  800e6dc0 0000d8 800e6dc0  4 FUN_800e6dc0 	Global
+  800e6ce8 0000d8 800e6ce8  4 MEMGetAllocatableSizeForExpHeapEx 	Global
+  800e6dc0 0000d8 800e6dc0  4 MEMAdjustExpHeap 	Global
   800e6e98 000084 800e6e98  4 MEMCreateFrmHeapEx 	Global
   800e6f1c 000030 800e6f1c  4 MEMDestroyFrmHeap 	Global
   800e6f4c 000120 800e6f4c  4 MEMAllocFromFrmHeapEx 	Global
@@ -3675,8 +3807,8 @@
   800e710c 000078 800e710c  4 MEMGetAllocatableSizeForFrmHeapEx 	Global
   800e7184 0000d4 800e7184  4 MEMRecordStateForFrmHeap 	Global
   800e7258 0000b4 800e7258  4 MEMFreeByStateToFrmHeap 	Global
-  800e730c 000084 800e730c  4 FUN_800e730c 	Global
-  800e7390 0000d0 800e7390  4 FUN_800e7390 	Global
+  800e730c 000084 800e730c  4 MEMAdjustFrmHeap 	Global
+  800e7390 0000d0 800e7390  4 MEMResizeForMBlockFrmHeap 	Global
   800e7460 000010 800e7460  4 AllocatorAllocForExpHeap_ 	Global
   800e7470 000008 800e7470  4 AllocatorFreeForExpHeap_ 	Global
   800e7478 000010 800e7478  4 AllocatorAllocForFrmHeap_ 	Global
@@ -3698,9 +3830,9 @@
   800e7a04 0000c8 800e7a04  4 PSMTXInvXpose 	Global
   800e7acc 00007c 800e7acc  4 PSMTXRotRad 	Global
   800e7b48 0000b0 800e7b48  4 FUN_800e7b48 	Global
-  800e7bf8 0000b0 800e7bf8  4 FUN_800e7bf8 	Global
+  800e7bf8 0000b0 800e7bf8  4 __PSMTXRotAxisRadInternal 	Global
   800e7ca8 00007c 800e7ca8  4 PSMTXRotAxisRad 	Global
-  800e7d24 000034 800e7d24  4 FUN_800e7d24 	Global
+  800e7d24 000034 800e7d24  4 PSMTXTrans 	Global
   800e7d58 00004c 800e7d58  4 PSMTXTransApply 	Global
   800e7da4 000028 800e7da4  4 PSMTXScale 	Global
   800e7dcc 000058 800e7dcc  4 PSMTXScaleApply 	Global
@@ -3790,7 +3922,7 @@
   800eb820 0000f8 800eb820  4 FUN_800eb820 	Global
   800eb918 000128 800eb918  4 FUN_800eb918 	Global
   800eba40 00000c 800eba40  4 FUN_800eba40 	Global
-  800eba4c 0000dc 800eba4c  4 FUN_800eba4c 	Global
+  800eba4c 0000dc 800eba4c  4 NANDInitBanner 	Global
   800ebb28 00009c 800ebb28  4 FUN_800ebb28 	Global
   800ebbc4 0000bc 800ebbc4  4 FUN_800ebbc4 	Global
   800ebc80 000108 800ebc80  4 FUN_800ebc80 	Global
@@ -3879,7 +4011,7 @@
   800eea5c 0000d8 800eea5c  4 OSLoadContext 	Global
   800eeb34 000008 800eeb34  4 OSGetStackPointer 	Global
   800eeb3c 000030 800eeb3c  4 FUN_800eeb3c 	Global
-  800eeb6c 000030 800eeb6c  4 FUN_800eeb6c 	Global
+  800eeb6c 000030 800eeb6c  4 OSSwitchFiberEx 	Global
   800eeb9c 000024 800eeb9c  4 OSClearContext 	Global
   800eebc0 0000bc 800eebc0  4 FUN_800eebc0 	Global
   800eec7c 000260 800eec7c  4 OSDumpContext 	Global
@@ -3922,7 +4054,7 @@
   800f205c 000060 800f205c  4 OSInitMessageQueue 	Global
   800f20bc 0000c8 800f20bc  4 OSSendMessage 	Global
   800f2184 0000dc 800f2184  4 OSRecieveMessage 	Global
-  800f2260 0000d0 800f2260  4 FUN_800f2260 	Global
+  800f2260 0000d0 800f2260  4 OSJamMessage 	Global
   800f233c 00000c 800f233c  4 OSGetPhysicalMem2Size 	Global
   800f2348 00000c 800f2348  4 FUN_800f2348 	Global
   800f2354 00000c 800f2354  4 FUN_800f2354 	Global
@@ -3956,7 +4088,7 @@
   800f3ec4 000284 800f3ec4  4 FUN_800f3ec4 	Global
   800f4148 000010 800f4148  4 OSInitThreadQueue 	Global
   800f4158 00000c 800f4158  4 OSGetCurrentThread 	Global
-  800f4164 00002c 800f4164  4 OSThreadTerminated 	Global
+  800f4164 00002c 800f4164  4 OSIsThreadTerminated 	Global
   800f4190 00003c 800f4190  4 OSDisableScheduler 	Global
   800f41cc 00003c 800f41cc  4 OSEnableScheduler 	Global
   800f4208 000068 800f4208  4 UnsetRun 	Global
@@ -3982,8 +4114,10 @@
   800f561c 000008 800f561c  4 OSGetTick 	Global
   800f5624 000064 800f5624  4 __OSGetSystemTime 	Global
   800f5688 000058 800f5688  4 FUN_800f5688 	Global
-  800f56e0 000170 800f56e0  4 FUN_800f56e0 	Global
-  800f5850 0001c8 800f5850  4 FUN_800f5850 	Global
+  800f56e0 000170 800f56e0  4 GetDates 	Global
+  800f57dc 000001 800f57dc  8 leapYearCheck2 	GetDates
+  800f5804 000001 800f5804  8 notALeapYear 	GetDates
+  800f5850 0001c8 800f5850  4 OSTicksToCalendarTime 	Global
   800f5a18 0002a0 800f5a18  4 FUN_800f5a18 	Global
   800f5cb8 000110 800f5cb8  4 FUN_800f5cb8 	Global
   800f5dc8 000070 800f5dc8  4 FUN_800f5dc8 	Global
@@ -4009,6 +4143,7 @@
   800f6eac 0000a4 800f6eac  4 FUN_800f6eac 	Global
   800f6f50 000020 800f6f50  4 __init_user 	Global
   800f6f70 000048 800f6f70  4 FUN_800f6f70 	Global
+  800f6fb8 00004c 800f6fb8  4 __fini_cpp 	Global
   800f7004 0000a0 800f7004  4 FUN_800f7004 	Global
   800f70a4 00011c 800f70a4  4 SCCheckStatus 	Global
   800f71c0 000114 800f71c0  4 SCReloadConfFileAsync 	Global
@@ -4021,19 +4156,19 @@
   800f7a3c 000190 800f7a3c  4 DeleteItemByID 	Global
   800f7bcc 000278 800f7bcc  4 CreateItemByID 	Global
   800f8048 000118 800f8048  4 SCReplaceIntegerItem 	Global
-  800f8160 0000d4 800f8160  4 FUN_800f8160 	Global
+  800f8160 0000d4 800f8160  4 SCFindU8Item 	Global
   800f8234 0000d4 800f8234  4 FUN_800f8234 	Global
   800f8308 0000d4 800f8308  4 FUN_800f8308 	Global
   800f8408 00000c 800f8408  4 FUN_800f8408 	Global
   800f8414 00021c 800f8414  4 FUN_800f8414 	Global
   800f8630 000338 800f8630  4 FUN_800f8630 	Global
-  800f8968 000054 800f8968  4 FUN_800f8968 	Global
+  800f8968 000054 800f8968  4 SCGetAspectRatio 	Global
   800f89bc 000074 800f89bc  4 FUN_800f89bc 	Global
-  800f8a30 000054 800f8a30  4 FUN_800f8a30 	Global
+  800f8a30 000054 800f8a30  4 SCGetEuRgb60Mode 	Global
   800f8a84 000c4c 800f8a84  4 FUN_800f8a84 	Global
-  800f8a90 00006c 800f8a90  4 FUN_800f8a90 	Global
-  800f8afc 000054 800f8afc  4 FUN_800f8afc 	Global
-  800f8b50 000054 800f8b50  4 FUN_800f8b50 	Global
+  800f8a90 00006c 800f8a90  4 SCGetLanguage 	Global
+  800f8afc 000054 800f8afc  4 SCGetProgressiveMode 	Global
+  800f8b50 000054 800f8b50  4 SCGetScreenSaverMode 	Global
   800f8ba4 000064 800f8ba4  4 SCGetSoundMode 	Global
   800f8c08 000040 800f8c08  4 FUN_800f8c08 	Global
   800f8c48 00000c 800f8c48  4 FUN_800f8c48 	Global
@@ -4062,14 +4197,14 @@
   800fa064 000194 800fa064  4 FUN_800fa064 	Global
   800fa1f8 000810 800fa1f8  4 FUN_800fa1f8 	Global
   800faa08 000044 800faa08  4 FUN_800faa08 	Global
-  800faa4c 000044 800faa4c  4 FUN_800faa4c 	Global
+  800faa4c 000044 800faa4c  4 VISetPostRetraceCallback 	Global
   800faa90 000108 800faa90  4 FUN_800faa90 	Global
   800fab98 000210 800fab98  4 FUN_800fab98 	Global
-  800fada8 000548 800fada8  4 FUN_800fada8 	Global
-  800fb2f0 000054 800fb2f0  4 FUN_800fb2f0 	Global
+  800fada8 000548 800fada8  4 VIInit 	Global
+  800fb2f0 000054 800fb2f0  4 VIWaitForRetrace 	Global
   800fb344 0002b8 800fb344  4 FUN_800fb344 	Global
   800fb5fc 000190 800fb5fc  4 FUN_800fb5fc 	Global
-  800fb78c 000794 800fb78c  4 FUN_800fb78c 	Global
+  800fb78c 000794 800fb78c  4 VIConfigure 	Global
   800fbf20 000354 800fbf20  4 FUN_800fbf20 	Global
   800fc274 000114 800fc274  4 VIFlush 	Global
   800fc388 00006c 800fc388  4 VISetNextFrameBuffer 	Global
@@ -4079,11 +4214,11 @@
   800fc47c 000090 800fc47c  4 FUN_800fc47c 	Global
   800fc50c 000060 800fc50c  4 VIGetTvFormat 	Global
   800fc56c 000060 800fc56c  4 FUN_800fc56c 	Global
-  800fc5cc 00003c 800fc5cc  4 FUN_800fc5cc 	Global
+  800fc5cc 00003c 800fc5cc  4 VIGetDTVStatus 	Global
   800fc608 000234 800fc608  4 FUN_800fc608 	Global
-  800fc83c 000054 800fc83c  4 FUN_800fc83c 	Global
+  800fc83c 000054 800fc83c  4 VIEnableDimming 	Global
   800fc890 000104 800fc890  4 FUN_800fc890 	Global
-  800fc994 000010 800fc994  4 FUN_800fc994 	Global
+  800fc994 000010 800fc994  4 __VIResetRFIdle 	Global
   800fc9a4 000098 800fc9a4  4 FUN_800fc9a4 	Global
   800fca3c 0003b4 800fca3c  4 FUN_800fca3c 	Global
   800fcdf0 0005d0 800fcdf0  4 FUN_800fcdf0 	Global
@@ -4120,44 +4255,45 @@
   80100054 000084 80100054  4 FUN_80100054 	Global
   801000f8 00038c 801000f8  4 FUN_801000f8 	Global
   80100484 0000f8 80100484  4 FUN_80100484 	Global
-  8010057c 00004c 8010057c  4 FUN_8010057c 	Global
+  8010057c 00004c 8010057c  4 WUDRegisterAllocator 	Global
   801005c8 000004 801005c8  4 thunk_FUN_8010ce50 	Global
-  801005cc 00018c 801005cc  4 FUN_801005cc 	Global
-  80100758 00003c 80100758  4 FUN_80100758 	Global
+  801005cc 00018c 801005cc  4 WUDShutdown 	Global
+  80100758 00003c 80100758  4 WUDGetStatus 	Global
   80100794 000048 80100794  4 FUN_80100794 	Global
   801007dc 00006c 801007dc  4 FUN_801007dc 	Global
   80100848 00005c 80100848  4 FUN_80100848 	Global
   801008a4 00005c 801008a4  4 FUN_801008a4 	Global
-  80100900 000134 80100900  4 FUN_80100900 	Global
+  80100900 000134 80100900  4 StartSyncDevice 	Global
   80100a34 00008c 80100a34  4 FUN_80100a34 	Global
   80100ac0 00008c 80100ac0  4 FUN_80100ac0 	Global
-  80100b4c 000098 80100b4c  4 FUN_80100b4c 	Global
-  80100be4 000120 80100be4  4 FUN_80100be4 	Global
-  80100d04 0000ec 80100d04  4 FUN_80100d04 	Global
-  80100df0 00005c 80100df0  4 FUN_80100df0 	Global
-  80100e4c 00005c 80100e4c  4 FUN_80100e4c 	Global
-  80100ea8 000058 80100ea8  4 FUN_80100ea8 	Global
+  80100b4c 000098 80100b4c  4 WUDStopSyncSimple 	Global
+  80100be4 000120 80100be4  4 WUDStartClearDevice 	Global
+  80100d04 0000ec 80100d04  4 WUDSetDisableChannel 	Global
+  80100df0 00005c 80100df0  4 WUDSetHidRecvCallback 	Global
+  80100e4c 00005c 80100e4c  4 WUDSetHidConnCallback 	Global
+  80100ea8 000058 80100ea8  4 WUDSetVisibility 	Global
+  80100f00 000004 80100f00  4 WUDiInitSub 	Global
   80100f04 000178 80100f04  4 FUN_80100f04 	Global
   8010107c 000230 8010107c  4 FUN_8010107c 	Global
   801012ac 0000d4 801012ac  4 FUN_801012ac 	Global
-  80101380 000158 80101380  4 FUN_80101380 	Global
-  801014d8 000118 801014d8  4 FUN_801014d8 	Global
-  801015f0 000144 801015f0  4 FUN_801015f0 	Global
-  80101734 0000d8 80101734  4 FUN_80101734 	Global
-  8010180c 0000c0 8010180c  4 FUN_8010180c 	Global
-  801018cc 000118 801018cc  4 FUN_801018cc 	Global
-  801019e4 000118 801019e4  4 FUN_801019e4 	Global
-  80101afc 000158 80101afc  4 FUN_80101afc 	Global
-  80101c54 000118 80101c54  4 FUN_80101c54 	Global
-  80101d6c 000118 80101d6c  4 FUN_80101d6c 	Global
+  80101380 000158 80101380  4 WUDiInitSub 	Global
+  801014d8 000118 801014d8  4 WUDiRegisterDevice 	Global
+  801015f0 000144 801015f0  4 WUDiRemoveDevice 	Global
+  80101734 0000d8 80101734  4 WUDiGetDevInfo 	Global
+  8010180c 0000c0 8010180c  4 WUDiGetNewDevInfo 	Global
+  801018cc 000118 801018cc  4 WUDiMoveTopSmpDevInfoPtr 	Global
+  801019e4 000118 801019e4  4 WUDiMoveBottomSmpDevInfoPtr 	Global
+  80101afc 000158 80101afc  4 WUDiMoveTopOfDisconnectedSmpDevice 	Global
+  80101c54 000118 80101c54  4 WUDiMoveTopStdDevInfoPtr 	Global
+  80101d6c 000118 80101d6c  4 WUDiMoveBottomStdDevInfoPtr 	Global
   80101e84 000158 80101e84  4 FUN_80101e84 	Global
   80102010 000554 80102010  4 FUN_80102010 	Global
   80102564 0001ec 80102564  4 FUN_80102564 	Global
-  80102750 000338 80102750  4 FUN_80102750 	Global
-  80102a88 000050 80102a88  4 FUN_80102a88 	Global
+  80102750 000338 80102750  4 WUDVendorSpecificCallback 	Global
+  80102a88 000050 80102a88  4 WUDDeviceStatusCallback 	Global
   80102ad8 0002ec 80102ad8  4 FUN_80102ad8 	Global
-  80102dc4 0000f4 80102dc4  4 FUN_80102dc4 	Global
-  80102eb8 000054 80102eb8  4 FUN_80102eb8 	Global
+  80102dc4 0000f4 80102dc4  4 WUDPowerManagerCallback 	Global
+  80102eb8 000054 80102eb8  4 _WUDGetDevAddr 	Global
   80102f0c 00005c 80102f0c  4 FUN_80102f0c 	Global
   80102f68 00005c 80102f68  4 FUN_80102f68 	Global
   80102fc4 00003c 80102fc4  4 FUN_80102fc4 	Global
@@ -4166,12 +4302,12 @@
   80103524 000010 80103524  4 FUN_80103524 	Global
   80103534 000010 80103534  4 FUN_80103534 	Global
   80103544 000008 80103544  4 FUN_80103544 	Global
-  8010354c 000050 8010354c  4 FUN_8010354c 	Global
+  8010354c 000050 8010354c  4 WUD_DEBUGPrint 	Global
   8010359c 000044 8010359c  4 FUN_8010359c 	Global
   801035e0 00007c 801035e0  4 AIInitDMA 	Global
   8010365c 000014 8010365c  4 FUN_8010365c 	Global
   80103670 000010 80103670  4 AIGetDMABytesLeft 	Global
-  80103680 000180 80103680  4 FUN_80103680 	Global
+  80103680 000180 80103680  4 AIInit 	Global
   80103800 0000a8 80103800  4 FUN_80103800 	Global
   801038a8 000064 801038a8  4 FUN_801038a8 	Global
   8010390c 0001c4 8010390c  4 FUN_8010390c 	Global
@@ -4264,7 +4400,7 @@
   80107658 000024 80107658  4 FUN_80107658 	Global
   8010767c 000498 8010767c  4 AXFXReverbHiSettings 	Global
   801076e0 000004 801076e0  4 thunk_FUN_80107b68 	Global
-  801076e4 0010f8 801076e4  4 AXFXReverbHiGetMemSizeDpl2 	Global
+  801076e4 00000c 801076e4  4 AXFXReverbHiGetMemSizeDpl2 	Global
   801076f0 0000a4 801076f0  4 AXFXReverbHiInitDpl2 	Global
   80107794 000024 80107794  4 AXFXReverbHiShutdownDpl2 	Global
   801077b8 0012b4 801077b8  4 AXFXReverbHiSettingsDpl2 	Global
@@ -4276,6 +4412,7 @@
   801081f4 000124 801081f4  4 FUN_801081f4 	Global
   80108318 000114 80108318  4 FUN_80108318 	Global
   8010842c 000324 8010842c  4 FUN_8010842c 	Global
+  80108750 00008c 80108750  4 FUN_80108750 	Global
   801087dc 0001c0 801087dc  4 FUN_801087dc 	Global
   80108a6c 000054 80108a6c  4 FUN_80108a6c 	Global
   80108ac0 0005ac 80108ac0  4 AXFXReverbHiExpCallbackDpl2 	Global
@@ -4477,14 +4614,14 @@
   801115f4 000088 801115f4  4 FUN_801115f4 	Global
   8011167c 000038 8011167c  4 FUN_8011167c 	Global
   801116b4 000038 801116b4  4 FUN_801116b4 	Global
-  801116ec 000064 801116ec  4 FUN_801116ec 	Global
-  80111750 000058 80111750  4 FUN_80111750 	Global
+  801116ec 000064 801116ec  4 BTA_DmSetDeviceName 	Global
+  80111750 000058 80111750  4 BTA_DmSetVisibility 	Global
   801117a8 000084 801117a8  4 FUN_801117a8 	Global
-  8011182c 000038 8011182c  4 FUN_8011182c 	Global
+  8011182c 000038 8011182c  4 BTA_DmSearchCancel 	Global
   80111864 00008c 80111864  4 FUN_80111864 	Global
-  801118f0 0000f0 801118f0  4 FUN_801118f0 	Global
-  801119e0 000048 801119e0  4 FUN_801119e0 	Global
-  80111a28 000038 80111a28  4 FUN_80111a28 	Global
+  801118f0 0000f0 801118f0  4 BTA_DmAddDevice 	Global
+  801119e0 000048 801119e0  4 BTA_DmRemoveDevice 	Global
+  80111a28 000038 80111a28  4 BTA_DmSendHciReset 	Global
   80111a60 000098 80111a60  4 FUN_80111a60 	Global
   80111af8 0000c8 80111af8  4 FUN_80111af8 	Global
   80111bc0 000068 80111bc0  4 FUN_80111bc0 	Global
@@ -4513,11 +4650,11 @@
   80113a8c 000298 80113a8c  4 FUN_80113a8c 	Global
   80113d24 000088 80113d24  4 FUN_80113d24 	Global
   80113dac 000038 80113dac  4 FUN_80113dac 	Global
-  80113de4 000064 80113de4  4 FUN_80113de4 	Global
+  80113de4 000064 80113de4  4 BTA_HhClose 	Global
   80113e48 0000b4 80113e48  4 FUN_80113e48 	Global
   80113efc 000090 80113efc  4 FUN_80113efc 	Global
-  80113f8c 0000a8 80113f8c  4 FUN_80113f8c 	Global
-  80114034 00006c 80114034  4 FUN_80114034 	Global
+  80113f8c 0000a8 80113f8c  4 BTA_HhAddDev 	Global
+  80114034 00006c 80114034  4 BTA_HhRemoveDev 	Global
   801140a0 000054 801140a0  4 FUN_801140a0 	Global
   801140f4 000354 801140f4  4 FUN_801140f4 	Global
   80114448 00014c 80114448  4 FUN_80114448 	Global
@@ -4535,10 +4672,10 @@
   80114ed0 00021c 80114ed0  4 FUN_80114ed0 	Global
   801150ec 000170 801150ec  4 FUN_801150ec 	Global
   8011525c 0001f0 8011525c  4 FUN_8011525c 	Global
-  8011544c 000010 8011544c  4 FUN_8011544c 	Global
+  8011544c 000010 8011544c  4 BTM_SetDefaultLinkPolicy 	Global
   80115560 00008c 80115560  4 FUN_80115560 	Global
   801155ec 00022c 801155ec  4 FUN_801155ec 	Global
-  80115818 000010 80115818  4 FUN_80115818 	Global
+  80115818 000010 80115818  4 BTM_SetDefaultLinkSuperTout 	Global
   80115828 0000d8 80115828  4 FUN_80115828 	Global
   80115900 00005c 80115900  4 FUN_80115900 	Global
   8011595c 000010 8011595c  4 FUN_8011595c 	Global
@@ -4551,7 +4688,7 @@
   80115ed8 0000d8 80115ed8  4 FUN_80115ed8 	Global
   80115fb0 00013c 80115fb0  4 FUN_80115fb0 	Global
   801160ec 00013c 801160ec  4 FUN_801160ec 	Global
-  8011645c 0000bc 8011645c  4 FUN_8011645c 	Global
+  8011645c 0000bc 8011645c  4 btn_remove_acl 	Global
   80116518 000220 80116518  4 FUN_80116518 	Global
   80116738 000188 80116738  4 FUN_80116738 	Global
   801168c0 0000ac 801168c0  4 FUN_801168c0 	Global
@@ -4565,20 +4702,20 @@
   80116f54 00009c 80116f54  4 FUN_80116f54 	Global
   80116ff0 0000a8 80116ff0  4 FUN_80116ff0 	Global
   80117098 00001c 80117098  4 FUN_80117098 	Global
-  801170b4 0000f0 801170b4  4 FUN_801170b4 	Global
+  801170b4 0000f0 801170b4  4 BTM_SetAfhChannels 	Global
   801171a4 000298 801171a4  4 FUN_801171a4 	Global
   80117c80 0000b8 80117c80  4 FUN_80117c80 	Global
   80117dc4 000040 80117dc4  4 FUN_80117dc4 	Global
   80117e4c 00004c 80117e4c  4 FUN_80117e4c 	Global
-  80117e98 000080 80117e98  4 FUN_80117e98 	Global
+  80117e98 000080 80117e98  4 BTM_SetDeviceClass 	Global
   80117f18 000010 80117f18  4 FUN_80117f18 	Global
   80117f28 000010 80117f28  4 FUN_80117f28 	Global
-  80117f38 000018 80117f38  4 FUN_80117f38 	Global
+  80117f38 000018 80117f38  4 BTM_RegisterForDeviceStatusNotif 	Global
   80117f50 0000fc 80117f50  4 FUN_80117f50 	Global
   8011804c 00006c 8011804c  4 FUN_8011804c 	Global
-  801180b8 000038 801180b8  4 FUN_801180b8 	Global
+  801180b8 000038 801180b8  4 BTM_RegisterForVSEvents 	Global
   801180f0 000098 801180f0  4 FUN_801180f0 	Global
-  80118188 0000a0 80118188  4 FUN_80118188 	Global
+  80118188 0000a0 80118188  4 BTM_WritePageTimeout 	Global
   80118228 0000d8 80118228  4 FUN_80118228 	Global
   80118300 0000d0 80118300  4 FUN_80118300 	Global
   801183d0 0000d0 801183d0  4 FUN_801183d0 	Global
@@ -4612,7 +4749,7 @@
   8011a1c0 000158 8011a1c0  4 FUN_8011a1c0 	Global
   8011a318 000040 8011a318  4 FUN_8011a318 	Global
   8011a358 00005c 8011a358  4 FUN_8011a358 	Global
-  8011a3b4 0000bc 8011a3b4  4 FUN_8011a3b4 	Global
+  8011a3b4 0000bc 8011a3b4  4 BTM_PmRegister 	Global
   8011a470 0001d0 8011a470  4 FUN_8011a470 	Global
   8011a640 0000b8 8011a640  4 FUN_8011a640 	Global
   8011a6f8 000074 8011a6f8  4 FUN_8011a6f8 	Global
@@ -5028,6 +5165,7 @@
   80139c6c 000024 80139c6c  4 DVDClose 	Global
   80139c90 0001c0 80139c90  4 FUN_80139c90 	Global
   80139e50 0000d0 80139e50  4 DVDReadAsyncPrio 	Global
+  80139f20 000014 80139f20  4 cbForReadAsync 	Global
   80139f38 000128 80139f38  4 DVDReadPrio 	Global
   8013a068 0000b4 8013a068  4 FUN_8013a068 	Global
   8013a120 0000e0 8013a120  4 FUN_8013a120 	Global
@@ -5059,9 +5197,9 @@
   8013c9ec 000328 8013c9ec  4 FUN_8013c9ec 	Global
   8013cd14 000508 8013cd14  4 FUN_8013cd14 	Global
   8013d21c 000834 8013d21c  4 FUN_8013d21c 	Global
-  8013da50 0000e4 8013da50  4 FUN_8013da50 	Global
+  8013da50 0000e4 8013da50  4 DVDReadAbsAsyncPrio 	Global
   8013db34 0000d8 8013db34  4 FUN_8013db34 	Global
-  8013dc0c 0000c8 8013dc0c  4 FUN_8013dc0c 	Global
+  8013dc0c 0000c8 8013dc0c  4 DVDGetCommandBlockStatus 	Global
   8013dcd4 00009c 8013dcd4  4 DVDGetDriveStatus 	Global
   8013dd70 000354 8013dd70  4 DVDCancelAsync 	Global
   8013e0c4 0000cc 8013e0c4  4 DVDCancel 	Global
@@ -5075,7 +5213,7 @@
   8013e414 000068 8013e414  4 FUN_8013e414 	Global
   8013e47c 0000a0 8013e47c  4 FUN_8013e47c 	Global
   8013e51c 000058 8013e51c  4 FUN_8013e51c 	Global
-  8013e574 000060 8013e574  4 FUN_8013e574 	Global
+  8013e574 000060 8013e574  4 __DVDGetNextWaitingQueue 	Global
   8013e5d4 000060 8013e5d4  4 FUN_8013e5d4 	Global
   8013e660 00005c 8013e660  4 FUN_8013e660 	Global
   8013e6bc 0000b0 8013e6bc  4 FUN_8013e6bc 	Global
@@ -5121,16 +5259,17 @@
   80141634 000008 80141634  4 FUN_80141634 	Global
   8014163c 000114 8014163c  4 TPLBind 	Global
   80141750 000020 80141750  4 TPLGet 	Global
-  80141770 0002d8 80141770  4 FUN_80141770 	Global
-  80141a48 00006c 80141a48  4 FUN_80141a48 	Global
-  80141ab4 000004 80141ab4  4 ARCConvertPathToEntrynum 	Global
-  80141ab8 000008 80141ab8  4 FUN_80141ab8 	Global
-  80141ac0 000128 80141ac0  4 FUN_80141ac0 	Global
-  80141be8 000008 80141be8  4 FUN_80141be8 	Global
-  80141bf0 0000a0 80141bf0  4 FUN_80141bf0 	Global
-  80141c90 00008c 80141c90  4 FUN_80141c90 	Global
-  80141d1c 0000e4 80141d1c  4 FUN_80141d1c 	Global
-  80141e08 000030 80141e08  4 FUN_80141e08 	Global
+  80141770 0002d8 80141770  4 WENCGetEncodeData 	Global
+  80141a48 00006c 80141a48  4 contentFastOpenNAND 	Global
+  80141ab4 000004 80141ab4  4 contentConvertPathToEntrynumNAND 	Global
+  80141ab8 000008 80141ab8  4 contentGetLengthNAND 	Global
+  80141ac0 000128 80141ac0  4 contentReadNAND 	Global
+  80141be8 000008 80141be8  4 contentCloseNAND 	Global
+  80141bf0 0000a0 80141bf0  4 ESP_ReadContentFile 	Global
+  80141c90 00008c 80141c90  4 ESP_SeekContentFile 	Global
+  80141d1c 0000e4 80141d1c  4 NETGetUniversalCalendar 	Global
+  80141e00 000008 80141e00  4 NETGetRexPPCVersionPrintable 	Global
+  80141e08 000030 80141e08  4 Mail_strcpy 	Global
   80141e38 000024 80141e38  4 FUN_80141e38 	Global
   80141e5c 000030 80141e5c  4 FUN_80141e5c 	Global
   80141e8c 0000b4 80141e8c  4 FUN_80141e8c 	Global
@@ -5156,7 +5295,7 @@
   801438ec 000190 801438ec  4 FUN_801438ec 	Global
   80143a7c 00016c 80143a7c  4 FUN_80143a7c 	Global
   80143be8 0001e8 80143be8  4 FUN_80143be8 	Global
-  80143dd0 000114 80143dd0  4 FUN_80143dd0 	Global
+  80143dd0 000114 80143dd0  4 NWC24GetMyUserId 	Global
   80143ee4 00010c 80143ee4  4 FUN_80143ee4 	Global
   80143ff0 000180 80143ff0  4 FUN_80143ff0 	Global
   80144170 00000c 80144170  4 FUN_80144170 	Global
@@ -5171,8 +5310,8 @@
   801445f0 000038 801445f0  4 FUN_801445f0 	Global
   80144628 0001ec 80144628  4 FUN_80144628 	Global
   80144814 00006c 80144814  4 FUN_80144814 	Global
-  80144880 000014 80144880  4 FUN_80144880 	Global
-  80144894 000014 80144894  4 FUN_80144894 	Global
+  80144880 000014 80144880  4 NWC24IsMsgLibOpened 	Global
+  80144894 000014 80144894  4 NWC24IsMsgLibOpenedByTool 	Global
   801448a8 0000a0 801448a8  4 FUN_801448a8 	Global
   80144948 000014 80144948  4 FUN_80144948 	Global
   8014495c 000008 8014495c  4 FUN_8014495c 	Global
@@ -5202,9 +5341,9 @@
   80146eb4 000048 80146eb4  4 FUN_80146eb4 	Global
   80146efc 000048 80146efc  4 FUN_80146efc 	Global
   80146f44 000048 80146f44  4 FUN_80146f44 	Global
-  80146f8c 000048 80146f8c  4 FUN_80146f8c 	Global
-  80146fd4 0000c8 80146fd4  4 FUN_80146fd4 	Global
-  8014709c 000c58 8014709c  4 FUN_8014709c 	Global
+  80146f8c 000048 80146f8c  4 NWC24GetEncodingStr 	Global
+  80146fd4 0000c8 80146fd4  4 NWC24CommitMsg 	Global
+  8014709c 000c58 8014709c  4 NWC24CommitMsgInternal 	Global
   80147cf4 0000a0 80147cf4  4 FUN_80147cf4 	Global
   80147d94 00037c 80147d94  4 FUN_80147d94 	Global
   80148110 000110 80148110  4 FUN_80148110 	Global
@@ -5212,7 +5351,7 @@
   80148308 000114 80148308  4 FUN_80148308 	Global
   8014841c 000100 8014841c  4 FUN_8014841c 	Global
   8014851c 000168 8014851c  4 FUN_8014851c 	Global
-  80148684 000120 80148684  4 FUN_80148684 	Global
+  80148684 000120 80148684  4 WriteDateField 	Global
   801487a4 00010c 801487a4  4 FUN_801487a4 	Global
   801488b0 000100 801488b0  4 FUN_801488b0 	Global
   801489b0 000100 801489b0  4 FUN_801489b0 	Global
@@ -5351,7 +5490,7 @@
   80150d04 000170 80150d04  4 FUN_80150d04 	Global
   80150e74 000408 80150e74  4 FUN_80150e74 	Global
   8015127c 000100 8015127c  4 FUN_8015127c 	Global
-  8015137c 000014 8015137c  4 FUN_8015137c 	Global
+  8015137c 000014 8015137c  4 VFiPFCACHE_SetCache 	Global
   80151390 000010 80151390  4 FUN_80151390 	Global
   801513a0 000010 801513a0  4 FUN_801513a0 	Global
   801513b0 0000c8 801513b0  4 FUN_801513b0 	Global
@@ -5651,7 +5790,7 @@
   80167f80 000188 80167f80  4 RFLExit 	Global
   80168108 00022c 80168108  4 FUN_80168108 	Global
   80168334 000014 80168334  4 RFLAvailable 	Global
-  80168348 000014 80168348  4 FUN_80168348 	Global
+  80168348 000014 80168348  4 RFLiAlloc 	Global
   8016835c 000014 8016835c  4 RFLiAlloc32 	Global
   80168370 000010 80168370  4 RFLiFree 	Global
   80168380 00001c 80168380  4 RFLiGetDBManager 	Global
@@ -5741,7 +5880,7 @@
   80170728 000508 80170728  4 FUN_80170728 	Global
   80170c30 000868 80170c30  4 FUN_80170c30 	Global
   80171498 0001f8 80171498  4 FUN_80171498 	Global
-  80171690 000068 80171690  4 FUN_80171690 	Global
+  80171690 000068 80171690  4 RFLiGetMaxMaskRsl 	Global
   801716f8 000040 801716f8  4 FUN_801716f8 	Global
   80171738 000030 80171738  4 FUN_80171738 	Global
   80171768 000034 80171768  4 FUN_80171768 	Global
@@ -5850,14 +5989,14 @@
   80177808 008748 80177808  4 FUN_80177808 	Global
   80177818 008a00 80177818  4 FUN_80177818 	Global
   80177824 000018 80177824  4 FUN_80177824 	Global
-  8017783c 000114 8017783c  4 FUN_8017783c 	Global
+  8017783c 000114 8017783c  4 HomeButton 	HomeButton
   80177950 000908 80177950  4 FUN_80177950 	Global
   80178258 000040 80178258  4 FUN_80178258 	Global
   801782b0 000168 801782b0  4 FUN_801782b0 	Global
   80178418 000084 80178418  4 FUN_80178418 	Global
   8017849c 00039c 8017849c  4 FUN_8017849c 	Global
   80178838 000200 80178838  4 FUN_80178838 	Global
-  80178a38 000124 80178a38  4 FUN_80178a38 	Global
+  80178a38 000124 80178a38  4 init_sound 	HomeButton
   80178b5c 000268 80178b5c  4 FUN_80178b5c 	Global
   80178dc4 001d60 80178dc4  4 FUN_80178dc4 	Global
   8017ab24 000200 8017ab24  4 FUN_8017ab24 	Global
@@ -5887,7 +6026,8 @@
   80180c0c 0000c4 80180c0c  4 FUN_80180c0c 	Global
   80180cd8 00002c 80180cd8  4 FUN_80180cd8 	Global
   80180d04 0001a4 80180d04  4 FUN_80180d04 	Global
-  80180ee0 000068 80180ee0  4 FUN_80180ee0 	Global
+  80180eb0 000030 80180eb0  4 FUN_80180eb0 	Global
+  80180ee0 000068 80180ee0  4 calc 	Manager
   80180f48 000068 80180f48  4 FUN_80180f48 	Global
   80180fb0 000078 80180fb0  4 FUN_80180fb0 	Global
   80181028 000154 80181028  4 FUN_80181028 	Global
@@ -5902,12 +6042,12 @@
   801819d4 00000c 801819d4  4 FUN_801819d4 	Global
   801819e0 000008 801819e0  4 FUN_801819e0 	Global
   80181b04 000114 80181b04  4 FUN_80181b04 	Global
-  80181c18 000110 80181c18  4 FUN_80181c18 	Global
-  80181d28 00006c 80181d28  4 FUN_80181d28 	Global
-  80181d94 0000c0 80181d94  4 FUN_80181d94 	Global
-  80181e54 000094 80181e54  4 FUN_80181e54 	Global
+  80181c18 000110 80181c18  4 wpadExtensionCallback 	Controller
+  80181d28 00006c 80181d28  4 soundOnCallback 	Controller
+  80181d94 0000c0 80181d94  4 Controller 	Controller
+  80181e54 000094 80181e54  4 initCallback 	Controller
   80181ee8 000054 80181ee8  4 FUN_80181ee8 	Global
-  80181f3c 000184 80181f3c  4 FUN_80181f3c 	Global
+  80181f3c 000184 80181f3c  4 setKpad 	Controller
   801820c0 000014 801820c0  4 FUN_801820c0 	Global
   801820d4 000014 801820d4  4 FUN_801820d4 	Global
   801820e8 0009c4 801820e8  4 FUN_801820e8 	Global
@@ -5916,7 +6056,7 @@
   80182104 000098 80182104  4 FUN_80182104 	Global
   8018219c 000060 8018219c  4 FUN_8018219c 	Global
   801821fc 000010 801821fc  4 FUN_801821fc 	Global
-  8018220c 0009a0 8018220c  4 FUN_8018220c 	Global
+  8018220c 0009a0 8018220c  4 isPlayReady 	RemoteSpk
   8018221c 000004 8018221c  4 FUN_8018221c 	Global
   80182220 000064 80182220  4 FUN_80182220 	Global
   80182284 00002c 80182284  4 FUN_80182284 	Global
@@ -5935,189 +6075,215 @@
   80182960 0000cc 80182960  4 FUN_80182960 	Global
   80182aac 000098 80182aac  4 FUN_80182aac 	Global
   80182b44 00001c 80182b44  4 FUN_80182b44 	Global
-  80182b60 000030 80182b60  4 FUN_80182b60 	Global
+  80182b60 000030 80182b60  4 isPlayingId 	RemoteSpk
+  80182bac 00000c 80182bac  4 FUN_80182bac 	Global
   80182bb8 000070 80182bb8  4 FUN_80182bb8 	Global
   80182c28 000034 80182c28  4 FUN_80182c28 	Global
   80182c5c 0000a0 80182c5c  4 FUN_80182c5c 	Global
   80182cfc 0000a8 80182cfc  4 FUN_80182cfc 	Global
   80182da4 000148 80182da4  4 FUN_80182da4 	Global
-  80182eec 0001b0 80182eec  4 FUN_80182eec 	Global
-  8018309c 0000dc 8018309c  4 FUN_8018309c 	Global
-  80183178 000040 80183178  4 FUN_80183178 	Global
-  801831b8 000008 801831b8  4 FUN_801831b8 	Global
-  801831c0 000008 801831c0  4 FUN_801831c0 	Global
-  801831c8 000008 801831c8  4 FUN_801831c8 	Global
-  801831d0 000008 801831d0  4 FUN_801831d0 	Global
-  801831d8 000008 801831d8  4 FUN_801831d8 	Global
-  801831e0 000008 801831e0  4 FUN_801831e0 	Global
-  801831e8 000008 801831e8  4 FUN_801831e8 	Global
-  801831f0 0000d8 801831f0  4 FUN_801831f0 	Global
-  801832c8 000028 801832c8  4 FUN_801832c8 	Global
-  801832f0 000018 801832f0  4 FUN_801832f0 	Global
-  80183308 00000c 80183308  4 FUN_80183308 	Global
-  80183314 0000a0 80183314  4 FUN_80183314 	Global
-  801833b4 0000bc 801833b4  4 FUN_801833b4 	Global
-  80183470 00004c 80183470  4 FUN_80183470 	Global
-  801834bc 00005c 801834bc  4 FUN_801834bc 	Global
-  80183518 000014 80183518  4 FUN_80183518 	Global
-  8018352c 000008 8018352c  4 FUN_8018352c 	Global
-  80183534 000050 80183534  4 FUN_80183534 	Global
-  80183584 000024 80183584  4 FUN_80183584 	Global
-  801835a8 00000c 801835a8  4 FUN_801835a8 	Global
-  801835b4 00000c 801835b4  4 FUN_801835b4 	Global
-  801835c0 000014 801835c0  4 FUN_801835c0 	Global
-  801835d4 000008 801835d4  4 FUN_801835d4 	Global
-  801835dc 000130 801835dc  4 FUN_801835dc 	Global
-  8018370c 00006c 8018370c  4 FUN_8018370c 	Global
-  80183778 000180 80183778  4 FUN_80183778 	Global
-  801838f8 00016c 801838f8  4 FUN_801838f8 	Global
-  80183a64 00013c 80183a64  4 FUN_80183a64 	Global
-  80183ba0 000044 80183ba0  4 FUN_80183ba0 	Global
-  80183be4 00029c 80183be4  4 FUN_80183be4 	Global
+  80182eec 0001b0 80182eec  4 createFromSystemHeap 	RPSysSystem
+  8018309c 0000dc 8018309c  4 RPSysSystem 	RPSysSystem
+  80183178 000040 80183178  4 ~RPSysSystem 	RPSysSystem
+  801831b8 000008 801831b8  4 getTimeStampString 	RPSysSystem
+  801831c0 000008 801831c0  4 getDvdEndMessage 	RPSysSystem
+  801831c8 000008 801831c8  4 getNandEndMessage 	RPSysSystem
+  801831d0 000008 801831d0  4 getWc24Thread 	RPSysSystem
+  801831d8 000008 801831d8  4 getDvdThread 	RPSysSystem
+  801831e0 000008 801831e0  4 getNandThread 	RPSysSystem
+  801831e8 000008 801831e8  4 setDimming 	RPSysSystem
+  801831f0 0000d8 801831f0  4 systemShutDown 	RPSysSystem
+  801832c8 000028 801832c8  4 createTimeStamp 	RPSysSystem
+  801832f0 000018 801832f0  4 isLoadCountEnd 	RPSysSystem
+  80183308 00000c 80183308  4 startLoadCount 	RPSysSystem
+  80183314 0000a0 80183314  4 getCalendarTime 	RPSysSystem
+  801833b4 0000bc 801833b4  4 getCalendarTime 	RPSysSystem
+  80183470 00004c 80183470  4 getCalendarTime16 	RPSysSystem
+  801834bc 00005c 801834bc  4 getCalendarTime32 	RPSysSystem
+  80183518 000014 80183518  4 FUN_80183518 	RPSysSystem
+  8018352c 000008 8018352c  4 getTitleScreenSceneId 	RPSysSystem
+  80183534 000050 80183534  4 setDisplayClearColor 	RPSysSystem
+  80183584 000024 80183584  4 operator= 	Color
+  801835a8 00000c 801835a8  4 getXfbHeight 	RPSysSystem
+  801835b4 00000c 801835b4  4 getFbWidth 	RPSysSystem
+  801835c0 000014 801835c0  4 getModifyRatio 	RPSysSystem
+  801835d4 000008 801835d4  4 getLoadCountIncrement 	RPSysSystem
+  801835dc 000130 801835dc  4 setupRenderMode 	RPSysSystem
+  8018370c 00006c 8018370c  4 setupTVMode 	RPSysSystem
+  80183778 000180 80183778  4 loadFrameWork 	RPSysSystem
+  801838f8 00016c 801838f8  4 mainLoop 	RPSysSystem
+  80183a64 00013c 80183a64  4 setup0 	RPSysSystem
+  80183ba0 000044 80183ba0  4 create 	RPSysSystem
+  80183be4 00029c 80183be4  4 initialize 	RPSysSystem
+  80183e80 00002c 80183e80  4 __sinit_\RPSysConfigData_cpp 	Global
+  80183eac 000008 80183eac  4 getSystemHeap 	RPSysConfigData
+  80183eb4 000008 80183eb4  4 getVideo 	RPSysConfigData
+  80183ebc 000008 80183ebc  4 getDisplay 	RPSysConfigData
+  80183ec4 000008 80183ec4  4 getXfbMgr 	RPSysConfigData
+  80183ecc 000008 80183ecc  4 getPerfView 	RPSysConfigData
+  80183ed4 000008 80183ed4  4 getSceneMgr 	RPSysConfigData
+  80183edc 000008 80183edc  4 getAudioMgr 	RPSysConfigData
   80183ee4 000034 80183ee4  4 main 	Global
   80183f18 000050 80183f18  4 OSReport 	Global
-  80183f68 000040 80183f68  4 ~RPSceneCreator 	RPSceneCreator
-  80183fa8 000058 80183fa8  4 ~RPScene 	RPScene
-  80184000 000460 80184000  4 FUN_80184000 	Global
+  80183f68 000040 80183f68  4 ~RPSceneCreator 	RPSysSceneCreator
+  80183fa8 000058 80183fa8  4 ~RPSysScene 	RPSysScene
+  80184000 000460 80184000  4 createSportsScene 	RPSysSceneCreator
   80184460 00005c 80184460  4 FUN_80184460 	Global
-  801844bc 00009c 801844bc  4 FUN_801844bc 	Global
-  80184558 00009c 80184558  4 FUN_80184558 	Global
-  801845f4 00009c 801845f4  4 FUN_801845f4 	Global
-  80184690 00005c 80184690  4 FUN_80184690 	Global
-  801846ec 00006c 801846ec  4 FUN_801846ec 	Global
-  80184758 0000ac 80184758  4 FUN_80184758 	Global
-  80184804 000034 80184804  4 destroy 	RPSceneCreator
-  80184838 000360 80184838  4 RPTask 	RPSceneCreator
-  80184b98 00000c 80184b98  4 FUN_80184b98 	Global
-  80184ba4 00026c 80184ba4  4 FUN_80184ba4 	Global
-  80184e10 000070 80184e10  4 createInstance 	RPSceneCreator
-  80184e80 000010 80184e80  4 FUN_80184e80 	Global
-  80184e90 000008 80184e90  4 FUN_80184e90 	Global
-  80184e98 000008 80184e98  4 FUN_80184e98 	Global
-  80184ea0 0000f0 80184ea0  4 FUN_80184ea0 	Global
-  80184f90 000074 80184f90  4 exit 	RPScene
-  80185004 000004 80185004  4 do_exit 	RPScene
-  80185008 000040 80185008  4 outgoing_childCreate 	RPScene
-  80185048 00004c 80185048  4 draw 	RPScene
-  80185094 0000d0 80185094  4 calc 	RPScene
-  80185164 000004 80185164  4 do_calc 	RPScene
-  80185168 0000c0 80185168  4 incoming_childDestroy 	RPScene
-  80185228 000004 80185228  4 do_init 	RPScene
-  8018522c 0000d8 8018522c  4 reinit 	RPScene
-  80185304 0000fc 80185304  4 enter 	RPScene
-  80185400 000004 80185400  4 do_enter 	RPScene
-  80185404 000068 80185404  4 FUN_80185404 	Global
-  8018546c 000008 8018546c  4 FUN_8018546c 	Global
-  80185474 000008 80185474  4 FUN_80185474 	Global
-  8018547c 000008 8018547c  4 FUN_8018547c 	Global
-  80185484 000048 80185484  4 FUN_80185484 	Global
-  801854cc 000048 801854cc  4 FUN_801854cc 	Global
-  80185514 000778 80185514  4 FUN_80185514 	Global
-  8018551c 00080c 8018551c  4 FUN_8018551c 	Global
-  80185524 000050 80185524  4 FUN_80185524 	Global
-  80185574 0003f4 80185574  4 FUN_80185574 	Global
-  8018557c 000548 8018557c  4 FUN_8018557c 	Global
-  80185584 0005b4 80185584  4 FUN_80185584 	Global
-  8018558c 000008 8018558c  4 getUnk 	RPScene
-  80185594 000004 80185594  4 togglePause 	RPScene
-  80185598 000004 80185598  4 do_prepare 	RPScene
-  8018559c 000004 8018559c  4 do_unk2 	RPScene
-  801855a0 000004 801855a0  4 task_calc 	RPTask
+  801844bc 00009c 801844bc  4 shouldUseCmnSndArchive 	RPSysSceneCreator
+  80184558 00009c 80184558  4 getAttributeWORD_0x10 	RPSysSceneCreator
+  801845f4 00009c 801845f4  4 getAttributeWORD_0x8 	RPSysSceneCreator
+  80184690 00005c 80184690  4 getSceneID 	RPSysSceneCreator
+  801846ec 00006c 801846ec  4 getSportID 	RPSysSceneCreator
+  80184758 0000ac 80184758  4 getResDirName 	RPSysSceneCreator
+  80184804 000034 80184804  4 destroy 	RPSysSceneCreator
+  80184838 000360 80184838  4 create 	RPSysSceneCreator
+  80184b98 00000c 80184b98  4 changeSoftReset 	RPSysSceneCreator
+  80184ba4 00026c 80184ba4  4 changeSceneAfterFade 	RPSysSceneCreator
+  80184e10 000070 80184e10  4 createInstance 	RPSysSceneCreator
+  80184e80 000010 80184e80  4 setFlag8 	RPSysScene
+  80184e90 000008 80184e90  4 getFadeFrame 	RPSysScene
+  80184e98 000008 80184e98  4 setFadeFrame 	RPSysScene
+  80184ea0 0000f0 80184ea0  4 init? 	RPSysScene
+  80184f90 000074 80184f90  4 exit 	RPSysScene
+  80185004 000004 80185004  4 do_exit 	RPSysScene
+  80185008 000040 80185008  4 outgoing_childCreate 	RPSysScene
+  80185048 00004c 80185048  4 draw 	RPSysScene
+  80185094 0000d0 80185094  4 calc 	RPSysScene
+  80185164 000004 80185164  4 do_calc 	RPSysScene
+  80185168 0000c0 80185168  4 incoming_childDestroy 	RPSysScene
+  80185228 000004 80185228  4 do_init 	RPSysScene
+  8018522c 0000d8 8018522c  4 reinit 	RPSysScene
+  80185304 0000fc 80185304  4 enter 	RPSysScene
+  80185400 000004 80185400  4 do_enter 	RPSysScene
+  80185404 000068 80185404  4 RPSysScene 	RPSysScene
+  8018546c 000008 8018546c  4 setDimming 	RPSysScene
+  80185474 000008 80185474  4 FUN_80185474 	RPSysScene
+  8018547c 000008 8018547c  4 FUN_8018547c 	RPSysScene
+  80185484 000048 80185484  4 setSceneFadeColor 	RPSysScene
+  801854cc 000048 801854cc  4 setFadeColor 	RPSysScene
+  80185514 000008 80185514  4 getFadeColor 	RPSysScene
+  8018551c 000008 8018551c  4 setFadeFrame 	RPSysScene
+  80185524 000050 80185524  4 FUN_80185524 	RPSysScene
+  80185574 000008 80185574  4 FUN_80185574 	RPSysScene
+  8018557c 000008 8018557c  4 FUN_8018557c 	RPSysScene
+  80185584 000008 80185584  4 FUN_80185584 	RPSysScene
+  8018558c 000008 8018558c  4 getUnk 	RPSysScene
+  80185594 000004 80185594  4 togglePause 	RPSysScene
+  80185598 000004 80185598  4 do_prepare 	RPSysScene
+  8018559c 000004 8018559c  4 do_unk2 	RPSysScene
+  801855a0 000004 801855a0  4 calc 	RPTask
   801855a4 000004 801855a4  4 task_unk 	RPTask
-  801855b4 000008 801855b4  4 ~RPScene 	RPScene
-  801855bc 0000bc 801855bc  4 FUN_801855bc 	Global
-  80185678 000058 80185678  4 FUN_80185678 	Global
-  801856d0 000198 801856d0  4 FUN_801856d0 	Global
-  80185868 000034 80185868  4 FUN_80185868 	Global
-  8018589c 000014 8018589c  4 FUN_8018589c 	Global
-  801858b0 000014 801858b0  4 FUN_801858b0 	Global
-  801858c4 000014 801858c4  4 FUN_801858c4 	Global
-  80185968 000074 80185968  4 FUN_80185968 	Global
-  801859dc 000074 801859dc  4 FUN_801859dc 	Global
-  80185b38 000014 80185b38  4 FUN_80185b38 	Global
-  80185b4c 000014 80185b4c  4 FUN_80185b4c 	Global
-  80185b60 000004 80185b60  4 fadeIn 	Global
-  80185b64 000014 80185b64  4 FUN_80185b64 	Global
-  80185b78 000014 80185b78  4 FUN_80185b78 	Global
-  80185b8c 000048 80185b8c  4 FUN_80185b8c 	Global
-  80185bd4 00008c 80185bd4  4 FUN_80185bd4 	Global
-  80185c8c 000054 80185c8c  4 FUN_80185c8c 	Global
-  80185d28 00000c 80185d28  4 FUN_80185d28 	Global
-  80185d34 000040 80185d34  4 FUN_80185d34 	Global
-  80185d74 000190 80185d74  4 FUN_80185d74 	Global
-  80185f04 000014 80185f04  4 FUN_80185f04 	Global
-  80185f18 000020 80185f18  4 FUN_80185f18 	Global
-  80185f38 000018 80185f38  4 FUN_80185f38 	Global
-  80185f50 000014 80185f50  4 FUN_80185f50 	Global
-  80185f64 000010 80185f64  4 FUN_80185f64 	Global
-  80185f74 000070 80185f74  4 FUN_80185f74 	Global
-  80185fe4 000070 80185fe4  4 FUN_80185fe4 	Global
-  80186054 0000ac 80186054  4 FUN_80186054 	Global
-  80186100 000008 80186100  4 FUN_80186100 	Global
-  80186108 00012c 80186108  4 FUN_80186108 	Global
-  80186234 000008 80186234  4 FUN_80186234 	Global
-  8018623c 000008 8018623c  4 FUN_8018623c 	Global
-  80186244 000120 80186244  4 FUN_80186244 	Global
-  80186364 000040 80186364  4 FUN_80186364 	Global
-  801863a4 00008c 801863a4  4 FUN_801863a4 	Global
-  80186430 000040 80186430  4 FUN_80186430 	Global
-  80186470 000270 80186470  4 FUN_80186470 	Global
-  801866e0 000060 801866e0  4 FUN_801866e0 	Global
-  8018674c 000010 8018674c  4 FUN_8018674c 	Global
-  80186770 00003c 80186770  4 FUN_80186770 	Global
-  801867ac 00004c 801867ac  4 FUN_801867ac 	Global
-  8018680c 000034 8018680c  4 FUN_8018680c 	Global
-  80186840 000038 80186840  4 FUN_80186840 	Global
-  80186888 0000d8 80186888  4 FUN_80186888 	Global
-  80186960 0000bc 80186960  4 FUN_80186960 	Global
-  80186a1c 00008c 80186a1c  4 FUN_80186a1c 	Global
-  80186aa8 000078 80186aa8  4 FUN_80186aa8 	Global
-  80186b20 000114 80186b20  4 FUN_80186b20 	Global
-  80186c34 0000b8 80186c34  4 FUN_80186c34 	Global
-  80186cec 000010 80186cec  4 FUN_80186cec 	Global
-  80186cfc 000020 80186cfc  4 FUN_80186cfc 	Global
-  80186d1c 000010 80186d1c  4 FUN_80186d1c 	Global
-  80186d2c 000004 80186d2c  4 FUN_80186d2c 	Global
-  80186d30 000110 80186d30  4 FUN_80186d30 	Global
-  80186e40 000058 80186e40  4 FUN_80186e40 	Global
-  80186eb4 0000ec 80186eb4  4 FUN_80186eb4 	Global
-  80186fa0 000254 80186fa0  4 FUN_80186fa0 	Global
-  801871f4 00009c 801871f4  4 FUN_801871f4 	Global
-  80187290 000070 80187290  4 FUN_80187290 	Global
-  80187300 00006c 80187300  4 FUN_80187300 	Global
-  8018736c 00007c 8018736c  4 FUN_8018736c 	Global
-  801873e8 000064 801873e8  4 FUN_801873e8 	Global
-  8018744c 000068 8018744c  4 FUN_8018744c 	Global
-  801874b4 000150 801874b4  4 FUN_801874b4 	Global
-  80187604 0001d0 80187604  4 FUN_80187604 	Global
-  801877d4 000008 801877d4  4 FUN_801877d4 	Global
-  801877dc 000060 801877dc  4 FUN_801877dc 	Global
-  8018783c 00003c 8018783c  4 FUN_8018783c 	Global
-  80187878 00004c 80187878  4 FUN_80187878 	Global
-  801878c4 0000a0 801878c4  4 FUN_801878c4 	Global
-  80187964 0000a8 80187964  4 FUN_80187964 	Global
-  80187a0c 00009c 80187a0c  4 FUN_80187a0c 	Global
-  80187aa8 000040 80187aa8  4 FUN_80187aa8 	Global
-  80187ae8 00006c 80187ae8  4 FUN_80187ae8 	Global
-  80187b54 000040 80187b54  4 FUN_80187b54 	Global
-  80187b94 00000c 80187b94  4 FUN_80187b94 	Global
-  80187ba0 000070 80187ba0  4 FUN_80187ba0 	Global
-  80187c10 00007c 80187c10  4 FUN_80187c10 	Global
+  801855a8 00000c 801855a8  4 __sinit_\RPSysScene_cpp 	Global
+  801855b4 000008 801855b4  4 ~RPSysScene 	RPSysScene
+  801855bc 0000bc 801855bc  4 UpdateRenderModeWidthHeight 	Global
+  80185678 000058 80185678  4 ~RPSysSceneMgr 	RPSysSceneMgr
+  801856d0 000198 801856d0  4 updateState 	RPSysSceneMgr
+  80185868 000034 80185868  4 calcCurrentScene 	RPSysSceneMgr
+  8018589c 000014 8018589c  4 drawMgrFader 	RPSysSceneMgr
+  801858b0 000014 801858b0  4 drawSceneFader 	RPSysSceneMgr
+  801858c4 000014 801858c4  4 calcSceneFader 	RPSysSceneMgr
+  801858d8 000090 801858d8  4 isFadeUnk 	RPSysSceneMgr
+  80185968 000074 80185968  4 isTaskFinished 	RPSysSceneMgr
+  801859dc 000074 801859dc  4 isFadeIn 	RPSysSceneMgr
+  80185a50 000074 80185a50  4 FUN_80185a50 	RPSysSceneMgr
+  80185ac4 000074 80185ac4  4 FUN_80185ac4 	RPSysSceneMgr
+  80185b38 000014 80185b38  4 startSceneFadeOut 	RPSysSceneMgr
+  80185b4c 000014 80185b4c  4 startSceneFadeIn 	RPSysSceneMgr
+  80185b60 000004 80185b60  4 fadeIn_unk 	RPSysSceneMgr
+  80185b64 000014 80185b64  4 setSceneStatus 	RPSysSceneMgr
+  80185b78 000014 80185b78  4 getSceneStatus 	RPSysSceneMgr
+  80185b8c 000048 80185b8c  4 setSceneFadeColor 	RPSysSceneMgr
+  80185bd4 00008c 80185bd4  4 setFadeColor 	RPSysSceneMgr
+  80185c60 00002c 80185c60  4 getFadeColor 	RPSysSceneMgr
+  80185c8c 000054 80185c8c  4 FUN_80185c8c 	RPSysSceneMgr
+  80185ce0 000048 80185ce0  4 setFadeFrame 	RPSysSceneMgr
+  80185d28 00000c 80185d28  4 getFadeFrame 	RPSysSceneMgr
+  80185d34 000040 80185d34  4 FUN_80185d34 	RPSysSceneMgr
+  80185d74 000190 80185d74  4 changeNextSceneAfterFade 	RPSysSceneMgr
+  80185f04 000014 80185f04  4 FUN_80185f04 	RPSysSceneMgr
+  80185f18 000020 80185f18  4 FUN_80185f18 	RPSysSceneMgr
+  80185f38 000018 80185f38  4 FUN_80185f38 	RPSysSceneMgr
+  80185f50 000014 80185f50  4 FUN_80185f50 	RPSysSceneMgr
+  80185f64 000010 80185f64  4 FUN_80185f64 	RPSysSceneMgr
+  80185f74 000070 80185f74  4 FUN_80185f74 	RPSysSceneMgr
+  80185fe4 000070 80185fe4  4 FUN_80185fe4 	RPSysSceneMgr
+  80186054 0000ac 80186054  4 softReset 	RPSysSceneMgr
+  80186100 000008 80186100  4 getCurrentScene 	RPSysSceneMgr
+  80186108 00012c 80186108  4 RPSysSceneMgr 	RPSysSceneMgr
+  80186234 000008 80186234  4 setSecondaryLang 	RPSysProjectLocal
+  8018623c 000008 8018623c  4 setPrimaryLang 	RPSysProjectLocal
+  80186244 000120 80186244  4 appendLocalDirectory 	RPSysProjectLocal
+  80186364 000040 80186364  4 ~RPSysLocale 	RPSysProjectLocal
+  801863a4 00008c 801863a4  4 CreateInstance 	RPSysProjectLocal
+  80186430 000040 80186430  4 ~RPSysGameConfig 	RPSysGameConfig
+  80186470 000270 80186470  4 RPSysGameConfig 	RPSysGameConfig
+  801866e0 000060 801866e0  4 CreateInstance 	RPSysGameConfig
+  80186740 000004 80186740  4 VF10 	RPSysGameOption
+  80186744 000004 80186744  4 write 	RPSysGameOption
+  80186748 000004 80186748  4 read 	RPSysGameOption
+  8018674c 000010 8018674c  4 RPSysGameConfigHandle 	RPSysGameConfigHandle
+  8018675c 000004 8018675c  4 VF10 	RPSysStringOption
+  80186760 000010 80186760  4 write 	RPSysStringOption
+  80186770 00003c 80186770  4 read 	RPSysStringOption
+  801867ac 00004c 801867ac  4 RPSysStringOption 	RPSysStringOption
+  801867f8 000004 801867f8  4 VF10 	RPSysIntOption
+  801867fc 000010 801867fc  4 write 	RPSysIntOption
+  8018680c 000034 8018680c  4 read 	RPSysIntOption
+  80186840 000038 80186840  4 RPSysIntOption 	RPSysIntOption
+  80186878 000010 80186878  4 FUN_80186878 	Global
+  80186888 0000d8 80186888  4 taskAsync 	RPUnkScene
+  80186960 0000bc 80186960  4 FUN_80186960 	RPUnkScene
+  80186a1c 00008c 80186a1c  4 FUN_80186a1c 	RPUnkScene
+  80186aa8 000078 80186aa8  4 FUN_80186aa8 	RPUnkScene
+  80186b20 000114 80186b20  4 FUN_80186b20 	RPUnkScene
+  80186c34 0000b8 80186c34  4 FUN_80186c34 	RPUnkScene
+  80186cec 000010 80186cec  4 FUN_80186cec 	RPUnkScene
+  80186cfc 000020 80186cfc  4 FUN_80186cfc 	RPUnkScene
+  80186d1c 000010 80186d1c  4 FUN_80186d1c 	RPUnkScene
+  80186d2c 000004 80186d2c  4 FUN_80186d2c 	RPUnkScene
+  80186d30 000110 80186d30  4 FUN_80186d30 	RPUnkScene
+  80186e40 000058 80186e40  4 __sinit_\RPUnkScene_cpp 	Global
+  80186e98 00001c 80186e98  4 FUN_80186e98 	RPUnkScene
+  80186eb4 0000ec 80186eb4  4 LoadFromDVD 	RPSysResourceManager
+  80186fa0 000254 80186fa0  4 LoadCompressed 	RPSysResourceManager
+  801871f4 00009c 801871f4  4 LoadGameLocalArchive 	RPSysResourceManager
+  80187290 000070 80187290  4 GetGameSoundLocalPath 	RPSysResourceManager
+  80187300 00006c 80187300  4 GetGameSoundCommonPath 	RPSysResourceManager
+  8018736c 00007c 8018736c  4 GetStaticSoundLocalPath 	RPSysResourceManager
+  801873e8 000064 801873e8  4 GetStaticSoundCommonPath 	RPSysResourceManager
+  8018744c 000068 8018744c  4 LoadKokeshiArchive 	RPSysResourceManager
+  801874b4 000150 801874b4  4 LoadSharedCommonArchive 	RPSysResourceManager
+  80187604 0001d0 80187604  4 LoadCacheArchives 	RPSysResourceManager
+  801877d4 000008 801877d4  4 RemoveFromFileList 	RPSysResourceManager
+  801877dc 000060 801877dc  4 LoadSoundArchive 	RPSysResourceManager
+  8018783c 00003c 8018783c  4 GetMessageResource 	RPSysResourceManager
+  80187878 00004c 80187878  4 GetFileFromArchive 	RPSysResourceManager
+  801878c4 0000a0 801878c4  4 LoadGameStageArchive 	RPSysResourceManager
+  80187964 0000a8 80187964  4 LoadGameLocalArchive 	RPSysResourceManager
+  80187a0c 00009c 80187a0c  4 LoadGameCommonArchive 	RPSysResourceManager
+  80187aa8 000040 80187aa8  4 ~RPSysResourceManager 	RPSysResourceManager
+  80187ae8 00006c 80187ae8  4 CreateInstance 	RPSysResourceManager
+  80187b54 000040 80187b54  4 ~RP_80187ba0 	RP_80187ba0
+  80187b94 00000c 80187b94  4 FUN_80187b94 	RP_80187ba0
+  80187ba0 000070 80187ba0  4 RP_80187ba0 	RP_80187ba0
+  80187c10 00007c 80187c10  4 UserDraw 	RPSysCommonObject
   80187c8c 000088 80187c8c  4 FUN_80187c8c 	Global
   80187d14 000064 80187d14  4 FUN_80187d14 	Global
   80187d78 000044 80187d78  4 FUN_80187d78 	Global
-  80187dbc 000128 80187dbc  4 FUN_80187dbc 	Global
-  80187ee4 000040 80187ee4  4 FUN_80187ee4 	Global
-  80187f24 000040 80187f24  4 FUN_80187f24 	Global
-  80187f64 000040 80187f64  4 FUN_80187f64 	Global
-  80187fa4 0001e8 80187fa4  4 FUN_80187fa4 	Global
-  8018818c 0000d4 8018818c  4 FUN_8018818c 	Global
-  80188260 000020 80188260  4 FUN_80188260 	Global
-  80188280 0000e8 80188280  4 FUN_80188280 	Global
+  80187dbc 000128 80187dbc  4 RPSysCommonObject 	RPSysCommonObject
+  80187ee4 000040 80187ee4  4 ~eggScreen 	eggScreen
+  80187f24 000040 80187f24  4 ~RPSysCommonObject 	RPSysCommonObject
+  80187f64 000040 80187f64  4 ~RPSysDvdStatus 	RPSysDvdStatus
+  80187fa4 0001e8 80187fa4  4 draw 	RPSysDvdStatus
+  8018818c 0000d4 8018818c  4 calc 	RPSysDvdStatus
+  80188260 000020 80188260  4 isErrorOccurred 	RPSysDvdStatus
+  80188280 0000e8 80188280  4 CreateInstance 	RPSysDvdStatus
   80188368 000058 80188368  4 FUN_80188368 	Global
-  801883c0 000130 801883c0  4 FUN_801883c0 	Global
+  801883c0 000130 801883c0  4 RPSysSaveDataMgr 	RPSysSaveDataMgr
   801884f0 000030 801884f0  4 FUN_801884f0 	Global
+  80188520 000008 80188520  4 FUN_80188520 	Global
   80188528 000098 80188528  4 FUN_80188528 	Global
+  801885c0 000008 801885c0  4 FUN_801885c0 	Global
   801885c8 0000e4 801885c8  4 FUN_801885c8 	Global
   801886ac 0000d0 801886ac  4 FUN_801886ac 	Global
   8018877c 0000ec 8018877c  4 FUN_8018877c 	Global
@@ -6127,7 +6293,7 @@
   80188b04 0000d0 80188b04  4 FUN_80188b04 	Global
   80188bd4 00018c 80188bd4  4 FUN_80188bd4 	Global
   80188d60 0000f4 80188d60  4 FUN_80188d60 	Global
-  80188e54 000010 80188e54  4 FUN_80188e54 	Global
+  80188e54 000010 80188e54  4 finishNandAccess 	RPSysSaveDataMgr
   80188e64 000008 80188e64  4 FUN_80188e64 	Global
   80188e6c 000020 80188e6c  4 FUN_80188e6c 	Global
   80188e8c 000008 80188e8c  4 FUN_80188e8c 	Global
@@ -6154,23 +6320,25 @@
   80189c10 000290 80189c10  4 FUN_80189c10 	Global
   80189ea0 0004fc 80189ea0  4 FUN_80189ea0 	Global
   8018a39c 000508 8018a39c  4 FUN_8018a39c 	Global
-  8018a8a4 000060 8018a8a4  4 FUN_8018a8a4 	Global
-  8018a90c 0000c4 8018a90c  4 FUN_8018a90c 	Global
-  8018a9d0 0000c0 8018a9d0  4 FUN_8018a9d0 	Global
-  8018aa90 000028 8018aa90  4 FUN_8018aa90 	Global
-  8018aab8 000038 8018aab8  4 FUN_8018aab8 	Global
-  8018aaf0 000020 8018aaf0  4 FUN_8018aaf0 	Global
-  8018ab10 000030 8018ab10  4 FUN_8018ab10 	Global
-  8018ab40 000008 8018ab40  4 FUN_8018ab40 	Global
-  8018ab48 000008 8018ab48  4 FUN_8018ab48 	Global
-  8018ab50 000008 8018ab50  4 FUN_8018ab50 	Global
-  8018ab58 000008 8018ab58  4 FUN_8018ab58 	Global
-  8018ab60 000080 8018ab60  4 FUN_8018ab60 	Global
-  8018abe0 000084 8018abe0  4 FUN_8018abe0 	Global
-  8018ac64 0000d0 8018ac64  4 FUN_8018ac64 	Global
-  8018ad34 00003c 8018ad34  4 FUN_8018ad34 	Global
-  8018ad70 000374 8018ad70  4 FUN_8018ad70 	Global
-  8018b0e4 000368 8018b0e4  4 FUN_8018b0e4 	Global
+  8018a8a4 000060 8018a8a4  4 CreateInstance 	RPSysSaveDataMgr
+  8018a904 000004 8018a904  4 FUN_8018a904 	IRPSysHostIOSocket
+  8018a908 000004 8018a908  4 FUN_8018a908 	IRPSysHostIOSocket
+  8018a90c 0000c4 8018a90c  4 write 	RPSportsCommonData
+  8018a9d0 0000c0 8018a9d0  4 read 	RPSportsCommonData
+  8018aa90 000028 8018aa90  4 checkTrainingUnlock 	RPSportsCommonData
+  8018aab8 000038 8018aab8  4 setTrainingUnlock 	RPSportsCommonData
+  8018aaf0 000020 8018aaf0  4 checkUnlock 	RPSportsCommonData
+  8018ab10 000030 8018ab10  4 setUnlock 	RPSportsCommonData
+  8018ab40 000008 8018ab40  4 FUN_8018ab40 	RPSportsCommonData
+  8018ab48 000008 8018ab48  4 FUN_8018ab48 	RPSportsCommonData
+  8018ab50 000008 8018ab50  4 FUN_8018ab50 	RPSportsCommonData
+  8018ab58 000008 8018ab58  4 FUN_8018ab58 	RPSportsCommonData
+  8018ab60 000080 8018ab60  4 FUN_8018ab60 	RPSportsCommonData
+  8018abe0 000084 8018abe0  4 FUN_8018abe0 	RPSportsCommonData
+  8018ac64 0000d0 8018ac64  4 reset 	RPSportsCommonData
+  8018ad34 00003c 8018ad34  4 FUN_8018ad34 	RPSportsCommonData
+  8018ad70 000374 8018ad70  4 write 	RPSportsPlayerData
+  8018b0e4 000368 8018b0e4  4 read 	RPSportsPlayerData
   8018b44c 000008 8018b44c  4 FUN_8018b44c 	Global
   8018b454 000008 8018b454  4 FUN_8018b454 	Global
   8018b45c 000044 8018b45c  4 FUN_8018b45c 	Global
@@ -6227,7 +6395,7 @@
   8018b8f8 000048 8018b8f8  4 FUN_8018b8f8 	Global
   8018b940 00002c 8018b940  4 FUN_8018b940 	Global
   8018b96c 000028 8018b96c  4 FUN_8018b96c 	Global
-  8018b994 00030c 8018b994  4 FUN_8018b994 	Global
+  8018b994 00030c 8018b994  4 reset 	RPSportsPlayerData
   8018bca0 00003c 8018bca0  4 FUN_8018bca0 	Global
   8018bcdc 000088 8018bcdc  4 FUN_8018bcdc 	Global
   8018bd64 0000ac 8018bd64  4 FUN_8018bd64 	Global
@@ -6235,8 +6403,8 @@
   8018be64 000040 8018be64  4 FUN_8018be64 	Global
   8018bea4 0000b0 8018bea4  4 FUN_8018bea4 	Global
   8018bf54 000008 8018bf54  4 FUN_8018bf54 	Global
-  8018bf5c 000184 8018bf5c  4 FUN_8018bf5c 	Global
-  8018c0e0 00024c 8018c0e0  4 FUN_8018c0e0 	Global
+  8018bf5c 000184 8018bf5c  4 WriteSave 	Global
+  8018c0e0 00024c 8018c0e0  4 read 	RPSportsSaveDataMgr
   8018c32c 000008 8018c32c  4 FUN_8018c32c 	Global
   8018c334 0000d8 8018c334  4 FUN_8018c334 	Global
   8018c40c 000010 8018c40c  4 FUN_8018c40c 	Global
@@ -6289,28 +6457,28 @@
   8018f374 00132c 8018f374  4 FUN_8018f374 	Global
   801906fc 000048 801906fc  4 FUN_801906fc 	Global
   80190744 000050 80190744  4 FUN_80190744 	Global
-  80190794 000040 80190794  4 FUN_80190794 	Global
-  801907d4 000010 801907d4  4 FUN_801907d4 	Global
-  801907e4 00005c 801907e4  4 FUN_801907e4 	Global
-  80190840 000004 80190840  4 FUN_80190840 	Global
-  80190844 000004 80190844  4 FUN_80190844 	Global
-  80190848 000040 80190848  4 FUN_80190848 	Global
-  80190888 00003c 80190888  4 FUN_80190888 	Global
+  80190794 000040 80190794  4 ~IRPSysHostIOSocket 	IRPSysHostIOSocket
+  801907d4 000010 801907d4  4 IRPSysHostIOSocket 	IRPSysHostIOSocket
+  801907e4 00005c 801907e4  4 IRPSysHostIOSocket 	IRPSysHostIOSocket
+  80190840 000004 80190840  4 update 	RPSysHostIOSocketManager
+  80190844 000004 80190844  4 FUN_80190844 	RPSysHostIOSocketManager
+  80190848 000040 80190848  4 ~RPSysHostIOSocketManager 	RPSysHostIOSocketManager
+  80190888 00003c 80190888  4 CreateInstance 	RPSysHostIOSocketManager
   801908c4 000004 801908c4  4 FUN_801908c4 	Global
   801908c8 000004 801908c8  4 FUN_801908c8 	Global
-  801908cc 00000c 801908cc  4 FUN_801908cc 	Global
-  801908d8 000088 801908d8  4 FUN_801908d8 	Global
-  80190960 000198 80190960  4 FUN_80190960 	Global
-  80190af8 0000a4 80190af8  4 FUN_80190af8 	Global
-  80190b9c 0000d0 80190b9c  4 FUN_80190b9c 	Global
-  80190c6c 000058 80190c6c  4 FUN_80190c6c 	Global
-  80190cc4 000060 80190cc4  4 FUN_80190cc4 	Global
-  80190d24 000024 80190d24  4 FUN_80190d24 	Global
-  80190d48 000024 80190d48  4 FUN_80190d48 	Global
-  80190d6c 000024 80190d6c  4 FUN_80190d6c 	Global
-  80190d90 000004 80190d90  4 thunk_FUN_800b14c8 	Global
-  80190d94 000058 80190d94  4 FUN_80190d94 	Global
-  80190dec 00003c 80190dec  4 FUN_80190dec 	Global
+  801908cc 00000c 801908cc  4 FUN_801908cc 	RPSysTextWriter
+  801908d8 000088 801908d8  4 FUN_801908d8 	RPSysTextWriter
+  80190960 000198 80190960  4 FUN_80190960 	RPSysTextWriter
+  80190af8 0000a4 80190af8  4 FUN_80190af8 	RPSysTextWriter
+  80190b9c 0000d0 80190b9c  4 Reset 	RPSysTextWriter
+  80190c6c 000058 80190c6c  4 ~RPSysTextWriter 	RPSysTextWriter
+  80190cc4 000060 80190cc4  4 CreateInstance 	RPSysTextWriter
+  80190d24 000024 80190d24  4 GetCharSpace 	RPSysMessage
+  80190d48 000024 80190d48  4 GetScale 	RPSysMessage
+  80190d6c 000024 80190d6c  4 GetAttribute 	RPSysMessage
+  80190d90 000004 80190d90  4 GetMessage 	RPSysMessage
+  80190d94 000058 80190d94  4 ~RPSysMessage 	RPSysMessage
+  80190dec 00003c 80190dec  4 RPSysMessage 	RPSysMessage
   80190e28 00010c 80190e28  4 FUN_80190e28 	Global
   80190f34 000028 80190f34  4 FUN_80190f34 	Global
   80190f5c 000028 80190f5c  4 FUN_80190f5c 	Global
@@ -6345,8 +6513,8 @@
   8019240c 000084 8019240c  4 FUN_8019240c 	Global
   80192490 000068 80192490  4 FUN_80192490 	Global
   801924f8 000058 801924f8  4 FUN_801924f8 	Global
-  80192550 00012c 80192550  4 FUN_80192550 	Global
-  8019267c 000034 8019267c  4 FUN_8019267c 	Global
+  80192550 00012c 80192550  4 RPSysKokeshiManager 	RPSysKokeshiManager
+  8019267c 000034 8019267c  4 CreateInstance 	RPSysKokeshiManager
   801926b0 000040 801926b0  4 FUN_801926b0 	Global
   801926f0 000010 801926f0  4 FUN_801926f0 	Global
   80192700 0000cc 80192700  4 FUN_80192700 	Global
@@ -6359,13 +6527,14 @@
   8019304c 0000a4 8019304c  4 FUN_8019304c 	Global
   801930f0 000008 801930f0  4 FUN_801930f0 	Global
   801930f8 000008 801930f8  4 FUN_801930f8 	Global
+  80193100 000150 80193100  4 FUN_80193100 	Global
   80193250 000018 80193250  4 FUN_80193250 	Global
   80193268 000010 80193268  4 FUN_80193268 	Global
   80193278 004fa0 80193278  4 FUN_80193278 	Global
   80193288 00022c 80193288  4 FUN_80193288 	Global
   801934b4 0000d0 801934b4  4 FUN_801934b4 	Global
   80193584 00007c 80193584  4 FUN_80193584 	Global
-  80193600 00009c 80193600  4 FUN_80193600 	Global
+  80193600 00009c 80193600  4 RetireParticleAll 	RPSysParticleManager
   8019369c 000048 8019369c  4 FUN_8019369c 	Global
   801936e4 000018 801936e4  4 FUN_801936e4 	Global
   801936fc 00009c 801936fc  4 FUN_801936fc 	Global
@@ -6389,11 +6558,11 @@
   8019474c 000028 8019474c  4 FUN_8019474c 	Global
   80194790 0000fc 80194790  4 FUN_80194790 	Global
   8019488c 0000ac 8019488c  4 FUN_8019488c 	Global
-  80194938 000060 80194938  4 FUN_80194938 	Global
+  80194938 000060 80194938  4 setParticleRotate 	Effect
   80194998 0000c0 80194998  4 FUN_80194998 	Global
-  80194a58 000060 80194a58  4 FUN_80194a58 	Global
+  80194a58 000060 80194a58  4 setParticleScale 	Effect
   80194ab8 0000c0 80194ab8  4 FUN_80194ab8 	Global
-  80194bac 000090 80194bac  4 FUN_80194bac 	Global
+  80194bac 000090 80194bac  4 setColor 	Effect
   80194c3c 000064 80194c3c  4 FUN_80194c3c 	Global
   80194ca0 0001b0 80194ca0  4 FUN_80194ca0 	Global
   80194e50 0000f8 80194e50  4 FUN_80194e50 	Global
@@ -6489,7 +6658,7 @@
   80198778 00008c 80198778  4 FUN_80198778 	Global
   80198804 0000d4 80198804  4 FUN_80198804 	Global
   801988d8 000090 801988d8  4 FUN_801988d8 	Global
-  80198968 000028 80198968  4 FUN_80198968 	Global
+  80198968 000028 80198968  4 Initialize 	RPSysWideTextWriter
   80198990 000040 80198990  4 FUN_80198990 	Global
   801989d0 00007c 801989d0  4 FUN_801989d0 	Global
   80198a4c 000068 80198a4c  4 FUN_80198a4c 	Global
@@ -6506,7 +6675,7 @@
   8019931c 0000d8 8019931c  4 FUN_8019931c 	Global
   801993f4 000210 801993f4  4 FUN_801993f4 	Global
   80199604 000074 80199604  4 FUN_80199604 	Global
-  80199678 000074 80199678  4 FUN_80199678 	Global
+  80199678 000074 80199678  4 RPSysFile 	RPSysFile
   801996ec 000188 801996ec  4 FUN_801996ec 	Global
   80199874 000004 80199874  4 FUN_80199874 	Global
   80199878 00000c 80199878  4 FUN_80199878 	Global
@@ -6532,13 +6701,13 @@
   8019ae38 0001fc 8019ae38  4 FUN_8019ae38 	Global
   8019b034 00008c 8019b034  4 FUN_8019b034 	Global
   8019b0c0 000058 8019b0c0  4 FUN_8019b0c0 	Global
-  8019b118 00004c 8019b118  4 FUN_8019b118 	Global
+  8019b118 00004c 8019b118  4 CreateInstance 	RPSysTagProcessor
   8019b164 0000b0 8019b164  4 FUN_8019b164 	Global
   8019b214 000080 8019b214  4 FUN_8019b214 	Global
   8019b294 000060 8019b294  4 FUN_8019b294 	Global
   8019b2f4 0000b4 8019b2f4  4 FUN_8019b2f4 	Global
   8019b3a8 000174 8019b3a8  4 FUN_8019b3a8 	Global
-  8019b5ac 000020 8019b5ac  4 FUN_8019b5ac 	Global
+  8019b5ac 000020 8019b5ac  4 isPrevDpdCtrlEnable 	RPSysCoreController
   8019b5cc 000054 8019b5cc  4 FUN_8019b5cc 	Global
   8019b620 000070 8019b620  4 FUN_8019b620 	Global
   8019b690 000068 8019b690  4 FUN_8019b690 	Global
@@ -6547,7 +6716,7 @@
   8019b738 00ae3c 8019b738  4 FUN_8019b738 	Global
   8019b740 000054 8019b740  4 FUN_8019b740 	Global
   8019b794 000044 8019b794  4 FUN_8019b794 	Global
-  8019b7dc 000044 8019b7dc  4 FUN_8019b7dc 	Global
+  8019b7dc 000044 8019b7dc  4 stopMotorAll 	RPSysCoreController
   8019b820 000004 8019b820  4 FUN_8019b820 	Global
   8019b824 000038 8019b824  4 FUN_8019b824 	Global
   8019b85c 00028c 8019b85c  4 FUN_8019b85c 	Global
@@ -6559,7 +6728,7 @@
   8019c080 000008 8019c080  4 FUN_8019c080 	Global
   8019c088 00ac04 8019c088  4 FUN_8019c088 	Global
   8019c090 000068 8019c090  4 FUN_8019c090 	Global
-  8019c0f8 0000b4 8019c0f8  4 FUN_8019c0f8 	Global
+  8019c0f8 0000b4 8019c0f8  4 initialize 	RPSysCoreController
   8019c1ac 00007c 8019c1ac  4 FUN_8019c1ac 	Global
   8019c228 000034 8019c228  4 FUN_8019c228 	Global
   8019c25c 000098 8019c25c  4 FUN_8019c25c 	Global
@@ -6606,7 +6775,7 @@
   8019ed14 000040 8019ed14  4 FUN_8019ed14 	Global
   8019ed54 000020 8019ed54  4 FUN_8019ed54 	Global
   8019ed74 000074 8019ed74  4 FUN_8019ed74 	Global
-  8019ede8 000358 8019ede8  4 FUN_8019ede8 	Global
+  8019ede8 000358 8019ede8  4 RPSysCursorDrawMgr 	RPSysCursorDrawMgr
   8019f144 00015c 8019f144  4 FUN_8019f144 	Global
   8019f2a0 000190 8019f2a0  4 FUN_8019f2a0 	Global
   8019f430 0001a4 8019f430  4 FUN_8019f430 	Global
@@ -6627,7 +6796,8 @@
   8019ff0c 0000d4 8019ff0c  4 FUN_8019ff0c 	Global
   8019ffe0 00011c 8019ffe0  4 FUN_8019ffe0 	Global
   801a00fc 000134 801a00fc  4 FUN_801a00fc 	Global
-  801a0230 000060 801a0230  4 FUN_801a0230 	Global
+  801a0230 000060 801a0230  4 CreateInstance 	RPSysCursorDrawMgr
+  801a0290 00002c 801a0290  4 FUN_801a0290 	Global
   801a02bc 0000b4 801a02bc  4 FUN_801a02bc 	Global
   801a0370 0000a8 801a0370  4 FUN_801a0370 	Global
   801a0418 00006c 801a0418  4 FUN_801a0418 	Global
@@ -6670,7 +6840,7 @@
   801a3e0c 0000fc 801a3e0c  4 FUN_801a3e0c 	Global
   801a3f08 00010c 801a3f08  4 FUN_801a3f08 	Global
   801a4014 0000a8 801a4014  4 FUN_801a4014 	Global
-  801a40bc 000814 801a40bc  4 FUN_801a40bc 	Global
+  801a40bc 000814 801a40bc  4 HandleMsgAttribute 	Global
   801a48d0 000060 801a48d0  4 FUN_801a48d0 	Global
   801a4930 000cac 801a4930  4 FUN_801a4930 	Global
   801a4954 02d2ac 801a4954  4 FUN_801a4954 	Global
@@ -6707,9 +6877,10 @@
   801a63a0 000084 801a63a0  4 FUN_801a63a0 	Global
   801a6424 0000b0 801a6424  4 FUN_801a6424 	Global
   801a64d4 000044 801a64d4  4 FUN_801a64d4 	Global
+  801a6574 000004 801a6574  4 endFrame 	Global
   801a6578 00052c 801a6578  4 FUN_801a6578 	Global
   801a6c8c 0000c8 801a6c8c  4 FUN_801a6c8c 	Global
-  801a6d54 0000c8 801a6d54  4 FUN_801a6d54 	Global
+  801a6d54 0000c8 801a6d54  4 RPSysCoreControllerMgr 	RPSysCoreControllerMgr
   801a6e1c 000064 801a6e1c  4 FUN_801a6e1c 	Global
   801a6f00 000068 801a6f00  4 FUN_801a6f00 	Global
   801a6f68 0005c8 801a6f68  4 FUN_801a6f68 	Global
@@ -6863,26 +7034,27 @@
   801af194 000040 801af194  4 FUN_801af194 	Global
   801af1d8 000230 801af1d8  4 FUN_801af1d8 	Global
   801af40c 000024 801af40c  4 FUN_801af40c 	Global
-  801af430 000024 801af430  4 FUN_801af430 	Global
+  801af430 000024 801af430  4 AppendDrawObject 	RPGrpRenderer
   801af454 000138 801af454  4 FUN_801af454 	Global
-  801af58c 00009c 801af58c  4 FUN_801af58c 	Global
+  801af58c 00009c 801af58c  4 CreateView2D 	RPGrpRenderer
   801af628 000098 801af628  4 FUN_801af628 	Global
   801af6c0 000054 801af6c0  4 FUN_801af6c0 	Global
   801af714 000058 801af714  4 FUN_801af714 	Global
   801af76c 000084 801af76c  4 FUN_801af76c 	Global
   801af7f0 001698 801af7f0  4 FUN_801af7f0 	Global
-  801af7f8 0004f0 801af7f8  4 FUN_801af7f8 	Global
+  801af7f8 0004f0 801af7f8  4 Rendering 	RPGrpRenderer
   801afce8 000060 801afce8  4 FUN_801afce8 	Global
   801afd48 000030 801afd48  4 FUN_801afd48 	Global
   801afd78 001eb8 801afd78  4 FUN_801afd78 	Global
   801afd80 000160 801afd80  4 FUN_801afd80 	Global
-  801afee0 00000c 801afee0  4 FUN_801afee0 	Global
-  801afeec 000080 801afeec  4 FUN_801afeec 	Global
-  801aff6c 000098 801aff6c  4 FUN_801aff6c 	Global
+  801afee0 00000c 801afee0  4 End 	RPGrpRenderer
+  801afeec 000080 801afeec  4 StartDebugDraw 	RPGrpRenderer
+  801aff6c 000098 801aff6c  4 Begin 	RPGrpRenderer
   801b0004 000048 801b0004  4 FUN_801b0004 	Global
-  801b004c 00016c 801b004c  4 FUN_801b004c 	Global
+  801b004c 00016c 801b004c  4 Initialize 	RPGrpRenderer
   801b01b8 000040 801b01b8  4 FUN_801b01b8 	Global
   801b01f8 000040 801b01f8  4 FUN_801b01f8 	Global
+  801b0238 000030 801b0238  4 FUN_801b0238 	Global
   801b0268 0000f4 801b0268  4 FUN_801b0268 	Global
   801b035c 00001c 801b035c  4 FUN_801b035c 	Global
   801b0378 000070 801b0378  4 FUN_801b0378 	Global
@@ -6933,8 +7105,8 @@
   801b2580 000040 801b2580  4 FUN_801b2580 	Global
   801b25f8 000040 801b25f8  4 FUN_801b25f8 	Global
   801b2638 000058 801b2638  4 FUN_801b2638 	Global
-  801b2690 12ecd0 801b2690  4 FUN_801b2690 	Global
-  801b2698 12ed44 801b2698  4 FUN_801b2698 	Global
+  801b2690 000008 801b2690  4 FUN_801b2690 	Global
+  801b2698 000008 801b2698  4 FUN_801b2698 	Global
   801b26a0 000024 801b26a0  4 FUN_801b26a0 	Global
   801b26c4 000040 801b26c4  4 FUN_801b26c4 	Global
   801b273c 00004c 801b273c  4 FUN_801b273c 	Global
@@ -6983,10 +7155,10 @@
   801b637c 0002bc 801b637c  4 FUN_801b637c 	Global
   801b6638 00004c 801b6638  4 FUN_801b6638 	Global
   801b6684 00004c 801b6684  4 FUN_801b6684 	Global
-  801b66d0 000040 801b66d0  4 FUN_801b66d0 	Global
+  801b66d0 000040 801b66d0  4 shutdownSystem 	RPSndAudioMgr
   801b6710 000080 801b6710  4 FUN_801b6710 	Global
   801b6790 0000b4 801b6790  4 FUN_801b6790 	Global
-  801b6844 0000ac 801b6844  4 FUN_801b6844 	Global
+  801b6844 0000ac 801b6844  4 enterPause 	RPSndAudioMgr
   801b68f0 0000e4 801b68f0  4 FUN_801b68f0 	Global
   801b69d4 0000dc 801b69d4  4 FUN_801b69d4 	Global
   801b6ab0 0000c4 801b6ab0  4 FUN_801b6ab0 	Global
@@ -6994,7 +7166,7 @@
   801b6c00 000080 801b6c00  4 FUN_801b6c00 	Global
   801b6c80 000080 801b6c80  4 FUN_801b6c80 	Global
   801b6d00 000118 801b6d00  4 FUN_801b6d00 	Global
-  801b6e18 000088 801b6e18  4 FUN_801b6e18 	Global
+  801b6e18 000088 801b6e18  4 startPauseSe 	RPSndAudioMgr
   801b6ea0 000124 801b6ea0  4 FUN_801b6ea0 	Global
   801b6fc4 00002c 801b6fc4  4 FUN_801b6fc4 	Global
   801b6ff0 0000ac 801b6ff0  4 FUN_801b6ff0 	Global
@@ -7008,27 +7180,30 @@
   801b73fc 0000b4 801b73fc  4 FUN_801b73fc 	Global
   801b74b0 000084 801b74b0  4 FUN_801b74b0 	Global
   801b7534 000074 801b7534  4 FUN_801b7534 	Global
-  801b75a8 000680 801b75a8  4 FUN_801b75a8 	Global
+  801b75a8 000680 801b75a8  4 calc 	RPSndAudioMgr
   801b7c28 000170 801b7c28  4 FUN_801b7c28 	Global
   801b7d98 0001f8 801b7d98  4 FUN_801b7d98 	Global
   801b7f90 0001c8 801b7f90  4 FUN_801b7f90 	Global
   801b815c 0000a4 801b815c  4 FUN_801b815c 	Global
-  801b8200 0000dc 801b8200  4 FUN_801b8200 	Global
-  801b82dc 000060 801b82dc  4 FUN_801b82dc 	Global
-  801b8384 00002c 801b8384  4 FUN_801b8384 	Global
+  801b8200 0000dc 801b8200  4 RPSndAudioMgr 	RPSndAudioMgr
+  801b82dc 000060 801b82dc  4 createInstance 	RPSndAudioMgr
+  801b833c 000008 801b833c  4 FUN_801b833c 	Global
+  801b8344 000008 801b8344  4 FUN_801b8344 	Global
+  801b8384 000014 801b8384  4 FUN_801b8384 	Global
+  801b8398 000018 801b8398  4 FUN_801b8398 	Global
   801b83b0 000080 801b83b0  4 FUN_801b83b0 	Global
   801b8430 0000f8 801b8430  4 FUN_801b8430 	Global
   801b858c 0000d0 801b858c  4 FUN_801b858c 	Global
   801b865c 0000d4 801b865c  4 FUN_801b865c 	Global
   801b8730 000058 801b8730  4 FUN_801b8730 	Global
-  801b8788 0000e4 801b8788  4 FUN_801b8788 	Global
+  801b8788 0000e4 801b8788  4 RPSndSpeakerMgr 	RPSndSpeakerMgr
   801b886c 000190 801b886c  4 FUN_801b886c 	Global
-  801b89fc 0000ec 801b89fc  4 FUN_801b89fc 	Global
-  801b8ae8 000030 801b8ae8  4 FUN_801b8ae8 	Global
+  801b89fc 0000ec 801b89fc  4 setEnableSw 	RPSndSpeakerMgr
+  801b8ae8 000030 801b8ae8  4 updateMasterVolume 	RPSndSpeakerMgr
   801b8b18 000080 801b8b18  4 FUN_801b8b18 	Global
-  801b8b98 000208 801b8b98  4 FUN_801b8b98 	Global
+  801b8b98 000208 801b8b98  4 calc 	RPSndSpeakerMgr
   801b8da0 0000f8 801b8da0  4 FUN_801b8da0 	Global
-  801b8e98 000060 801b8e98  4 FUN_801b8e98 	Global
+  801b8e98 000060 801b8e98  4 createInstance 	RPSndSpeakerMgr
   801b8ef8 000080 801b8ef8  4 FUN_801b8ef8 	Global
   801b8f78 0000f8 801b8f78  4 FUN_801b8f78 	Global
   801b9070 000094 801b9070  4 FUN_801b9070 	Global
@@ -7122,7 +7297,7 @@
   801be7c0 000050 801be7c0  4 FUN_801be7c0 	Global
   801be810 0001ac 801be810  4 FUN_801be810 	Global
   801be9bc 00006c 801be9bc  4 FUN_801be9bc 	Global
-  801bea28 000054 801bea28  4 FUN_801bea28 	Global
+  801bea28 000054 801bea28  4 initialize 	RPUtlRandom
   801bea7c 000040 801bea7c  4 FUN_801bea7c 	Global
   801beabc 000038 801beabc  4 FUN_801beabc 	Global
   801beaf4 00000c 801beaf4  4 FUN_801beaf4 	Global
@@ -7159,7 +7334,7 @@
   801bfd00 00000c 801bfd00  4 FUN_801bfd00 	Global
   801bfd0c 000014 801bfd0c  4 FUN_801bfd0c 	Global
   801bfd20 000024 801bfd20  4 FUN_801bfd20 	Global
-  801bfd44 000004 801bfd44  4 FUN_801bfd44 	Global
+  801bfd44 000004 801bfd44  4 StubbedPrint 	Global
   801bfd48 00009c 801bfd48  4 FUN_801bfd48 	Global
   801bfe0c 000040 801bfe0c  4 FUN_801bfe0c 	Global
   801bfe4c 000028 801bfe4c  4 FUN_801bfe4c 	Global
@@ -7568,6 +7743,7 @@
   801d8f84 000024 801d8f84  4 FUN_801d8f84 	Global
   801d8fa8 000068 801d8fa8  4 FUN_801d8fa8 	Global
   801d9010 000060 801d9010  4 FUN_801d9010 	Global
+  801d9070 000008 801d9070  4 FUN_801d9070 	Global
   801d9078 000224 801d9078  4 FUN_801d9078 	Global
   801d929c 000048 801d929c  4 FUN_801d929c 	Global
   801d92e4 00001c 801d92e4  4 FUN_801d92e4 	Global
@@ -7906,8 +8082,8 @@
   801ef228 0000c4 801ef228  4 FUN_801ef228 	Global
   801ef2f0 0001c8 801ef2f0  4 FUN_801ef2f0 	Global
   801ef4b8 00048c 801ef4b8  4 FUN_801ef4b8 	Global
-  801ef944 0000bc 801ef944  4 FUN_801ef944 	Global
-  801efa00 00003c 801efa00  4 FUN_801efa00 	Global
+  801ef944 0000bc 801ef944  4 UpdateSkillLevel 	GeneralSkill
+  801efa00 00003c 801efa00  4 GetCurrentSkill 	GeneralSkill
   801efa3c 00012c 801efa3c  4 FUN_801efa3c 	Global
   801efb68 0004b8 801efb68  4 FUN_801efb68 	Global
   801f0020 00060c 801f0020  4 FUN_801f0020 	Global
@@ -8891,9 +9067,9 @@
   80235960 0000ec 80235960  4 FUN_80235960 	Global
   80235a4c 000160 80235a4c  4 FUN_80235a4c 	Global
   80235bac 000124 80235bac  4 FUN_80235bac 	Global
-  80235cd0 0002d0 80235cd0  4 FUN_80235cd0 	Global
+  80235cd0 0002d0 80235cd0  4 CalcNewSkill 	Tennis
   80235fa0 0003b8 80235fa0  4 FUN_80235fa0 	Global
-  80236358 00031c 80236358  4 FUN_80236358 	Global
+  80236358 00031c 80236358  4 EndGameProc 	Tennis
   80236674 00056c 80236674  4 FUN_80236674 	Global
   80236be0 00030c 80236be0  4 FUN_80236be0 	Global
   80236eec 0006a0 80236eec  4 FUN_80236eec 	Global
@@ -9126,8 +9302,8 @@
   80248410 00005c 80248410  4 FUN_80248410 	Global
   8024846c 00074c 8024846c  4 FUN_8024846c 	Global
   80248bb8 00001c 80248bb8  4 FUN_80248bb8 	Global
-  80248bd4 000010 80248bd4  4 FUN_80248bd4 	Global
-  80248be4 000028 80248be4  4 FUN_80248be4 	Global
+  80248bd4 000010 80248bd4  4 AddF32ToSkillLevel 	Tennis
+  80248be4 000028 80248be4  4 DecaySkillLevel 	Tennis
   80248c0c 0000c4 80248c0c  4 FUN_80248c0c 	Global
   80248cd0 000010 80248cd0  4 FUN_80248cd0 	Global
   80248ce0 000008 80248ce0  4 FUN_80248ce0 	Global
@@ -9235,7 +9411,7 @@
   8024f204 00025c 8024f204  4 FUN_8024f204 	Global
   8024f460 000064 8024f460  4 FUN_8024f460 	Global
   8024f4c4 000120 8024f4c4  4 FUN_8024f4c4 	Global
-  8024f5f0 0001d0 8024f5f0  4 FUN_8024f5f0 	Global
+  8024f5f0 0001d0 8024f5f0  4 CalcNewSkill 	Baseball
   8024f7c0 000688 8024f7c0  4 FUN_8024f7c0 	Global
   8024fe60 000130 8024fe60  4 FUN_8024fe60 	Global
   8024ffa0 000154 8024ffa0  4 FUN_8024ffa0 	Global
@@ -9650,6 +9826,7 @@
   8026dfa0 000010 8026dfa0  4 FUN_8026dfa0 	Global
   8026dfb0 000070 8026dfb0  4 FUN_8026dfb0 	Global
   8026e080 000040 8026e080  4 FUN_8026e080 	Global
+  8026e0c0 000008 8026e0c0  4 FUN_8026e0c0 	Global
   8026e0dc 000364 8026e0dc  4 FUN_8026e0dc 	Global
   8026e440 000104 8026e440  4 FUN_8026e440 	Global
   8026e544 000040 8026e544  4 FUN_8026e544 	Global
@@ -9743,7 +9920,13 @@
   80271b7c 0000dc 80271b7c  4 FUN_80271b7c 	Global
   80271c58 00011c 80271c58  4 FUN_80271c58 	Global
   80271d74 000174 80271d74  4 FUN_80271d74 	Global
-  80271ee8 000014 80271ee8  4 FUN_80271ee8 	Global
+  80271ee8 000014 80271ee8  4 IsGameMultiplayer 	Baseball
+  80271efc 000004 80271efc  4 FUN_80271efc 	Global
+  80271f00 000004 80271f00  4 FUN_80271f00 	Global
+  80271f04 000004 80271f04  4 FUN_80271f04 	Global
+  80271f08 000004 80271f08  4 FUN_80271f08 	Global
+  80271f0c 000004 80271f0c  4 FUN_80271f0c 	Global
+  80271f10 000004 80271f10  4 FUN_80271f10 	Global
   80271f14 00017c 80271f14  4 FUN_80271f14 	Global
   802720a4 000384 802720a4  4 FUN_802720a4 	Global
   80272428 00021c 80272428  4 FUN_80272428 	Global
@@ -9752,6 +9935,7 @@
   8027287c 000008 8027287c  4 FUN_8027287c 	Global
   80272884 000078 80272884  4 FUN_80272884 	Global
   802728fc 000004 802728fc  4 FUN_802728fc 	Global
+  80272900 000008 80272900  4 FUN_80272900 	Global
   80272908 0000dc 80272908  4 FUN_80272908 	Global
   802729e4 000078 802729e4  4 FUN_802729e4 	Global
   80272a5c 0002d4 80272a5c  4 FUN_80272a5c 	Global
@@ -9795,11 +9979,11 @@
   80274ba8 0000cc 80274ba8  4 FUN_80274ba8 	Global
   80274c8c 000058 80274c8c  4 FUN_80274c8c 	Global
   80274cf0 007e7c 80274cf0  4 FUN_80274cf0 	Global
-  80274d04 000014 80274d04  4 FUN_80274d04 	Global
-  80274d18 00013c 80274d18  4 FUN_80274d18 	Global
+  80274d04 000014 80274d04  4 SetNewScore 	BSBScoreText
+  80274d18 00013c 80274d18  4 Update 	BSBScoreText
   80274e54 000044 80274e54  4 FUN_80274e54 	Global
   80274e98 000044 80274e98  4 FUN_80274e98 	Global
-  80274edc 000020 80274edc  4 FUN_80274edc 	Global
+  80274edc 000020 80274edc  4 SetPtr2C 	BSBScoreText
   80274efc 000084 80274efc  4 FUN_80274efc 	Global
   80274f84 0000b0 80274f84  4 FUN_80274f84 	Global
   80275034 000058 80275034  4 FUN_80275034 	Global
@@ -10281,7 +10465,7 @@
   80291694 00008c 80291694  4 FUN_80291694 	Global
   80291720 000080 80291720  4 FUN_80291720 	Global
   802917a0 01c9a8 802917a0  4 FUN_802917a0 	Global
-  802917d4 0004d0 802917d4  4 FUN_802917d4 	Global
+  802917d4 0004d0 802917d4  4 PmpProc2 	Global
   80291ca4 000060 80291ca4  4 FUN_80291ca4 	Global
   80291d04 00007c 80291d04  4 FUN_80291d04 	Global
   80291d80 00005c 80291d80  4 FUN_80291d80 	Global
@@ -10289,7 +10473,7 @@
   80291e3c 000060 80291e3c  4 FUN_80291e3c 	Global
   80291e9c 00003c 80291e9c  4 FUN_80291e9c 	Global
   80291ed8 00005c 80291ed8  4 FUN_80291ed8 	Global
-  80291f34 000134 80291f34  4 FUN_80291f34 	Global
+  80291f34 000134 80291f34  4 PmpProc 	Golf
   80292068 00022c 80292068  4 FUN_80292068 	Global
   80292294 000020 80292294  4 FUN_80292294 	Global
   802922b4 000014 802922b4  4 FUN_802922b4 	Global
@@ -10302,7 +10486,7 @@
   80292c7c 00029c 80292c7c  4 FUN_80292c7c 	Global
   80292f18 00008c 80292f18  4 FUN_80292f18 	Global
   80292fa4 000064 80292fa4  4 FUN_80292fa4 	Global
-  80293008 000698 80293008  4 FUN_80293008 	Global
+  80293008 000698 80293008  4 LoadCurrentHoleResources 	Golf
   802936a0 0000c4 802936a0  4 FUN_802936a0 	Global
   802937c8 0001b0 802937c8  4 FUN_802937c8 	Global
   80293978 000218 80293978  4 FUN_80293978 	Global
@@ -10458,54 +10642,61 @@
   8029c11c 00005c 8029c11c  4 FUN_8029c11c 	Global
   8029c2f8 000304 8029c2f8  4 FUN_8029c2f8 	Global
   8029c5fc 0002a8 8029c5fc  4 FUN_8029c5fc 	Global
+  8029c8a4 000008 8029c8a4  4 FUN_8029c8a4 	Global
+  8029c8ac 000010 8029c8ac  4 FUN_8029c8ac 	Global
   8029c8bc 0000dc 8029c8bc  4 FUN_8029c8bc 	Global
   8029c998 000044 8029c998  4 FUN_8029c998 	Global
   8029c9dc 000060 8029c9dc  4 FUN_8029c9dc 	Global
+  8029ca3c 000010 8029ca3c  4 InitFOVAndUnk 	Golf
   8029ca4c 000058 8029ca4c  4 FUN_8029ca4c 	Global
   8029caa8 000004 8029caa8  4 FUN_8029caa8 	Global
   8029caac 00002c 8029caac  4 FUN_8029caac 	Global
   8029cad8 00003c 8029cad8  4 FUN_8029cad8 	Global
   8029cb14 000008 8029cb14  4 FUN_8029cb14 	Global
-  8029cb1c 000058 8029cb1c  4 FUN_8029cb1c 	Global
-  8029cb74 000060 8029cb74  4 FUN_8029cb74 	Global
-  8029cbd4 000080 8029cbd4  4 FUN_8029cbd4 	Global
-  8029cc54 000068 8029cc54  4 FUN_8029cc54 	Global
-  8029ccbc 000148 8029ccbc  4 FUN_8029ccbc 	Global
+  8029cb1c 000058 8029cb1c  4 GetNumHolesPlayed 	Golf
+  8029cb74 000060 8029cb74  4 IsFirstHoleOfGamemode 	Golf
+  8029cbd4 000080 8029cbd4  4 GetPlayerScoreOnRelativeHole 	Golf
+  8029cc54 000068 8029cc54  4 GetPlayerStrokesOnRelativeHole 	Golf
+  8029ccbc 000148 8029ccbc  4 CalcRealScore 	Golf
   8029ce04 000054 8029ce04  4 GetIndexedHoleNum 	Golf
   8029ce58 00001c 8029ce58  4 GetRoundLength 	Golf
   8029ce74 000034 8029ce74  4 GetHoleWind 	Golf
-  8029cea8 001000 8029cea8  4 GenerateWindFromGamemode 	Golf
+  8029cea8 00007c 8029cea8  4 GenerateWindFromGamemode 	Golf
   8029cf24 0000cc 8029cf24  4 UpdatePlayerScores 	Golf
   8029cff0 0000c8 8029cff0  4 CanPlayNextHole 	Golf
   8029d0b8 000010 8029d0b8  4 GetNonzeroIdxHoleNum 	Golf
   8029d0c8 000018 8029d0c8  4 GetNthHolePar 	RPGolConfig
   8029d0e0 000020 8029d0e0  4 GetHolePar 	RPGolConfig
-  8029d100 000138 8029d100  4 ChooseHolePinPosition 	Golf
+  8029d100 000138 8029d100  4 ChooseHolePinPosIndex 	Golf
   8029d238 00008c 8029d238  4 FUN_8029d238 	Global
   8029d2c4 0000e8 8029d2c4  4 FUN_8029d2c4 	Global
-  8029d3ac 00008c 8029d3ac  4 FUN_8029d3ac 	Global
+  8029d3ac 00008c 8029d3ac  4 IsTrainingGame 	Golf
   8029d438 00002c 8029d438  4 GetHoleInfoBit_Sky2 	Golf
   8029d464 00002c 8029d464  4 GetHoleInfoBit_SeaSfx 	Golf
   8029d490 00002c 8029d490  4 GetHoleInfoBit_RiverSfx 	Golf
-  8029d4bc 000224 8029d4bc  4 FUN_8029d4bc 	Golf
-  8029d6e0 000098 8029d6e0  4 FUN_8029d6e0 	Global
-  8029d810 0000f4 8029d810  4 FUN_8029d810 	Global
+  8029d4bc 000224 8029d4bc  4 SetupGame_Standard 	Golf
+  8029d6e0 000098 8029d6e0  4 SetupGame_Fitness 	Golf
+  8029d778 000098 8029d778  4 SetupGame_Training 	Golf
+  8029d810 00005c 8029d810  4 SetupGame 	Golf
   8029d86c 0000f4 8029d86c  4 FUN_8029d86c 	Global
-  8029d960 000010 8029d960  4 FUN_8029d960 	Global
-  8029d970 000008 8029d970  4 FUN_8029d970 	Global
-  8029d978 00001c 8029d978  4 FUN_8029d978 	Global
+  8029d960 000010 8029d960  4 SetPinPosArrayIndex 	Golf
+  8029d970 000008 8029d970  4 GreenUnk 	Golf
+  8029d978 00001c 8029d978  4 GetHoleFileStr 	Golf
   8029d994 00000c 8029d994  4 FUN_8029d994 	Global
-  8029d9a0 00005c 8029d9a0  4 FUN_8029d9a0 	Global
-  8029d9fc 000280 8029d9fc  4 FUN_8029d9fc 	Global
-  8029dc7c 000044 8029dc7c  4 FUN_8029dc7c 	Global
-  8029dcc0 000034 8029dcc0  4 FUN_8029dcc0 	Global
-  8029dea8 0001dc 8029dea8  4 FUN_8029dea8 	Global
-  8029e084 000264 8029e084  4 FUN_8029e084 	Global
-  8029e2e8 0002e8 8029e2e8  4 FUN_8029e2e8 	Global
-  8029e5ec 000040 8029e5ec  4 FUN_8029e5ec 	Global
-  8029e62c 000010 8029e62c  4 FUN_8029e62c 	Global
-  8029e63c 013468 8029e63c  4 FUN_8029e63c 	Global
+  8029d9a0 00005c 8029d9a0  4 ~RPGolConfig 	RPGolConfig
+  8029d9fc 000280 8029d9fc  4 RPGolConfig 	RPGolConfig
+  8029dc7c 000044 8029dc7c  4 destroyInstance 	RPGolConfig
+  8029dcc0 000034 8029dcc0  4 createInstance 	RPGolConfig
+  8029dcf4 0001b4 8029dcf4  4 CreateWind 	Golf
+  8029dea8 0001dc 8029dea8  4 CreateRandomSequence 	Golf
+  8029e084 000264 8029e084  4 GetHoleNumFromName 	Golf
+  8029e2e8 0002e8 8029e2e8  4 CreateHoleInfo 	Golf
+  8029e5d0 00001c 8029e5d0  4 DestroyHoleInfo 	Golf
+  8029e5ec 000040 8029e5ec  4 ~HoleInfo 	HoleInfo
+  8029e62c 000010 8029e62c  4 DisableMiiWaitingPose 	Golf
+  8029e63c 000008 8029e63c  4 FUN_8029e63c 	Global
   8029e644 000040 8029e644  4 FUN_8029e644 	Global
+  8029e684 00000c 8029e684  4 FUN_8029e684 	Global
   8029e690 000048 8029e690  4 FUN_8029e690 	Global
   8029e6d8 000088 8029e6d8  4 FUN_8029e6d8 	Global
   8029e760 000070 8029e760  4 FUN_8029e760 	Global
@@ -10560,7 +10751,7 @@
   802a2210 00000c 802a2210  4 FUN_802a2210 	Global
   802a221c 000030 802a221c  4 FUN_802a221c 	Global
   802a2250 0000bc 802a2250  4 FUN_802a2250 	Global
-  802a230c 003c94 802a230c  4 FUN_802a230c 	Global
+  802a230c 00000c 802a230c  4 FUN_802a230c 	Global
   802a2318 000144 802a2318  4 FUN_802a2318 	Global
   802a245c 000190 802a245c  4 FUN_802a245c 	Global
   802a25ec 000034 802a25ec  4 FUN_802a25ec 	Global
@@ -10630,6 +10821,7 @@
   802a70d0 000178 802a70d0  4 FUN_802a70d0 	Global
   802a7248 000184 802a7248  4 FUN_802a7248 	Global
   802a73cc 000040 802a73cc  4 FUN_802a73cc 	Global
+  802a7410 000034 802a7410  4 FUN_802a7410 	Global
   802a7460 000408 802a7460  4 FUN_802a7460 	Global
   802a7868 0000c8 802a7868  4 FUN_802a7868 	Global
   802a7930 00005c 802a7930  4 FUN_802a7930 	Global
@@ -10812,6 +11004,7 @@
   802b18b4 0000d0 802b18b4  4 FUN_802b18b4 	Global
   802b1984 000070 802b1984  4 FUN_802b1984 	Global
   802b1a0c 000028 802b1a0c  4 FUN_802b1a0c 	Global
+  802b1a34 000070 802b1a34  4 FUN_802b1a34 	Global
   802b1aa4 0004d4 802b1aa4  4 FUN_802b1aa4 	Global
   802b1f78 0003d8 802b1f78  4 FUN_802b1f78 	Global
   802b2350 00006c 802b2350  4 FUN_802b2350 	Global
@@ -10873,7 +11066,7 @@
   802b6ac4 00005c 802b6ac4  4 FUN_802b6ac4 	Global
   802b6b20 000050 802b6b20  4 FUN_802b6b20 	Global
   802b6b70 000060 802b6b70  4 FUN_802b6b70 	Global
-  802b6c40 0002e4 802b6c40  4 FUN_802b6c40 	Global
+  802b6c40 0002e4 802b6c40  4 MatoBehave 	Global
   802b6f24 00000c 802b6f24  4 FUN_802b6f24 	Global
   802b6f30 0000ec 802b6f30  4 FUN_802b6f30 	Global
   802b701c 000078 802b701c  4 FUN_802b701c 	Global
@@ -10996,7 +11189,7 @@
   802c1b30 000490 802c1b30  4 FUN_802c1b30 	Global
   802c1fc0 0003fc 802c1fc0  4 FUN_802c1fc0 	Global
   802c23bc 0000d8 802c23bc  4 FUN_802c23bc 	Global
-  802c2494 000170 802c2494  4 FUN_802c2494 	Global
+  802c2494 000170 802c2494  4 CalcNewSkill 	Golf
   802c2604 00014c 802c2604  4 FUN_802c2604 	Global
   802c2750 0005ec 802c2750  4 FUN_802c2750 	Global
   802c2d3c 0000cc 802c2d3c  4 FUN_802c2d3c 	Global
@@ -11084,7 +11277,7 @@
   802cbbf0 000264 802cbbf0  4 FUN_802cbbf0 	Global
   802cbe54 0001e8 802cbe54  4 FUN_802cbe54 	Global
   802cc03c 000124 802cc03c  4 FUN_802cc03c 	Global
-  802cc160 000214 802cc160  4 FUN_802cc160 	Global
+  802cc160 000214 802cc160  4 CalcNewSkill 	Boxing
   802cc374 0000b4 802cc374  4 FUN_802cc374 	Global
   802cc428 0000d0 802cc428  4 FUN_802cc428 	Global
   802cc4f8 0003b0 802cc4f8  4 FUN_802cc4f8 	Global
@@ -11629,7 +11822,7 @@
   80304990 00004c 80304990  4 FUN_80304990 	Global
   803049dc 000010 803049dc  4 FUN_803049dc 	Global
   803049ec 000050 803049ec  4 FUN_803049ec 	Global
-  80304a3c 00001c 80304a3c  4 FUN_80304a3c 	Global
+  80304a3c 00001c 80304a3c  4 GetCurrentSkill 	Boxing
   80304a5c 0000a8 80304a5c  4 FUN_80304a5c 	Global
   80304b04 000054 80304b04  4 FUN_80304b04 	Global
   80304b58 000218 80304b58  4 FUN_80304b58 	Global
@@ -11768,7 +11961,7 @@
   803157d0 000058 803157d0  4 FUN_803157d0 	Global
   80315828 000074 80315828  4 FUN_80315828 	Global
   8031591c 00005c 8031591c  4 FUN_8031591c 	Global
-  80315990 000008 80315990  4 FUN_80315990 	Global
+  80315990 000008 80315990  4 ToggleEnvSfx 	Bowling
   80315998 0000f0 80315998  4 FUN_80315998 	Global
   80315a88 0001d0 80315a88  4 FUN_80315a88 	Global
   80315c58 000158 80315c58  4 FUN_80315c58 	Global
@@ -11788,12 +11981,12 @@
   80318e58 000058 80318e58  4 FUN_80318e58 	Global
   80318eb0 000d90 80318eb0  4 FUN_80318eb0 	Global
   80319c40 000058 80319c40  4 FUN_80319c40 	Global
-  80319c98 0001fc 80319c98  4 FUN_80319c98 	Global
+  80319c98 0001fc 80319c98  4 UseReplayCamera 	Bowling
   80319e94 00024c 80319e94  4 FUN_80319e94 	Global
-  8031a0e0 0012a8 8031a0e0  4 FUN_8031a0e0 	Global
+  8031a0e0 0012a8 8031a0e0  4 UseCamera 	Bowling
   8031b388 000038 8031b388  4 FUN_8031b388 	Global
   8031b3c0 000034 8031b3c0  4 FUN_8031b3c0 	Global
-  8031b3f4 000c84 8031b3f4  4 FUN_8031b3f4 	Global
+  8031b3f4 000c84 8031b3f4  4 CameraProc 	Bowling
   8031c078 00005c 8031c078  4 FUN_8031c078 	Global
   8031c0d4 0002b4 8031c0d4  4 FUN_8031c0d4 	Global
   8031c388 000038 8031c388  4 FUN_8031c388 	Global
@@ -11941,6 +12134,7 @@
   80327e20 000004 80327e20  4 fabsf 	Global
   80327e24 00002c 80327e24  4 FUN_80327e24 	Global
   80327e50 000010 80327e50  4 FUN_80327e50 	Global
+  80327e60 000010 80327e60  4 FUN_80327e60 	Global
   80327e90 00007c 80327e90  4 FUN_80327e90 	Global
   80327f0c 0002b8 80327f0c  4 FUN_80327f0c 	Global
   803281c4 000300 803281c4  4 FUN_803281c4 	Global
@@ -11973,24 +12167,24 @@
   8032adf8 00005c 8032adf8  4 FUN_8032adf8 	Global
   8032ae54 000048 8032ae54  4 FUN_8032ae54 	Global
   8032ae9c 000148 8032ae9c  4 FUN_8032ae9c 	Global
-  8032afe4 0003c8 8032afe4  4 FUN_8032afe4 	Global
+  8032afe4 0003c8 8032afe4  4 CalcNewSkill 	Bowling
   8032b3ac 00002c 8032b3ac  4 FUN_8032b3ac 	Global
   8032b3d8 000180 8032b3d8  4 FUN_8032b3d8 	Global
   8032b558 00015c 8032b558  4 FUN_8032b558 	Global
-  8032b6b4 0003c8 8032b6b4  4 FUN_8032b6b4 	Global
+  8032b6b4 0003c8 8032b6b4  4 EndGameProc 	Bowling
   8032ba7c 0006c8 8032ba7c  4 FUN_8032ba7c 	Global
   8032c144 000258 8032c144  4 FUN_8032c144 	Global
   8032c39c 001f28 8032c39c  4 FUN_8032c39c 	Global
   8032e2c4 000178 8032e2c4  4 FUN_8032e2c4 	Global
-  8032e43c 000078 8032e43c  4 FUN_8032e43c 	Global
-  8032e4b4 000074 8032e4b4  4 FUN_8032e4b4 	Global
+  8032e43c 000078 8032e43c  4 GetNumDownedPins 	Bowling
+  8032e4b4 000074 8032e4b4  4 GetNumRemainingPins 	Bowling
   8032e528 0001f4 8032e528  4 FUN_8032e528 	Global
   8032e71c 00033c 8032e71c  4 FUN_8032e71c 	Global
   8032ea58 0000b8 8032ea58  4 FUN_8032ea58 	Global
-  8032eb10 0004e8 8032eb10  4 FUN_8032eb10 	Global
+  8032eb10 0004e8 8032eb10  4 MainProc 	Bowling
   8032effc 0002bc 8032effc  4 FUN_8032effc 	Global
   8032f2b8 00025c 8032f2b8  4 FUN_8032f2b8 	Global
-  8032f514 000190 8032f514  4 FUN_8032f514 	Global
+  8032f514 000190 8032f514  4 PrintDebugOvl1 	Bowling
   8032f6a4 00001c 8032f6a4  4 FUN_8032f6a4 	Global
   8032f6c0 00001c 8032f6c0  4 FUN_8032f6c0 	Global
   8032f6dc 00001c 8032f6dc  4 FUN_8032f6dc 	Global
@@ -11998,10 +12192,10 @@
   803305d8 00024c 803305d8  4 FUN_803305d8 	Global
   80330824 000008 80330824  4 FUN_80330824 	Global
   8033082c 000004 8033082c  4 FUN_8033082c 	Global
-  80330830 000130 80330830  4 FUN_80330830 	Global
+  80330830 000130 80330830  4 UpdateBallsMdl 	Bowling
   80330960 0001f8 80330960  4 FUN_80330960 	Global
   80330b58 00004c 80330b58  4 FUN_80330b58 	Global
-  80330ba4 00008c 80330ba4  4 FUN_80330ba4 	Global
+  80330ba4 00008c 80330ba4  4 UpdateBallsPhysics 	Bowling
   80330c30 00003c 80330c30  4 FUN_80330c30 	Global
   80330c6c 00007c 80330c6c  4 FUN_80330c6c 	Global
   80330ce8 000064 80330ce8  4 FUN_80330ce8 	Global
@@ -12017,7 +12211,7 @@
   803325d4 0000a4 803325d4  4 FUN_803325d4 	Global
   80332678 000184 80332678  4 FUN_80332678 	Global
   803327fc 000058 803327fc  4 FUN_803327fc 	Global
-  80332854 0001b8 80332854  4 FUN_80332854 	Global
+  80332854 0001b8 80332854  4 UpdateNpcs 	Bowling
   80332a0c 00005c 80332a0c  4 FUN_80332a0c 	Global
   80332a68 0000cc 80332a68  4 FUN_80332a68 	Global
   80332b34 000098 80332b34  4 FUN_80332b34 	Global
