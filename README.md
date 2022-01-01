@@ -1,10 +1,12 @@
 # ogws_info
 Resources/information that I've gathered during my work with OGWS.  
+- This repository is meant to only cover structures from the RP engine (the engine designed for the Pack Project).  
+- As a result, this code will reference other external (EGG/NW4R/etc.) structures that are not defined here.  
   
 If you are interested in the decompilation, or would like to contribute, feel free to check it out here: https://github.com/doldecomp/ogws
   
 ## Index
-- `code/`: Documented code regarding data structures and concepts seen within the game. The code is not a 1:1 decompilation; however, it is close enough to precisely replicate thinigs like mathematical formulas.  
+- `RP/`: Documented code regarding data structures and concepts in the RP engine. Most classes will only have headers, but if the code is easily documentable then it will usually also have a CPP file.
   
 - `RSPE_r1.dmap`: Symbol map (NTSC-U, v1.01) for use with the Dolphin emulator, to aid in debugging. Converted from the decompilation Ghidra project. Updated when I get the chance.  
   
@@ -14,4 +16,5 @@ If you are interested in the decompilation, or would like to contribute, feel fr
   
 ## Instructions
 Dolphin is a bit confusing with this stuff, so I thought I'd leave a note here.  
+  
 Dolphin will only look for `{install-directory}\User\Maps\{GameID}.map` if you select `Symbols > Load Symbol Map`, so you need to instead select `Symbols > Load Other Map File...`, and navigate the to the `*.dmap` file you have downloaded.
