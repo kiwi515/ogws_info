@@ -2,6 +2,9 @@
 #define TYPES_RP_H
 #include <types.h>
 
+// RPSystem
+struct RPSysLoadScene;
+
 // RPSports
 struct RPBoxBoxer;
 struct RPBoxBoxerEnergy;
