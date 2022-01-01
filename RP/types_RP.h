@@ -2,6 +2,9 @@
 #define TYPES_RP_H
 #include <types.h>
 
+// RPKernel
+struct RPSysFile;
+
 // RPSystem
 struct RPSysLoadScene;
 

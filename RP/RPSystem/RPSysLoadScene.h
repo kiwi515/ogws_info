@@ -1,6 +1,8 @@
-#ifndef RP_SYSTEM_LOAD_SCENE_H
-#define RP_SYSTEM_LOAD_SCENE_H
+#ifndef RP_SYSTEM_SYS_LOAD_SCENE_H
+#define RP_SYSTEM_SYS_LOAD_SCENE_H
 #include "types_rp.h"
+
+#include <types_egg.h>
 
 /**
  * @brief Seems to "queue" up the next scene to load.
@@ -8,7 +10,7 @@
  * Used commonly by the menu scene to determine whether the player select scene
  * should be in its regular/training/fitness state.
  * 
- * Name from Wii Fit U
+ * (Name from Wii Fit U)
  */
 class RPSysLoadScene
 {
