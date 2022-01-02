@@ -13,17 +13,18 @@
 class RPSysQueuedScene
 {
 public:    
+    static RPSysQueuedScene * CreateInstance(EGG::Heap *heap); // 80187ba0
     static RPSysQueuedScene * getInstance() { return sInstance; }
 
-    static RPSysQueuedScene * CreateInstance(EGG::Heap *); // 80187ba0
     void Reset(); // 80187b94
 
 private:
-    RPSysQueuedScene(EGG::Heap *heap) : mHeap(heap), mSceneID(-1) {}
+    RPSysQueuedScene(EGG::Heap *heap) : mParentHeap(heap), mSceneID(-1) {}
     virtual ~RPSysQueuedScene(); // 80187b54
 
 private:
-    EGG::Heap *mHeap; // at 0x4
+    EGG::Heap *mParentHeap; // at 0x4
+    //! @brief ID of queued scene
     s32 mSceneID; // at 0x8
 
     static RPSysQueuedScene *sInstance; // 804bf4f8
