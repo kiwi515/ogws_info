@@ -12,6 +12,7 @@ struct RPSysScene;
 struct RPSysProjectLocal;
 struct RPSysResourceManager;
 struct RPSysQueuedScene;
+struct RPSysDvdStatus;
 
 // RPSports
 struct RPBoxBoxer;
