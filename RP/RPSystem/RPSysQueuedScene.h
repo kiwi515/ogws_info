@@ -9,6 +9,8 @@
  * 
  * Used commonly by the menu scene to determine whether the player select scene
  * should be in its regular/training/fitness state.
+ * 
+ * (Custom name)
  */
 class RPSysQueuedScene
 {
