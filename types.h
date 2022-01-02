@@ -1,5 +1,8 @@
 // https://github.com/doldecomp/ogws/blob/master/include/types.h
 // edited for this repo
+#ifndef TYPES_H
+#define TYPES_H
+#include <stddef.h>
 
 typedef unsigned long long u64;
 typedef signed long long s64;
@@ -22,3 +25,5 @@ typedef void UNKTYPE;
 typedef enum { FALSE, TRUE } BOOL;
 
 #define NULL 0
+
+#endif

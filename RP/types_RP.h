@@ -10,6 +10,7 @@ struct RPSysFile;
 struct RPSysSceneCreator;
 struct RPSysScene;
 struct RPSysProjectLocal;
+struct RPSysResourceManager;
 struct RPSysQueuedScene;
 
 // RPSports
