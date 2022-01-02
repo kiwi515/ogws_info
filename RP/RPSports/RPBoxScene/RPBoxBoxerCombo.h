@@ -2,6 +2,14 @@
 #define RP_SPORTS_BOX_BOXER_COMBO_H
 #include "types_RP.h"
 
+/**
+ * @brief Combo for boxer's punches
+ * 
+ * The combo system rewards alternating hands when punching, and increases punch strength over time.
+ * If the player either waits too long or does not alternate hands, the combo will reset.
+ * 
+ * (Custom name)
+ */
 class RPBoxBoxerCombo
 {
 public:

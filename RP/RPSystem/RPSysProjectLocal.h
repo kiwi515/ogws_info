@@ -7,6 +7,8 @@
 /**
  * @brief Offers support for runtime localization with values that can be set at compile time.
  * Utilized for everything from regional files, formatting date/time, singular numbers, number system, and more.
+ * 
+ * (Name from Wii Fit U)
  */
 class RPSysProjectLocal
 {

@@ -2,7 +2,6 @@
 Resources/information that I've gathered during my work with OGWS.  
 - This repository is meant to only cover structures from the RP engine (the engine designed for the Pack Project). 
 - As a result, this code will reference other external (EGG/NW4R/etc.) structures that are not defined here.  
-- Unless explicitly stated otherwise, all class names are taken from Wii Fit U's symbols.   
 - Because this project is designed to help future decompilation, all virtual addresses specified are for the US Rev 1 version of the game.  
   
 If you are interested in the decompilation, or would like to contribute, feel free to check it out here: https://github.com/doldecomp/ogws

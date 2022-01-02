@@ -2,6 +2,15 @@
 #define RP_SPORTS_BOX_BOXER_H
 #include "types_RP.h"
 
+/**
+ * @brief Info about a boxer
+ * 
+ * This seems to be a member of of a parent "player" class, but this holds
+ * all relevant information about a boxer, from health/state
+ * to even the time they will get up when knocked down.
+ * 
+ * (Custom name)
+ */
 class RPBoxBoxer
 {
 public:

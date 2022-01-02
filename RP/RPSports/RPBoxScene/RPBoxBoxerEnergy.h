@@ -2,6 +2,16 @@
 #define RP_SPORTS_BOX_BOXER_STATUS_H
 #include "types_RP.h"
 
+/**
+ * @brief State of a boxer's energy
+ * 
+ * All player objects have energy, which depletes as you whiff punches and/or get blocked.
+ * 
+ * However, the code that allows the energy to deplete/regen is locked behind scene flags,
+ * so the entire feature goes unused.
+ * 
+ * (Custom name)
+ */
 class RPBoxBoxerEnergy
 {
 public:

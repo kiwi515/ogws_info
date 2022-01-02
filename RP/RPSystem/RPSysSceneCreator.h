@@ -13,6 +13,8 @@
  * 
  * The scene creator also ensures that all scenes created are intended for the current pack.
  * This is done by referencing the scene attributes.
+ * 
+ * (Name from Wii Fit U)
  */
 class RPSysSceneCreator : EGG::SceneCreator
 {
