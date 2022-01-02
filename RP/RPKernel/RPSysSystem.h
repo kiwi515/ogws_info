@@ -19,7 +19,7 @@
  * 
  * (Name from Wii Fit U)
  * 
- * TODO: A few functions and static vars are missing
+ * TODO: A few functions are missing
  */
 class RPSysSystem
 {
@@ -83,13 +83,6 @@ private:
     f32 mFrameTime; // 0x50 (mTicksPerFrame / 60.0f)
     u32 mLoadCount; // at 0x54 (incremented by mTicksPerFrame)
     char *mTimeStampString; // at 0x58
-
-    static RPSysSystem *sInstance; // 804bf4b8
-    static GXRenderModeObj *sRenderMode; // 804bf4bc
-
-    static EGG::Heap *sRootMem1; // 804a3d68
-    static EGG::Heap *sRootMem2; // 804a3d6c
-    static EGG::Heap *sSystemHeap; // 804a3d74
 };
 
 #endif
