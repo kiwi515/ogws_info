@@ -55,7 +55,7 @@ public:
 
     void setLanguage(u32 lang); // 80186234
     void setLocale(u32 locale); // 8018623c
-    void appendLocalDirectory(char *, const char *); // 80186244
+    void appendLocalDirectory(char *path, const char *prefix); // 80186244
 
 private:
     RPSysProjectLocal(EGG::Heap *heap) : mParentHeap(heap), mMeasureSystem(RP_SYS_IMPERIAL), mPackID(RP_SPORTS_PACK),
