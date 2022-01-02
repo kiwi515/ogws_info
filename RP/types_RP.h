@@ -7,7 +7,7 @@ struct RPSysSystem;
 struct RPSysFile;
 
 // RPSystem
-struct RPSysLoadScene;
+struct RPSysQueuedScene;
 
 // RPSports
 struct RPBoxBoxer;
