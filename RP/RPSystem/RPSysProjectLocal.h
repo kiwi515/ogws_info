@@ -13,10 +13,11 @@
 class RPSysProjectLocal
 {
 public:
-    enum ENumberSystem
+    enum EMeasureSystem
     {
-        RP_NUMSYS_0,
-        RP_NUMSYS_1,
+        RP_SYS_0,
+        RP_SYS_IMPERIAL,
+        RP_SYS_2,
     };
 
     enum EPackID
@@ -57,13 +58,13 @@ public:
     void appendLocalDirectory(char *, const char *); // 80186244
 
 private:
-    RPSysProjectLocal(EGG::Heap *heap) : mParentHeap(heap), mNumberSystem(RP_NUMSYS_1), mPackID(RP_SPORTS_PACK),
+    RPSysProjectLocal(EGG::Heap *heap) : mParentHeap(heap), mMeasureSystem(RP_SYS_IMPERIAL), mPackID(RP_SPORTS_PACK),
         mLocale(RP_ENGLISH_US), mLanguage(RP_ENGLISH_US), WORD_0x18(0), mSndStorage(RP_STORAGE_MEM) {}
     virtual ~RPSysProjectLocal(); // 80186364
 
     EGG::Heap *mParentHeap; // at 0x4
-    //! @brief Primarily for formatting decimal numbers (dot vs comma)
-    u32 mNumberSystem; // at 0x8
+    //! @brief For formatting decimal numbers, using feet vs meters, etc.
+    u32 mMeasureSystem; // at 0x8
     //! @brief Pack Project game ID
     u32 mPackID; // at 0xC
     //! @brief Controls what directory is used for regional files, etc.
