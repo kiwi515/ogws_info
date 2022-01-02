@@ -83,6 +83,8 @@ private:
     f32 mFrameTime; // 0x50 (mTicksPerFrame / 60.0f)
     u32 mLoadCount; // at 0x54 (incremented by mTicksPerFrame)
     char *mTimeStampString; // at 0x58
+
+    static RPSysSystem *sInstance; // 804bf4b8
 };
 
 #endif
