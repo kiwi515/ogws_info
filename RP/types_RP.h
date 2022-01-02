@@ -3,6 +3,7 @@
 #include <types.h>
 
 // RPKernel
+struct RPSysSystem;
 struct RPSysFile;
 
 // RPSystem
