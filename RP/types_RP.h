@@ -15,6 +15,7 @@ struct RPSysQueuedScene;
 struct RPSysDvdStatus;
 
 // RPSports
+struct RPSportsCommonData;
 struct RPBoxBoxer;
 struct RPBoxBoxerEnergy;
 struct RPBoxBoxerCombo;
