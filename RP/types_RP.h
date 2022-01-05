@@ -2,6 +2,11 @@
 #define TYPES_RP_H
 #include <types.h>
 
+//! Provides year, month, month day
+typedef u16 RPTime16;
+//! Provides year, month, month day, week day, hour
+typedef u32 RPTime32;
+
 // RPKernel
 struct RPSysSystem;
 struct RPSysFile;
@@ -16,6 +21,7 @@ struct RPSysDvdStatus;
 
 // RPSports
 struct RPSportsCommonData;
+struct RPSportsPlayerData;
 struct RPBoxBoxer;
 struct RPBoxBoxerEnergy;
 struct RPBoxBoxerCombo;
