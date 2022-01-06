@@ -1,5 +1,5 @@
-#ifndef RP_SYS_SAVE_DATA_H
-#define RP_SYS_SAVE_DATA_H
+#ifndef RP_SYSTEM_SAVE_DATA_H
+#define RP_SYSTEM_SAVE_DATA_H
 #include "types_rp.h"
 
 #include <types_egg.h>

@@ -1,5 +1,5 @@
-#ifndef RP_KERNEL_SYS_FILE_H
-#define RP_KERNEL_SYS_FILE_H
+#ifndef RP_KERNEL_FILE_H
+#define RP_KERNEL_FILE_H
 #include "types_rp.h"
 
 #include <nw4r/ut/ut_list.h>

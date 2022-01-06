@@ -1,5 +1,5 @@
-#ifndef RP_KERNEL_SYS_SYSTEM_H
-#define RP_KERNEL_SYS_SYSTEM_H
+#ifndef RP_KERNEL_SYSTEM_H
+#define RP_KERNEL_SYSTEM_H
 #include "types_rp.h"
 
 #include <egg/core/eggColor.h>

@@ -1,5 +1,5 @@
-#ifndef RP_SYSTEM_SYS_QUEUED_SCENE_H
-#define RP_SYSTEM_SYS_QUEUED_SCENE_H
+#ifndef RP_SYSTEM_QUEUED_SCENE_H
+#define RP_SYSTEM_QUEUED_SCENE_H
 #include "types_rp.h"
 
 #include <types_egg.h>

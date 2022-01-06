@@ -1,5 +1,5 @@
-#ifndef RP_SYSTEM_SYS_SAVE_DATA_MGR_H
-#define RP_SYSTEM_SYS_SAVE_DATA_MGR_H
+#ifndef RP_SYSTEM_SAVE_DATA_MGR_H
+#define RP_SYSTEM_SAVE_DATA_MGR_H
 #include "types_RP.h"
 
 #include "IRPSysHostIOSocket.h"

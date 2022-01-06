@@ -1,5 +1,5 @@
-#ifndef RP_SYSTEM_SYS_PROJECT_LOCAL_H
-#define RP_SYSTEM_SYS_PROJECT_LOCAL_H
+#ifndef RP_SYSTEM_PROJECT_LOCAL_H
+#define RP_SYSTEM_PROJECT_LOCAL_H
 #include "types_rp.h"
 
 #include <types_egg.h>

@@ -1,5 +1,5 @@
-#ifndef RP_SYSTEM_SYS_DVD_STATUS_H
-#define RP_SYSTEM_SYS_DVD_STATUS_H
+#ifndef RP_SYSTEM_DVD_STATUS_H
+#define RP_SYSTEM_DVD_STATUS_H
 #include "types_rp.h"
 
 #include <egg/core/eggHeap.h>
