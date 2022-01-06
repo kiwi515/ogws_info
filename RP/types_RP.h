@@ -12,6 +12,7 @@ struct RPSysSystem;
 struct RPSysFile;
 
 // RPSystem
+struct RPSysSaveData;
 struct RPSysSceneCreator;
 struct RPSysScene;
 struct RPSysProjectLocal;
@@ -22,7 +23,6 @@ struct RPSysDvdStatus;
 // RPSports
 struct RPSportsCommonData;
 struct RPSportsPlayerData;
-struct RPSysSaveData;
 struct RPBoxBoxer;
 struct RPBoxBoxerEnergy;
 struct RPBoxBoxerCombo;
