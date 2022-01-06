@@ -84,6 +84,10 @@ public:
         DIALOG_WII_REMOTE_MASTER,
     };
 
+public:
+    //! Check if a game has been unlocked
+    bool isGameUnlock(u32 id) const; // 8018d6ac
+
 private:
     //! Mii History for every possible amount of players
     MiiHistory mHistory[1 + 2]; // at 0x0

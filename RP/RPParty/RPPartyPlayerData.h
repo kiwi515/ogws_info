@@ -61,6 +61,22 @@ public:
         CUTSCENE_ALL_PLATINUM,
     };
 
+public:
+    //! Player list debut time
+    void setDebutTime(RPTime32 time); // 8018d6d0
+    RPTime32 getDebutTime() const; // 8018d6d8
+
+    //! Mii unique ID
+    void setUniqueID(const u8* id); // 8018d6e0
+    void getUniqueID(u8 *idOut) const; // 8018d724
+
+    //! Player list flag
+    void setOnPlayerList(bool onList); // 8018d768
+    bool isOnPlayerList() const; // 8018d790
+
+    //! Reset all data (From WFU)
+    void reset(); // 8018d79c
+
 private:
     //! Length of high score list
     static const u32 NUM_SCORES = 5;

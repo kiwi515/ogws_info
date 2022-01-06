@@ -187,7 +187,10 @@ public:
     void setSkillLevel(f32 skill, u32 sport); // 8018b888
     f32 getSkillLevel(u32 sport) const; // 8018b898
 
-    // TO-DO: BYTE_0x10 getters/setters 
+    // TO-DO: BYTE_0x10 getters/setters
+
+    //! Reset all data (From WFU)
+    void reset(); // 8018b994
 
 private:
     static const u32 TRAINING_MAX = 3;
