@@ -5,9 +5,9 @@
 #include <types_egg.h>
 
 /**
- * @brief Structure to hold all RP engine save data
+ * @brief Structure to hold RP engine save data
  * 
- * While this structure is generic and can support all the Pack Project games,
+ * While this structure is generic and can support multiple Pack Project games,
  * it seems that its behavior is set at compile time (along with getFileSize),
  * rather than using RPSysProjectLocal.
  * 
