@@ -5,7 +5,7 @@
 #include <types_egg.h>
 
 /**
- * @brief Save data pertaining to a player in the player list
+ * @brief Save data pertaining to a player in the player list in Wii Sports
  * 
  * NOTE: Not a packed structure, this is an abstraction of the binary format
  * 
@@ -196,6 +196,7 @@ private:
     /**
      * General player data
      */
+    //! Player list entry flags
     u32 mFlags; // at 0x0
     //! Mii unique ID
     u8 mUniqueID[8]; // at 0x4

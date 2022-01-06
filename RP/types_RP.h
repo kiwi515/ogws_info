@@ -22,8 +22,13 @@ struct RPSysDvdStatus;
 // RPSports
 struct RPSportsCommonData;
 struct RPSportsPlayerData;
+struct RPSysSaveData;
 struct RPBoxBoxer;
 struct RPBoxBoxerEnergy;
 struct RPBoxBoxerCombo;
+
+// RPParty
+struct RPPartyCommonData;
+struct RPPartyPlayerData;
 
 #endif

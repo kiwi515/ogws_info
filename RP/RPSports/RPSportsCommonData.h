@@ -25,11 +25,11 @@ public:
     {
         //! @brief Previously selected Mii (Index into player list)
         //! -1 if unused
-        s8 mPrevMiiIdx;
+        s8 mPrevMiiIdx; // at 0x0
 
         //! @brief Set by WPADGetRadioSensitivity
         //! Used to identify the remote previously used
-        u8 mRadioSensitivity[6];
+        u8 mRadioSensitivity[6]; // at 0x1
     };
 
     /**
