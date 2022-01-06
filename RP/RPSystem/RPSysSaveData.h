@@ -1,5 +1,5 @@
-#ifndef RP_SPORTS_SAVE_DATA_H
-#define RP_SPORTS_SAVE_DATA_H
+#ifndef RP_SYS_SAVE_DATA_H
+#define RP_SYS_SAVE_DATA_H
 #include "types_rp.h"
 
 #include <types_egg.h>
@@ -30,7 +30,7 @@ public:
     //! Total size of raw save file
     static u32 getFileSize(); // 8018bf54
 
-    RPSportsSaveData(); // 8018ad34
+    RPSysSaveData(); // 8018ad34
 
     //! @brief For serialization (From WFU)
     //! Raw save is needed to calculate checksum
