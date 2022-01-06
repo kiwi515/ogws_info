@@ -10,9 +10,11 @@ typedef u32 RPTime32;
 // RPKernel
 struct RPSysSystem;
 struct RPSysFile;
+struct IRPSysHostIOSocket;
 
 // RPSystem
 struct RPSysSaveData;
+struct RPSysSaveDataMgr;
 struct RPSysSceneCreator;
 struct RPSysScene;
 struct RPSysProjectLocal;

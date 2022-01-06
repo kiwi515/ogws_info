@@ -52,8 +52,8 @@ public:
     void setSportsPlayerData(const RPSportsPlayerData *playerData, u32 id); // 8018c68c
     RPSportsPlayerData *getSportsPlayerData(u32 id) const; // 8018cb6c
 
-    //! Save data validity
-    bool isErrorOccurred() const; // 8018cb7c
+    //! Save data validity (typo)
+    bool isErrorOccured() const; // 8018cb7c
 
 private:
     //! Flags regarding the status of the data
