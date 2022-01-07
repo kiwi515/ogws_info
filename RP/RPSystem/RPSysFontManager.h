@@ -5,6 +5,14 @@
 #include <nw4r/ut/ut_RomFont.h>
 #include <nw4r/ut/ut_ResFont.h>
 
+/**
+ * @brief RP engine font manager
+ * 
+ * Responsible for loading and setting up the rom font and any res fonts needed.
+ * Whether specific fonts are used is determined at compile time.
+ * 
+ * (Name from Wii Fit U)
+ */
 class RPSysFontManager
 {
 public:
@@ -35,6 +43,9 @@ public:
     void LoadResFonts(); // 8018bd64
     //! Retrieve ResFont data by name
     void * GetResFontData(const char *name) const; // 8018bcdc
+
+    //! Access RomFont (for text writer)
+    nw4r::ut::RomFont& GetRomFont() const { return *mRomFont; }
 
 private:
     RPSysFontManager()

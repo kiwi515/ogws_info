@@ -11,6 +11,7 @@ typedef u32 RPTime32;
 struct RPSysSystem;
 struct RPSysFile;
 struct IRPSysHostIOSocket;
+struct RPSysTextWriter;
 
 // RPSystem
 struct RPSysFontManager;
