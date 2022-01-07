@@ -18,7 +18,7 @@ public:
 private:
     //! @brief Name based on NW4R's text writer
     //! This is because they share sizes (mFormatBufferSize * sizeof(wchar_t))
-    static wchar_t *mFormatBuffer;
+    static wchar_t *mFormatBuffer; // 804bf558
 };
 
 #endif
