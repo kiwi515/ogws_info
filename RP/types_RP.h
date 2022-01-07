@@ -12,6 +12,7 @@ struct RPSysSystem;
 struct RPSysFile;
 struct IRPSysHostIOSocket;
 struct RPSysTextWriter;
+struct RPSysMessage;
 struct RPSysWideTextWriter;
 
 // RPSystem
