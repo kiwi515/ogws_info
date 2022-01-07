@@ -14,6 +14,7 @@ struct IRPSysHostIOSocket;
 struct RPSysTextWriter;
 struct RPSysMessage;
 struct RPSysWideTextWriter;
+struct RPSysLytAllocator;
 
 // RPSystem
 struct RPSysFontManager;
