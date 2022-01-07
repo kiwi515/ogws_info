@@ -9,10 +9,12 @@
 class IRPSysHostIOSocket
 {
 public:
-    virtual ~IRPSysHostIOSocket();
+    virtual ~IRPSysHostIOSocket(); // 80190794
+    virtual UNKTYPE FUN_8018a904(UNKTYPE) {} // 8018a904
+    virtual UNKTYPE FUN_8018a908(UNKTYPE) {} // 8018a908
     
-    IRPSysHostIOSocket(const char *, ...);
-    IRPSysHostIOSocket();
+    IRPSysHostIOSocket(const char *, ...); // 801907e4
+    IRPSysHostIOSocket(); // 801907d4
 };
 
 #endif
