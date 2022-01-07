@@ -13,6 +13,7 @@ struct RPSysFile;
 struct IRPSysHostIOSocket;
 
 // RPSystem
+struct RPSysFontManager;
 struct RPSysSaveData;
 struct RPSysSaveDataMgr;
 struct RPSysSceneCreator;
