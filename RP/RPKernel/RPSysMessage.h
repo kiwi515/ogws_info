@@ -30,7 +30,6 @@ public:
     RPSysMessage(const void *bin, EGG::Heap *heap); // 80190dec
     virtual ~RPSysMessage(); // 80190d94
 
-private:
     //! Retrieve message info by searching the message ID data block
     RPMsgInfoBlockEntry * GetMessage(u32 id1, u32 id2); // 80190d90
     //! Retrieve attribute from message info block
