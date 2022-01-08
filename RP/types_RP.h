@@ -21,6 +21,7 @@ struct RPSysFontManager;
 struct RPSysSaveData;
 struct RPSysSaveDataMgr;
 struct RPSysSceneCreator;
+struct IRPGrpDrawObject;
 struct RPSysScene;
 struct RPSysProjectLocal;
 struct RPSysResourceManager;
