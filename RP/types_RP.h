@@ -7,6 +7,10 @@ typedef u16 RPTime16;
 //! Provides year, month, month day, week day, hour
 typedef u32 RPTime32;
 
+// RPGraphics
+struct IRPGrpDrawObject;
+struct RPGrpRenderer;
+
 // RPKernel
 struct RPSysSystem;
 struct RPSysFile;
@@ -17,16 +21,16 @@ struct RPSysWideTextWriter;
 struct RPSysLytAllocator;
 
 // RPSystem
-struct RPSysFontManager;
-struct RPSysSaveData;
-struct RPSysSaveDataMgr;
 struct RPSysSceneCreator;
-struct IRPGrpDrawObject;
 struct RPSysScene;
 struct RPSysProjectLocal;
 struct RPSysResourceManager;
 struct RPSysQueuedScene;
+struct RPSysCommonObject;
 struct RPSysDvdStatus;
+struct RPSysSaveDataMgr;
+struct RPSysFontManager;
+struct RPSysSaveData;
 
 // RPSports
 struct RPSportsCommonData;

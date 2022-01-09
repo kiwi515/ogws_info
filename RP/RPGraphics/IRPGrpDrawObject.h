@@ -3,17 +3,20 @@
 #include "types_RP.h"
 
 /**
- * @brief Interface for renderable objects.
+ * @brief Linked-list interface for renderable objects.
  * The engine's renderer has a linked list of DrawObjects that it traverses through when rendering.
  * 
  * (Name from Wii Fit U)
  */
 class IRPGrpDrawObject
 {
+private:
+    IRPGrpDrawObject *mNext; // at 0x0
+
 public:
-    virtual ~IRPGrpDrawObject(); // at 0x0
-    virtual void UserDraw(); // at 0x4
-    virtual void DebugDraw(); // at 0x8
+    virtual ~IRPGrpDrawObject(); // at 0x4
+    virtual void UserDraw(); // at 0x8
+    virtual void DebugDraw(); // at 0xC
 };
 
 #endif

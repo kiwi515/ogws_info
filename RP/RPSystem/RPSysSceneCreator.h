@@ -74,15 +74,15 @@ public:
     s32 getSportID(s32 sceneID); // 801846ec
 
 private:
-    RPSysSceneCreator(EGG::Heap *heap) : mParentHeap(heap), mExitScene(-1) {}
+    RPSysSceneCreator(EGG::Heap *heap) : mParentHeap(heap), mSceneId(-1) {}
     virtual ~RPSysSceneCreator() {} // 80183f68
     virtual EGG::Scene * create(s32 sceneID); // 80184838
     virtual void destroy(s32); // 80184804
 
 private:
     EGG::Heap *mParentHeap; // at 0x4
-    //! @brief Newest created scene's exit scene (only set if exit type needs one)
-    s32 mExitScene; // at 0x8
+    //! Last created scene's ID
+    int mSceneId; // at 0x8
 
     static RPSysSceneCreator *sInstance; // 804bf4f8
     static SceneAttributes sSceneAttributeTable[]; // 803820f8
