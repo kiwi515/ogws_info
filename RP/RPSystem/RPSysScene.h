@@ -52,7 +52,7 @@ public:
     //! Disable fade-in when entering/re-initializing the scene
     void disableFadeIn(); // 80184e80
     //! Creator scene ID
-    s32 getCreatorSceneID() const; // 80184e90
+    int getCreatorSceneID() const; // 80184e90
     void setCreatorSceneID(int scene); // 80184e98
     //! Initialize scene members
     void init(); // 80184ea0
