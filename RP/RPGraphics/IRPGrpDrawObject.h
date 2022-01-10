@@ -14,6 +14,7 @@ private:
     IRPGrpDrawObject *mNext; // at 0x0
 
 public:
+    IRPGrpDrawObject() : mNext(NULL) {}
     virtual ~IRPGrpDrawObject(); // at 0x4
     virtual void UserDraw(); // at 0x8
     virtual void DebugDraw(); // at 0xC
