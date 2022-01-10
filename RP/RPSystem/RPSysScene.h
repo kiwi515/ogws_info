@@ -5,6 +5,7 @@
 #include "IRPGrpDrawObject.h"
 #include <egg/core/eggScene.h>
 #include <egg/core/eggColor.h>
+#include <egg/math/eggVector.h>
 
 /**
  * @brief Base class for all RP engine scenes.
@@ -44,9 +45,8 @@ public:
     virtual void Calculate(); // 80185164
     //! Exit the scene
     virtual void Exit(); // 80185004
-    //! @brief Task method
-    //! Not static, but EGG's TaskThread lets you request
-    //! non-static functions by giving it args to pass in
+    //! @brief Async task
+    //! Called through taskAsyncFunc
     virtual void taskAsync(); // 8018559c
 
     //! Disable fade-in when entering/re-initializing the scene
@@ -83,6 +83,36 @@ public:
     //! This happens when both faders are done and ready to fade back out
     bool isSceneDisplay() const; // 80185584
 
+    /* Functions below defined in RPSysLoadScene.cpp */
+
+    //! @brief Calls virtual task function
+    //! Set up on thread by initTaskAsync
+    static void taskAsyncFunc(void *scene); // 80186878
+    //! Calls LoadResource when done
+    static void loadResourceFunc(void *scene); // 80186888
+
+    UNKTYPE FUN_80186960(UNKTYPE);
+    UNKTYPE FUN_80186a1c(UNKTYPE);
+
+    //! Request DVD thread to run taskAsyncFunc
+    void initTaskAsync(); // 80186aa8
+
+    UNKTYPE FUN_80186b20(UNKTYPE); // 80186b20
+    UNKTYPE FUN_80186c34(UNKTYPE); // 80186c34
+
+    //! @brief Enable the "Now Loading" scene text
+    //! Set automatically if the scene attributes allow it
+    void setShowLoadingText(); // 80186cec
+    //! If the scene is waiting on an async task still
+    bool isTaskAsyncFinish() const; // 80186cfc
+    //! Set waiting on async flag
+    void setTaskAsync(); // 80186d1c
+
+    UNKTYPE FUN_80186d2c(UNKTYPE);
+
+    //! Print time stamp string in specified color
+    void printTimeStamp(EGG::Color color); // 80186d30
+
 private:
     //! Becomes the global renderer when scene is entered
     RPGrpRenderer *mRenderer; // at 0x2C
@@ -106,6 +136,9 @@ private:
     //! @brief Unknown, unused global object
     //! VF38 will return its address
     static UNKWORD DAT_804bf4d0; // 804bf4d0
+
+    //! @brief Defined in RPSysLoadScene.cpp
+    static EGG::Vector3f DAT_804a3db0[3]; // 804a3db0
 };
 
 #endif
