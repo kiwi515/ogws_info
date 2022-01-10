@@ -29,7 +29,7 @@ public:
     virtual void outgoing_childCreate(); // 80185008
     //! Any drawing the object needs to do
     virtual void UserDraw(); // 801855a0
-    //! Unused draw pass, nearly all objects stub this out
+    //! Debug draw pass, nearly all objects stub this out
     virtual void DebugDraw(); // 801855a4
     //! Returns address of some unused global object
     virtual UNKTYPE * VF38(UNKTYPE); // 8018558c
