@@ -10,6 +10,9 @@
 class RPSportsBaseScene : RPSysScene
 {
 public:
+    RPSportsBaseScene() {}
+    ~RPSportsBaseScene() {}
+
     //! Initialize/setup the scene
     virtual void Configure(); // 801ef1c8
     //! Load any needed resources
