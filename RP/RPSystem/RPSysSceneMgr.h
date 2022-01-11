@@ -14,6 +14,8 @@
  * 
  * Additionally, this class has another ColorFader, which gets purposed for the current scene.
  * The inherited fader is referred to as the "manager fader" and is used to fade in/out the entire game graphics.
+ * 
+ * (Name from Wii Fit U)
  */
 class RPSysSceneMgr : EGG::SceneManager
 {

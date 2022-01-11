@@ -6,6 +6,8 @@
 
 /**
  * @brief Base class for all scenes unique to the Sports Pack (Wii Sports)
+ * 
+ * (Name derived from Wii Fit U's RPHealthBaseScene)
  */
 class RPSportsBaseScene : RPSysScene
 {
