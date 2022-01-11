@@ -16,6 +16,9 @@
 class RPSysDvdStatus
 {
 public:
+    /**
+     * @brief Status of access to the DVD drive
+     */
     enum EDvdStatus
     {
         DVD_IDLE = -2,
@@ -26,12 +29,16 @@ public:
     };
 
 public:
+    //! Singleton methods
     static RPSysDvdStatus * CreateInstance(EGG::Heap *heap); // 80188280
     static RPSysDvdStatus * getInstance() { return sInstance; }
 
+    //! Draw status message when applicable
     void draw(); // 80187fa4
+    //! Update status from DVD library
     void update(); // 8018818c
-    //! Typo
+    //! @brief Check if status represents a fatal error
+    //! Function name typo
     bool isErrorOccured(); // 80188260
 
 private:
@@ -48,11 +55,16 @@ private:
     virtual ~RPSysDvdStatus(); // 80187f64
 
 private:
+    //! Heap in which this object was allocated
     EGG::Heap *mParentHeap; // at 0x4
+    //! DVD status
     s32 mErrorStatus; // at 0x8
+    //! Error message to draw (constructed when needed)
     const char *mErrorMessage; // at 0xC
+    //! Fader to black out the screen when displaying an error message
     EGG::ColorFader *mErrorFader; // at 0x10
 
+    //! Static instance
     static RPSysDvdStatus *sInstance; // 804bf500
 };
 
