@@ -72,7 +72,7 @@ public:
     //! Change the current scene
     bool changeNextSceneAfterFade(int scene, bool reload); // 80185d74
 
-    // TO-DO
+    // TO-DO: State check functions
     // ? FUN_80185f04()
     // ? FUN_80185f18()
     // ? FUN_80185f38()
