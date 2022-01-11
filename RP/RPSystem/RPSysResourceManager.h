@@ -18,26 +18,44 @@
 class RPSysResourceManager
 {
 public:
+    //! Singleton methods
     static RPSysResourceManager * CreateInstance(); // 80187ae8
     static RPSysResourceManager * GetInstance() { return sInstance; }
 
+    //! Open binary message (BMG) file
     static void * GetMessageResource(const char *path); // 8018783c
-    static void GetFileFromArchive(EGG::Archive *arc, const char *path, u32 *sizeOut); // 80187878
+    //! Get file from EGG archive (optionally get file size)
+    static void * GetFileFromArchive(EGG::Archive *arc, const char *path, u32 *sizeOut); // 80187878
+    //! Load archive from current scene's Stage directory
     static EGG::Archive * LoadGameStageArchive(const char *path); // 801878c4
+    //! Load local archive (local.carc) for the specified scene
     static EGG::Archive * LoadGameLocalArchive(int sceneID, EGG::Heap *heap); // 80187964
+    //! Load common archive (common.carc) for the specified scene
     static EGG::Archive * LoadGameCommonArchive(int sceneID, EGG::Heap *heap); // 80187a0c
 
+    //! Load file from DVD (optionally get file size)
     void * LoadFromDVD(const char *path, EGG::Heap *heap, int allocDir, int *sizeOut); // 80186eb4
+    //! Load and decompress file
     void * LoadCompressed(const char *path, EGG::Heap *heap); // 80186fa0
-    EGG::Archive * LoadGameLocalArchive(const char *staticDir); // 801871f4
+    //! Load local archive in specified directory
+    EGG::Archive * LoadLocalArchive(const char *dir); // 801871f4
+    //! Get local sound path of specified scene
     void GetGameSoundLocalPath(char *bufOut, u32 bufSize, int sceneID); // 80187290
+    //! Get common sound path of specified scene
     void GetGameSoundCommonPath(char *bufOut, u32 bufSize, int sceneID); // 80187300
+    //! Get local sound path of current pack's static directory
     void GetStaticSoundLocalPath(char *bufOut, u32 bufSize); // 8018736c
+    //! Get common sound path of current pack's static directory
     void GetStaticSoundCommonPath(char *bufOut, u32 bufSize); // 801873e8
+    //! Load Mii resources (kokeshi.carc)
     void LoadKokeshiArchive(); // 8018744c
+    //! Load static common archive
     void LoadSharedCommonArchive(); // 801874b4
+    //! Load cached archives (font, BMG, static common)
     void LoadCacheArchives(); // 80187604
+    //! Remove file from file list
     void RemoveFromFileList(RPSysFile *file); // 801877d4
+    //! Load sound archive
     bool LoadSoundArchive(const char *path); // 801877dc
 
 private:
@@ -61,7 +79,9 @@ private:
     UNKTYPE *PTR_0x38;
     UNKWORD WORD_0x3C;
 
+    //! Static instance
     static RPSysResourceManager *sInstance; // 804bf4f0
+    //! Pack Project static paths
     static const char *sPackStaticPaths[4]; // 803b9850
 };
 
