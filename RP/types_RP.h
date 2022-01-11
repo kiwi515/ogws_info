@@ -23,6 +23,7 @@ struct RPSysLytAllocator;
 // RPSystem
 struct RPSysSceneCreator;
 struct RPSysScene;
+struct RPSysSceneMgr;
 struct RPSysProjectLocal;
 struct RPSysResourceManager;
 struct RPSysQueuedScene;
