@@ -13,7 +13,7 @@ class RPSportsBaseScene : RPSysScene
 {
 public:
     RPSportsBaseScene() {}
-    ~RPSportsBaseScene() {} // 80184460
+    virtual ~RPSportsBaseScene() {} // 80184460
 
     //! Initialize/setup the scene
     virtual void Configure(); // 801ef1c8
