@@ -27,10 +27,6 @@ public:
     virtual void reinit(); // 8018522c
     virtual void incoming_childDestroy(); // 80185168
     virtual void outgoing_childCreate(); // 80185008
-    //! Any drawing the object needs to do
-    virtual void UserDraw(); // 801855a0
-    //! Debug draw pass, nearly all objects stub this out
-    virtual void DebugDraw(); // 801855a4
     //! Returns address of some unused global object
     virtual UNKTYPE * VF38(UNKTYPE); // 8018558c
     //! Callback for pause/unpause (bool true if pausing)
