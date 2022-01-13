@@ -10,6 +10,7 @@ typedef u32 RPTime32;
 // RPGraphics
 struct IRPGrpDrawObject;
 struct RPGrpRenderer;
+struct RPGrpFogManager;
 
 // RPKernel
 struct RPSysSystem;
