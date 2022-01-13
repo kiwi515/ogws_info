@@ -7,6 +7,8 @@
 /**
  * @brief Seems to provide common draw functionality to objects,
  * considering it has no additional functionality.
+ * 
+ * (Name from Wii Fit U)
  */
 class RPSysCommonObject : IRPGrpDrawObject
 {
