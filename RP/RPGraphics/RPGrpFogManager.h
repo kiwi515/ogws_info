@@ -6,6 +6,7 @@
 
 /**
  * @brief RP engine fog manager
+ * 
  * (Name from Wii Fit U)
  */
 class RPGrpFogManager : EGG::FogManager
