@@ -13,6 +13,10 @@
 class RPSysProjectLocal
 {
 public:
+    /**
+     * @brief Measurement system
+     * Mostly used for string formatting
+     */
     enum EMeasureSystem
     {
         RP_SYS_0,
@@ -50,11 +54,15 @@ public:
     };
 
 public:
+    //! Singleton methods
     static RPSysProjectLocal * CreateInstance(EGG::Heap *heap); // 801863a4
     static RPSysProjectLocal * getInstance() { return sInstance; }
 
+    //! Set engine language
     void setLanguage(u32 lang); // 80186234
+    //! Set engine locale
     void setLocale(u32 locale); // 8018623c
+    //! Concatenate locale directory to input path
     void appendLocalDirectory(char *path, const char *prefix); // 80186244
 
 private:
@@ -63,20 +71,21 @@ private:
     virtual ~RPSysProjectLocal(); // 80186364
 
     EGG::Heap *mParentHeap; // at 0x4
-    //! @brief For formatting decimal numbers, using feet vs meters, etc.
+    //! For formatting decimal numbers, using feet vs meters, etc.
     u32 mMeasureSystem; // at 0x8
-    //! @brief Pack Project game ID
+    //! Pack Project game ID
     u32 mPackID; // at 0xC
-    //! @brief Controls what directory is used for regional files, etc.
+    //! Controls what directory is used for regional files, etc.
     u32 mLocale; // at 0x10
-    //! @brief Seems to be unused, set alongside locale
+    //! Seems to be unused, set alongside locale
     u32 mLanguage; // at 0x14
-    //! @brief Audio related, only used by code leftover from Wii Play
+    //! Audio related, only used by code leftover from Wii Play
     UNKWORD WORD_0x18;
-    //! @brief Where audio archives are stored (DVD, NAND, etc.)
+    //! Where audio archives are stored (DVD, NAND, etc.)
     //! Only used by openArchiveRP
     u32 mSndStorage;
 
+    //! Static instance
     static RPSysProjectLocal *sInstance; // 804bf4e0
 };
 
