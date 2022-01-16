@@ -3,6 +3,12 @@
 
 *Data gathered during my work with* ***[OGWS]*** *.*
 
+---
+
+**⸢ [Overview] ⸥ ⸢ [Instructions] ⸥**
+
+---
+
 <br>
 
 ### Coverage
@@ -97,6 +103,9 @@ navigate the to the `*.dmap` file you have downloaded.
 <!---------------------------------------------------------------------------->
 
 [OGWS]: https://github.com/doldecomp/ogws
+
+[Overview]: #Overview
+[Instructions]: #Instructions
 
 [Code]: Source/RP/
 
