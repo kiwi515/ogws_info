@@ -3,26 +3,36 @@
 
 *Data gathered during my work with* ***[OGWS]*** *.*
 
-##### Use
+<br>
+
+### Coverage
 
 This repository is only meant to cover structures from **RP Engine**.
 
-##### External Definitions
+<br>
+
+### External Definitions
 
 As the engine was designed for the `Pack Project`, the code references <br>
 other external resources like `EGG` and `NW4R`, which are not defined here.
 
-##### Virtual Addresses
+<br>
+
+### Virtual Addresses
 
 As this project is designed to help future decompilation, all specified <br>
 `Virtual Addresses` reference the `US Rev 1` version of the game.
 
-##### Interest
+<br>
+
+### Interest
 
 *If you are interested in the decompilation or would* <br>
 *like to contribute, feel free to check it out* ***[OGWS]*** *.*
 
 ---
+
+<br>
 
 ## Overview
 
@@ -62,6 +72,8 @@ As this project is designed to help future decompilation, all specified <br>
 
 ---
 
+<br>
+
 ## Instructions
 
 ***Dolphin*** *is a bit confusing with this stuff,* <br>
@@ -69,9 +81,14 @@ As this project is designed to help future decompilation, all specified <br>
 
 <br>
 
+#### Problem
+
 If you select `Symbols » Load Symbol Map` , **Dolphin** will only look <br>
 for `<Installation Directory>\User\Maps\<Game Id>.map` files.
 
+<br>
+
+#### Solution
 
 Instead select `Symbols » Load Other Map File ...` & <br>
 navigate the to the `*.dmap` file you have downloaded.
@@ -85,4 +102,4 @@ navigate the to the `*.dmap` file you have downloaded.
 
 [Symbols Dolphin]: Source/RSPE_r1.dmap
 [Symbols Ghidra]: Source/RSPE_r1.map
-[Symbols CSV]: Source/RSPE_r1.csv
+[Symbols CSV]: Source/RSPE_r1.map.csv
