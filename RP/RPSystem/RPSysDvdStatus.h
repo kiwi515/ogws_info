@@ -6,8 +6,8 @@
 #include <egg/core/eggColorFader.h>
 
 /**
- * Current status/error of the DVD.  
- * Similar to EGG's DvdStatus, but seems to be a re-implementation (missing Disposer inheritance).
+ * @brief Current status/error of the DVD.
+ * @note Similar to EGG's DvdStatus, but seems to be a re-implementation (missing Disposer inheritance)
  * @wfuname
  */
 class RPSysDvdStatus

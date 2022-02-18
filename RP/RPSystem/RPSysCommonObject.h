@@ -5,8 +5,7 @@
 #include "IRPGrpDrawObject.h"
 
 /**
- * Seems to provide common draw functionality to objects,
- * considering it has no additional functionality.
+ * @brief Provides common draw functionality to derived objects
  * @wfuname
  */
 class RPSysCommonObject : IRPGrpDrawObject
