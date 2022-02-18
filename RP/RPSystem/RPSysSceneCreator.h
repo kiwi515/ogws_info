@@ -74,42 +74,79 @@ public:
     static RPSysSceneCreator * CreateInstance(EGG::Heap *heap);
     static RPSysSceneCreator * getInstance() { return sInstance; }
     
-    bool changeSceneAfterFade(s32 sceneID, bool reenterCurrent); // 80184ba4
-    void changeSoftReset(); // 80184b98
-    EGG::Scene * createSportsScene(s32 sceneID); // 80184000
-    s32 getCreateType(s32 sceneID); // 801845f4
-    s32 getExitType(s32 sceneID); // 80184558
-    s32 getUseCommonSound(s32 sceneID); // 801844bc
-    s32 getResDirName(s32 sceneID); // 80184758
-    s32 getSceneID(s32 sportID); // 80184690
-    s32 getSportID(s32 sceneID); // 801846ec
+    /**
+     * Fade out into a new scene, optionally reloading the current scene
+     * @address 80184ba4
+     * @return Success
+     */
+    bool changeSceneAfterFade(s32 sceneID, bool reenterCurrent);
+    /**
+     * Change to the boot scene (performing a soft reset)
+     * @address 80184b98
+     */
+    void changeSoftReset();
+
+    /**
+     * Create a Sports Pack scene
+     * @address 80184000
+     */
+    EGG::Scene * createSportsScene(s32 sceneID);
+
+    //! Scene attribute accessor
+    //! @address 801845f4
+    s32 getCreateType(s32 sceneID);
+    //! Scene attribute accessor
+    //! @address 80184558
+    s32 getExitType(s32 sceneID);
+    //! Scene attribute accessor
+    //! @address 801844bc    
+    s32 getUseCommonSound(s32 sceneID);
+    //! Scene attribute accessor
+    //! @address 80184758    
+    s32 getResDirName(s32 sceneID);
+    //! Scene attribute accessor
+    //! @address 80184690    
+    s32 getSceneID(s32 sportID);
+    //! Scene attribute accessor
+    //! @address 801846ec    
+    s32 getSportID(s32 sceneID);
+
+    /**
+     * Create any Pack Project scene
+     * @address 80184838
+     */
+    virtual EGG::Scene * create(s32 sceneID);
+
+    /**
+     * Request engine shutdown
+     * @address 80184804
+     */
+    virtual void destroy(s32);
 
 private:
     RPSysSceneCreator(EGG::Heap *heap) : mParentHeap(heap), mSceneId(-1) {}
-    virtual ~RPSysSceneCreator() {} // 80183f68
-    virtual EGG::Scene * create(s32 sceneID); // 80184838
-    virtual void destroy(s32); // 80184804
+    //! @address 80183f68
+    virtual ~RPSysSceneCreator() {}
 
 private:
+    //! Heap in which this object was allocated
     EGG::Heap *mParentHeap; // at 0x4
     //! Last created scene's ID
     int mSceneId; // at 0x8
 
-    static RPSysSceneCreator *sInstance; // 804bf4f8
-    static SceneAttributes sSceneAttributeTable[]; // 803820f8
+    /**
+     * Static instance
+     * @address 804bf4f8
+     */
+    static RPSysSceneCreator *sInstance;
+
+    /**
+     * Configuration for all supported Pack Project scenes
+     * @address 803820f8
+     */
+    static SceneAttributes sSceneAttributeTable[];
 };
 
-/**
- * @brief Information about every scene that the scene creator supports.
- * 
- * It includes instructions on how the creator should create the new scene/destroy the old scene,
- * information on where a given scene's resources reside, etc.
- * 
- * There is notably an unused flag that allows the unused "Now Loading" text to display.
- * 
- * Additionally, the "name" field seems to be unused but may be related
- * to the getSceneID(const char*) method mentioned in Wii Fit U.
- */
 RPSysSceneCreator::SceneAttributes RPSysSceneCreator::sSceneAttributeTable[] = {
     // Scene                       pack         c    s    e    u       resDir                 name
     {RP_BOOT_SCENE,             RP_ALLPACK,     0, FALSE, 1, TRUE,  "RPCommon/",             "ロゴ"},
