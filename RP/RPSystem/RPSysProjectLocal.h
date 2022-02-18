@@ -5,18 +5,13 @@
 #include <types_egg.h>
 
 /**
- * @brief Offers support for runtime localization with values that can be set at compile time.
- * Utilized for everything from regional files, formatting date/time, singular numbers, number system, and more.
- * 
- * (Name from Wii Fit U)
+ * @brief Runtime-access regional localization using compile-time settings.
+ * @wfuname
  */
 class RPSysProjectLocal
 {
 public:
-    /**
-     * @brief Measurement system
-     * Mostly used for string formatting
-     */
+    //! Measurement system (mostly used for string formatting)
     enum EMeasureSystem
     {
         RP_SYS_0,
@@ -24,6 +19,7 @@ public:
         RP_SYS_2,
     };
 
+    //! Pack Project game ID
     enum EPackID
     {
         RP_SPORTS_PACK,
@@ -33,7 +29,7 @@ public:
         RP_ALLPACK
     };
 
-    // Used for both locale and language
+    //! Region, used for both locale and language
     enum ERegion
     {
         RP_ENGLISH_GB,
@@ -46,6 +42,7 @@ public:
         RP_ENGLISH_US
     };
 
+    //! Storage of sound archives (NAND suggests RP supports WiiWare?)
     enum EStorage
     {
         RP_STORAGE_MEM,
@@ -54,22 +51,27 @@ public:
     };
 
 public:
-    //! Singleton methods
-    static RPSysProjectLocal * CreateInstance(EGG::Heap *heap); // 801863a4
+    //! @address 801863a4
+    static RPSysProjectLocal * CreateInstance(EGG::Heap *heap);
     static RPSysProjectLocal * getInstance() { return sInstance; }
 
-    //! Set engine language
-    void setLanguage(u32 lang); // 80186234
-    //! Set engine locale
-    void setLocale(u32 locale); // 8018623c
-    //! Concatenate locale directory to input path
-    void appendLocalDirectory(char *path, const char *prefix); // 80186244
+    //! @address 80186234
+    void setLanguage(ERegion lang);
+    //! @address 8018623c
+    void setLocale(ERegion locale);
+    /**
+     * Concatenate locale directory to input path
+     * @address 80186244
+     */
+    void appendLocalDirectory(char *path, const char *prefix);
 
 private:
     RPSysProjectLocal(EGG::Heap *heap) : mParentHeap(heap), mMeasureSystem(RP_SYS_IMPERIAL), mPackID(RP_SPORTS_PACK),
         mLocale(RP_ENGLISH_US), mLanguage(RP_ENGLISH_US), WORD_0x18(0), mSndStorage(RP_STORAGE_MEM) {}
-    virtual ~RPSysProjectLocal(); // 80186364
+    //! @address 80186364
+    virtual ~RPSysProjectLocal();
 
+    //! Heap in which this object was allocated
     EGG::Heap *mParentHeap; // at 0x4
     //! For formatting decimal numbers, using feet vs meters, etc.
     u32 mMeasureSystem; // at 0x8
@@ -81,12 +83,14 @@ private:
     u32 mLanguage; // at 0x14
     //! Audio related, only used by code leftover from Wii Play
     UNKWORD WORD_0x18;
-    //! Where audio archives are stored (DVD, NAND, etc.)
-    //! Only used by openArchiveRP
+    //! Where audio archives are stored (DVD, NAND, memory)
     u32 mSndStorage;
 
-    //! Static instance
-    static RPSysProjectLocal *sInstance; // 804bf4e0
+    /**
+     * Static instance
+     * @address 804bf4e0
+     */
+    static RPSysProjectLocal *sInstance;
 };
 
 #endif
