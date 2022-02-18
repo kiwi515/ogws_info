@@ -47,22 +47,22 @@ public:
     void read(EGG::RamStream *stream, const void *rawSave);
 
     //! @address 8018c32c
-    RPPartyCommonData *getPartyCommonData() const;
+    RPPartyCommonData * getPartyCommonData() const;
 
     //! @address 8018c334
     void setPartyPlayerData(const RPPartyPlayerData *playerData, u32 id);
     //! @address 8018c40c
-    RPPartyPlayerData *getPartyPlayerData(u32 id) const;
+    RPPartyPlayerData * getPartyPlayerData(u32 id) const;
 
     //! @address 8018c41c
     void setSportsCommonData(const RPSportsCommonData *cmnData);
     //! @address 8018c684
-    RPSportsCommonData *getSportsCommonData() const;
+    RPSportsCommonData * getSportsCommonData() const;
 
     //! @address 8018c68c
     void setSportsPlayerData(const RPSportsPlayerData *playerData, u32 id);
     //! @address 8018cb6c
-    RPSportsPlayerData *getSportsPlayerData(u32 id) const;
+    RPSportsPlayerData * getSportsPlayerData(u32 id) const;
 
     /**
      * Check save data validity
