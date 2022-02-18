@@ -6,40 +6,32 @@
 #include <types_egg.h>
 
 /**
- * @brief Tag parameter container for the Pack Project Game Config File (gameConfig.ini)
- * 
- * (Name from Wii Fit U)
+ * @brief Tag parameter container for the Pack Project Game Config File (`gameConfig.ini`)
+ * @note Likely only exists in the binary because CreateInstance is called by RPSysSystem
+ * @wfuname
  */
 class RPSysGameConfig : RPSysTagParameters
 {
 public:
-    //! Singleton methods
     static RPSysGameConfig * getInstance() { return sInstance; }
-    static RPSysGameConfig * CreateInstance(EGG::Heap *heap); // 801866e0
+    //! @address 801866e0
+    static RPSysGameConfig * CreateInstance(EGG::Heap *heap);
 
 private:
-    RPSysGameConfig(EGG::Heap *heap); // 80186470
-    virtual ~RPSysGameConfig(); // 80186430
+    //! @address 80186470
+    RPSysGameConfig(EGG::Heap *heap);
+    //! @address 80186430
+    virtual ~RPSysGameConfig();
 
 private:
     //! Heap in which this object was allocated
     EGG::Heap *mParentHeap; // at 0xC
-    //! @brief Root scene ("Sports Pack")
-    //! I believe this was used to lookup the scene ID in the scene attributes
+    //! Root scene, possibly used by the stripped `RPSysSceneCreator::getSceneID(const char *)`
     RPSysStringTagParm mRootScene; // at 0x10
     //! TV Mode (Aspect ratio)
     RPSysStringTagParm mTVMode; // at 0x20
-    //! @brief Language (unused in config file)
-    //! I wonder if this was made before RPSysProjectLocal
+    //! Language; unused in .ini, likely predates language support in RPSysProjectLocal
     RPSysStringTagParm mLanguage; // at 0x30
-
-    /**
-     * @brief These options seem to have toggled debug prints
-     * for various parts of the RP engine.
-     * 
-     * Very few are present in Wii Sports's gameConfig,
-     * but all except three show up in Wii Fit's file.
-     */
     //! "Common print setting"
     RPSysPrimTagParm<int> mRPPrint; // at 0x40
     //! "System print setting"
@@ -76,12 +68,14 @@ private:
     RPSysPrimTagParm<int> mRPSumPrint; // at 0x140
     //! "Umemiya-san print setting"
     RPSysPrimTagParm<int> mRPUmePrint; // at 0x150
-
     //! "Game open setting"
     RPSysPrimTagParm<int> mGameOpen; // at 0x160
 
-    //! Static instance
-    static RPSysGameConfig *sInstance; // 804bf4e8
+    /**
+     * Static instance
+     * @address 804bf4e8
+     */
+    static RPSysGameConfig *sInstance;
 };
 
 #endif
