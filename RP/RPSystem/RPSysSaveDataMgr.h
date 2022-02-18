@@ -12,30 +12,25 @@
 /**
  * @brief RP engine save data manager
  * 
- * Alongside the main save data class, the manager also seems to
+ * @note Alongside the main save data class, the manager also seems to
  * have some behavior set at compile-time based on the pack ID.
- * 
- * Additionally, because this class supports multiple packs,
- * there exists code to support Wii Play save data, which was not stripped
- * because of the player select scene (runtime localization).
- * 
- * (Name from Wii Fit U, most function names also from Wii Fit U)
+ * Due to runtime localization in the player select scene, some code
+ * for handling Wii Play save data still exists in the binary.
+ * @wfuname
  */
 class RPSysSaveDataMgr : IRPSysHostIOSocket
 {
 public:
-    /**
-     * @brief Banner files that can be created
-     */
+    //! Banner files
     enum EBannerType
     {
-        BANNER_REAL, // banner.bin
-        BANNER_TEMP  // /tmp/banner.bin
+        //! banner.bin
+        BANNER_REAL,
+        //! /tmp/banner.bin
+        BANNER_TEMP
     };
 
-    /**
-     * @brief Status flags
-     */
+    //! Status flags
     enum EStatusFlag
     {
         NAND_MEMORY_EXIST = (1 << 0),
@@ -47,74 +42,135 @@ public:
     };
 
 public:
-    //! Singleton methods
-    static RPSysSaveDataMgr * CreateInstance(EGG::Heap *heap); // 8018a8a4
+    //! @address 8018a8a4
+    static RPSysSaveDataMgr * CreateInstance(EGG::Heap *heap);
     static RPSysSaveDataMgr * getInstance() { return sInstance; }
 
-    //! @brief Write both save and banner files
-    //! Used asynchronously through task threads
-    static void saveDataFunc(); // 801884f0
-    //! @brief Read save file
-    //! Used asynchronously through task threads
-    static void loadDataFunc(); // 80188520
-    //! @brief Create NAND entries for both save/banner
-    //! Used asynchronously through task threads
-    static void createPackFileFunc(); // 80188528
-    //! @brief Check if the NAND has enough free space
-    //! Used asynchronously through task threads
-    static void existNandMemoryFunc(); // 801885c0
-    //! @brief Validate that both the save/banner exist by checking their filetype
-    //! Used asynchronously through task threads
-    static void existPackFileFunc(); // 801885c8
+    /**
+     * @brief Write both save and banner files
+     * @note Used asynchronously through task threads
+     * @address 801884f0
+     */
+    static void saveDataFunc();
+    /**
+     * @brief Read save file
+     * @note Used asynchronously through task threads
+     * @address 80188520
+     */
+    static void loadDataFunc();
+    /**
+     * @brief Create NAND entries for both save/banner
+     * @note Used asynchronously through task threads
+     * @address 80188528
+     */
+    static void createPackFileFunc();
+    /**
+     * @brief Check if the NAND has enough free space
+     * @note Used asynchronously through task threads
+     * @address 801885c0
+     */
+    static void existNandMemoryFunc();
+    /**
+     * @brief Validate that both the save/banner exist by checking their filetype
+     * @note Used asynchronously through task threads
+     * @address 801885c8
+     */
+    static void existPackFileFunc();
 
-    //! @brief Write banner file to NAND
-    //! Caller can choose between temp/real file
-    void saveBanner(u32 bannerType); // 801886ac
-    //! Read NAND save data into mRawSaveFile, then construct mRPSaveFile
-    void loadSync(); // 8018877c
-    //! @brief Write mRPSaveFile into mRawSaveFile,
-    //! then write the raw contents to the NAND save
-    void saveSync(); // 80188868
-    //! Create temp banner file on NAND (/tmp/banner.bin)
-    void createBannerFile(); // 8018895c
-    //! Check if the NAND has enough free space
-    void existNandMemorySync(); // 80188a60
-    //! @brief Display "Continue without saving?" message when applicable,
-    //! and handle the player's yes/no choice
-    void continueNoSaveProc(); // 80188b04
-    //! @brief Constructs banner.bin inside mBannerBin
-    //! TPL exists on disc and text comes from the BMG
-    void buildBannerBin(); // 80188bd4
-    //! @brief Displays "Unable to save" message when applicable,
-    //! then hands off to continueNoSaveProc
-    void unableToSaveProc(); // 80188d60
-    //! Finishes NAND access by clearing the flag
-    void finishNandAccess(); // 80188e54
+    /**
+     * @brief Write banner file to NAND (temp/real)
+     * @address 801886ac
+     */
+    void saveBanner(EBannerType bannerType);
+    /**
+     * Read NAND save data into raw save, then construct RP save file
+     * @address 8018877c
+     */
+    void loadSync();
+    /**
+     * Save RP save file into raw save, then write raw save to NAND
+     * @address 80188868
+     */
+    void saveSync();
+    /**
+     * Create temp banner file on NAND (`/tmp/banner.bin`)
+     * @address 8018895c
+     */
+    void createBannerFile();
+    /**
+     * Check if the NAND has enough free space
+     * @address 80188a60
+     */
+    void existNandMemorySync();
+    /**
+     * Try to display "Continue without saving?" message
+     * @address 80188b04
+     */
+    void continueNoSaveProc();
+    /**
+     * @brief Build banner.bin file
+     * @note TPL exists on disc, text in BMG
+     * @address 80188bd4
+     */
+    void buildBannerBin();
+    /**
+     * @brief Try to display "Unable to save" message
+     * @note Calls continueNoSaveProc
+     * @address 80188d60
+     */
+    void unableToSaveProc();
+    /**
+     * Finishes NAND access by clearing the flag
+     * @address 80188e54
+     */
+    void finishNandAccess(); 
 
-    //! @brief How many empty NAND blocks the game requires
-    //! Constant value set to 2 (250kb)
-    u32 getUserBlockSize() const; // 80188e6c
-    //! @brief How many empty NAND blocks the game requires
-    //! Calculated dynamically from the save file size
-    //! Still yields same result (2 blocks)
-    u32 calcUserBlockSize() const; // 80188e6c
+    /**
+     * @brief Empty NAND block count the game requires to store save data
+     * @note Compile-time constant set to 2 (250kb)
+     * @address 80188e64
+     */
+    u32 getUserBlockSize() const;
+    /**
+     * @brief Empty NAND block count the game requires to store save data
+     * @note Calculated dynamically from the save file size,
+     * but still yields same result (2 blocks)
+     * @address 80188e6c
+     */
+    u32 calcUserBlockSize() const;
 
-    //! NAND error code
-    s32 getErrorCode() const; // 80188e8c
-    //! NAND check answer
-    u32 getNandCheckAnswer() const; // 80188e94
+    //! @address 80188e8c
+    s32 getErrorCode() const;
+    //! @address 80188e94
+    u32 getNandCheckAnswer() const;
     
-    //! Toggle ability to save
-    void setSaveDisable(bool disable); // 80188e9c
+    /**
+     * Toggle ability to save
+     * @address 80188e9c
+     */
+    void setSaveDisable(bool disable);
 
-    //! Manager save data validity
-    bool isSaveFileBroken() const; // 80188ec4
-    //! Save data class validity (typo)
-    bool isErrorOccured() const; // 80188efc
-    //! Is there enough free memory on the NAND for the save file?
-    bool isNandMemoryExist() const; // 80188f04
-    //! Do the banner/save files exist?
-    bool isPackFileExist() const; // 80188f10
+    /**
+     * Check manager status flags for save-related errors
+     * @address 80188ec4
+     */
+    bool isSaveFileBroken() const;
+    /**
+     * Check save data for errors
+     * @typo
+     * @address 80188efc
+     */
+    bool isErrorOccured() const;
+    /**
+     * Check for free space on NAND to store save data
+     * @address 80188f04
+     */
+    bool isNandMemoryExist() const;
+    /**
+     * Check for existence of banner/save files
+     * @address 80188f10
+     */
+    bool isPackFileExist() const;
     //! Is the manager currently done with the NAND?
     bool isNandAccessDone() const; // 80188f30
     //! Check for NAND access/write task
@@ -144,52 +200,59 @@ public:
     //! @brief Checks if the banner/save files exist on the NAND
     bool existPackFileSync(); // 80189414
 
-    //! Wii Play common save data
-    RPPartyCommonData getPartyCommonData() const; // 80189534
+    //! @address 80189534
+    RPPartyCommonData getPartyCommonData() const;
 
-    //! Wii Play player list save data
-    void setPartyPlayerData(const RPPartyPlayerData *playerData, u32 id); // 8018962c
-    RPPartyPlayerData getPartyPlayerData(u32 id) const; // 80189720
+    //! @address 8018962c
+    void setPartyPlayerData(const RPPartyPlayerData *playerData, u32 id);
+    //! @address 80189720
+    RPPartyPlayerData getPartyPlayerData(u32 id) const;
 
-    //! Wii Sports common save data
-    void setSportsCommonData(const RPSportsCommonData *cmnData); // 80189820
-    RPSportsCommonData getSportsCommonData() const; // 80189c10
+    //! @address 80189820
+    void setSportsCommonData(const RPSportsCommonData *cmnData);
+    //! @address 80189c10
+    RPSportsCommonData getSportsCommonData() const;
 
-    //! Wii Sports player list save data
-    void setSportsPlayerData(const RPSportsPlayerData *playerData, u32 id); // 80189ea0
-    RPSportsPlayerData getSportsPlayerData(u32 id) const; // 8018a39c
+    //! @address 80189ea0
+    void setSportsPlayerData(const RPSportsPlayerData *playerData, u32 id);
+    //! @address 8018a39c
+    RPSportsPlayerData getSportsPlayerData(u32 id) const;
 
 private:
-    RPSysSaveDataMgr(EGG::Heap *heap); // 801883c0
-    virtual ~RPSysSaveDataMgr(); // 80188368
+    //! @address 801883c0
+    RPSysSaveDataMgr(EGG::Heap *heap);
+    //! @address 80188368
+    virtual ~RPSysSaveDataMgr();
 
 private:
-    //! The Heap which contains this object
+    //! Heap in which this object was allocated
     EGG::Heap *mParentHeap; // at 0x4
     //! Flags regarding the manager's status
     u32 mStatus; // at 0x8
-    //! Most recent NAND error code
+    //! NAND error code
     s32 mNandErrorCode; // at 0xC
     UNKWORD WORD_0x10;
     //! NAND check answer
     u32 mNandCheckAnswer; // at 0x14
-    //! Size of the raw save file (RPSports.dat)
+    //! Size of the raw save file (`RPSports.dat`)
     u32 mSaveFileSize; // at 0x18
-    //! Banner.bin size (hardcoded 0x72a0)
+    //! Banner.bin size
     u32 mBannerBinSize; // at 0x1C
     //! @brief Save file size aligned some way
-    //! Used to calculate no. of empty blocks needed
+    //! Used to calculate no. of empty blocks needed (WiiWare support?)
     UNKWORD INT_0x20;
-    //! @brief Banner.bin contents
-    //! This buffer is strangely a bit larger than mBannerBinSize
+    //! Buffer containing banner.bin
     void *mBannerBin; // at 0x24
     //! Raw save file data (RPSports.dat)
     void *mRawSaveFile; // at 0x28
     //! RP save file class
     RPSysSaveData *mRPSaveFile; // at 0x2C
 
-    //! Static instance
-    static RPSysSaveDataMgr *sInstance; // 804bf508
+    /**
+     * Static instance
+     * @address 804bf508
+     */
+    static RPSysSaveDataMgr *sInstance;
 };
 
 #endif
