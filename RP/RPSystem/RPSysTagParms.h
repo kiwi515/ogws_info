@@ -6,14 +6,17 @@
 
 /**
  * @brief Container for tag parameters
- * Base used for RP engine's GameConfig
- * 
- * (Name from Wii Fit U)
+ * @note Base used for RP engine's GameConfig
+ * @wfuname
  */
 class RPSysTagParameters
 {
 public:
-    RPSysTagParameters(char *name); // 8018674c
+    /**
+     * @address 8018674c
+     * @param name Container name
+     */
+    RPSysTagParameters(char *name);
 
 private:
     //! Name of parameter group
@@ -23,20 +26,34 @@ private:
 };
 
 /**
- * @brief Base class for tag parameters
- * 
- * (Name from Wii Fit U)
+ * @brief Base class for a tag parameter
+ * @wfuname
  */
 class RPSysTagParm
 {
 public:
-    RPSysTagParm(RPSysTagParameters *parent, char *tag); // 80186840
+    /**
+     * @address 80186840
+     * @param parent Parent container
+     * @param tag Parameter name
+     */
+    RPSysTagParm(RPSysTagParameters *parent, char *tag);
 
-    //! Parameter I/O
-    virtual void read(EGG::Stream& stream); // 80186748
-    virtual void write(EGG::Stream& stream); // 80186744
-    //! Print parameter information?
-    virtual void dump(); // 80186740
+    /**
+     * Read parameter value
+     * @address 80186748
+     */
+    virtual void read(EGG::Stream& stream);
+    /**
+     * Write parameter value
+     * @address 80186744
+     */
+    virtual void write(EGG::Stream& stream);
+    /**
+     * Print parameter information? (stubbed)
+     * @address 80186740
+     */
+    virtual void dump();
 
 private:
     //! Parameter tag
@@ -46,25 +63,36 @@ private:
 };
 
 /**
- * @brief Tag parameter class for primitive type values
- *
- * Only the int template is used by the game.
- * 
- * @tparam T Parameter value type
- * 
- * (Name from Wii Fit U)
+ * @brief Template for primitive typed tag parameters
+ * @note Only the `int` template is used in OGWS
+ * @tparam Parameter primitive type
+ * @wfuname
  */
 template <typename T>
 class RPSysPrimTagParm : RPSysTagParm
 {
 public:
+    /**
+     * @param parent Parent container
+     * @param tag Parameter name
+     */
     RPSysPrimTagParm(RPSysTagParameters *parent, char *tag) : RPSysTagParm(parent, tag) {}
 
-    //! Parameter I/O
-    virtual void read(EGG::Stream& stream); // 8018680c (<int>)
-    virtual void write(EGG::Stream& stream); // 801867fc (<int>)
-    //! Print parameter information?
-    virtual void dump(); // 801867f8 (<int>)
+    /**
+     * Read parameter value
+     * @address 8018680c (\<int\> template)
+     */
+    virtual void read(EGG::Stream& stream);
+    /**
+     * Read parameter value
+     * @address 801867fc (\<int\> template)
+     */
+    virtual void write(EGG::Stream& stream);
+    /**
+     * Print parameter information? (stubbed)
+     * @address 801867f8 (\<int\> template)
+     */
+    virtual void dump();
 
 private:
     //! Parameter value
@@ -73,19 +101,33 @@ private:
 
 /**
  * @brief Tag parameter class for string values
- * 
- * (Name from Wii Fit U)
+ * @wfuname
  */
 class RPSysStringTagParm : RPSysTagParm
 {
 public:
-    RPSysStringTagParm(RPSysTagParameters *parent, char *tag); // 801867ac
+    /**
+     * @address 801867ac
+     * @param parent Parent container
+     * @param tag Parameter name
+     */
+    RPSysStringTagParm(RPSysTagParameters *parent, char *tag);
 
-    //! Parameter I/O
-    virtual void read(EGG::Stream& stream); // 80186770
-    virtual void write(EGG::Stream& stream); // 80186760
-    //! Print parameter information?
-    virtual void dump(); // 8018675c
+    /**
+     * Read parameter value
+     * @address 80186770
+     */
+    virtual void read(EGG::Stream& stream);
+    /**
+     * Write parameter value
+     * @address 80186760
+     */
+    virtual void write(EGG::Stream& stream);
+    /**
+     * Print parameter information? (stubbed)
+     * @address 8018675c
+     */
+    virtual void dump();
 
 private:
     //! Parameter value
