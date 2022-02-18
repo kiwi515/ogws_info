@@ -5,20 +5,17 @@
 #include <egg/core/eggSceneCreator.h>
 
 /**
- * @brief Scene creator for all RP scenes.
- * 
- * Not to be confused with the scene manager, the scene creator simply creates/destroys scenes.
- * It does have some methods involving changing the current scene,
- * but those usually hand over the request to the scene manager.
- * 
- * The scene creator also ensures that all scenes created are intended for the current pack.
- * This is done by referencing the scene attributes.
- * 
- * (Name from Wii Fit U)
+ * @brief Factory for all RP scenes
+ * @note Not to be confused with the scene manager, the scene creator simply creates/destroys scenes.
+ * The scene creator ensures that all scenes created are intended
+ * for the current pack by referencing the scene attributes.
+ * @wfuname
  */
 class RPSysSceneCreator : EGG::SceneCreator
 {
 public:
+    //! RP Scene ID
+    //! @wfuname
     enum ESceneID
     {
         RP_BOOT_SCENE,
@@ -38,6 +35,7 @@ public:
         RP_GOL_SELECT_SCENE,
     };
 
+    //! Pack Project game ID
     enum EPackID
     {
         RP_SPORTS_PACK,
@@ -47,20 +45,33 @@ public:
         RP_ALLPACK
     };
 
+    /**
+     * @brief Attributes to show the creator how to handle a given scene
+     * @customname
+     */
     struct SceneAttributes
     {
+        //! Scene ID
         s32 scene; // at 0x0
+        //! Pack ID
         s32 pack; // at 0x4
+        //! How to create the scene
         s32 createType; // at 0x8
+        //! Toggle "Now Loading" text (unused)
         s32 showLoadingText; // at 0xC
+        //! How to exit the scene
         s32 exitType; // at 0x10
+        //! Whether to use the RP common sound archive
         s32 useCommonSound; // at 0x14
+        //! Scene file directory
         const char *resDirName; // at 0x18
+        //! Proper name (unused lookup feature?)
         const char *sceneName; // at 0x1C
     };
 
 public:    
-    static RPSysSceneCreator * CreateInstance(EGG::Heap *heap); // 80184e10
+    //! @address 80184e10
+    static RPSysSceneCreator * CreateInstance(EGG::Heap *heap);
     static RPSysSceneCreator * getInstance() { return sInstance; }
     
     bool changeSceneAfterFade(s32 sceneID, bool reenterCurrent); // 80184ba4
