@@ -6,10 +6,15 @@
 
 /**
  * @brief Base class for all scenes unique to the Sports Pack (Wii Sports)
+ * 
+ * (Name derived from Wii Fit U's RPHealthBaseScene)
  */
 class RPSportsBaseScene : RPSysScene
 {
 public:
+    RPSportsBaseScene() {}
+    virtual ~RPSportsBaseScene() {} // 80184460
+
     //! Initialize/setup the scene
     virtual void Configure(); // 801ef1c8
     //! Load any needed resources

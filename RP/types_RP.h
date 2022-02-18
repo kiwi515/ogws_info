@@ -10,6 +10,7 @@ typedef u32 RPTime32;
 // RPGraphics
 struct IRPGrpDrawObject;
 struct RPGrpRenderer;
+struct RPGrpFogManager;
 
 // RPKernel
 struct RPSysSystem;
@@ -25,6 +26,11 @@ struct RPSysSceneCreator;
 struct RPSysScene;
 struct RPSysSceneMgr;
 struct RPSysProjectLocal;
+struct RPSysGameConfig;
+struct RPSysTagParameters;
+struct RPSysTagParm;
+template <typename T> struct RPSysPrimTagParm;
+struct RPSysStringTagParm;
 struct RPSysResourceManager;
 struct RPSysQueuedScene;
 struct RPSysCommonObject;
