@@ -5,6 +5,7 @@
 
 /**
  * @brief Bowling scene resource manager
+ * @customname
  */
 class RPBowResourceManager : IRPSysHostIOSocket
 {
