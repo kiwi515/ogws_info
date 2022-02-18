@@ -46,6 +46,7 @@ struct RPSportsBaseScene;
 struct RPBoxBoxer;
 struct RPBoxBoxerEnergy;
 struct RPBoxBoxerCombo;
+struct RPBowResourceManager;
 
 // RPParty
 struct RPPartyCommonData;
