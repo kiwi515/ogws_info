@@ -6,19 +6,14 @@
 #include <egg/core/eggColorFader.h>
 
 /**
- * @brief Current status/error of the DVD
- * 
- * Extremely similar to EGG's DvdStatus, but seems to be a re-implementation (missing Disposer inheritance).
- * Additionally, EGG's version does not exist in OGWS.
- * 
- * (Class name from Wii Fit U, and most member names from EGG)
+ * Current status/error of the DVD.  
+ * Similar to EGG's DvdStatus, but seems to be a re-implementation (missing Disposer inheritance).
+ * @wfuname
  */
 class RPSysDvdStatus
 {
 public:
-    /**
-     * @brief Status of access to the DVD drive
-     */
+    //! Status of the last access to the DVD drive
     enum EDvdStatus
     {
         DVD_IDLE = -2,
@@ -29,17 +24,26 @@ public:
     };
 
 public:
-    //! Singleton methods
-    static RPSysDvdStatus * CreateInstance(EGG::Heap *heap); // 80188280
+    //! @address 80188280
+    static RPSysDvdStatus * CreateInstance(EGG::Heap *heap);
     static RPSysDvdStatus * getInstance() { return sInstance; }
 
-    //! Draw status message when applicable
-    void draw(); // 80187fa4
-    //! Update status from DVD library
-    void update(); // 8018818c
-    //! @brief Check if status represents a fatal error
-    //! Function name typo
-    bool isErrorOccured(); // 80188260
+    /**
+     * Draw status message (only if an error has occurred)
+     * @address 80187fa4
+     */
+    void draw();
+    /**
+     * Update status using DVD library
+     * @address 8018818c
+     */
+    void update();
+    /**
+     * Check if the DVD cannot be accessed
+     * @address 80188260
+     * @typo
+     */
+    bool isErrorOccured();
 
 private:
     RPSysDvdStatus(EGG::Heap *heap) : mParentHeap(heap), mErrorStatus(DVD_IDLE)
@@ -52,7 +56,8 @@ private:
         // Maybe the status in the constructor is a defualt argument?
         mErrorFader->setStatus(EGG::ColorFader::STATUS_PREPARE_IN);
     }
-    virtual ~RPSysDvdStatus(); // 80187f64
+    //! @address 80187f64
+    virtual ~RPSysDvdStatus();
 
 private:
     //! Heap in which this object was allocated
@@ -64,8 +69,11 @@ private:
     //! Fader to black out the screen when displaying an error message
     EGG::ColorFader *mErrorFader; // at 0x10
 
-    //! Static instance
-    static RPSysDvdStatus *sInstance; // 804bf500
+    /**
+     * Static instance
+     * @address 804bf500
+     */
+    static RPSysDvdStatus *sInstance;
 };
 
 #endif
