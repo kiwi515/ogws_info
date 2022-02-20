@@ -263,6 +263,7 @@ TAB_SIZE               = 4
 
 ALIASES                = "address=@par Virtual Address:"
 ALIASES                += "wfuname=^^<b>(Name from Wii Fit U)</b>^^"
+ALIASES                += "wscname=^^<b>(Name from Wii Sports Club)</b>^^"
 ALIASES                += "customname=^^<b>(Name custom or derived from official symbol)</b>^^"
 ALIASES 			   += "typo=\xrefitem typo \"\" \"Typo Errors\" "
 
