@@ -7,6 +7,8 @@ typedef u16 RPTime16;
 //! Provides year, month, month day, week day, hour
 typedef u32 RPTime32;
 
+struct RPSysUnknownBase;
+
 // RPGraphics
 struct IRPGrpDrawObject;
 struct RPGrpRenderer;
@@ -47,6 +49,7 @@ struct RPBoxBoxer;
 struct RPBoxBoxerEnergy;
 struct RPBoxBoxerCombo;
 struct RPBowResourceManager;
+struct RPGolConfig;
 
 // RPParty
 struct RPPartyCommonData;
