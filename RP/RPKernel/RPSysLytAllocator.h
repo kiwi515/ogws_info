@@ -5,23 +5,31 @@
 #include <egg/core/eggAllocator.h>
 
 /**
- * @brief Wrapper for EGG's Allocator for use with layouts
- * 
- * (Name from Wii Fit U)
+ * @brief Memory allocator for layouts
+ * @details Wrapper for EGG::Allocator with custom free func
+ * @wfuname
  */
 class RPSysLytAllocator : EGG::Allocator
 {
 public:
-    RPSysLytAllocator(EGG::Heap *heap, s32 r5); // 8019e434
-    virtual ~RPSysLytAllocator(); // 8019e3dc
+    //! @address 8019e434
+    RPSysLytAllocator(EGG::Heap *heap, s32 r5);
+    //! @address 8019e3dc
+    virtual ~RPSysLytAllocator();
 
 private:
-    //! @brief Alloc/free funcs
-    //! Inherited func pointers are overwritten to point here
+    /**
+     * @brief Alloc/free funcs
+     * @note Base class's funcs point here
+     */
     MEMAllocatorFuncs mFuncs; // at 0x14
 };
 
-//! Layout allocator free func (alloc func is carried over from the inherited Allocator)
-static void FreeMemory(MEMAllocator *allocator, void *mem); // 8019e490
+/**
+ * @brief Layout allocator free func
+ * @note Alloc func is carried over from base class
+ * @address 8019e490
+ */
+static void FreeMemory(MEMAllocator *allocator, void *mem);
 
 #endif
