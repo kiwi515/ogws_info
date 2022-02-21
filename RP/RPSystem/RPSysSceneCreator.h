@@ -6,7 +6,7 @@
 
 /**
  * @brief Factory for all RP scenes
- * @note Not to be confused with the scene manager, the scene creator simply creates/destroys scenes.
+ * @details Not to be confused with the scene manager, the scene creator simply creates/destroys scenes.
  * The scene creator ensures that all scenes created are intended
  * for the current pack by referencing the scene attributes.
  * @wfuname

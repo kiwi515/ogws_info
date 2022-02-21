@@ -6,7 +6,7 @@
 
 /**
  * @brief Container for tag parameters
- * @note Base used for RP engine's GameConfig
+ * @details Base used for RP engine's GameConfig
  * @wfuname
  */
 class RPSysTagParameters
@@ -64,7 +64,7 @@ private:
 
 /**
  * @brief Template for primitive typed tag parameters
- * @note Only the `int` template is used in OGWS
+ * @details Only the `int` template is used in OGWS
  * @tparam Parameter primitive type
  * @wfuname
  */

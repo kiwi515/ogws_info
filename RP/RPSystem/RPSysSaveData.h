@@ -6,7 +6,7 @@
 
 /**
  * @brief Generic structure to hold RP engine save data
- * @note While this structure is generic and can support multiple Pack Project games,
+ * @details While this structure is generic and can support multiple Pack Project games,
  * it seems that some of its behavior is set at compile time rather than using RPSysProjectLocal.
  * @wfuname
  */

@@ -9,7 +9,7 @@
 
 /**
  * @brief Engine resource manager
- * @note Responsible for pretty much all file loads from the disc,
+ * @details Responsible for pretty much all file loads from the disc,
  * and also serves as a utility for building scene/pack relative paths to files.
  * @wfuname
  */

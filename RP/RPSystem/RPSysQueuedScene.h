@@ -6,7 +6,7 @@
 
 /**
  * @brief Tracks the next scene that will be loaded
- * @note Used commonly by the menu scene to determine whether the player select scene
+ * @details Used commonly by the menu scene to determine whether the player select scene
  * should be in its regular/training/fitness state.
  * @customname
  */

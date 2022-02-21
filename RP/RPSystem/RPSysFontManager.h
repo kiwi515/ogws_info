@@ -7,7 +7,7 @@
 
 /**
  * @brief RP engine font manager
- * @note Responsible for loading and setting up the rom font and any res fonts needed
+ * @details Responsible for loading and setting up the rom font and any res fonts needed
  * (Whether specific fonts are used is determined at compile time)
  * @wfuname
  */

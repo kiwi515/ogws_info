@@ -21,7 +21,7 @@ public:
 
         /**
          * @see EHoleResource
-         * @note Only one resource can be used as they are not flags.
+         * @details Only one resource can be used as they are not flags.
          */
         u32 resource; // at 0x8
 
@@ -100,7 +100,7 @@ public:
 
     /**
      * @brief Player's total score so far
-     * @note Caller can optionally include the current hole in the calculation,
+     * @details Caller can optionally include the current hole in the calculation,
      * which is used for the result screen as the hole is not incremented after finishing the round
      * @address 8029ccbc
      * @param player Player id
@@ -136,7 +136,7 @@ public:
 
     /**
      * @brief Update player scores
-     * @note Scores taken from golf player manager
+     * @details Scores taken from golf player manager
      * @address 8029cf24
      */
     void UpdateScores();

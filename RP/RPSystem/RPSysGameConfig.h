@@ -7,7 +7,7 @@
 
 /**
  * @brief Tag parameter container for the Pack Project Game Config File (`gameConfig.ini`)
- * @note Likely only exists in the binary because CreateInstance is called by RPSysSystem
+ * @details Likely only exists in the binary because CreateInstance is called by RPSysSystem
  * @wfuname
  */
 class RPSysGameConfig : RPSysTagParameters

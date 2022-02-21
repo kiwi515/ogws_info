@@ -12,7 +12,7 @@
 /**
  * @brief RP engine save data manager
  * 
- * @note Alongside the main save data class, the manager also seems to
+ * @details Alongside the main save data class, the manager also seems to
  * have some behavior set at compile-time based on the pack ID.
  * Due to runtime localization in the player select scene, some code
  * for handling Wii Play save data still exists in the binary.
@@ -48,31 +48,31 @@ public:
 
     /**
      * @brief Write both save and banner files
-     * @note Used asynchronously through task threads
+     * @details Used asynchronously through task threads
      * @address 801884f0
      */
     static void saveDataFunc();
     /**
      * @brief Read save file
-     * @note Used asynchronously through task threads
+     * @details Used asynchronously through task threads
      * @address 80188520
      */
     static void loadDataFunc();
     /**
      * @brief Create NAND entries for both save/banner
-     * @note Used asynchronously through task threads
+     * @details Used asynchronously through task threads
      * @address 80188528
      */
     static void createPackFileFunc();
     /**
      * @brief Check if the NAND has enough free space
-     * @note Used asynchronously through task threads
+     * @details Used asynchronously through task threads
      * @address 801885c0
      */
     static void existNandMemoryFunc();
     /**
      * @brief Validate that both the save/banner exist by checking their filetype
-     * @note Used asynchronously through task threads
+     * @details Used asynchronously through task threads
      * @address 801885c8
      */
     static void existPackFileFunc();
@@ -109,13 +109,13 @@ public:
     void continueNoSaveProc();
     /**
      * @brief Build banner.bin file
-     * @note TPL exists on disc, text in BMG
+     * @details TPL exists on disc, text in BMG
      * @address 80188bd4
      */
     void buildBannerBin();
     /**
      * @brief Try to display "Unable to save" message
-     * @note Calls continueNoSaveProc
+     * @details Calls continueNoSaveProc
      * @address 80188d60
      */
     void unableToSaveProc();
@@ -127,13 +127,13 @@ public:
 
     /**
      * @brief Empty NAND block count the game requires to store save data
-     * @note Compile-time constant set to 2 (250kb)
+     * @details Compile-time constant set to 2 (250kb)
      * @address 80188e64
      */
     u32 getUserBlockSize() const;
     /**
      * @brief Empty NAND block count the game requires to store save data
-     * @note Calculated dynamically from the save file size,
+     * @details Calculated dynamically from the save file size,
      * but still yields same result (2 blocks)
      * @address 80188e6c
      */

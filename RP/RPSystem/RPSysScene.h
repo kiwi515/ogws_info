@@ -9,7 +9,7 @@
 
 /**
  * @brief Base class for all RP engine scenes.
- * @note Inherits from EGG::Scene for compatability,
+ * @details Inherits from EGG::Scene for compatability,
  * and inherits from a renderable interface to simplify the renderer's job.
  * @wfuname
  */
@@ -63,7 +63,7 @@ public:
     virtual void Exit();
     /**
      * @brief Async task
-     * @note Called by taskAsyncFunc
+     * @details Called by taskAsyncFunc
      * @address 8018559c
      */
     virtual void taskAsync();
@@ -92,7 +92,7 @@ public:
     void setDimming(bool dim);
 
     /**
-     * @note Bool goes used in WFU, but OGWS just tells the manager
+     * @details Bool goes used in WFU, but OGWS just tells the manager
      * rather than accessing the fader directly
      */
     /**@{*/ 
@@ -109,7 +109,7 @@ public:
     void setSceneFadeColor(EGG::Color color);
     /**
      * @brief Fade color of both of manager's faders
-     * @note Manager has a scene fader and a manager fader
+     * @details Manager has a scene fader and a manager fader
      */
     /**@{*/ 
     //! @address 801854cc
@@ -126,26 +126,26 @@ public:
 
     /**
      * @brief Check if the scene manager is allowing NAND access
-     * @note The scene manager must not be fading in or be busy
+     * @details The scene manager must not be fading in or be busy
      * @address 80185524
      */
     bool isNandAccessEnable() const;
     /**
      * @brief Check if the scene manager is allowing the scene to change
-     * @note The scene manager must be ready to fade out and not be busy
+     * @details The scene manager must be ready to fade out and not be busy
      * @address 80185574
      */
     bool isSceneChangeEnable() const;
 
     /**
      * @brief Check if the scene is currently blank (not visible)
-     * @note This happens when both faders are preparing to fade in
+     * @details This happens when both faders are preparing to fade in
      * @address 8018557c
      */
     bool isSceneBlank() const;
     /**
      * @brief Check if the scene is currently fully visible
-     * @note This happens when both faders are done and ready to fade back out
+     * @details This happens when both faders are done and ready to fade back out
      * @address 80185584
      */
     bool isSceneDisplay() const;
@@ -156,14 +156,14 @@ public:
     /**@{*/ 
     /**
      * @brief Calls virtual task function asynchronously
-     * @note Set up on thread by initTaskAsync
+     * @details Set up on thread by initTaskAsync
      * @address 80186878
      * @param scene Scene required to call taskAsync
      */
     static void taskAsyncFunc(void *scene);
     /**
      * @brief Loads scene resources asynchronously
-     * @note calls LoadResource when done
+     * @details calls LoadResource when done
      * @address 80186888
      * @param scene Scene required to call taskAsync
      */
@@ -183,7 +183,7 @@ public:
 
     /**
      * @brief Enable the "Now Loading" scene text
-     * @note Set automatically if the scene attributes allow it
+     * @details Set automatically if the scene attributes allow it
      * @address 80186cec
      */
     void setShowLoadingText();
