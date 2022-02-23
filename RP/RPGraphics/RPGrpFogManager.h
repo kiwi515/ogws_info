@@ -6,14 +6,14 @@
 
 /**
  * @brief RP engine fog manager
- * 
- * (Name from Wii Fit U)
+ * @wfuname
  */
 class RPGrpFogManager : EGG::FogManager
 {
 public:
     RPGrpFogManager() {}
-    virtual ~RPGrpFogManager() {} // 801b2424
+    //! @address 801b2424
+    virtual ~RPGrpFogManager() {}
 };
 
 #endif
