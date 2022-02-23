@@ -37,7 +37,7 @@ public:
     //! @brief Cutscene IDs for mCutscenesSeen
     enum ECutsceneID
     {
-        CUTSCENE_0,
+        CUTSCENE_0,           //!< Unused
         CUTSCENE_ALL_BRONZE,  //!< All bronze medals
         CUTSCENE_ALL_SILVER,  //!< All silver medals
         CUTSCENE_ALL_GOLD,    //!< All gold medals
