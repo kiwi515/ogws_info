@@ -1,7 +1,6 @@
 /**
- * Enum for Bowling's sound archive (BRSAR)
+ * @brief Enum for Bowling's sound archive (BRSAR)
  */
-
 enum rp_Bow_sound
 {
     /* 0x00 */ SE_TR_Training_Kabeyoke_Replay_WallEffect,

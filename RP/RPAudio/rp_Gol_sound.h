@@ -1,7 +1,6 @@
 /**
- * Enum for Golf's sound archive (BRSAR)
+ * @brief Enum for Golf's sound archive (BRSAR)
  */
-
 enum rp_Gol_sound
 {
     /* 0x00 */ SE_TR_FlagHit,

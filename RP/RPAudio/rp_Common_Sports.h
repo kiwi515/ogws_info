@@ -1,7 +1,6 @@
 /**
- * Enum for Wii Sports's common sound archive (BRSAR)
+ * @brief Enum for Wii Sports's common sound archive (BRSAR)
  */
-
 enum rp_Common_Sports
 {
     /* 0x00 */ RP_COMMON_SE_LOGO_01,

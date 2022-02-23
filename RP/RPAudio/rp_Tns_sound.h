@@ -1,7 +1,6 @@
 /**
- * Enum for Tennis's sound archive (BRSAR)
+ * @brief Enum for Tennis's sound archive (BRSAR)
  */
-
 enum rp_Tns_sound
 {
     /* 0x00 */ SE_TR_TARGET_CRUSH,

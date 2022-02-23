@@ -1,7 +1,6 @@
 /**
- * Enum for Boxing's sound archive (BRSAR)
+ * @brief Enum for Boxing's sound archive (BRSAR)
  */
-
 enum rp_Box_sound
 {
     /* 0x000 */ SE_TR_punch_jab,

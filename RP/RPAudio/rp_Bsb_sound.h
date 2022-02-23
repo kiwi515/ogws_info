@@ -1,7 +1,6 @@
 /**
- * Enum for Baseball's sound archive (BRSAR)
+ * @brief Enum for Baseball's sound archive (BRSAR)
  */
-
 enum rp_Bsb_sound
 {
     /* 0x00 */ SE_TR_BallFall,
