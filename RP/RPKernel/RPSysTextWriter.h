@@ -30,7 +30,6 @@ public:
      * @address 80190af8
      */
     void Printf(f32 x, f32 y, const char *msg, ...);
-
     /**
      * @brief Print formatted text to screen coordinates (relative to the center)
      * @address 80190960
@@ -42,7 +41,6 @@ public:
      * @address 801908d8
      */
     void Begin();
-    
     /**
      * @brief End rendering
      * @address 801908cc
