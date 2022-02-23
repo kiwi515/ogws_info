@@ -18,24 +18,25 @@ public:
     static RPSysQueuedScene * getInstance() { return sInstance; }
 
     /**
-     * Reset the queued scene to -1
+     * @brief Reset the queued scene to -1
      * @address 80187b94
      */
     void Reset();
 
 private:
     RPSysQueuedScene(EGG::Heap *heap) : mParentHeap(heap), mSceneID(-1) {}
+
     //! @address 80187b54
     virtual ~RPSysQueuedScene();
 
 private:
-    //! Heap in which this object was allocated
+    //! @brief Heap in which this object was allocated
     EGG::Heap *mParentHeap; // at 0x4
-    //! ID of queued scene (-1 = none)
+    //! @brief ID of queued scene (-1 = none)
     s32 mSceneID; // at 0x8
 
     /**
-     * Static instance
+     * @brief Static instance
      * @address 804bf4f8
      */
     static RPSysQueuedScene *sInstance;

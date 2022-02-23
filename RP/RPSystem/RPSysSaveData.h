@@ -16,16 +16,14 @@ public:
     //! @brief Potential errors in the save data
     enum ESaveError
     {
-        //! Missing 'RPSP'
-        SAVE_BAD_HI_MAGIC = (1 << 0),
-        //! Missing '0000'
-        SAVE_BAD_LO_MAGIC = (1 << 1),
-        SAVE_BAD_CHECKSUM = (1 << 2)
+        SAVE_BAD_HI_MAGIC = (1 << 0), //!< Missing 'RPSP'
+        SAVE_BAD_LO_MAGIC = (1 << 1), //!< Missing '0000'
+        SAVE_BAD_CHECKSUM = (1 << 2)  //!< Checksum mismatch
     };
 
 public:
     /**
-     * Size of save file
+     * @brief Size of save file
      * @address 8018bf54
      */
     static u32 getFileSize();
@@ -34,13 +32,13 @@ public:
     RPSysSaveData();
 
     /**
-     * Write save to stream
+     * @brief Write save to stream
      * @address 8018ad70
      * @param rawSave Binary save, needed to calculate checksum
      */
     void write(EGG::RamStream *stream, const void *rawSave) const;
     /**
-     * Read save from stream
+     * @brief Read save from stream
      * @address 8018b0e4
      * @param rawSave Binary save, needed to calculate checksum
      */
@@ -65,22 +63,22 @@ public:
     RPSportsPlayerData * getSportsPlayerData(u32 id) const;
 
     /**
-     * Check save data validity
+     * @brief Check save data validity
      * @typo
      * @address 8018cb7c
      */
     bool isErrorOccured() const;
 
 private:
-    //! Flags regarding the status of the data
+    //! @brief Flags regarding the status of the data
     u32 mErrors; // at 0x0
-    //! Wii Sports common save data
+    //! @brief Wii Sports common save data
     RPSportsCommonData *mSportsCmnData; // at 0x4
-    //! Wii Sports player list (100 entries)
+    //! @brief Wii Sports player list (100 entries)
     RPSportsPlayerData *mSportsPlayerList; // at 0x8
-    //! Wii Play common save data
+    //! @brief Wii Play common save data
     RPPartyCommonData *mPartyCmnData; // at 0xC
-    //! Wii Play player list (100 entries)
+    //! @brief Wii Play player list (100 entries)
     RPPartyPlayerData *mPartyPlayerList; // at 0x10
 
     UNKWORD WORD_0x14;

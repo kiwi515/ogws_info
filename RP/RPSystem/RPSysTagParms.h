@@ -19,9 +19,9 @@ public:
     RPSysTagParameters(char *name);
 
 private:
-    //! Name of parameter group
+    //! @brief Name of parameter group
     const char *mName; // at 0x0
-    //! Children parameters
+    //! @brief Children parameters
     RPSysTagParm *mChildren; // at 0x4
 };
 
@@ -40,25 +40,25 @@ public:
     RPSysTagParm(RPSysTagParameters *parent, char *tag);
 
     /**
-     * Read parameter value
+     * @brief Read parameter value
      * @address 80186748
      */
     virtual void read(EGG::Stream& stream);
     /**
-     * Write parameter value
+     * @brief Write parameter value
      * @address 80186744
      */
     virtual void write(EGG::Stream& stream);
     /**
-     * Print parameter information? (stubbed)
+     * @brief Print parameter information? (stubbed)
      * @address 80186740
      */
     virtual void dump();
 
 private:
-    //! Parameter tag
+    //! @brief Parameter tag
     char *mTag; // at 0x0
-    //! Next parameter in linked list
+    //! @brief Next parameter in linked list
     RPSysTagParm *mNext; // at 0x4
 };
 
@@ -79,23 +79,23 @@ public:
     RPSysPrimTagParm(RPSysTagParameters *parent, char *tag) : RPSysTagParm(parent, tag) {}
 
     /**
-     * Read parameter value
+     * @brief Read parameter value
      * @address 8018680c (\<int\> template)
      */
     virtual void read(EGG::Stream& stream);
     /**
-     * Read parameter value
+     * @brief Read parameter value
      * @address 801867fc (\<int\> template)
      */
     virtual void write(EGG::Stream& stream);
     /**
-     * Print parameter information? (stubbed)
+     * @brief Print parameter information? (stubbed)
      * @address 801867f8 (\<int\> template)
      */
     virtual void dump();
 
 private:
-    //! Parameter value
+    //! @brief Parameter value
     T mValue; // at 0xC
 };
 
@@ -114,23 +114,23 @@ public:
     RPSysStringTagParm(RPSysTagParameters *parent, char *tag);
 
     /**
-     * Read parameter value
+     * @brief Read parameter value
      * @address 80186770
      */
     virtual void read(EGG::Stream& stream);
     /**
-     * Write parameter value
+     * @brief Write parameter value
      * @address 80186760
      */
     virtual void write(EGG::Stream& stream);
     /**
-     * Print parameter information? (stubbed)
+     * @brief Print parameter information? (stubbed)
      * @address 8018675c
      */
     virtual void dump();
 
 private:
-    //! Parameter value
+    //! @brief Parameter value
     const char *mValue; // at 0xC
 };
 

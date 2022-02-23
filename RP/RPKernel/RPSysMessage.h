@@ -20,9 +20,9 @@ public:
      */
     struct RPMsgInfoBlockEntry : EGG::MsgRes::MsgInfoBlockEntry
     {
-        //! Text scale
+        //! @brief Text scale
         u16 mScale; // at 0x8
-        //! Text kerning
+        //! @brief Text kerning
         s8 mCharSpace; // at 0xA
     };
 
@@ -32,6 +32,7 @@ public:
      * @param bin Binary message file (BMG)
      */
     RPSysMessage(const void *bin, EGG::Heap *heap);
+
     //! @address 80190d94
     virtual ~RPSysMessage();
 

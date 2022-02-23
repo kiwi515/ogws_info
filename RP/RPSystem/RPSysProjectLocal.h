@@ -11,7 +11,7 @@
 class RPSysProjectLocal
 {
 public:
-    //! Measurement system (mostly used for string formatting)
+    //! @brief Measurement system (mostly used for string formatting)
     enum EMeasureSystem
     {
         RP_SYS_0,
@@ -19,7 +19,7 @@ public:
         RP_SYS_2,
     };
 
-    //! Pack Project game ID
+    //! @brief Pack Project game ID
     enum EPackID
     {
         RP_SPORTS_PACK,
@@ -29,7 +29,7 @@ public:
         RP_ALLPACK
     };
 
-    //! Region, used for both locale and language
+    //! @brief Region, used for both locale and language
     enum ERegion
     {
         RP_ENGLISH_GB,
@@ -42,7 +42,7 @@ public:
         RP_ENGLISH_US
     };
 
-    //! Storage of sound archives (NAND suggests RP supports WiiWare?)
+    //! @brief Storage of sound archives (NAND suggests RP supports WiiWare?)
     enum EStorage
     {
         RP_STORAGE_MEM,
@@ -59,8 +59,9 @@ public:
     void setLanguage(ERegion lang);
     //! @address 8018623c
     void setLocale(ERegion locale);
+
     /**
-     * Concatenate locale directory to input path
+     * @brief Concatenate locale directory to input path
      * @address 80186244
      */
     void appendLocalDirectory(char *path, const char *prefix);
@@ -68,22 +69,23 @@ public:
 private:
     RPSysProjectLocal(EGG::Heap *heap) : mParentHeap(heap), mMeasureSystem(RP_SYS_IMPERIAL), mPackID(RP_SPORTS_PACK),
         mLocale(RP_ENGLISH_US), mLanguage(RP_ENGLISH_US), WORD_0x18(0), mSndStorage(RP_STORAGE_MEM) {}
+
     //! @address 80186364
     virtual ~RPSysProjectLocal();
 
-    //! Heap in which this object was allocated
+    //! @brief Heap in which this object was allocated
     EGG::Heap *mParentHeap; // at 0x4
-    //! For formatting decimal numbers, using feet vs meters, etc.
+    //! @brief For formatting decimal numbers, using feet vs meters, etc.
     u32 mMeasureSystem; // at 0x8
-    //! Pack Project game ID
+    //! @brief Pack Project game ID
     u32 mPackID; // at 0xC
-    //! Controls what directory is used for regional files, etc.
+    //! @brief Controls what directory is used for regional files, etc.
     u32 mLocale; // at 0x10
-    //! Seems to be unused, set alongside locale
+    //! @brief Seems to be unused, set alongside locale
     u32 mLanguage; // at 0x14
-    //! Audio related, only used by code leftover from Wii Play
+    //! @brief Audio related, only used by code leftover from Wii Play
     UNKWORD WORD_0x18;
-    //! Where audio archives are stored (DVD, NAND, memory)
+    //! @brief Where audio archives are stored (DVD, NAND, memory)
     u32 mSndStorage;
 
     /**

@@ -20,31 +20,31 @@ public:
     static RPSysTextWriter * GetInstance() { return sInstance; }
 
     /**
-     * Reset all settings
+     * @brief Reset all settings
      * @address 80190b9c
      */
     void Reset();
 
     /**
-     * Print formatted text to screen coordinates (relative to the top-left)
+     * @brief Print formatted text to screen coordinates (relative to the top-left)
      * @address 80190af8
      */
     void Printf(f32 x, f32 y, const char *msg, ...);
 
     /**
-     * Print formatted text to screen coordinates (relative to the center)
+     * @brief Print formatted text to screen coordinates (relative to the center)
      * @address 80190960
      */
     void PrintfZeroCenter(f32 x, f32 y, const char *msg, ...);
 
     /**
-     * Setup GX for rendering
+     * @brief Setup GX for rendering
      * @address 801908d8
      */
     void Begin();
     
     /**
-     * End rendering
+     * @brief End rendering
      * @address 801908cc
      */
     void End();
@@ -55,15 +55,16 @@ private:
         SetFont(RPSysFontManager::GetInstance()->GetRomFont());
         mIsRendering = FALSE;
     }
+
     //! @address 80190c6c
     virtual ~RPSysTextWriter();
 
 private:
-    //! Render status (Begin/End)
+    //! @brief Render status (Begin/End)
     BOOL mIsRendering; // at 0x68
 
     /**
-     * Static instance
+     * @brief Static instance
      * @address 804bf538
      */
     static RPSysTextWriter *sInstance;

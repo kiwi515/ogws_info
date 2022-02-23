@@ -31,18 +31,19 @@ public:
      * @param data Pointer to file data
      */
     RPSysFile(const char *path, int size, const void *data);
+
     //! @address 80199604
     virtual ~RPSysFile();
 
 public:
-    //! Link node for resource manager
+    //! @brief Link node for resource manager
     nw4r::ut::Node mNode; // at 0x10
 private:
-    //! File path
+    //! @brief File path
     char mPath[128]; // at 0x18
-    //! File size
+    //! @brief File size
     int mSize; // at 0x98
-    //! File data
+    //! @brief File data
     void *mData; // at 0x9C
 };
 

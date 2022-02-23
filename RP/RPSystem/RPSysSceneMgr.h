@@ -16,7 +16,7 @@
 class RPSysSceneMgr : EGG::SceneManager
 {
 public:
-    //! Scene manager states
+    //! @brief Scene manager states
     enum EState
     {
         STATE_NORMAL,
@@ -28,12 +28,12 @@ public:
 
 public:
     /**
-     * Manager state logic
+     * @brief Manager state logic
      * @address 801856d0
      */
     void updateState();
     /**
-     * Active scene's logic
+     * @brief Active scene's logic
      * @address 80185868
      */
     void calcCurrentScene();
@@ -52,12 +52,12 @@ public:
      */
     bool isSceneChangeEnable();
     /**
-     * Checks if all of the system threads are idle
+     * @brief Checks if all of the system threads are idle
      * @address 80185968
      */
     bool isTaskFinished(); 
     /**
-     * Checks if both faders are currently fading in
+     * @brief Checks if both faders are currently fading in
      * @address 801859dc
      */
     bool isFadeIn();
@@ -93,7 +93,7 @@ public:
     //! @address 80185c60
     EGG::Color getFadeColor();
     /**
-     * Reset both faders' colors to white
+     * @brief Reset both faders' colors to white
      * @address 80185c8c
      */
     void resetFadeColor();
@@ -103,13 +103,13 @@ public:
     //! @address 80185d28
     u16 getFadeFrame();
     /**
-     * Reset both faders' frame to 20
+     * @brief Reset both faders' frame to 20
      * @address 80185d34
      */
     void resetFadeFrame();
 
     /**
-     * Fade out into new scene
+     * @brief Fade out into new scene
      * @address 80185d74
      * @param scene Scene ID
      * @param reload Optionally reload current scene
@@ -124,19 +124,19 @@ public:
     // ? FUN_80185f64()
 
     /**
-     * Shutdown system
+     * @brief Shutdown system
      * @address 80185f74
      * @param black For VISetBlack
      */
     bool shutdownSystem(bool black); 
     /**
-     * Shutdown system
+     * @brief Shutdown system
      * @address 80185fe4
      * @param black For VISetBlack
      */
     bool returnToMenu(bool black);
     /**
-     * Soft reset
+     * @brief Soft reset
      * @address 80186054
      * @param black For VISetBlack
      */
@@ -158,11 +158,11 @@ private:
     virtual ~RPSysSceneMgr();
 
 private:
-    //! Heap in which this object was allocated
+    //! @brief Heap in which this object was allocated
     EGG::Heap *mParentHeap; // at 0x2C
-    //! Manager state
+    //! @brief Manager state
     int mState; // at 0x30
-    //! Fader for the current scene
+    //! @brief Fader for the current scene
     EGG::ColorFader *mSceneFader; // at 0x34
 };
 

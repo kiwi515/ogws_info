@@ -13,10 +13,12 @@ class RPSysCommonObject : IRPGrpDrawObject
 public:
     //! @address 80187dbc
     RPSysCommonObject();
+    
     //! @address 80187f24
     virtual ~RPSysCommonObject();
+
     /**
-     * Draws scene fader, pause mgr, etc.
+     * @brief Draws scene fader, pause mgr, etc.
      * @address 80187c10
      */
     virtual void UserDraw();

@@ -20,6 +20,7 @@ public:
     RPSysScene();
     //! @address 80183fa8
     virtual ~RPSysScene() {}
+
     //! @address 80185094
     virtual void calc();
     //! @address 80185048
@@ -34,24 +35,26 @@ public:
     virtual void incoming_childDestroy();
     //! @address 80185008
     virtual void outgoing_childCreate();
+
     /**
-     * Returns address of DAT_804bf4d0
+     * @brief Returns address of DAT_804bf4d0
      * @address 8018558c
      */
     virtual UNKTYPE * VF38(UNKTYPE);
     /**
-     * Callback for pause/unpause
+     * @brief Callback for pause/unpause
      * @address 80185594
      * @param pauseOn True = enter, false = exit
      */
     virtual void pauseCallBack(bool pauseOn);
+
     /**
-     * Setup scene members
+     * @brief Setup scene members
      * @address 80185400
      */
     virtual void Configure();
     /**
-     * Load required scene resources
+     * @brief Load required scene resources
      * @address 80185598
      */
     virtual void LoadResource();
@@ -61,6 +64,7 @@ public:
     virtual void Calculate();
     //! @address 80185004
     virtual void Exit();
+
     /**
      * @brief Async task
      * @details Called by taskAsyncFunc
@@ -69,7 +73,7 @@ public:
     virtual void taskAsync();
 
     /**
-     * Disable scene fade-in on enter/reset
+     * @brief Disable scene fade-in on enter/reset
      * @address 80184e80
      */
     void disableFadeIn();
@@ -80,13 +84,13 @@ public:
     void setCreatorSceneID(int scene);
 
     /**
-     * Initialize base RP scene members
+     * @brief Initialize base RP scene members
      * @address 80184ea0
      */
     void init();
 
     /**
-     * Toggle VI dimming
+     * @brief Toggle VI dimming
      * @address 8018546c
      */
     void setDimming(bool dim);
@@ -208,12 +212,12 @@ public:
     /**@}*/
 
 private:
-    //! Scene renderer (becomes global on scene enter)
+    //! @brief Scene renderer (becomes global on scene enter)
     RPGrpRenderer *mRenderer; // at 0x2C
-    //! Common draw functionality
+    //! @brief Common draw functionality
     RPSysCommonObject *mCmnObject; // at 0x30
     //! @brief TODO, constructor at 801988d8
-    //! Some particle related structure
+    //! @details Some particle related structure
     UNKTYPE *PTR_0x34;
     /**
      * @brief Local scene heap (speculative)
@@ -222,16 +226,16 @@ private:
      * and RPSysSystem has destroyHeap(EGG::Heap *) in WFU
      */
     EGG::Heap *mHeap; // at 0x38
-    //! Scene flags
+    //! @brief Scene flags
     u32 mFlags; // at 0x3C
     //! @brief Scene ID set by scene creator
     int mCreatorSceneId; // at 0x40
 
     //! @brief Unknown, unused global object
-    //! VF38 will return its address
+    //! @details VF38 will return its address
     static UNKWORD DAT_804bf4d0; // 804bf4d0
 
-    //! Defined in RPSysLoadScene.cpp
+    //! @brief Defined in RPSysLoadScene.cpp
     static EGG::Vector3f DAT_804a3db0[3]; // 804a3db0
 };
 

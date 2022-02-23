@@ -14,6 +14,7 @@ class RPSysLytAllocator : EGG::Allocator
 public:
     //! @address 8019e434
     RPSysLytAllocator(EGG::Heap *heap, s32 r5);
+    
     //! @address 8019e3dc
     virtual ~RPSysLytAllocator();
 

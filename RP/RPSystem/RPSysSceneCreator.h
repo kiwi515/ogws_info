@@ -14,7 +14,7 @@
 class RPSysSceneCreator : EGG::SceneCreator
 {
 public:
-    //! RP Scene ID
+    //! @brief RP Scene ID
     //! @wfuname
     enum ESceneID
     {
@@ -35,7 +35,7 @@ public:
         RP_GOL_SELECT_SCENE,
     };
 
-    //! Pack Project game ID
+    //! @brief Pack Project game ID
     enum EPackID
     {
         RP_SPORTS_PACK,
@@ -51,21 +51,21 @@ public:
      */
     struct SceneAttributes
     {
-        //! Scene ID
+        //! @brief Scene ID
         s32 scene; // at 0x0
-        //! Pack ID
+        //! @brief Pack ID
         s32 pack; // at 0x4
-        //! How to create the scene
+        //! @brief How to create the scene
         s32 createType; // at 0x8
-        //! Toggle "Now Loading" text (unused)
+        //! @brief Toggle "Now Loading" text (unused)
         s32 showLoadingText; // at 0xC
-        //! How to exit the scene
+        //! @brief How to exit the scene
         s32 exitType; // at 0x10
-        //! Whether to use the RP common sound archive
+        //! @brief Whether to use the RP common sound archive
         s32 useCommonSound; // at 0x14
-        //! Scene file directory
+        //! @brief Scene file directory
         const char *resDirName; // at 0x18
-        //! Proper name (unused lookup feature?)
+        //! @brief Proper name (unused lookup feature?)
         const char *sceneName; // at 0x1C
     };
 
@@ -75,50 +75,44 @@ public:
     static RPSysSceneCreator * getInstance() { return sInstance; }
     
     /**
-     * Fade out into a new scene, optionally reloading the current scene
+     * @brief Fade out into a new scene, optionally reloading the current scene
      * @address 80184ba4
      * @return Success
      */
     bool changeSceneAfterFade(s32 sceneID, bool reenterCurrent);
     /**
-     * Change to the boot scene (performing a soft reset)
+     * @brief Change to the boot scene (performing a soft reset)
      * @address 80184b98
      */
     void changeSoftReset();
 
     /**
-     * Create a Sports Pack scene
+     * @brief Create a Sports Pack scene
      * @address 80184000
      */
     EGG::Scene * createSportsScene(s32 sceneID);
 
-    //! Scene attribute accessor
     //! @address 801845f4
     s32 getCreateType(s32 sceneID);
-    //! Scene attribute accessor
     //! @address 80184558
     s32 getExitType(s32 sceneID);
-    //! Scene attribute accessor
     //! @address 801844bc    
     s32 getUseCommonSound(s32 sceneID);
-    //! Scene attribute accessor
     //! @address 80184758    
     s32 getResDirName(s32 sceneID);
-    //! Scene attribute accessor
     //! @address 80184690    
     s32 getSceneID(s32 sportID);
-    //! Scene attribute accessor
     //! @address 801846ec    
     s32 getSportID(s32 sceneID);
 
     /**
-     * Create any Pack Project scene
+     * @brief Create any Pack Project scene
      * @address 80184838
      */
     virtual EGG::Scene * create(s32 sceneID);
 
     /**
-     * Request engine shutdown
+     * @brief Request engine shutdown
      * @address 80184804
      */
     virtual void destroy(s32);
@@ -129,22 +123,22 @@ private:
     virtual ~RPSysSceneCreator() {}
 
 private:
-    //! Heap in which this object was allocated
+    //! @brief Heap in which this object was allocated
     EGG::Heap *mParentHeap; // at 0x4
-    //! Last created scene's ID
+    //! @brief Last created scene's ID
     int mSceneId; // at 0x8
 
     /**
-     * Static instance
-     * @address 804bf4f8
-     */
-    static RPSysSceneCreator *sInstance;
-
-    /**
-     * Configuration for all supported Pack Project scenes
+     * @brief Configuration for all supported Pack Project scenes
      * @address 803820f8
      */
     static SceneAttributes sSceneAttributeTable[];
+
+    /**
+     * @brief Static instance
+     * @address 804bf4f8
+     */
+    static RPSysSceneCreator *sInstance;
 };
 
 RPSysSceneCreator::SceneAttributes RPSysSceneCreator::sSceneAttributeTable[] = {

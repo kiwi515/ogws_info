@@ -11,7 +11,6 @@
 
 /**
  * @brief RP engine save data manager
- * 
  * @details Alongside the main save data class, the manager also seems to
  * have some behavior set at compile-time based on the pack ID.
  * Due to runtime localization in the player select scene, some code
@@ -21,16 +20,14 @@
 class RPSysSaveDataMgr : IRPSysHostIOSocket
 {
 public:
-    //! Banner files
+    //! @brief Banner files
     enum EBannerType
     {
-        //! banner.bin
-        BANNER_REAL,
-        //! /tmp/banner.bin
-        BANNER_TEMP
+        BANNER_REAL, //!< banner.bin
+        BANNER_TEMP  //!< /tmp/banner.bin
     };
 
-    //! Status flags
+    //! @brief Status flags
     enum EStatusFlag
     {
         NAND_MEMORY_EXIST = (1 << 0),
@@ -82,28 +79,30 @@ public:
      * @address 801886ac
      */
     void saveBanner(EBannerType bannerType);
+
     /**
-     * Read NAND save data into raw save, then construct RP save file
+     * @brief Read NAND save data into raw save, then construct RP save file
      * @address 8018877c
      */
     void loadSync();
     /**
-     * Save RP save file into raw save, then write raw save to NAND
+     * @brief Save RP save file into raw save, then write raw save to NAND
      * @address 80188868
      */
     void saveSync();
+
     /**
-     * Create temp banner file on NAND (`/tmp/banner.bin`)
+     * @brief Create temp banner file on NAND (`/tmp/banner.bin`)
      * @address 8018895c
      */
     void createBannerFile();
     /**
-     * Check if the NAND has enough free space
+     * @brief Check if the NAND has enough free space
      * @address 80188a60
      */
     void existNandMemorySync();
     /**
-     * Try to display "Continue without saving?" message
+     * @brief Try to display "Continue without saving?" message
      * @address 80188b04
      */
     void continueNoSaveProc();
@@ -120,7 +119,7 @@ public:
      */
     void unableToSaveProc();
     /**
-     * Finishes NAND access by clearing the flag
+     * @brief Finishes NAND access by clearing the flag
      * @address 80188e54
      */
     void finishNandAccess(); 
@@ -145,57 +144,57 @@ public:
     u32 getNandCheckAnswer() const;
     
     /**
-     * Toggle ability to save
+     * @brief Toggle ability to save
      * @address 80188e9c
      */
     void setSaveDisable(bool disable);
 
     /**
-     * Check manager status flags for save-related errors
+     * @brief Check manager status flags for save-related errors
      * @address 80188ec4
      */
     bool isSaveFileBroken() const;
     /**
-     * Check save data for errors
+     * @brief Check save data for errors
      * @typo
      * @address 80188efc
      */
     bool isErrorOccured() const;
     /**
-     * Check for free space on NAND to store save data
+     * @brief Check for free space on NAND to store save data
      * @address 80188f04
      */
     bool isNandMemoryExist() const;
     /**
-     * Check for existence of banner/save files
+     * @brief Check for existence of banner/save files
      * @address 80188f10
      */
     bool isPackFileExist() const;
-    //! Is the manager currently done with the NAND?
+    //! @brief Is the manager currently done with the NAND?
     bool isNandAccessDone() const; // 80188f30
-    //! Check for NAND access/write task
+    //! @brief Check for NAND access/write task
     bool isIdle() const; // 80188f44
 
     //! @brief Requests saveDataFunc on the NAND thread
-    //! Returns whether the task request was successful
+    //! @return Whether the task request was successful
     bool saveAsync(); // 80188f64
     //! @brief Requests loadDataFunc on the NAND thread
-    //! Returns whether the task request was successful
+    //! @return Whether the task request was successful
     bool loadAsync(); // 80189040
 
-    //! Attempts to write save/banner files if the scene is idle
+    //! @brief Attempts to write save/banner files if the scene is idle
     bool writePackFileSync(); // 801890e0
-    //! Attempts to delete save/banner files if the scene is idle
+    //! @brief Attempts to delete save/banner files if the scene is idle
     bool deletePackFileSync(); // 8018915c
 
     //! @brief Tries to create the banner/save files asynchronously, by using the NAND thread
-    //! Returns whether the task request was successful
+    //! @return Whether the task request was successful
     bool createPackFileAsync(); // 80189234
     //! @brief Asynchronously checks if the NAND has enough space for the save file, by using the NAND thread
-    //! Returns whether the task request was successful
+    //! @return Whether the task request was successful
     bool existNandMemoryAsync(); // 801892d4
     //! @brief Asynchronously checks if the banner/save files exist on the NAND
-    //! Returns whether the task request was successful
+    //! @return whether the task request was successful
     bool existPackFileAsync(); // 80189374
     //! @brief Checks if the banner/save files exist on the NAND
     bool existPackFileSync(); // 80189414
@@ -225,31 +224,31 @@ private:
     virtual ~RPSysSaveDataMgr();
 
 private:
-    //! Heap in which this object was allocated
+    //! @brief Heap in which this object was allocated
     EGG::Heap *mParentHeap; // at 0x4
-    //! Flags regarding the manager's status
+    //! @brief Flags regarding the manager's status
     u32 mStatus; // at 0x8
-    //! NAND error code
+    //! @brief NAND error code
     s32 mNandErrorCode; // at 0xC
     UNKWORD WORD_0x10;
-    //! NAND check answer
+    //! @brief NAND check answer
     u32 mNandCheckAnswer; // at 0x14
-    //! Size of the raw save file (`RPSports.dat`)
+    //! @brief Size of the raw save file (`RPSports.dat`)
     u32 mSaveFileSize; // at 0x18
-    //! Banner.bin size
+    //! @brief Banner.bin size
     u32 mBannerBinSize; // at 0x1C
     //! @brief Save file size aligned some way
-    //! Used to calculate no. of empty blocks needed (WiiWare support?)
+    //! @details Used to calculate no. of empty blocks needed (WiiWare support?)
     UNKWORD INT_0x20;
-    //! Buffer containing banner.bin
+    //! @brief Buffer containing banner.bin
     void *mBannerBin; // at 0x24
-    //! Raw save file data (RPSports.dat)
+    //! @brief Raw save file data (RPSports.dat)
     void *mRawSaveFile; // at 0x28
-    //! RP save file class
+    //! @brief RP save file class
     RPSysSaveData *mRPSaveFile; // at 0x2C
 
     /**
-     * Static instance
+     * @brief Static instance
      * @address 804bf508
      */
     static RPSysSaveDataMgr *sInstance;

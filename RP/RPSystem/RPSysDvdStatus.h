@@ -13,7 +13,7 @@
 class RPSysDvdStatus
 {
 public:
-    //! Status of the last access to the DVD drive
+    //! @brief Status of the last access to the DVD drive
     enum EDvdStatus
     {
         DVD_IDLE = -2,
@@ -29,17 +29,19 @@ public:
     static RPSysDvdStatus * getInstance() { return sInstance; }
 
     /**
-     * Draw status message (only if an error has occurred)
+     * @brief Draw status message (only if an error has occurred)
      * @address 80187fa4
      */
     void draw();
+
     /**
-     * Update status using DVD library
+     * @brief Update status using DVD library
      * @address 8018818c
      */
     void update();
+    
     /**
-     * Check if the DVD cannot be accessed
+     * @brief Check if the DVD cannot be accessed
      * @address 80188260
      * @typo
      */
@@ -56,21 +58,22 @@ private:
         // Maybe the status in the constructor is a defualt argument?
         mErrorFader->setStatus(EGG::ColorFader::STATUS_PREPARE_IN);
     }
+
     //! @address 80187f64
     virtual ~RPSysDvdStatus();
 
 private:
-    //! Heap in which this object was allocated
+    //! @brief Heap in which this object was allocated
     EGG::Heap *mParentHeap; // at 0x4
-    //! DVD status
+    //! @brief DVD status
     s32 mErrorStatus; // at 0x8
-    //! Error message to draw (constructed when needed)
+    //! @brief Error message to draw (constructed when needed)
     const char *mErrorMessage; // at 0xC
-    //! Fader to black out the screen when displaying an error message
+    //! @brief Fader to black out the screen when displaying an error message
     EGG::ColorFader *mErrorFader; // at 0x10
 
     /**
-     * Static instance
+     * @brief Static instance
      * @address 804bf500
      */
     static RPSysDvdStatus *sInstance;

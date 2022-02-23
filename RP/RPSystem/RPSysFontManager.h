@@ -14,7 +14,7 @@
 class RPSysFontManager
 {
 public:
-    //! Pack Project res fonts
+    //! @brief Pack Project res fonts
     enum EResFont
     {
         FONT_NRODDB_32_I4,
@@ -34,23 +34,24 @@ public:
     static RPSysFontManager * GetInstance() { return sInstance; }
 
     /**
-     * Set up rom font
+     * @brief Set up rom font
      * @address 8018be10
      */
     void LoadRomFont();
     /**
-     * Set up res fonts
+     * @brief Set up res fonts
      * @address 8018bd64
      */
     void LoadResFonts(); // 8018bd64
+
     /**
-     * Retrieve ResFont data by name
+     * @brief Retrieve ResFont data by name
      * @address 8018bcdc
      * @return Serialized res font
      */
     void * GetResFontData(const char *name) const;
 
-    //! Access RomFont (for text writer)
+    //! @brief Access RomFont (for text writer)
     nw4r::ut::RomFont& GetRomFont() const { return *mRomFont; }
 
 private:
@@ -65,29 +66,31 @@ private:
             mResFontData[i] = NULL;
         }
     }
+
     //! @address 8018be64
     virtual ~RPSysFontManager();
 
 private:
-    //! Deserialized rom font
+    //! @brief Deserialized rom font
     nw4r::ut::RomFont *mRomFont; // at 0x4
-    //! Deserialized res fonts
+    //! @brief Deserialized res fonts
     nw4r::ut::ResFont *mResFonts[FONT_MAX]; // at 0x8
-    //! Serialized res fonts
+    //! @brief Serialized res fonts
     void *mResFontData[FONT_MAX]; // at 0x24
 
     /**
-     * Boolean(?) array that marks which fonts are used by the pack
+     * @brief Boolean(?) array that marks which fonts are used by the pack
      * @address 80382a50
      */
     static u32 sIsResFontUsed[FONT_MAX];
     /**
-     * Strings of font filenames
+     * @brief Strings of font filenames
      * @address 803b9950
      */
     static const char *sPackResFonts[FONT_MAX];
+    
     /**
-     * Static instance
+     * @brief Static instance
      * @address 804bf510
      */
     static RPSysFontManager *sInstance;

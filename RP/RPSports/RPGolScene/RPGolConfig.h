@@ -33,7 +33,7 @@ public:
         f32 FLOAT_0x20;
     };
 
-    //! Optional resources that can be requested for a hole
+    //! @brief Optional resources that can be requested for a hole
     enum EHoleResource
     {
         RES_NONE,
@@ -42,7 +42,7 @@ public:
         RES_SKY_REFLECT
     };
 
-    //! Golf gamemode
+    //! @brief Golf gamemode
     enum EGameMode
     {
         GAMEMODE_0,
@@ -71,19 +71,19 @@ public:
     static void DestroyInstance();
 
     /**
-     * Number of holes played so far
+     * @brief Number of holes played so far
      * @address 8029cb1c
      */
     static int GetNumHolesPlayed();
 
     /**
-     * Check if the current hole is the first hole of the gamemode
+     * @brief Check if the current hole is the first hole of the gamemode
      * @address 8029cb74
      */
     static bool IsFirstHole();
 
     /**
-     * Player's score on specified hole
+     * @brief Player's score on specified hole
      * @address 8029cbd4
      * @param hole Hole id (Nth hole played in round, not hole N)
      * @param player Player id
@@ -91,7 +91,7 @@ public:
     static int GetNthHoleScore(u32 hole, u32 player);
 
     /**
-     * Player's stroke count on specified hole
+     * @brief Player's stroke count on specified hole
      * @address 8029cc54
      * @param hole Hole id (Nth hole played in round, not hole N)
      * @param player Player id
@@ -109,19 +109,19 @@ public:
     static int GetTotalScore(u32 player, bool includeCurr);
 
     /**
-     * ID of the Nth hole of the round
+     * @brief ID of the Nth hole of the round
      * @address 8029ce04
      */
     static int GetRelativeHole(int n);
 
     /**
-     * Number of holes that will be played
+     * @brief Number of holes that will be played
      * @address 8029ce58
      */
     static int GetNumHolesTotal();
 
     /**
-     * Current wind direction + speed
+     * @brief Current wind direction + speed
      * @address 8029ce74
      * @param dirOut Direction output ptr
      * @param spdOut Speed output ptr
@@ -129,7 +129,7 @@ public:
     void GetWind(int *dirOut, int *spdOut) const;
 
     /**
-     * Creates the wind set based on what holes are required by the gamemode
+     * @brief Creates the wind set based on what holes are required by the gamemode
      * @address 8029cea8
      */
     void CreateWindForGamemode();
@@ -142,32 +142,32 @@ public:
     void UpdateScores();
 
     /**
-     * Check if the round is not over yet
+     * @brief Check if the round is not over yet
      * @address 8029cff0
      */
     bool CanPlayNextHole() const;
 
     /**
-     * Current hole ID, one-indexed for UI
+     * @brief Current hole ID, one-indexed for UI
      * @address 8029d0b8
      */
     static int GetUIHoleNum();
 
     /**
-     * Par of specified hole
+     * @brief Par of specified hole
      * @address 8029d0c8
      * @param n Hole id (Hole N, not relative to round)
      */
     static int GetHolePar(int n);
 
     /**
-     * Par of current hole
+     * @brief Par of current hole
      * @address 8029d0e0
      */
     static int GetCurrentHolePar();
 
     /**
-     * Choose random pin position
+     * @brief Choose random pin position
      * @address 8029d100
      */
     void ChoosePinPos();
@@ -177,25 +177,25 @@ public:
     // FUN_8029d2c4
 
     /**
-     * Check if the current gamemode is training or fitness, not standard
+     * @brief Check if the current gamemode is training or fitness, not standard
      * @address 8029d3ac
      */
     static bool IsNotStandardGame();
 
     /**
-     * Check if the current hole needs `sky2`, the mirrored skybox for reflections
+     * @brief Check if the current hole needs `sky2`, the mirrored skybox for reflections
      * @address 8029d438
      */
     static bool IsSkyReflect();
 
     /**
-     * Check if the current hole uses the sea environment sfx (`SE_LV_Env2_Sea`)
+     * @brief Check if the current hole uses the sea environment sfx (`SE_LV_Env2_Sea`)
      * @address 8029d464
      */
     static bool IsUseSeaSfx();
 
     /**
-     * Check if the current hole uses the river environment sfx (`SE_LV_Env2_River`)
+     * @brief Check if the current hole uses the river environment sfx (`SE_LV_Env2_River`)
      * @address 8029d490
      */
     static bool IsUseRiverSfx();
@@ -216,7 +216,7 @@ public:
     // FUN_8029d970()
 
     /**
-     * CARC name of the current hole
+     * @brief CARC name of the current hole
      * @address 8029d978
      */
     static const char * GetCurrentHoleName();
@@ -224,13 +224,13 @@ public:
     // FUN_8029d994()
 
     /**
-     * Create wind set from settings
+     * @brief Create wind set from settings
      * @address 8029cea8
      */
     static void CreateWind(int startHole, int endHole, int minWind, int maxWind);
 
     /**
-     * Create a random, exclusive sequence between 0 and `max`
+     * @brief Create a random, exclusive sequence between 0 and `max`
      * @address 8029dea8
      * @param max Sequence max value
      * @param array Output array
@@ -251,7 +251,9 @@ private:
     virtual ~RPGolConfig();
 
 private:
+    //! @brief Max player count
     static const u32 PLAYER_MAX = 4;
+    //! @brief Golf course length
     static const u32 HOLE_MAX = 9;
 
     u32 mPlayerScores[PLAYER_MAX][HOLE_MAX]; // at 0x4
@@ -260,13 +262,13 @@ private:
     char UNK_0x9C[0x1C74 - 0x9C];
 
     /**
-     * Hole info for the 9 holes plus a few unused courses
+     * @brief Hole info for the 9 holes plus a few unused courses
      * @address 803c7aa0
      */
     static HoleInfo sHoleInfo[];
 
     /**
-     * Static instance
+     * @brief Static instance
      * @address 804bf8c4 
      */
     static RPGolConfig *sInstance;
