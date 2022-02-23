@@ -4,22 +4,27 @@
 
 /**
  * @brief RP engine screen wide text (wchar_t) writer
- * 
- * It can be assumed that this rivals the standard RP text writer in how it inherits from NW4R,
- * but it is not known for sure as only one function is in Wii Sports, and very few are in Wii Fit U.
- * 
- * (Name from Wii Fit U)
+ * @details This likely follows RPSysTextWriter in its inheritance
+ * from NW4R structures, but this is not known for sure. 
+ * Only one function is in Wii Sports, and very few are in Wii Fit U.
+ * @wfuname
  */
 class RPSysWideTextWriter
 {
 public:
-    //! Initialize format buffer
-    static void Initialize(); // 80198968
+    /**
+     * @brief Initialize format buffer
+     * @address 80198968
+     */
+    static void Initialize();
 
 private:
-    //! @brief Name based on NW4R's text writer
-    //! This is because they share sizes (mFormatBufferSize * sizeof(wchar_t))
-    static wchar_t *mFormatBuffer; // 804bf558
+    /**
+     * @brief Static format buffer
+     * @details Name from NW4R's text writer, because they share sizes
+     * @address 804bf558
+     */
+    static wchar_t *mFormatBuffer;
 };
 
 #endif
