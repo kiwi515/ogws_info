@@ -8,7 +8,7 @@
 #include <egg/math/eggVector.h>
 
 /**
- * @brief Base class for all RP engine scenes.
+ * @brief Base class for all RP engine scenes
  * @details Inherits from EGG::Scene for compatability,
  * and inherits from a renderable interface to simplify the renderer's job.
  * @wfuname

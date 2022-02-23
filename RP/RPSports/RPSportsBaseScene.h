@@ -5,46 +5,88 @@
 #include "RPSysScene.h"
 
 /**
- * @brief Base class for all scenes unique to the Sports Pack (Wii Sports)
- * 
- * (Name derived from Wii Fit U's RPHealthBaseScene)
+ * @brief Base class for all Sports Pack scenes
+ * @customname
  */
 class RPSportsBaseScene : RPSysScene
 {
 public:
     RPSportsBaseScene() {}
-    virtual ~RPSportsBaseScene() {} // 80184460
+    //! @address 80184460
+    virtual ~RPSportsBaseScene() {}
 
-    //! Initialize/setup the scene
-    virtual void Configure(); // 801ef1c8
-    //! Load any needed resources
-    virtual void LoadResource(); // 801ef184
-    //! Re-initialize the scene
-    virtual void Reset(); // 801ef140
-    //! Run scene logic
-    virtual void Calculate(); // 801ef0fc
-    //! Exit the scene
-    virtual void Exit(); // 801ef064
+    /**
+     * @brief Initialize/setup the scene
+     * @address 801ef1c8
+     */
+    virtual void Configure();
+    /**
+     * @brief Load any needed resources
+     * @address 801ef184
+     */
+    virtual void LoadResource();
+    /**
+     * @brief Re-initialize the scene
+     * @address 801ef140
+     */
+    virtual void Reset();
+    /**
+     * @brief Run scene logic
+     * @address 801ef0fc
+     */
+    virtual void Calculate();
+    /**
+     * @brief Exit the scene
+     * @address 801ef064
+     */
+    virtual void Exit();
 
-    //! Configure callback
-    virtual void OnConfigure(); // 801ef20c
-    //! LoadResource callback
-    virtual void OnLoadResource(); // 801ef1c4
-    //! Reset callback
-    virtual void OnReset(); // 801ef180
-    //! Calculate callback
-    virtual void OnCalculate(); // 801ef13c
-    //! UserDraw callback
-    virtual void OnUserDraw(); // 801ef0f8
-    //! DebugDraw callback
-    virtual void OnDebugDraw(); // 801ef0b4
-    //! Exit callback
-    virtual void OnExit(); // 801ef0a0
+    /**
+     * @brief Configure callback
+     * @address 801ef20c
+     */
+    virtual void OnConfigure();
+    /**
+     * @brief LoadResource callback
+     * @address 801ef1c4
+     */
+    virtual void OnLoadResource();
+    /**
+     * @brief Reset callback
+     * @address 801ef180
+     */
+    virtual void OnReset();
+    /**
+     * @brief Calculate callback
+     * @address 801ef13c
+     */
+    virtual void OnCalculate();
+    /**
+     * @brief UserDraw callback
+     * @address 801ef0f8
+     */
+    virtual void OnUserDraw();
+    /**
+     * @brief DebugDraw callback
+     * @address 801ef0b4
+     */
+    virtual void OnDebugDraw();
+    /**
+     * @brief Exit callback
+     * @address 801ef0a0
+     */
+    virtual void OnExit();
 
-    //! Any drawing the object needs to do
-    virtual void UserDraw(); // 801ef0b8
-    //! Debug draw pass, nearly all objects stub this out
-    virtual void DebugDraw(); // 801ef0a4
+    /**
+     * @brief Any drawing the object needs to do
+     * @address 801ef0b8
+     */
+    virtual void UserDraw();
+    /**
+     * @brief Debug draw pass, nearly all objects stub this out
+     * @address 801ef0a4
+     */
+    virtual void DebugDraw();
 };
 
 #endif
