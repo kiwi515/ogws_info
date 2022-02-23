@@ -284,16 +284,11 @@ RPGolConfig::HoleInfo sHoleInfo[] = {
     {"fc12",   4, RPGolConfig::RES_NONE,        -331.0f, -941.0f,  2.4f, 0.0f, 0.0f, 0.0f},
     {"fc9",    3, RPGolConfig::RES_SEA_SFX,     -397.0f, -205.0f,  0.4f, 0.0f, 0.0f, 0.0f},
     {"fc13",   5, RPGolConfig::RES_SEA_SFX,     1044.0f, -287.0f, -4.5f, 0.0f, 0.0f, 0.0f},
-    //! Target Practice hole
-    {"fc11",   3, RPGolConfig::RES_SKY_REFLECT,    0.0f, -205.0f, -0.8f, 0.0f, 0.0f, 0.0f},
-    //! E3 hole
-    {"E3",     4, RPGolConfig::RES_NONE,           0.0f,    0.0f,  0.0f, 0.0f, 0.0f, 0.0f},
-    //! "Survey" (Driving range)
-    {"survey", 5, RPGolConfig::RES_NONE,           0.0f,    0.0f,  0.0f, 0.0f, 0.0f, 0.0f},
-    //! "Angle" (Physics test)
-    {"angle",  5, RPGolConfig::RES_NONE,           0.0f,    0.0f,  0.0f, 0.0f, 0.0f, 0.0f},
-    //! Unfinished port of Famicom Hole 18
-    {"fc18",   5, RPGolConfig::RES_NONE,           0.0f,    0.0f,  0.0f, 0.0f, 0.0f, 0.0f}
+    {"fc11",   3, RPGolConfig::RES_SKY_REFLECT,    0.0f, -205.0f, -0.8f, 0.0f, 0.0f, 0.0f}, //!< Target Practice hole
+    {"E3",     4, RPGolConfig::RES_NONE,           0.0f,    0.0f,  0.0f, 0.0f, 0.0f, 0.0f}, //!< E3 hole
+    {"survey", 5, RPGolConfig::RES_NONE,           0.0f,    0.0f,  0.0f, 0.0f, 0.0f, 0.0f}, //!< "Survey" (Driving range)
+    {"angle",  5, RPGolConfig::RES_NONE,           0.0f,    0.0f,  0.0f, 0.0f, 0.0f, 0.0f}, //!< "Angle" (Physics test)
+    {"fc18",   5, RPGolConfig::RES_NONE,           0.0f,    0.0f,  0.0f, 0.0f, 0.0f, 0.0f}  //!< Unfinished port of Famicom Hole 18
 };
 
 #endif
