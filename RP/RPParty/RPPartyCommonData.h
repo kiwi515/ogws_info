@@ -59,8 +59,11 @@ public:
     };
 
 public:
-    //! @brief Check if a game has been unlocked
-    bool isGameUnlock(u32 id) const; // 8018d6ac
+    /**
+     * @brief Check if a game has been unlocked
+     * @address 8018d6ac
+     */
+    bool isGameUnlock(u32 id) const;
 
 private:
     //! @brief Mii History for every possible amount of players
