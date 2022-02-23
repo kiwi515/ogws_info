@@ -4,42 +4,60 @@
 
 /**
  * @brief State of a boxer's energy
- * 
- * All player objects have energy, which depletes as you whiff punches and/or get blocked.
- * 
- * However, the code that allows the energy to deplete/regen is locked behind scene flags,
- * so the entire feature goes unused.
- * 
- * (Custom name)
+ * @details Depletes as you whiff punches and/or get blocked.
+ * @note The code that allows the energy to deplete/regen is locked behind global flags,
+ * so the entire feature goes unused. It can be seen in some prerelease footage.
+ * @customname
  */
 class RPBoxBoxerEnergy
 {
 public:
     enum EnergyState
     {
-        ENERGY_NORMAL,
-        ENERGY_STUNNED
+        ENERGY_NORMAL, //!< Regular state
+        ENERGY_STUNNED //!< Stunned
     };
 
     enum EnergyFlag
     {
-        FLAG_STUNNED = 0x1
+        FLAG_STUNNED = (1 << 0)
     };
 
     EnergyState mState; // at 0x0
     f32 FLOAT_0x4;
+    //! @brief Energy remaining
     f32 mEnergy; // at 0x8
     f32 FLOAT_0xC;
     f32 FLOAT_0x10;
     u16 mFlags; // at 0x14
 
 public:
-    RPBoxBoxerEnergy(); // 80305e0c
-    virtual ~RPBoxBoxerEnergy(); // 80305e1c
+    //! @address 80305e0c
+    RPBoxBoxerEnergy();
+    //! @address 80305e1c
+    virtual ~RPBoxBoxerEnergy();
     
-    bool shouldStun() const; // 80305bcc
-    void calcStun(f32 baseRegen, u32 boxerState); // 80305be8
-    void calcEnergy(u32 flag, bool resetEnergy); // 80305cc4
+    /**
+     * @brief Check if the energy is low enough to stun
+     * @address 80305bcc
+     */
+    bool shouldStun() const;
+
+    /**
+     * @brief Regenerate energy
+     * @details Regen differs based on boxer state
+     * @address 80305be8
+     */
+    void calcRegen(f32 baseRegen, u32 boxerState);
+
+    /**
+     * @brief Deplete energy
+     * @details Energy depletes most on whiffed punches
+     * @note Always disabled due to global flags
+     * @param flag Effectively toggles option, however a global flag overrides this
+     * @param resetEnergy Reset energy to 1.0
+     */
+    void calcDeplete(u32 flag, bool resetEnergy);
 };
 
 #endif
