@@ -4,40 +4,58 @@
 
 /**
  * @brief Combo for boxer's punches
- * 
- * The combo system rewards alternating hands when punching, and increases punch strength over time.
+ * @details The combo system rewards alternating hands when punching, and increases punch strength over time.
  * If the player either waits too long or does not alternate hands, the combo will reset.
- * 
- * (Custom name)
+ * @customname
  */
 class RPBoxBoxerCombo
 {
 public:
+    //! @brief Types of punches
     enum PunchType
     {
-        PUNCH_LEFT,
-        PUNCH_RIGHT,
-        PUNCH_MISS
+        PUNCH_LEFT,  //!< Left-handed punch
+        PUNCH_RIGHT, //!< Right-handed punch
+        PUNCH_MISS   //!< Missed punch
     };
 
 private:
+    //! @brief Combo strength (next hit)
     u16 mStrength; // at 0x0
+    //! @brief Time left to continue combo
     f32 mContinueTimer; // at 0x4
+    //! @brief Continue timer initial value (in frames)
     u16 mWindowLength; // at 0x8
+    //! @brief Fraction of continue timer remaining
     f32 mWindowRemaining; // at 0xC
+    //! @brief Combo length (number of punches)
     u16 mPunchCount; // at 0x10
+    //! @brief Last punch
     PunchType mLastPunchType; // at 0x14
 
 public:
-    RPBoxBoxerCombo(); // 80306c24
-    virtual ~RPBoxBoxerCombo(); // 80306c34
+    //! @address 80306c24
+    RPBoxBoxerCombo();
+    //! @address 80306c34
+    virtual ~RPBoxBoxerCombo();
 
-    void onPunchLand(PunchType); // 80306a8c
-    void onPunchThrow(PunchType); // 80306b30
-    void calc(); // 80306b64
-    void onPunchEnd(); // 80306bd4
-    void onRoundStart(); // 80306bfc
+    //! @address 80306a8c
+    void onPunchLand(PunchType);
+    //! @address 80306b30
+    void onPunchThrow(PunchType);
 
+    //! @address 80306b64
+    void calc();
+
+    //! @address 80306bd4
+    void onPunchEnd();
+    //! @address 80306bfc
+    void onRoundStart();
+
+    /**
+     * @brief Reset all values
+     * @note Called on combo break
+     */
     void reset()
     {
         mStrength = 0;
