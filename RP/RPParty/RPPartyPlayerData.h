@@ -5,7 +5,7 @@
 #include <types_egg.h>
 
 /**
- * @brief Wii Play player list entry
+ * @brief Wii Play save file player list entry
  * @note Not a packed structure, this is an abstraction of the binary format
  * @customname
  */

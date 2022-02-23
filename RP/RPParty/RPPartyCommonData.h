@@ -5,7 +5,7 @@
 #include <types_egg.h>
 
 /**
- * @brief Common data in the RPParty save file
+ * @brief Wii Play save file common data
  * @details Includes everything that isn't tied to a specific player
  * @note Not a packed structure, this is an abstraction of the binary format
  * @customname

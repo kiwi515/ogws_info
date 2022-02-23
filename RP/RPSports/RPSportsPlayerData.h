@@ -5,7 +5,7 @@
 #include <types_egg.h>
 
 /**
- * @brief Save data pertaining to a player in the player list in Wii Sports
+ * @brief Wii Sports save file player list entry
  * 
  * NOTE: Not a packed structure, this is an abstraction of the binary format
  * 

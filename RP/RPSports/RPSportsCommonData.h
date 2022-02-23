@@ -5,7 +5,7 @@
 #include <types_egg.h>
 
 /**
- * @brief Common data in the RPSports save file
+ * @brief Wii Sports save file common data
  * This includes everything that isn't tied to a specific player
  * 
  * NOTE: Not a packed structure, this is an abstraction of the binary format
