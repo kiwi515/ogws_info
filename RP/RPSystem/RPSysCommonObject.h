@@ -5,7 +5,8 @@
 #include "IRPGrpDrawObject.h"
 
 /**
- * @brief Provides common draw functionality to derived objects
+ * @brief Provides common draw functionality to derived objects,
+ * and automatically adds them to the renderer's queue.
  * @wfuname
  */
 class RPSysCommonObject : IRPGrpDrawObject
