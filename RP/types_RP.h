@@ -12,6 +12,8 @@ struct RPSysUnknownBase;
 // RPGraphics
 struct IRPGrpDrawObject;
 struct RPGrpRenderer;
+struct RPGrpModel;
+struct RPGrpModelBoundingInfo;
 struct RPGrpFogManager;
 
 // RPKernel
