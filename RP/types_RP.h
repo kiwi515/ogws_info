@@ -13,8 +13,9 @@ struct RPSysUnknownBase;
 struct IRPGrpDrawObject;
 struct RPGrpRenderer;
 struct RPGrpModel;
-struct RPGrpModelBoundingInfo;
 struct RPGrpFogManager;
+struct RPGrpModelBoundingInfo;
+struct RPGrpShadowTexture;
 
 // RPKernel
 struct RPSysSystem;
@@ -22,6 +23,7 @@ struct RPSysFile;
 struct IRPSysHostIOSocket;
 struct RPSysTextWriter;
 struct RPSysMessage;
+struct RPSysEffect;
 struct RPSysWideTextWriter;
 struct RPSysLytAllocator;
 
@@ -51,10 +53,26 @@ struct RPBoxBoxer;
 struct RPBoxBoxerEnergy;
 struct RPBoxBoxerCombo;
 struct RPBowResourceManager;
+struct RPGolMapObjBase;
+struct RPGolFieldManager;
+struct RPGolMapObjTree;
+struct RPGolMapObjTreeWater;
+struct RPGolMapObjPlayer;
+struct RPGolMapObjSky;
+struct RPGolMapObjTeeMarker;
+struct RPGolMapObjPin;
+struct RPGolMapObjTarget;
+struct RPGolMapObjTargetHit;
+struct RPGolMapObjCup;
+struct RPGolMapObjWind;
 struct RPGolConfig;
 
 // RPParty
 struct RPPartyCommonData;
 struct RPPartyPlayerData;
+
+// RPUtility
+struct RPUtlMapData;
+struct RPUtlDohGraphSun;
 
 #endif
