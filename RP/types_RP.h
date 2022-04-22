@@ -13,6 +13,7 @@ struct RPSysUnknownBase;
 struct IRPGrpDrawObject;
 struct RPGrpRenderer;
 struct RPGrpModel;
+struct RPGrpModelG3D;
 struct RPGrpFogManager;
 struct RPGrpModelBoundingInfo;
 struct RPGrpShadowTexture;
@@ -73,6 +74,7 @@ struct RPPartyPlayerData;
 
 // RPUtility
 struct RPUtlMapData;
+struct RPUtlMapObject;
 struct RPUtlDohGraphSun;
 
 #endif
