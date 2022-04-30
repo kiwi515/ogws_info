@@ -49,6 +49,7 @@ struct RPSysSaveData;
 // RPSports
 struct RPSportsCommonData;
 struct RPSportsPlayerData;
+struct RPSportsSequenceMgr;
 struct RPSportsBaseScene;
 struct RPBoxBoxer;
 struct RPBoxBoxerEnergy;
