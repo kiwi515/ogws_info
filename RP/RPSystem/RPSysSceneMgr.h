@@ -87,11 +87,11 @@ public:
     EGG::Fader::EStatus getSceneStatus();
 
     //! @address 80185b8c
-    void setSceneFadeColor(EGG::Color color);
+    void setSceneFadeColor(nw4r::ut::Color color);
     //! @address 80185bd4
-    void setFadeColor(EGG::Color color);
+    void setFadeColor(nw4r::ut::Color color);
     //! @address 80185c60
-    EGG::Color getFadeColor();
+    nw4r::ut::Color getFadeColor();
     /**
      * @brief Reset both faders' colors to white
      * @address 80185c8c

@@ -4,8 +4,8 @@
 
 #include "IRPGrpDrawObject.h"
 #include <egg/core/eggScene.h>
-#include <egg/core/eggColor.h>
 #include <egg/math/eggVector.h>
+#include <nw4r/ut/ut_Color.h>
 
 /**
  * @brief Base class for all RP engine scenes
@@ -110,16 +110,16 @@ public:
      * @brief Set manager's scene fade color
      * @address 80185484
      */
-    void setSceneFadeColor(EGG::Color color);
+    void setSceneFadeColor(nw4r::ut::Color color);
     /**
      * @brief Fade color of both of manager's faders
      * @details Manager has a scene fader and a manager fader
      */
     /**@{*/ 
     //! @address 801854cc
-    void setFadeColor(EGG::Color color);
+    void setFadeColor(nw4r::ut::Color color);
     //! @address 80185514
-    EGG::Color getFadeColor() const;
+    nw4r::ut::Color getFadeColor() const;
     /**@}*/
 
     /**
@@ -208,7 +208,7 @@ public:
      * @brief Print time stamp string in specified color
      * @address 80186d30
      */
-    void printTimeStamp(EGG::Color color);
+    void printTimeStamp(nw4r::ut::Color color);
     /**@}*/
 
 private:

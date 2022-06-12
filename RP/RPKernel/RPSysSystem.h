@@ -2,9 +2,9 @@
 #define RP_KERNEL_SYSTEM_H
 #include "types_rp.h"
 
-#include <egg/core/eggColor.h>
 #include <egg/core/eggHeap.h>
 #include <egg/core/eggTaskThread.h>
+#include <nw4r/ut/ut_Color.h>
 #include <GX/GXFrameBuf.h>
 #include <OS/OSMutex.h>
 
@@ -37,7 +37,7 @@ public:
     f32 getModifyRatio() const; // 801835c0
     u16 getFBWidth() const; // 801835b4
     u16 getXFBHeight() const; // 801835a8
-    void setDisplayClearColor(EGG::Color); // 80183534
+    void setDisplayClearColor(nw4r::ut::Color); // 80183534
     u32 getBootSceneId(); // 8018352c
     u32 getCalendarTime32(); // 801834bc
     u16 getCalendarTime16(); // 80183470
