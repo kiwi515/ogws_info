@@ -32,7 +32,21 @@ public:
         RP_PHYSICAL_MENU_SCENE,
         RP_PHYSICAL_PREVIEW_SCENE,
         RP_PHYSICAL_RESULT_SCENE,
-        RP_GOL_SELECT_SCENE,
+        RP_GOL_SELECT_SCENE
+    };
+
+    /**
+     * @brief Sport ID
+     */
+    enum ESportID
+    {
+        SPORT_BASEBALL,
+        SPORT_TENNIS,
+        SPORT_GOLF,
+        SPORT_BOXING,
+        SPORT_BOWLING,
+
+        SPORT_MAX
     };
 
     //! @brief Pack Project game ID

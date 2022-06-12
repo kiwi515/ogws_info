@@ -3,6 +3,7 @@
 #include "types_RP.h"
 
 #include "RPSysScene.h"
+#include "RPSysSceneCreator.h"
 
 /**
  * @brief Base class for all Sports Pack scenes
@@ -87,6 +88,45 @@ public:
      * @address 801ef0a4
      */
     virtual void DebugDraw();
+
+private:    
+    //! @brief Current sequence (from sequence mgr)
+    u32 mSequence; // at 0x44
+    //! @brief Current training game (from sequence mgr)
+    u32 mTrainingGame; // at 0x48
+
+    //! @brief Blurs the scene
+    BOOL mIsBlurred; // at 0x4C
+    //! @brief Scene blur amount
+    //! @details Interpolates from 0 to 1 by 0.05/frame
+    f32 mBlurAmount; // at 0x50
+
+    //! @brief Current sport ID
+    u32 mSport; // at 0x54
+
+    //! @brief Pause permission
+    BOOL mCanPause; // at 0x58
+    //! @brief Hide scene with fade color 
+    BOOL mIsHidden; // at 0x5C
+
+    //! @brief Sports text (sports_message.bmg)
+    RPSysMessage *mSportsMsg; // at 0x60
+    //! @brief Common text (common_message.bmg)
+    RPSysMessage *mCommonMsg; // at 0x64
+
+    UNKTYPE *mSkillGraph; // at 0x68
+    UNKTYPE *mScreenWipe; // at 0x6C
+    UNKTYPE *PTR_0x70;
+    UNKTYPE *PTR_0x74;
+    UNKTYPE *PTR_0x78;
+    UNKTYPE *mTutorialSkip; // at 0x7C
+    UNKTYPE *PTR_0x80;
+    UNKTYPE *PTR_0x84;
+    UNKTYPE *PTR_0x88;
+    UNKTYPE *PTR_0x8C;
+    UNKTYPE *PTR_0x90;
+    UNKTYPE *PTR_0x94;
+    UNKTYPE *PTR_0x98;
 };
 
 #endif

@@ -25,7 +25,9 @@ struct IRPSysHostIOSocket;
 struct RPSysTextWriter;
 struct RPSysMessage;
 struct RPSysEffect;
+struct RPSysLayout;
 struct RPSysWideTextWriter;
+struct RPSysLytResAccessor;
 struct RPSysLytAllocator;
 
 // RPSystem
@@ -56,7 +58,9 @@ struct RPBoxBoxerEnergy;
 struct RPBoxBoxerCombo;
 struct RPBowResourceManager;
 struct RPGolMapObjBase;
+struct RPGolScene;
 struct RPGolFieldManager;
+struct RPGolMain;
 struct RPGolMapObjTree;
 struct RPGolMapObjTreeWater;
 struct RPGolMapObjPlayer;
