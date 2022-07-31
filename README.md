@@ -3,12 +3,17 @@
 
 *Data gathered during my work with* ***[OGWS]*** *.*
 
----
+<br>
+<br>
 
-**⸢ [Overview] ⸥ ⸢ [Instructions] ⸥**
+<div align = center>
 
----
+[![Button Usage]][Usage]   
+[![Button Files]][Files] 
 
+</div>
+
+<br>
 <br>
 
 ### Coverage
@@ -36,79 +41,18 @@ As this project is designed to help future decompilation, all specified <br>
 *If you are interested in the decompilation or would* <br>
 *like to contribute, feel free to check it out* ***[OGWS]*** *.*
 
----
-
 <br>
-
-## Overview
-
-- [`RP/`][Code]
-
-    `Documented Code` regarding data structures <br>
-    as well as concepts in the **RP Engine**.
-
-    *Most classes will only have headers,* <br>
-    *but if the code is easily documentable* <br>
-    *then it will usually also have a `CPP` file.*
-
-    <br>
-
-- [`RSPE_r1.dmap`][Symbols Dolphin] `NTSC-U` `v1.01`
-
-    `Symbol Map` for use with the **Dolphin** <br>
-    emulator, to aid in debugging.
-
-    *Converted from the de-compiled Ghidra project.*
-
-    *Updated when I get the chance.*
-
-    <br>
-
-- [`RSPE_r1.map`][Symbols Ghidra] `NTSC-U` `v1.01`
-
-    `Symbol Map` for use with **Ghidra** <br>
-    when loading the `Wii Sports DOL`.
-
-    <br>
-
-- [`RSPE_r1.csv`][Symbols CSV] `NTSC-U` `v1.01`
-
-    `Symbol Map` in **CSV** form, for whatever <br>
-    data analysis you may want to do.
-
----
-
-<br>
-
-## Instructions
-
-***Dolphin*** *is a bit confusing with this stuff,* <br>
-*so I thought I'd leave a note here.*
-
-<br>
-
-#### Problem
-
-If you select `Symbols » Load Symbol Map` , **Dolphin** will only look <br>
-for `<Installation Directory>\User\Maps\<Game Id>.map` files.
-
-<br>
-
-#### Solution
-
-Instead select `Symbols » Load Other Map File ...` & <br>
-navigate the to the `*.dmap` file you have downloaded.
 
 
 <!---------------------------------------------------------------------------->
 
 [OGWS]: https://github.com/doldecomp/ogws
 
-[Overview]: #Overview
-[Instructions]: #Instructions
+[Usage]: Documentation/Usage.md
+[Files]: Documentation/Files.md
 
-[Code]: Source/RP/
 
-[Symbols Dolphin]: Source/RSPE_r1.dmap
-[Symbols Ghidra]: Source/RSPE_r1.map
-[Symbols CSV]: Source/RSPE_r1.map.csv
+<!---------------------------------[ Buttons ]--------------------------------->
+
+[Button Usage]: https://img.shields.io/badge/Usage-0696D7?style=for-the-badge&logoColor=white&logo=GitBook
+[Button Files]: https://img.shields.io/badge/Files-179C7D?style=for-the-badge&logoColor=white&logo=AzureArtifacts
