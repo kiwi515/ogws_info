@@ -109,11 +109,11 @@ public:
     bool isInsideBounding(RPSysLytBounding *bounding, const nw4r::math::VEC2& pos);
 
     /**
-     * @brief Change textbox font color by switching the active textbox
+     * @brief Copy font color from alternative textbox
      * @details Searches for a textbox with the active textbox's name, applying the id as a suffix
      * @param textBox Layout text box
      * @param id Pane id
-     * @return true if new textbox was found
+     * @return true if color was changed successfully
      * @address 80195bb8
      */
     bool changeFontColor(RPSysLytTextBox *textBox, u32 id);

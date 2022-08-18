@@ -9,7 +9,7 @@
  * and automatically adds them to the renderer's queue.
  * @wfuname
  */
-class RPSysCommonObject : IRPGrpDrawObject
+class RPSysCommonObject : public IRPGrpDrawObject
 {
 public:
     //! @address 80187dbc

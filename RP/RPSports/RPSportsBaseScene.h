@@ -9,7 +9,7 @@
  * @brief Base class for all Sports Pack scenes
  * @customname
  */
-class RPSportsBaseScene : RPSysScene
+class RPSportsBaseScene : public RPSysScene
 {
 public:
     RPSportsBaseScene() {}

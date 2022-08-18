@@ -12,7 +12,7 @@
  * such as the ability to print to an arbitrary screenspace location, or begin/end rendering.
  * @wfuname
  */
-class RPSysTextWriter : nw4r::ut::TextWriterBase<char>
+class RPSysTextWriter : public nw4r::ut::TextWriterBase<char>
 {
 public:
     //! @address 80190cc4

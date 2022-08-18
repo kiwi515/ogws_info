@@ -9,7 +9,7 @@
  * @details Wrapper for EGG::Allocator with custom free func
  * @wfuname
  */
-class RPSysLytAllocator : EGG::Allocator
+class RPSysLytAllocator : public EGG::Allocator
 {
 public:
     //! @address 8019e434

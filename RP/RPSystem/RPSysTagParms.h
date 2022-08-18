@@ -69,7 +69,7 @@ private:
  * @wfuname
  */
 template <typename T>
-class RPSysPrimTagParm : RPSysTagParm
+class RPSysPrimTagParm : public RPSysTagParm
 {
 public:
     /**
@@ -103,7 +103,7 @@ private:
  * @brief Tag parameter class for string values
  * @wfuname
  */
-class RPSysStringTagParm : RPSysTagParm
+class RPSysStringTagParm : public RPSysTagParm
 {
 public:
     /**

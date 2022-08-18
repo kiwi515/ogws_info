@@ -8,7 +8,7 @@
  * @brief RP engine fog manager
  * @wfuname
  */
-class RPGrpFogManager : EGG::FogManager
+class RPGrpFogManager : public EGG::FogManager
 {
 public:
     RPGrpFogManager() {}

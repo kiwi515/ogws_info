@@ -13,7 +13,7 @@
  * and inherits from a renderable interface to simplify the renderer's job.
  * @wfuname
  */
-class RPSysScene : EGG::Scene, IRPGrpDrawObject
+class RPSysScene : public EGG::Scene, public IRPGrpDrawObject
 {
 public:
     //! @address 80185404

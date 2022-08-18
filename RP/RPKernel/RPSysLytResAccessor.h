@@ -14,7 +14,7 @@
 class RPSysLytResAccessor
 {
 public:
-    class InternalAccessor : nw4r::lyt::ArcResourceAccessor
+    class InternalAccessor : public nw4r::lyt::ArcResourceAccessor
     {
     public:
         InternalAccessor();

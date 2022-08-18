@@ -17,7 +17,7 @@
  * for handling Wii Play save data still exists in the binary.
  * @wfuname
  */
-class RPSysSaveDataMgr : IRPSysHostIOSocket
+class RPSysSaveDataMgr : public IRPSysHostIOSocket
 {
 public:
     //! @brief Banner files

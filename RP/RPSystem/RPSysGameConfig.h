@@ -10,7 +10,7 @@
  * @details Likely only exists in the binary because CreateInstance is called by RPSysSystem
  * @wfuname
  */
-class RPSysGameConfig : RPSysTagParameters
+class RPSysGameConfig : public RPSysTagParameters
 {
 public:
     static RPSysGameConfig * getInstance() { return sInstance; }

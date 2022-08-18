@@ -13,7 +13,7 @@
  * and is used to fade in/out all graphics (transition between scenes)
  * @wfuname
  */
-class RPSysSceneMgr : EGG::SceneManager
+class RPSysSceneMgr : public EGG::SceneManager
 {
 public:
     //! @brief Scene manager states

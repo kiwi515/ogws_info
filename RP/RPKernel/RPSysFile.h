@@ -21,7 +21,7 @@
  * 
  * @wfuname
  */
-class RPSysFile : EGG::Disposer
+class RPSysFile : public EGG::Disposer
 {
 public:
     /**

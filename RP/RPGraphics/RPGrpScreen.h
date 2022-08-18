@@ -4,7 +4,7 @@
 
 #include <egg/gfx/eggScreen.h>
 
-class RPGrpScreen : EGG::eggScreen
+class RPGrpScreen : public EGG::eggScreen
 {
 public:
     //! TO-DO: Constructor

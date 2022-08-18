@@ -10,7 +10,7 @@
  * seen in RP BMG files (scale, char space, etc.)
  * @wfuname
  */
-class RPSysMessage : EGG::MsgRes
+class RPSysMessage : public EGG::MsgRes
 {
 public:
     /**
@@ -18,7 +18,7 @@ public:
      * @details MsgInfoBlock stores the sizes of its entries,
      * allowing games to add extra features to their text.
      */
-    struct RPMsgInfoBlockEntry : EGG::MsgRes::MsgInfoBlockEntry
+    struct RPMsgInfoBlockEntry : public EGG::MsgRes::MsgInfoBlockEntry
     {
         //! @brief Text scale
         u16 mScale; // at 0x8

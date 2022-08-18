@@ -11,7 +11,7 @@
  * for the current pack by referencing the scene attributes.
  * @wfuname
  */
-class RPSysSceneCreator : EGG::SceneCreator
+class RPSysSceneCreator : public EGG::SceneCreator
 {
 public:
     //! @brief RP Scene ID

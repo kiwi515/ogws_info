@@ -7,7 +7,7 @@
  * @brief Bowling scene resource manager
  * @customname
  */
-class RPBowResourceManager : IRPSysHostIOSocket
+class RPBowResourceManager : public IRPSysHostIOSocket
 {
 public:
     //! @address 80320ea4
