@@ -111,6 +111,7 @@ public:
     /**
      * @brief Copy font color from alternative textbox
      * @details Searches for a textbox with the active textbox's name, applying the id as a suffix
+     * @see RPSysLytTextBox::copyFontColor
      * @param textBox Layout text box
      * @param id Pane id
      * @return true if color was changed successfully

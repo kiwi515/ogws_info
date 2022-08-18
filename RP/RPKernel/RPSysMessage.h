@@ -38,28 +38,35 @@ public:
 
     /**
      * @brief Get message info by ID
+     * @param groupId Message group ID
+     * @param msgId Message ID
      * @address 80190d90
      */
-    RPMsgInfoBlockEntry * GetMessage(u32 id1, u32 id2);
+    RPMsgInfoBlockEntry * GetMessage(u32 groupId, u32 msgId);
 
     /**
      * @brief Get message attribute by ID
-     * @note Attribute is part of base MsgInfo
+     * @param groupId Message group ID
+     * @param msgId Message ID
      * @address 80190d6c
      */
-    u32 GetAttribute(u32 id1, u32 id2);
+    u32 GetAttribute(u32 groupId, u32 msgId);
 
     /**
      * @brief Get message scale by ID
+     * @param groupId Message group ID
+     * @param msgId Message ID
      * @address 80190d48
      */
-    u16 GetScale(u32 id1, u32 id2);
+    u16 GetScale(u32 groupId, u32 msgId);
 
     /**
      * @brief Get message char space (kerning) by ID
+     * @param groupId Message group ID
+     * @param msgId Message ID
      * @address 80190d24
      */
-    s8 GetCharSpace(u32 id1, u32 id2);
+    s8 GetCharSpace(u32 groupId, u32 msgId);
 };
 
 #endif
