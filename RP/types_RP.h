@@ -17,6 +17,7 @@ struct RPGrpModelG3D;
 struct RPGrpFogManager;
 struct RPGrpModelBoundingInfo;
 struct RPGrpShadowTexture;
+struct RPGrpScreen;
 
 // RPKernel
 struct RPSysSystem;
@@ -26,9 +27,16 @@ struct RPSysTextWriter;
 struct RPSysMessage;
 struct RPSysEffect;
 struct RPSysLayout;
+struct RPSysKokeshiIcon;
 struct RPSysWideTextWriter;
+struct RPSysLytBounding;
+struct RPSysLytPicture;
+struct RPSysLytTextBox;
+struct RPSysLytWindow;
 struct RPSysLytResAccessor;
 struct RPSysLytAllocator;
+struct RPSysLytAnmObj;
+struct RPSysLytDynamicAnm;
 
 // RPSystem
 struct RPSysSceneCreator;
