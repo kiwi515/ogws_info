@@ -11,6 +11,7 @@
 /**
  * @brief NW4R layout wrapper with added features, such as support for
  * Mii icons and dynamic animation.
+ * @wfuname
  */
 class RPSysLayout
 {

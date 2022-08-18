@@ -37,6 +37,7 @@ struct RPSysLytResAccessor;
 struct RPSysLytAllocator;
 struct RPSysLytAnmObj;
 struct RPSysLytDynamicAnm;
+struct RPSysLytResAccessor;
 
 // RPSystem
 struct RPSysSceneCreator;

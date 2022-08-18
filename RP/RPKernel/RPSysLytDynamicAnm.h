@@ -10,6 +10,7 @@
 /**
  * @brief Dynamic animation in/out of the screen, with configurable direction and length.
  * Reversible at any time.
+ * @wfuname
  */
 class RPSysLytDynamicAnm
 {
