@@ -1,6 +1,6 @@
-/**
- * @brief Enum for Tennis's sound archive (BRSAR)
- */
+#ifndef RP_AUDIO_RP_TNS_SOUND_RSAR_H
+#define RP_AUDIO_RP_TNS_SOUND_RSAR_H
+
 enum rp_Tns_sound
 {
     /* 0x00 */ SE_TR_TARGET_CRUSH,
@@ -176,3 +176,5 @@ enum rp_Tns_sound
     /* 0xAA */ RP_COM_GAME_SE_PAUSE_KEY_A_01_TVSP,
     /* 0xAB */ RP_COM_GAME_SE_PAUSE_KEY_A_01
 };
+
+#endif

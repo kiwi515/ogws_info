@@ -1,6 +1,6 @@
-/**
- * @brief Enum for Bowling's sound archive (BRSAR)
- */
+#ifndef RP_AUDIO_RP_BOW_SOUND_RSAR_H
+#define RP_AUDIO_RP_BOW_SOUND_RSAR_H
+
 enum rp_Bow_sound
 {
     /* 0x00 */ SE_TR_Training_Kabeyoke_Replay_WallEffect,
@@ -163,3 +163,5 @@ enum rp_Bow_sound
     /* 0x9D */ RP_COM_GAME_SE_PAUSE_KEY_A_01_TVSP,
     /* 0x9E */ RP_COM_GAME_SE_PAUSE_KEY_A_01
 };
+
+#endif

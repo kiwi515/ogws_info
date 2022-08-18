@@ -1,6 +1,6 @@
-/**
- * @brief Enum for Baseball's sound archive (BRSAR)
- */
+#ifndef RP_AUDIO_RP_BSB_SOUND_RSAR_H
+#define RP_AUDIO_RP_BSB_SOUND_RSAR_H
+
 enum rp_Bsb_sound
 {
     /* 0x00 */ SE_TR_BallFall,
@@ -182,3 +182,5 @@ enum rp_Bsb_sound
     /* 0xB0 */ RP_COM_GAME_SE_PAUSE_KEY_A_01_TVSP,
     /* 0xB1 */ RP_COM_GAME_SE_PAUSE_KEY_A_01
 };
+
+#endif

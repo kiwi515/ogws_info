@@ -1,6 +1,6 @@
-/**
- * @brief Enum for Wii Sports's common sound archive (BRSAR)
- */
+#ifndef RP_AUDIO_RP_COMMON_SOUND_RSAR_H
+#define RP_AUDIO_RP_COMMON_SOUND_RSAR_H
+
 enum rp_Common_Sports
 {
     /* 0x00 */ RP_COMMON_SE_LOGO_01,
@@ -82,3 +82,5 @@ enum rp_Common_Sports
     /* 0x4C */ RP_COM_GAME_SE_PAUSE_KEY_A_01_TVSP,
     /* 0x4D */ RP_COM_GAME_SE_PAUSE_KEY_A_01
 };
+
+#endif

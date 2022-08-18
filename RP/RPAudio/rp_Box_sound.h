@@ -1,6 +1,6 @@
-/**
- * @brief Enum for Boxing's sound archive (BRSAR)
- */
+#ifndef RP_AUDIO_RP_BOX_SOUND_RSAR_H
+#define RP_AUDIO_RP_BOX_SOUND_RSAR_H
+
 enum rp_Box_sound
 {
     /* 0x000 */ SE_TR_punch_jab,
@@ -270,3 +270,5 @@ enum rp_Box_sound
     /* 0x108 */ RP_COM_GAME_SE_PAUSE_KEY_A_01_TVSP,
     /* 0x109 */ RP_COM_GAME_SE_PAUSE_KEY_A_01
 };
+
+#endif
