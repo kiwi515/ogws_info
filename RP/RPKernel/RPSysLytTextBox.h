@@ -25,7 +25,7 @@ public:
     void setScaleX(f32 scale);
 
     /**
-     * @brief Set custom text, using attributes from a BMG message
+     * @brief Set custom text, and set attributes from a BMG message
      * @param msg Message file
      * @param group Message group ID (for attributes)
      * @param msgId Message ID (for attributes)
@@ -35,7 +35,7 @@ public:
     void setMessage(RPSysMessage *msg, u32 groupId, u32 msgId, const wchar_t *text);
 
     /**
-     * @brief Set text to format string from BMG
+     * @brief Set text to formatted string from BMG
      * @param msg Message file
      * @param groupId Message group ID
      * @param msgId Message ID
