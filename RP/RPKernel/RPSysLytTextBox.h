@@ -5,7 +5,7 @@
 #include <nw4r/lyt/lyt_textBox.h>
 
 /**
- * @brief NW4R textbox extension
+ * @brief NW4R layout textbox extension
  */
 class RPSysLytTextBox : public nw4r::lyt::TextBox
 {
