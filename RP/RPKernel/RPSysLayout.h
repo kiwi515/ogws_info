@@ -304,13 +304,13 @@ public:
     void createDynamicAnm(EGG::Heap *heap, nw4r::lyt::Pane *pane);
 
     /**
-     * @brief Parse dynamic animation info from a string
-     * @param info Dynamic animation info 
+     * @brief Parse dynamic animation info from a pane
+     * @param pane Pane containing dynamic animation info
      * @param[out] direction Animation direction
      * @param[out] length Animation length
      * @address 80197598
      */
-    void parseDynamicAnmInfo(const char* info,
+    void parseDynamicAnmInfo(nw4r::lyt::Pane* pane,
         RPSysLytDynamicAnm::EDirection *direction, s16 *length);
 
     /**
