@@ -25,15 +25,15 @@ private:
 
     //! @brief Map object rotation
     nw4r::math::MTX33 mRotation; // at 0xC
-    //! @brief Map object offset
-    nw4r::math::VEC3 mOffset; // at 0x30
+    //! @brief Map object translation
+    nw4r::math::VEC3 mTrans; // at 0x30
     //! @brief Map object scale
     nw4r::math::VEC3 mScale; // at 0x3C
 
-    //! @brief Pointer to mRotation
+    //! @brief Pointer to rotation
     nw4r::math::MTX33 *mpRotation; // at 0x40
-    //! @brief Pointer to mOffset
-    nw4r::math::VEC3 *mpOffset; // at 0x44
+    //! @brief Pointer to translate
+    nw4r::math::VEC3 *mpTrans; // at 0x44
 };
 
 #endif
