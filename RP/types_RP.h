@@ -20,6 +20,7 @@ struct RPGrpShadowTexture;
 struct RPGrpScreen;
 
 // RPKernel
+struct RPSysConfigData;
 struct RPSysSystem;
 struct RPSysFile;
 struct IRPSysHostIOSocket;
