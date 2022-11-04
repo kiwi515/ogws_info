@@ -1,5 +1,6 @@
 # ogws_info
-Resources/information that I've gathered during my work with OGWS.  
+Resources/information that I've gathered during my work with *Wii Sports*.  
+Everything is designed to work with Doxygen, the auto-generated documentation framework.  
 - This repository is meant to only cover structures from the RP engine (the engine designed for the Pack Project). 
 - As a result, this code will reference other external (EGG/NW4R/etc.) structures that are not defined here.  
 - Because this project is designed to help future decompilation, all virtual addresses specified are for the US Rev 1 version of the game.  
@@ -16,6 +17,4 @@ If you are interested in the decompilation, or would like to contribute, feel fr
 - `RSPE_r1.csv`: Symbol map (NTSC-U, v1.01) in CSV form, for whatever data analysis you may want to do.
   
 ## Instructions
-Dolphin is a bit confusing with this stuff, so I thought I'd leave a note here.  
-  
 Dolphin will only look for `{install-directory}\User\Maps\{GameID}.map` if you select `Symbols > Load Symbol Map`, so you need to instead select `Symbols > Load Other Map File...`, and navigate the to the `*.dmap` file you have downloaded.
